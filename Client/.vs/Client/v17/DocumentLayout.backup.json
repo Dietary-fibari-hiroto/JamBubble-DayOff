@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{7b7dd7dd-64c6-42b1-bd6f-2ee8e2aebd92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e21a0b2b-0c64-4724-8384-38f57753210c}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T04:08:32.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

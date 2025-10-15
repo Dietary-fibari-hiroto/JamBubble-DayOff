@@ -1,0 +1,11 @@
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.deps.json
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.runtimeconfig.json
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\appsettings.Development.json
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\appsettings.json
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.staticwebassets.endpoints.json
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.exe
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.pdb
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\obj\Debug\docker-c.35A3FFBA.Up2Date
