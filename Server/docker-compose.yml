@@ -7,25 +7,5 @@ services:
       dockerfile: Server/Dockerfile
     ports:
       - "8080:8080"
-    depends_on:
-      - mysql
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=mysql;Database=jb_db;User=jb_user;Password=sleepingondayoff;
 
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: sleepingondayoff
-      MYSQL_DATABASE: jb_db
-      MYSQL_USER: jb_user
-      MYSQL_PASSWORD: sleepinondayoff
-    ports:
-      - "3306:3306"
-    volumes:
-      - dbdata:/var/lib/mysql
 
-volumes:
-  dbdata:
