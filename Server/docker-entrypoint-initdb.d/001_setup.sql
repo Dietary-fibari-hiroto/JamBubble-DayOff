@@ -1,1 +1,0 @@
-ALTER USER `jb_user`@`%` IDENTIFIED WITH mysql_native_password BY 'sleepingondayoff';
