@@ -16,19 +16,16 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql
-    # command: --mysql-native-password=ON
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: sleepingondayoff
       MYSQL_DATABASE: jb_db
-      # MYSQL_USER: jb_user
-      # MYSQL_PASSWORD: sleepingondayoff
+      MYSQL_USER: jb_user
+      MYSQL_PASSWORD: sleepingondayoff
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
 volumes:
   dbdata:
-
