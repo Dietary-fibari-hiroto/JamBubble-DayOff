@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Server.Models;
+
+public partial class Scene
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public virtual ICollection<Session> Sessions { get; set; } = new List<Session>();
+}
