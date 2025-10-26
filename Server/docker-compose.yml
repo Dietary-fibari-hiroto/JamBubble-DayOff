@@ -11,7 +11,7 @@ services:
       - mysql
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=mysql;Database=jb_db;User=jb_user;Password=sleepingondayoff;
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=jb_db;userid=jb_user;password=sleepingondayoff;AllowPublicKeyRetrieval=True;
 
   mysql:
     image: mysql:8.0
