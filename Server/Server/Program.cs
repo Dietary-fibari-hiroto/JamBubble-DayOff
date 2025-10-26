@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Server.DbContexts;
+using Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,15 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-builder.Services.AddDbContext<SampleDbcontext>(optinons =>
-    //optinons.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))); compose‚©‚çÚ‘±î•ñ‚ğ
-    optinons.UseMySql(builder.Configuration.GetConnectionString("MySQLSampleContext"), new MySqlServerVersion(new Version(8, 4, 2))));@// appsetting.json‚©‚çÚ‘±î•ñ‚ğ
+builder.Services.AddDbContext<AppDbContext>(optinons =>
+    optinons.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))); // compose‚©‚çÚ‘±î•ñ
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/db-ping", async (SampleDbcontext db) =>
+app.MapGet("/db-ping", async (AppDbContext db) =>
 {
     try
     {
