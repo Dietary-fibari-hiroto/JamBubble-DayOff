@@ -15,3 +15,11 @@
 
 - DBの接続がcomposeからの環境変数での接続ができなかった
 
+## 2025/10/26
+- MySqlWorkBenchでER図を作成
+    - そこからDBを構築
+    - スキャフォールディングでコードに変更
+        ``` 
+            dotnet ef dbcontext scaffold "server=localhost;port=3306;database=jb_db;userid=jb_user;password=sleepingondayoff;AllowPublicKeyRetrieval=True;" Pomelo.EntityFrameworkCore.MySql -o Models --context AppDbContext --context-dir Data --force
+        ```
+    - ModelsとDBContextを生成
