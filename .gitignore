@@ -1,0 +1,88 @@
+.env
+.env.*
+
+# Build output
+bin/
+obj/
+*.dll
+*.exe
+*.app
+*.ipa
+*.aab
+*.apk
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VSCode
+.vscode/
+.history/
+
+# Visual Studio
+.vs/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+
+# MAUI / Xamarin / Android / iOS
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.jar
+*.keystore
+*.pdb
+*.mdb
+*.cache
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.xcuserstate
+*.xcworkspace
+*.xcuserdata
+*.xcconfig
+*.xcsettings
+
+# Web build output (if any)
+wwwroot/dist/
+node_modules/
+
+# JetBrains Rider / Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Logs
+*.log
+
+# SQLite local DBs
+*.db
+*.db-shm
+*.db-wal

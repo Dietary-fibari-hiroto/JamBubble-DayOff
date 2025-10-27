@@ -10,7 +10,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Api\Controllers\" />
+    <Folder Include="src\Application\Services\" />
+    <Folder Include="src\Core\Interfaces\" />
+    <Folder Include="src\Infrastructure\Repositories\" />
+    <Folder Include="src\Api\DTOs\" />
+    <Folder Include="src\Api\Middlewares\" />
+    <Folder Include="src\Core\Exceptions\" />
+    <Folder Include="src\Application\" />
+    <Folder Include="src\BlazorServerApp\" />
+    <Folder Include="src\Infrastructure\Migrations\" />
+    <Folder Include="src\SignalIR\" />
   </ItemGroup>
 
 </Project>

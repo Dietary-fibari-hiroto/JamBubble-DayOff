@@ -1,11 +1,35 @@
-version: '3.8'
+﻿version: "3.8"
 
 services:
+  #MySQL コンテナ
+  mysql:
+    image: mysql:8.0
+    container_name: jumbubble
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  #ASP.NET Core
   server:
     build:
       context: .
       dockerfile: Server/Dockerfile
+    container_name: jumbubble_server
     ports:
-      - "8080:8080"
+      - "9000:9000"
+    depends_on:
+      - mysql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
+    # ↑ 重要：ここで MySQL への接続文字列を渡す
+    # "server=mysql" ← docker-compose 内のサービス名で接続
 
-
+volumes:
+  mysql_data:
