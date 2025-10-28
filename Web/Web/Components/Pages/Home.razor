@@ -1,7 +1,45 @@
 ﻿@page "/"
 
+@inject NavigationManager NavManager
+@rendermode InteractiveServer
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="developer-section-container">
+    <img class="team-logo" src="images/icons/DayoffWhiteLogo.png" />
+    <h1 class ="string-big-bold">JamBubble</h1>
+    <p class="string-s">Developer Page</p>
+</div>
+<div class="developer-section-container">
+    <h3 class="string-reg-bold">PageList</h3>
+    <ul id="pagelist-container">
 
-Welcome to your new app.
+        @foreach(var path in paths)
+        {
+            <li @onclick='() => NavigateTo("/"+path)'>@path</li>
+        }
+
+    </ul>
+</div>
+
+@code{
+    private List<string> paths = new List<string>
+    {
+        "splash",
+        "connecting",
+        "pinentry",
+        "profilesetup",
+        "welcome",
+        "sessionlink",
+        "sessionrequest",
+        "sessionrequestboard",
+        "sessionplaylist",
+        "sessionmenber",
+        "sessionend"
+    };
+
+    private void NavigateTo(string target)
+    {
+        NavManager.NavigateTo(target);
+    }
+
+}

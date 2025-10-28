@@ -1,0 +1,14 @@
+﻿@page "/splash"
+
+@inject NavigationManager NavManager
+@rendermode InteractiveServer
+
+<h3 @onclick="BackTo">Splash</h3>
+
+@code {
+    private void BackTo()
+    {
+        NavManager.NavigateTo("/");
+    }
+
+}

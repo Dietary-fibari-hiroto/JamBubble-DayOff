@@ -22,14 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\Api\Controllers\" />
-    <Folder Include="src\Application\Services\" />
-    <Folder Include="src\Core\Interfaces\" />
-    <Folder Include="src\Infrastructure\Repositories\" />
     <Folder Include="src\Api\DTOs\" />
     <Folder Include="src\Api\Middlewares\" />
     <Folder Include="src\Core\Exceptions\" />
-    <Folder Include="src\Application\" />
     <Folder Include="src\BlazorServerApp\" />
     <Folder Include="src\Infrastructure\Migrations\" />
     <Folder Include="src\SignalIR\" />

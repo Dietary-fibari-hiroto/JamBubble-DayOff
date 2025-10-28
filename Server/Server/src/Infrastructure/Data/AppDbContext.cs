@@ -6,7 +6,7 @@ namespace Server.Data
     /**
      * すべてのEntityとDBテーブルの対応関係を管理する
      * 
-     * dotnet ef migrations add JumBubble
+     * dotnet ef migrations add JamBubble
      * dotnet ef database update
      * 
      * dotnet ef database drop
@@ -17,6 +17,36 @@ namespace Server.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<User> Users => Set<User>();
+        public DbSet<Provider> Providers => Set<Provider>();
+        public DbSet<UserProvider> UserProviders => Set<UserProvider>();
+        public DbSet<UserHistory> UserHistories => Set<UserHistory>();
+        public DbSet<FavoriteMusic> FavoriteMusics => Set<FavoriteMusic>();
+        public DbSet<UserBlock> UserBlocks => Set<UserBlock>();
+
+        public DbSet<Friend> Friends => Set<Friend>();
+        public DbSet<FriendRequest> FriendRequests => Set<FriendRequest>();
+
+        public DbSet<Session> Sessions => Set<Session>();
+        public DbSet<Tag> Tags => Set<Tag>();
+        public DbSet<SessionTag> SessionTags => Set<SessionTag>();
+        public DbSet<Scene> Scenes => Set<Scene>();
+        public DbSet<SessionSortSetting> SessionSortSettings => Set<SessionSortSetting>();
+        public DbSet<Guest> Guests => Set<Guest>();
+        public DbSet<Request> Requests => Set<Request>();
+        public DbSet<RequestCache> RequestCaches => Set<RequestCache>();
+
+        public DbSet<StreetPassOption> StreetPassOptions => Set<StreetPassOption>();
+        public DbSet<StreetPassHistory> StreetPassHistories => Set<StreetPassHistory>();
+        
+        public DbSet<Fornow> Fornows=> Set<Fornow>();
+        public DbSet<FornowLike> FornowLikes => Set<FornowLike>();
+
+        public DbSet<Message>Messages => Set<Message>();
+
+        public DbSet<FavoriteMusicSummary> FavoriteMusicSummaries => Set<FavoriteMusicSummary>();
+
+
+    
 
         //Entityの構成を定義するメソッド
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -33,10 +63,21 @@ namespace Server.Data
                 }
 
             }
+            //元のスーパークラスのないようも実行
             base.OnModelCreating(modelBuilder);
 
 
-            //複合キーの設定
+            //複合キーの定義
+            modelBuilder.Entity<UserProvider>().HasKey(p => new { p.UserId, p.ProviderId });
+            modelBuilder.Entity<Friend>().HasKey(p => new { p.User1Id, p.User2Id });
+            modelBuilder.Entity<FriendRequest>().HasKey(p => new { p.SendUserId, p.PassUserId });
+            modelBuilder.Entity<UserBlock>().HasKey( p=> new {p.UserId,p.BlockedUserId});
+
+            modelBuilder.Entity<SessionTag>().HasKey(p => new { p.SessionId, p.TagId });
+
+            modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
+
+
         }
 
         //INSERTやUPDATEでDBに反映させるタイミングで呼び出される関数

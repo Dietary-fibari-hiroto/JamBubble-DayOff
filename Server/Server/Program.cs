@@ -13,7 +13,16 @@ builder.Services.AddSwaggerGen(); //SwaggerUI実装
 //環境変数から接続文字列を読みこむ
 var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION");
 //Mysqlの登録(DBとやり取りするためのやつ)
-builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 38))));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        connectionString,
+        new MySqlServerVersion(new Version(8, 0, 38)),
+        mySqlOptions => mySqlOptions.EnableRetryOnFailure(
+    maxRetryCount: 5,               // 最大リトライ回数
+    maxRetryDelay: TimeSpan.FromSeconds(10), // リトライ間隔の最大時間
+    errorNumbersToAdd: null          // 追加でリトライ対象にするエラー番号 (nullでもOK)
+)
+    ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
 

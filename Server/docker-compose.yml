@@ -4,7 +4,7 @@ services:
   #MySQL コンテナ
   mysql:
     image: mysql:8.0
-    container_name: jumbubble
+    container_name: jambubble
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -13,14 +13,14 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - jambubble:/var/lib/mysql
 
   #ASP.NET Core
   server:
     build:
       context: .
       dockerfile: Server/Dockerfile
-    container_name: jumbubble_server
+    container_name: jambubble_server
     ports:
       - "9000:9000"
     depends_on:
@@ -32,4 +32,4 @@ services:
     # "server=mysql" ← docker-compose 内のサービス名で接続
 
 volumes:
-  mysql_data:
+  jambubble:

@@ -1,0 +1,24 @@
+﻿.developer-section-container{
+    padding-top:100px;
+}
+
+.developer-section-container,
+#pagelist-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.team-logo{
+    width:150px;
+    height:117px;
+}
+
+#pagelist-container > li{
+    border-bottom:solid white 1px;
+    width:300px;
+    padding-left:10px;
+    margin:10px 0 ;
+    cursor:pointer;
+}

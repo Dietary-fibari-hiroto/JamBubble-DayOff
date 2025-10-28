@@ -11,7 +11,7 @@ public class User:TimestampedEntity {
     public string Name { get; set; } = null!;
 
     [Required]
-    public int Age { get; set; }
+    public DateTime Birthday { get; set; }
 
     [Required]
     [StringLength(255)]
@@ -32,9 +32,6 @@ public class User:TimestampedEntity {
     [StringLength(255)]
     public string? ImgUrl { get; set; }
 
-    [Column("favorite_music")]
-    [StringLength(50)]
-    public string? FavoriteMusic { get; set; }
 
 }
 
