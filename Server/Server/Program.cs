@@ -1,45 +1,49 @@
-using DotNetEnv; // © ‚±‚ê‚ğã‚É’Ç‰Á
+using DotNetEnv; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½
 using Microsoft.EntityFrameworkCore;
 using Server.Data;
 using Server.Data.Configrations; 
-//ƒAƒvƒŠ‚Ìİ’è‚âDI’“ü‚·‚é‚½‚ß‚Ì€”õ
+//ï¿½Aï¿½vï¿½ï¿½ï¿½Ìİ’ï¿½ï¿½DIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìï¿½ï¿½ï¿½
 var builder = WebApplication.CreateBuilder(args);
 
 Env.Load();
 
-builder.Services.AddControllers(); //API‚ÅƒRƒ“ƒgƒ[ƒ‰g‚¢‚Ü‚Á‚¹‚Ü‚¶‚È‚¢
-builder.Services.AddEndpointsApiExplorer(); //SwaggerUI—p‚ÌAPIƒhƒLƒ…ƒƒ“ƒg\’z
-builder.Services.AddSwaggerGen(); //SwaggerUIÀ‘•
-//ŠÂ‹«•Ï”‚©‚çÚ‘±•¶š—ñ‚ğ“Ç‚İ‚±‚Ş
-var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION");
-//Mysql‚Ì“o˜^(DB‚Æ‚â‚èæ‚è‚·‚é‚½‚ß‚Ì‚â‚Â)
+builder.Services.AddControllers(); //APIï¿½ÅƒRï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½È‚ï¿½
+builder.Services.AddEndpointsApiExplorer(); //SwaggerUIï¿½pï¿½ï¿½APIï¿½hï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½\ï¿½z
+builder.Services.AddSwaggerGen(); //SwaggerUIï¿½ï¿½ï¿½ï¿½
+//ï¿½Â‹ï¿½ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚İ‚ï¿½ï¿½ï¿½
+var connectionString =
+    Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
+    ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
+    ?? Environment.GetEnvironmentVariable("CONNECTION_STRING")
+    ?? throw new InvalidOperationException("Connection string not found.");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         connectionString,
         new MySqlServerVersion(new Version(8, 0, 38)),
         mySqlOptions => mySqlOptions.EnableRetryOnFailure(
-    maxRetryCount: 5,               // Å‘åƒŠƒgƒ‰ƒC‰ñ”
-    maxRetryDelay: TimeSpan.FromSeconds(10), // ƒŠƒgƒ‰ƒCŠÔŠu‚ÌÅ‘åŠÔ
-    errorNumbersToAdd: null          // ’Ç‰Á‚ÅƒŠƒgƒ‰ƒC‘ÎÛ‚É‚·‚éƒGƒ‰[”Ô† (null‚Å‚àOK)
+    maxRetryCount: 5,               // ï¿½Å‘åƒŠï¿½gï¿½ï¿½ï¿½Cï¿½ï¿½
+    maxRetryDelay: TimeSpan.FromSeconds(10), // ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Cï¿½ÔŠuï¿½ÌÅ‘åï¿½ï¿½
+    errorNumbersToAdd: null          // ï¿½Ç‰ï¿½ï¿½Åƒï¿½ï¿½gï¿½ï¿½ï¿½Cï¿½ÎÛ‚É‚ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Ôï¿½ (nullï¿½Å‚ï¿½OK)
 )
     ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
 
-var app = builder.Build();//ã‹LİŒv}‚ğŠî‚É\’z
+var app = builder.Build();//ï¿½ï¿½Lï¿½İŒvï¿½}ï¿½ï¿½ï¿½ï¿½É\ï¿½z
 
 app.MapGet("/", () => "Hello World!");
 
-//SwaggerUI‚ÌƒGƒ“ƒhƒ|ƒCƒ“ƒg‚ÆUI“Ç‚İ‚İ•\’z
+//SwaggerUIï¿½ÌƒGï¿½ï¿½ï¿½hï¿½|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½UIï¿½Ç‚İï¿½ï¿½İï¿½ï¿½\ï¿½z
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection(); //Http‚ÅƒŠƒNƒGƒXƒg‚³‚ê‚½‚Æ‚«‚ÉHttps‚ÖƒŠƒ_ƒCƒŒƒNƒg
-app.UseAuthorization(); //”F‰Â‚ğƒ~ƒhƒ‹ƒEƒFƒAƒpƒCƒvƒ‰ƒCƒ“‚É’Ç‰Á
-app.MapControllers(); //controller‚Å’è‹`‚³‚ê‚½ƒ‹[ƒg‚ğ—LŒø‚É‚·‚é(ƒRƒ“ƒgƒ[ƒ‰[‚ğ—LŒø‚É‚·‚é)
+app.UseHttpsRedirection(); //Httpï¿½Åƒï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½Httpsï¿½Öƒï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½g
+app.UseAuthorization(); //ï¿½Fï¿½Â‚ï¿½ï¿½~ï¿½hï¿½ï¿½ï¿½Eï¿½Fï¿½Aï¿½pï¿½Cï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½É’Ç‰ï¿½
+app.MapControllers(); //controllerï¿½Å’ï¿½`ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½[ï¿½gï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½(ï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½)
 
-app.Run();//ÀsIII
+app.Run();//ï¿½ï¿½ï¿½sï¿½Iï¿½Iï¿½I
 
