@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,15 +58,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SessionEnd.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionEnd.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionEnd.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionEnd.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionEnd.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SessionPlaylist.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:31:06.592Z",
+              "WhenOpened": "2025-10-28T12:30:13.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SessionRequest.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequest.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T12:29:19.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SessionLink.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T12:28:57.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Welcome.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Welcome.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Welcome.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Welcome.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Welcome.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T12:28:35.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Routes.razor",
+              "RelativeToolTip": "Web\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T05:28:22.502Z",
               "EditorCaption": ""
             },
             {
@@ -79,73 +127,19 @@
               "RelativeToolTip": "Web\\Components\\Pages\\SessionMenber.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:30:35.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T12:30:35.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SessionPlaylist.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SessionEnd.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionEnd.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionEnd.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionEnd.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionEnd.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:30:13.178Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SessionRequest.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequest.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:29:19.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SessionLink.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:28:57.759Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Welcome.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Welcome.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Welcome.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Welcome.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\Welcome.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:28:35.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Routes.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Routes.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Routes.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Routes.razor",
-              "RelativeToolTip": "Web\\Components\\Routes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T05:28:22.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T12:31:06.592Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Web\\Components\\Pages\\Splash.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T11:14:44.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T11:14:44.398Z"
             },
             {
               "$type": "Document",

@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -86,7 +86,7 @@
               "RelativeDocumentMoniker": "Server\\.env",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\.env",
               "RelativeToolTip": "Server\\.env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-10-28T04:53:06.89Z",
               "EditorCaption": ""
@@ -101,7 +101,8 @@
               "RelativeToolTip": "Server\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-28T13:24:39.054Z"
+              "WhenOpened": "2025-10-28T13:24:39.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -113,24 +114,25 @@
               "RelativeToolTip": "Server\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-28T13:24:54.89Z"
+              "WhenOpened": "2025-10-28T13:24:54.89Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.env",
               "RelativeDocumentMoniker": ".env",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.env",
               "RelativeToolTip": ".env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-10-28T04:52:57.868Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\Program.cs",
               "RelativeDocumentMoniker": "Server\\Program.cs",
@@ -149,7 +151,7 @@
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAA8wAgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2025-10-28T13:50:47.71Z",
               "EditorCaption": ""
@@ -164,7 +166,8 @@
               "RelativeToolTip": "Server\\src\\Core\\Interfaces\\Services\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T12:47:56.871Z"
+              "WhenOpened": "2025-10-28T12:47:56.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -176,7 +179,8 @@
               "RelativeToolTip": "Server\\src\\Application\\Services\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T12:50:36.339Z"
+              "WhenOpened": "2025-10-28T12:50:36.339Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -188,7 +192,8 @@
               "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Users\\UserBlock.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T12:01:31.36Z"
+              "WhenOpened": "2025-10-27T12:01:31.36Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -198,9 +203,10 @@
               "RelativeDocumentMoniker": "Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
               "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAA8wAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T11:20:33.999Z"
+              "WhenOpened": "2025-10-27T11:20:33.999Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -212,7 +218,8 @@
               "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Users\\UserProvider.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:39:43.279Z"
+              "WhenOpened": "2025-10-27T10:39:43.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,7 +231,8 @@
               "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Users\\UserHistory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:57:49.462Z"
+              "WhenOpened": "2025-10-27T10:57:49.462Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -236,7 +244,8 @@
               "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Users\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T08:18:32.17Z"
+              "WhenOpened": "2025-10-27T08:18:32.17Z",
+              "EditorCaption": ""
             }
           ]
         }
