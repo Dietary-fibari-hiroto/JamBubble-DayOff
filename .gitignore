@@ -1,88 +1,172 @@
 .env
 .env.*
 
-# Build output
-bin/
-obj/
-*.dll
-*.exe
-*.app
-*.ipa
-*.aab
-*.apk
+## =========================================
+## .NET / ASP.NET / MAUI / Blazor 共通設定
+## =========================================
 
-# User-specific files
+# ビルド出力
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.binlog
+
+# ユーザー固有
 *.user
 *.suo
 *.userosscache
-*.sln.docstates
+*.userprefs
+*.rsuser
 
-# VSCode
-.vscode/
-.history/
-
-# Visual Studio
+# VSキャッシュ
 .vs/
+*.dbmdl
+*.dbproj.schemaview
+.vscode/
 
-# macOS
-.DS_Store
+# 一時ファイル / バックアップ
+*.tmp
+*.temp
+*.bak
+*.backup
+*.cache
+*.swp
+*.sln.docstates
+~$*
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.nuget/
+packages/
+# NuGet自動復元設定ファイルは残す
+!packages/build/
+!packages/repositories.config
 
 # Rider
 .idea/
 
-# MAUI / Xamarin / Android / iOS
+# JetBrains系キャッシュ
+*.iml
+out/
+
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+## =========================================
+## ASP.NET / Blazor / Web 関連
+## =========================================
+
+# 一時的な発行ファイル
+publish/
+obj/Release/
+obj/Debug/
+bin/Release/
+bin/Debug/
+
+
+# Node.jsが絡むBlazor HybridやWebプロジェクト用
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# タスクランナー
+gulpfile.js.map
+.grunt/
+bower_components/
+
+## =========================================
+## .NET MAUI 専用
+## =========================================
+
+# プラットフォーム別ビルド出力
+**/Platforms/Android/obj/
+**/Platforms/Android/bin/
+**/Platforms/iOS/obj/
+**/Platforms/iOS/bin/
+**/Platforms/MacCatalyst/obj/
+**/Platforms/MacCatalyst/bin/
+**/Platforms/Windows/obj/
+**/Platforms/Windows/bin/
+
+# MAUIキャッシュ
+**/Resources/Raw/*.zip
+**/Resources/*.xaml.g.cs
+*.xaml.g.cs
+*.xaml.cs~
+
+# Android関連
 *.apk
 *.aab
 *.ap_
 *.dex
-*.class
-*.jar
 *.keystore
-*.pdb
-*.mdb
-*.cache
-*.log
+*.jks
+
+# iOS関連
+*.app
+*.ipa
+*.dSYM
+*.xcarchive
+
+# Windows関連
+*.appx
+*.appxbundle
+*.appxupload
+*.msix
+*.msixbundle
+*.msixupload
+AppPackages/
+BundleArtifacts/
+Project.lock.json
+*.pfx
+
+## =========================================
+## その他
+## =========================================
+
+# テスト結果
+TestResults/
+*.coverage
+*.coveragexml
+*.testsettings
+
+# ローカル環境用設定
+.env
+.env.local
+.env.development
+.env.production
+appsettings.*.json
+
+# SQLite, LiteDB などローカルDB
 *.db
+*.sqlite
 *.db-shm
 *.db-wal
-*.xcuserstate
-*.xcworkspace
-*.xcuserdata
-*.xcconfig
-*.xcsettings
+*.mdf
+*.ldf
 
-# Web build output (if any)
-wwwroot/dist/
-node_modules/
+# JSONデバッグ情報
+*.json~
 
-# JetBrains Rider / Resharper
-_ReSharper*/
-*.[Rr]e[Ss]harper
-*.DotSettings.user
 
-# NuGet packages
-*.nupkg
-*.snupkg
-packages/
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# Temporary files
-*.tmp
-*.bak
-*.swp
-*~
-
-# Logs
-*.log
-
-# SQLite local DBs
-*.db
-*.db-shm
-*.db-wal
+## =========================================
+## 例外：Gitで管理したいフォルダを明示
+## =========================================
+!wwwroot/
+!Resources/
+!Platforms/
+!Properties/
+!MauiProgram.cs
+!Program.cs
+!App.razor
+!App.xaml
+!App.xaml.cs
