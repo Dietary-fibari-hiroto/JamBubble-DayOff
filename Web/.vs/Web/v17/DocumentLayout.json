@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\web\\web\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\web\\web\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,19 +62,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SessionPlaylist.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\App.razor",
+              "RelativeToolTip": "Web\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-28T12:30:13.178Z"
+              "WhenOpened": "2025-10-29T06:50:46.633Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SessionRequest.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequest.razor",
@@ -82,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SessionLink.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor",
@@ -94,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Welcome.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Welcome.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\Welcome.razor",
@@ -106,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Routes.razor",
@@ -120,6 +125,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "SessionPlaylist.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T12:30:13.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SessionMenber.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionMenber.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionMenber.razor",
@@ -131,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SessionEnd.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionEnd.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionEnd.razor",
@@ -143,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Splash.razor",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Splash.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\Splash.razor",
@@ -155,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Variable.css",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
               "RelativeDocumentMoniker": "Web\\wwwroot\\css\\Variable.css",
