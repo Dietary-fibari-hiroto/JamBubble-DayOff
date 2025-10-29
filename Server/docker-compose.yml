@@ -23,6 +23,7 @@ services:
     container_name: jambubble_server
     ports:
       - "9000:9000"
+      - "9001:9001"
     depends_on:
       - mysql
     environment:

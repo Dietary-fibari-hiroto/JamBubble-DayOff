@@ -2,11 +2,11 @@ services:
   server:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_HTTP_PORTS=9000
+      - ASPNETCORE_HTTPS_PORTS=9001
     ports:
-      - "8080"
-      - "8081"
+      - "9000"
+      - "9001"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.microsoft/userSecrets:/root/.microsoft/usersecrets:ro
