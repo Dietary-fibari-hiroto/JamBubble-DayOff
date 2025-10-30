@@ -1,7 +1,8 @@
 using DotNetEnv; // �� �������ɒǉ�
 using Microsoft.EntityFrameworkCore;
 using Server.Data;
-using Server.Data.Configrations; 
+using Server.Data.Configrations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            ),
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = false,
+            ValidateIssuerSigningKey = true,
+        };
+    }
+    );
 
 var app = builder.Build();//��L�݌v�}����ɍ\�z
 
@@ -42,7 +60,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
+
 app.UseAuthorization(); //�F���~�h���E�F�A�p�C�v���C���ɒǉ�
+app.UseAuthentication();
+
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 
 app.Run();//���s�I�I�I
