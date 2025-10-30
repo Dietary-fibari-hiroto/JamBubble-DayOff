@@ -5,18 +5,23 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using DotNetEnv;
 
 namespace Server.src.Services
 {
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IConfiguration _configuration;
+        private readonly string _jwtKey; // JWT署名キー 
+        private readonly string _jwtIssuer; // JWT発行者
+        private readonly string _jwtAudience; // JWT対象者
 
-        public AuthService(IUserRepository userRepository, IConfiguration configuration)
-        { 
+        public AuthService(IUserRepository userRepository)
+        {
             _userRepository = userRepository;
-            _configuration = configuration;
+            _jwtKey = Environment.GetEnvironmentVariable("jwt__key")!;
+            _jwtIssuer = Environment.GetEnvironmentVariable("jwt__Issuer")!;
+            _jwtAudience = Environment.GetEnvironmentVariable("jwt__Audience")!;
         }
 
         public async Task<string?> LoginAsync(string email, string password)
@@ -30,19 +35,21 @@ namespace Server.src.Services
             // JWTトークンの生成
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName, user.Name)
+                new Claim(JwtRegisteredClaimNames.Sub, user!.Id.ToString()), // ユーザーIDをサブジェクトクレームに設定
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Name) // ユーザー名をユニーク名クレームに設定
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            // 署名キーを.envから取得
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtKey));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); // 署名アルゴリズム
 
+            // トークンの作成
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(1),
-                signingCredentials: creds
+                issuer: _jwtIssuer, // 発行者
+                audience: _jwtAudience, // 対象者
+                claims: claims, // クレーム
+                expires: DateTime.UtcNow.AddHours(1), // 有効期限
+                signingCredentials: creds // 署名情報
                 );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
