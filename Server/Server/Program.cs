@@ -30,20 +30,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
+
+// JWT認証の設定
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidIssuer = Environment.GetEnvironmentVariable("jwt__Issuer"),
+            ValidAudience = Environment.GetEnvironmentVariable("jwt__Audience"),
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+                System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("jwt__key")!)
             ),
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = false,
-            ValidateIssuerSigningKey = true,
+            ValidateIssuer = true, // 発行者の検証
+            ValidateAudience = true, // 対象者の検証
+            ValidateLifetime = false, // 有効期限の検証
+            ValidateIssuerSigningKey = true, // 署名キーの検証
         };
     }
     );
@@ -61,8 +63,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
 
-app.UseAuthorization(); //�F���~�h���E�F�A�p�C�v���C���ɒǉ�
-app.UseAuthentication();
+app.UseAuthorization(); // 認可ミドルウェア
+app.UseAuthentication(); // 認証ミドルウェア
 
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 
