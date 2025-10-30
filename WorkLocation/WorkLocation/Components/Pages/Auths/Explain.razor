@@ -1,0 +1,64 @@
+﻿@page "/explain"
+@layout AuthLayout
+@inject NavigationManager NavManager
+@rendermode InteractiveServer
+<div class="page-container">
+@if (explain2Panel)
+{
+    <div class="@explain2Class"  @onclick="NextSequence">
+        <p class="explain-text string-ss">それではあなたのことを教えてください</p>
+    </div>
+}
+@if(explainPanel)
+{
+    <div class="@explainClass" @onclick="NextSequence">
+        <p class="explain-text string-ss">
+            ダウンロードしていただきありがとうございます！<br/>
+            <br />
+
+            このアプリは、みんなで一緒に音楽を作るための<br />
+            プレイリストが作れる場所です。<br />
+            <br />
+
+            使い方は自由ですが、マナーを守って楽しく安全に使いましょう！
+        </p>
+    </div>
+}
+
+<Bubble CssClass="@( "position1-babble " + (babbuleNext ? "" : "next") )" />
+<Bubble CssClass="@( "position2-babble " + (babbuleNext ? "":"next") )" />
+</div>
+@code {
+    private bool explain2Panel = false;
+    private bool explainPanel = true;
+    private bool babbuleNext = true;
+    private string explainClass = "explain";
+    private string explain2Class = "explain2";
+
+
+    async Task NextSequence()
+    {
+
+        if (explain2Panel)
+        {
+            NavManager.NavigateTo("/register");
+        }
+        else
+        {
+            explainClass = "explain exit";
+            babbuleNext = false;
+            StateHasChanged();
+
+            await Task.Delay(1000);
+
+            explainPanel = false;
+            explain2Panel = true;
+
+            await Task.Delay(10);
+            explain2Class = "explain2 show";
+            StateHasChanged();
+
+            
+        }
+    }
+}

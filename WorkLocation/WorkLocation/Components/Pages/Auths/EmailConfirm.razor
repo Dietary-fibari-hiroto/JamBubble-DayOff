@@ -1,0 +1,43 @@
+﻿@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+@page "/emailconfirm"
+<AuthBgPannel>
+    <img class="icons" src="images/icons/jumbubblelogo.png" />
+    <p class="string-s">メールアドレスを確認してください</p>
+    <div class="guide-text-container">
+        <p class="flex-all-center">
+            <span class="string-ss-bold">@email</span>
+            <span class="string-ss">宛に確認コードが送信されました</span>
+        </p>
+        <p class="string-ss text-center">
+            メール受信箱を確認し、下記に認証コードを入力してあなたのメールアドレスが有効化認証してください。
+            コードの有効期限まであと15:00です。
+        </p>
+    </div>
+    <div class="input-container">
+        <input class="number-input" type="number" />
+        <input class="number-input" type="number" />
+        <input class="number-input" type="number" />
+        <input class="number-input" type="number" />
+    </div>
+    <Submit OnClick="ToConfirm" Label="認証" CssClass="primary"/>
+    <RawTextButton Label="コードを再送"/>
+    <RawTextButton OnClick="ToHome" Label="最初に戻る" />
+</AuthBgPannel>
+
+@code {
+    private string email = "example.email.com";
+
+    private Task ToConfirm()
+    {
+        NavManager.NavigateTo("/emailcomplete");
+        return Task.CompletedTask;
+    }
+
+    private Task ToHome()
+    {
+        NavManager.NavigateTo("/welcomescreen");
+        return Task.CompletedTask;
+    }
+}

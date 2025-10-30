@@ -1,0 +1,10 @@
+﻿<div>
+    <p class="string-label">@LabelText</p>
+    <input placeholder="example" class="input-element" />
+    <p class="string-ss supplement-text">@SupplementText</p>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = "";
+    [Parameter] public string SupplementText { get; set; } = "";
+}

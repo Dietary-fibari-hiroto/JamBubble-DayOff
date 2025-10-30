@@ -1,0 +1,33 @@
+﻿button{
+    width:300px;
+    height:50px;
+    border-radius:10px;
+}
+p{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.mini-margin{
+    margin:10px 0;
+}
+
+.line-primary{
+    border:solid 2px var(--color-primary);
+}
+.primary{
+    background-color:var(--color-primary);
+}
+.spotify-primary{
+    background-color:var(--color-spotify-primary);
+}
+.applemusic-primary {
+    background: linear-gradient(to left, #fa253dff, #fb5b73ff);
+}
+.deep-gray {
+    background-color: var(--color-deep-gray);
+}
+.secondary-bg {
+    background-color: var(--color-secondary-bg);
+}

@@ -1,0 +1,21 @@
+﻿@page "/registercomplete"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+<AuthBgPannel>
+
+    <img class="icons" src="images/icons/jumbubblelogo.png" />
+    <div class="flex-all-center container">
+        <p class="string-md">アカウントを作成しました</p>
+        <p class="text-margin string-ss text-center">
+            ようこそJumBubbleへ<br />
+            ここから始まるのは、みんなの“好き”が集まった時間。
+            曲を追加して、一緒にプレイリストを作っていきましょう。
+            <br />
+        </p>
+        <div class="submit-container">
+           
+            <Submit  Label="はじめる" CssClass="primary" />
+        </div>
+    </div>
+</AuthBgPannel>

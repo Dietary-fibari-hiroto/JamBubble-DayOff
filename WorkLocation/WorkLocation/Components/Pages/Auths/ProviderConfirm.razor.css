@@ -1,0 +1,17 @@
+﻿.icons {
+    width: 143px;
+    height: 143px;
+}
+.input-container > * + * {
+    margin-left: 100px;
+}
+.container > *{
+    margin:25px 0;
+}
+.guide-text{
+    
+    text-align:center;
+}
+.submit-container > * + *{
+    margin-top:10px;
+}

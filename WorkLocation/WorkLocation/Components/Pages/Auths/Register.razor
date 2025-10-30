@@ -1,0 +1,57 @@
+﻿@page "/register"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<AuthBgPannel>
+    <img class="app-icon" src="images/icons/jumbubblelogo.png" />
+    <h2 class="string-md">新規作成</h2>
+    <section>
+        <TextInput LabelText="アカウント名"/>
+        <TextInput LabelText="メールアドレス"/>
+        <TextInput LabelText="パスワード" SupplementText="半角英数、数字を含む8文字以上"/>
+        <TextInput LabelText="パスワード(確認)"/>
+        <SelecterBox LabelText ="性別" Options="@meils" @bind-Value ="@selected"/>
+        <BirthDatePicker @bind-Value = "userBirthday" LabelText="生年月日" />
+        <InputImage LabelText="プロフィール画像" SupplementText="推奨サイズ: 300x300px"
+                     OnImageSelected="HandleImageSelected" />
+
+        <div>
+            <div class="terms-container">
+                <input class="terms-checkbox" type="checkbox" @bond="IsChecked" />
+                <p class="string-ss"><span class="terms-text">利用規約</span>に同意します</p>
+            </div>
+            <p class="string-mini supplement-text">＊利用規約をお読みの上、チェックを入れてください</p>
+        </div>
+    </section>
+    <section class="button-container">
+        <Submit OnClick="OnSubmit" label="次へ" CssClass="primary" />
+        <RawTextButton OnClick="OnReturn" label="もどる" IsUnderline=true />
+    </section>
+</AuthBgPannel>
+
+@code {
+    DateOnly? userBirthday;
+    List<string> meils = new() { "男性", "女性", "どちらでもない" };
+    string selected = "男性";
+
+    private IBrowserFile selectedFile;
+
+    private void HandleImageSelected(IBrowserFile file)
+    {
+        selectedFile = file;
+        Console.WriteLine($"選択した画像: {file.Name}, {file.Size} bytes");
+    }
+
+    private Task OnReturn()
+    {
+        NavManager.NavigateTo("/welcomescreen");
+       return Task.CompletedTask;
+    }
+
+    private Task OnSubmit()
+    {
+        NavManager.NavigateTo("/registerconfirm");
+        return Task.CompletedTask;
+    }
+}
