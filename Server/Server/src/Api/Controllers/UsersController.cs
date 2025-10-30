@@ -38,17 +38,24 @@ namespace Server.src.Api.Controllers
     [Route("/api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthService _authService;
+        private readonly IAuthService _authService; // 依存性の注入
+        
         public AuthController(IAuthService authService)
         {
-            _authService = authService;
+            _authService = authService; // コンストラクタ
         }
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
+            // ModelStateでのリクエストのバリデーションチェック
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // 認証処理
             var token = await _authService.LoginAsync(request.Email, request.Password);
             if (token == null)
-                return Unauthorized();
+                return Unauthorized(); // 認証失敗
 
             return Ok(new { token });
         }
