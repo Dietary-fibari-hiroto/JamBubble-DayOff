@@ -24,6 +24,7 @@ public class User:TimestampedEntity {
     [Required]
     public int Gender { get; set; } = 0;
 
+    // TODO:ここのRequiredの必要性
     [Column("is_street_pass")]
     [Required]
     public bool IsStreetPass { get; set; } = false;
