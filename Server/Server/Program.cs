@@ -1,8 +1,12 @@
 using DotNetEnv; // �� �������ɒǉ�
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Server.Data;
 using Server.Data.Configrations;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Server.src.Configrations;
+using System.Security.Cryptography.Xml;
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +14,21 @@ Env.Load();
 
 builder.Services.AddControllers(); //API�ŃR���g���[���g���܂����܂��Ȃ�
 builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
-builder.Services.AddSwaggerGen(); //SwaggerUI����
-//���ϐ�����ڑ��������ǂ݂���
+// Swaggerの設定
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT認証用トークンを入力してください。例: Bearer {token}",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    });
+
+    options.OperationFilter<AuthOperationFilter>();
+});
 var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
     ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
@@ -37,8 +54,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            ValidIssuer = Environment.GetEnvironmentVariable("jwt__Issuer"),
-            ValidAudience = Environment.GetEnvironmentVariable("jwt__Audience"),
+            ValidIssuer = Environment.GetEnvironmentVariable("jwt__Issuer")!,
+            ValidAudience = Environment.GetEnvironmentVariable("jwt__Audience")!,
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("jwt__key")!)
             ),
