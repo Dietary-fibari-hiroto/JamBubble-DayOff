@@ -1,5 +1,5 @@
-<p align="center"><img src="DayoffWhiteLogo.png" alt="ロゴ" width="full" /></p>
-<p align="center"><img src="jumbubblelogo.png" alt="ロゴ" width="full" /></p>
+<p align="center"><img src="DayoffWhiteLogo.png" alt="ロゴ" width="500px" /></p>
+<p align="center"><img src="jumbubblelogo.png" alt="ロゴ" width="500px" /></p>
 
 # JamBubble-DayOff
 
@@ -15,6 +15,8 @@
 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML" width="40" height="40"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" width="40" height="40"/>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf7u6IFvFishXrGbwZiPBZfPxJMrQH3eUKhuE6Vb5wEMrhoazewOBy9iLvxpLGu97wgnU&usqp=CAU" alt="Blazor" width="40" height="40"/>
 
 </p>
 

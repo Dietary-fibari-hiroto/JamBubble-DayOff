@@ -1,0 +1,18 @@
+﻿@inject NavigationManager NavManager
+@rendermode InteractiveServer
+
+<button @onclick="ReturnTo" class="return-button">
+    <img height="24" width="12" src="images/elementicons/return.svg" />
+    <p class="string-reg-bold">@label</p>
+</button>
+
+@code{
+    [Parameter] public string label { get; set; } = "";
+    [Parameter] public string path { get; set; } = "/app/main";
+
+    private Task ReturnTo()
+    {
+        NavManager.NavigateTo(path);
+        return Task.CompletedTask;
+    }
+}

@@ -1,1 +1,19 @@
 ﻿
+.song-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+}
+.page-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    
+}
+
+    .logo {
+        height: 60px;
+        width: 60px;
+    }

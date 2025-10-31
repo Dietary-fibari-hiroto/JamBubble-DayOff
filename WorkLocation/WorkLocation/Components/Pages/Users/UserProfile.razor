@@ -1,0 +1,49 @@
+﻿@page "/app/user/profile"
+<ReturnButton label="Profile"/>
+<div class="profile-container">
+    <figure class="img-figure">
+        <img src = "images/photos/offn.jpg"/>
+        <div class="edit-button"><EditButton /></div>
+    </figure>
+    <div class="name-container"><p class="string-m-bold">ゆずき</p><EditButton /></div>
+    <p class="string-sss text-center">
+        ローファイとシティポップが日常のBGM。
+        朝はコーヒーとゆるめのビート、夜はギターが心地いい曲を。
+        最近はインディ系を掘るのがマイブーム。
+    </p>
+    <section class="section-frame">
+        <h1 class="string-reg-bold">Favorite song</h1>
+        <figure class="favorite-song-content">
+            <img src = "images/photos/movie.jpg"/>
+            <div class="favorite-song-edit">
+                <EditButton/>
+            </div>
+        </figure>
+        <div class="text-center music-info">
+            <p class="string-md-bold align-jus">Movie</p>
+            <p class="string-ss">Tom misch.Spotify</p>
+        </div>
+    </section>
+<MiniSubmit Label="保存" CssClass="primary"/>
+    <section class="section-frame">
+        <h1 class="string-reg-bold">過去の履歴</h1>
+        <div>
+            <p class="align-jus string-ss-bold">セッション数</p>
+            <p><span class="string-big-bold">12</span><span class="string-ss-bold">回</span></p>
+        </div>
+    </section>
+    <section class="section-frame">
+        <h1 class="string-reg-bold">プロバイダ</h1>
+        <Submit Label="Premiumプラン" CssClass="spotify-primary mini-margin"><img class="provider-icon" src="images/icons/spotify_icon.png" /></Submit>
+        <Submit Label="Apple Music でログイン" CssClass="deep-gray mini-margin"><img class="provider-icon" src="images/icons/applemusic_icon.png" /></Submit>
+    </section>
+    <section class="margin-y-50">
+        <MiniSubmit Label="ログアウト" CssClass="deep-gray"/>
+        <MiniSubmit Label="アカウント削除" CssClass="applemusic-primary"/>
+    </section>
+
+</div>
+
+@code {
+
+}

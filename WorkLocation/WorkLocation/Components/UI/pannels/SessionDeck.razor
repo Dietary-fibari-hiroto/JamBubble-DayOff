@@ -1,23 +1,23 @@
-﻿
+﻿@using WorkLocation.DTOs
+
 <section>
     <div class="label-container">
-        <p class="string-reg-bold">人気の公開セッション</p>
+        <p class="string-reg-bold">@title</p>
         <button class="string-sss more-button">
             もっとみる<div class="arrow-container"><div class="arrow-right"></div><div class="arrow-right-after"></div></div>
         </button>
     </div>
     <div class="card-container">
-        <div class="card-element">
-            <figure class="thumbnail-container">
-                <img class="thumbnail" src="images/photos/pexels-thevibrantmachine-3066867.jpg"/>
-                <img class="provider-icon" src="images/icons/spotify_icon.png"/>
-            </figure>
-            <p class="string-ss title-label">
-                秋の夜に合いそうな曲集めてます
-            </p>
-        </div>
+        <SessionCard /><SessionCard />
+        <SessionCard/>
+        @foreach(SessionCardDto session in Sessions)
+        {
+            //DTOで渡す準備だけしとく
+            <SessionCard title ="@session" />
+        }
     </div>
 </section>
 @code {
-
+    [Parameter] public string title { get; set; } = "";
+    private List<SessionCardDto> Sessions = new();
 }

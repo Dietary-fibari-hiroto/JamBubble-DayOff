@@ -1,12 +1,13 @@
 ﻿.hedaer {
-    position: fixed;
-    top: 5%;
+    position: absolute;
+    top: 3%;
     left: 50%;
     width: 85%;
     transform: translate(-50%,0);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 

@@ -1,0 +1,15 @@
+﻿@using WorkLocation.DTOs
+@using WorkLocation.Enums
+<div class="card-element">
+    <figure class="thumbnail-container">
+        <img class="thumbnail" src="images/photos/pexels-thevibrantmachine-3066867.jpg" />
+        <img class="provider-icon" src="images/icons/spotify_icon.png" />
+    </figure>
+    <p class="string-ss title-label">
+        秋の夜に合いそうな曲集めてます
+    </p>
+</div>
+
+@code{
+    [Parameter] public SessionCardDto Data { get; set; } = new();
+}

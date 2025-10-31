@@ -4,6 +4,11 @@
     align-items: center;
     flex-direction: column;
 }
+.flex-all-center-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .space-y-submit > * + *{
     margin-top:20px;
 }
@@ -25,4 +30,11 @@
 .app-mini-icon{
     width:60px;
     height:60px;
+}
+
+.margin-y-10{
+    margin:10px 0;
+}
+.margin-y-50 {
+    margin: 50px 0;
 }

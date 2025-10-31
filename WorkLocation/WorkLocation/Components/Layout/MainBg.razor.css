@@ -1,8 +1,20 @@
 ﻿.main-bg {
+    position:relative;
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(to bottom,#000000,var(--color-secondary));
+
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}
+.main-container{
+    width:95%;
 }
 .margin-content{
     padding-top:100px;
+}
+.margin-top{
+    margin-top:50px;
 }
