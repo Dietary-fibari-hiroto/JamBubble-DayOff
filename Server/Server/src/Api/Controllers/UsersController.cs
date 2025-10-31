@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Server.src.Entities;
 using Server.src.Interfaces;
 
 namespace Server.src.Api.Controllers
@@ -26,9 +27,9 @@ namespace Server.src.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _userService.GetAllUserAsync());
 
-        //[Authorize]
-        //[HttpGet]
 
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody]User user) => Ok(await _userService.AddUserAsync(user));
 
 
     }
