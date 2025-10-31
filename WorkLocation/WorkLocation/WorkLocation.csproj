@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Components\Pages\Playlists\" />
+    <Folder Include="Components\Pages\Serchs\" />
+    <Folder Include="Components\Pages\Friends\" />
+    <Folder Include="Components\Pages\Sessions\" />
     <Folder Include="wwwroot\bootstrap\" />
   </ItemGroup>
 

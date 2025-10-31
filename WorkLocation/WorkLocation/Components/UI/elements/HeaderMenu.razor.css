@@ -1,0 +1,16 @@
+﻿.hedaer {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    width: 60px;
+    height: 60px;
+}

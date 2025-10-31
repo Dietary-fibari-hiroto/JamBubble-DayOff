@@ -1,4 +1,4 @@
-﻿@page "/providerconfirm"
+﻿@page "/auth/providerconfirm"
 @layout AuthLayout
 @rendermode InteractiveServer
 @inject NavigationManager NavManager
@@ -23,7 +23,7 @@
 @code{
     private Task ToNext()
     {
-        NavManager.NavigateTo("/registercomplete");
+        NavManager.NavigateTo("/auth/registercomplete");
         return Task.CompletedTask;
     }
 }

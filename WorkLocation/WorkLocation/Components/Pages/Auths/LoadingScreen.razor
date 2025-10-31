@@ -1,5 +1,6 @@
-﻿@page "/loadingscreen"
+﻿@page "/auth/loadingscreen"
 @layout GateScreenLayout
+@rendermode InteractiveServer
 @inject NavigationManager NavManager
 
 <div class="flex-all-center loading-screen">
@@ -22,7 +23,7 @@
         {
             await Task.Delay(3000);
 
-            NavManager.NavigateTo("/welcomescreen");
+            NavManager.NavigateTo("/auth/welcomescreen");
         }
     }
 }
