@@ -1,0 +1,37 @@
+﻿@page "/welcomescreen"
+@layout GateScreenLayout
+@inject NavigationManager NavManager
+
+<div class="welcome-screen flex-all-center">
+  
+
+    <div>
+        <p>
+            <span class="string-l-bold">JamBubble</span>
+        <span class="string-md">へようこそ</span>
+        </p>
+        <p class="string-s">
+            アカウントを持ってる人はログイン！<br/>
+            まだの人は、今すぐ作ってみよう！
+        </p>
+    </div>
+    <div class="space-y-submit">
+        <Submit CssClass="line-primary" OnClick="LoginSubmit" Label="ログイン"/>
+        <Submit CssClass ="primary" OnClick="RegisterSubmit"  Label="アカウントを作る"/>
+    </div>
+    <Bubble CssClass="top-babble"/>
+    <Bubble CssClass="bottom-babble"/>
+</div>
+
+@code {
+    private Task LoginSubmit()
+    {
+        NavManager.NavigateTo("/login");
+        return Task.CompletedTask;
+    }
+    private Task RegisterSubmit()
+    {
+        NavManager.NavigateTo("/explain");
+        return Task.CompletedTask;
+    }
+}

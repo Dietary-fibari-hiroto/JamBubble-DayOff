@@ -1,5 +1,6 @@
 ﻿@page "/loadingscreen"
 @layout GateScreenLayout
+@inject NavigationManager NavManager
 
 <div class="flex-all-center loading-screen">
     <img class="app-logo" src="images/icons/jumbubblelogo.png"/>
@@ -15,5 +16,13 @@
 </div>
 
 @code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(3000);
 
+            NavManager.NavigateTo("/welcomescreen");
+        }
+    }
 }

@@ -1,5 +1,25 @@
 ﻿@page "/"
+@inject NavigationManager NavManager
 
-<h1>Hello, world!</h1>
+<PageTitle>BrandScreen</PageTitle>
 
-Welcome to your new app.
+<div class="brand-screen">
+    <img class="brand-icon @(IsHidden?"hidden":"")" src="images/icons/DayoffWhiteLogo.png" />
+</div>
+
+@code{
+    private bool IsHidden = true;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            IsHidden = false;
+            StateHasChanged();
+            await Task.Delay(3000);
+            IsHidden = true;
+            StateHasChanged();
+            await Task.Delay(1000);
+            NavManager.NavigateTo("/loadingscreen");
+        }
+    }
+}
