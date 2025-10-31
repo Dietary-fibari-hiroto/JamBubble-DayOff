@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\Api\DTOs\" />
     <Folder Include="src\Api\Middlewares\" />
     <Folder Include="src\Core\Exceptions\" />
     <Folder Include="src\BlazorServerApp\" />
