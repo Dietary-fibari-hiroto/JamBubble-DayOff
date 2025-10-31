@@ -12,5 +12,6 @@ namespace Server.src.Services
         }
 
         public async Task<IEnumerable<User>> GetAllUserAsync() => await _repo.GetAllAsync();
+        public async Task<User?> AddUserAsync(User user) => await _repo.AddAsync(user);
     }
 }
