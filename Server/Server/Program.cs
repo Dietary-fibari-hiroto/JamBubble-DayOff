@@ -6,7 +6,10 @@ using Microsoft.OpenApi.Models;
 using Server.Data;
 using Server.Data.Configrations;
 using Server.src.Configrations;
+using System.Reflection;
 using System.Security.Cryptography.Xml;
+using Server.src.DTOs;
+
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +31,13 @@ builder.Services.AddSwaggerGen(options =>
     });
 
     options.OperationFilter<AuthOperationFilter>();
+
+    // XMLの読み込み
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+    // 作成したスキーマフィルターを登録
+    options.SchemaFilter<RequestFilter>();
 });
 var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
