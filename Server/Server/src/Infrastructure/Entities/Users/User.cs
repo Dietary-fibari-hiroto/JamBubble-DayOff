@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 namespace Server.src.Entities;
 public class User:TimestampedEntity {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [JsonIgnore]
     [Key]
     public int Id { get; set; }
 
@@ -11,7 +13,7 @@ public class User:TimestampedEntity {
     public string Name { get; set; } = null!;
 
     [Required]
-    public DateTime Birthday { get; set; }
+    public DateOnly Birthday { get; set; }
 
     [Required]
     [StringLength(255)]
