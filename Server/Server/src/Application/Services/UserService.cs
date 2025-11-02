@@ -20,7 +20,16 @@ namespace Server.src.Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<User>> GetAllUserAsync() => await _repo.GetAllAsync();
+        public async Task<User?> GetUserAsync(int userId)
+        {
+            // IDで取得
+            var user = await _repo.GetByIdAsync(userId);
+            if (user == null) return null;
+
+            // パスワードを空に
+            user.Password = "";
+            return user;
+        }
         public async Task<User?> AddUserAsync(User user)
         {
             // すでに同じEmailのユーザーが存在するか確認
@@ -36,6 +45,22 @@ namespace Server.src.Services
             // TODO:レスポンス内容をどうするか
             addedUser.Password = "";
             return addedUser;
+        }
+
+        public async Task<User?> UpdateUserAsync(User updateData, int userId)
+        {
+            // IDで取得
+            var updateUser = await _repo.GetByIdAsync(userId);
+            if (updateUser == null) return null;
+
+
+
+            return updateUser;
+        }
+
+        public async Task<bool> DeleteUserAsync(int userId)
+        {
+            return false;
         }
     }
 }

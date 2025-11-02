@@ -25,15 +25,42 @@ namespace Server.src.Api.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// ユーザー情報を返す
+        /// </summary>
+        [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GetAll() => Ok(await _userService.GetAllUserAsync());
+        [ProducesResponseType(typeof(UserResponse), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetUser()
+        {
+            // JWTのクレームからユーザーID取得
+            var userIdString = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (String.IsNullOrEmpty(userIdString))
+            {
+                return Unauthorized("ID claim not found in token.");
+            }
+
+            // intに変換
+            if(!int.TryParse(userIdString, out var userId))
+            {
+                return BadRequest("Invalid user ID format in token.");
+            }
+            
+            var user = await _userService.GetUserAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            return Ok(user);
+        }
 
         /// <summary>
         /// ユーザー作成
         /// </summary>
         [AllowAnonymous]
         [HttpPost]
-        [ProducesResponseType(typeof(User), StatusCodes.Status201Created)] // 成功時のレスポンス型 
+        [ProducesResponseType(typeof(UserResponse), StatusCodes.Status201Created)] // 成功時のレスポンス型 
         public async Task<IActionResult> Register([FromBody] User user)
         {
             var addedUser = await _userService.AddUserAsync(user);

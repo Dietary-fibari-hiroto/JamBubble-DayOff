@@ -60,6 +60,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
 
+// DIコンテナに登録
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
 // JWT認証の設定
@@ -94,8 +95,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
 
-app.UseAuthorization(); // 認可ミドルウェア
 app.UseAuthentication(); // 認証ミドルウェア
+app.UseAuthorization(); // 認可ミドルウェア
 
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 
