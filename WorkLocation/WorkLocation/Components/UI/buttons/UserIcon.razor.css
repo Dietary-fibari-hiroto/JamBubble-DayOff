@@ -14,4 +14,5 @@
     position:fixed;
     top:5%;
     right:10%;
+    z-index:10;
 }

@@ -1,13 +1,9 @@
-﻿@rendermode InteractiveServer
+﻿
 @inject NavigationManager NavManager
-<img @onclick="OnCancel" class="cancel-button @(BlackMode?"black":"")" src="images/elementicons/x.svg" />
+<img @onclick="@OnClick" class="cancel-button @(BlackMode ? "black" : "")" src="images/elementicons/x.svg" />
 
 @code {
-    [Parameter] public string path { get; set; } = "/app/main";
     [Parameter] public bool BlackMode { get; set; } = false;
-    private Task OnCancel()
-    {
-        NavManager.NavigateTo(path);
-        return Task.CompletedTask;
-    }
+    [Parameter] public EventCallback OnClick { get; set; } 
+
 }

@@ -1,11 +1,14 @@
-﻿<div class="footer">
+﻿@inject NavigationManager NavManager
+@rendermode InteractiveServer
+
+<div class="footer">
     <div class="footer-container">
         <div class="transition-container">
-            <button class="transition-content">
+            <button @onclick='()=>Navigate("/app/main")' class="transition-content">
                 <img src = "images/elementicons/house.svg"/>
                 <p class="string-mini">ホーム</p>
             </button>
-            <button class="transition-content">
+            <button @onclick='() => Navigate("/app/playlist")' class="transition-content">
                 <img src="images/elementicons/list-music.svg" />
                 <p class="string-mini">プレイリスト</p>
             </button>
@@ -26,3 +29,13 @@
         <div class="footer-bg" />
     </div>
 </div>
+
+
+@code{
+
+    private Task Navigate(string path)
+    {
+        NavManager.NavigateTo(path);
+        return Task.CompletedTask;
+    }
+}

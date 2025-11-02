@@ -31,3 +31,8 @@
 .secondary-bg {
     background-color: var(--color-secondary-bg);
 }
+
+.white {
+    background-color: white;
+    color:black;
+}

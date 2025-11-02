@@ -1,0 +1,24 @@
+﻿@using WorkLocation.Enums
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<div class="bar-container" @onclick="ToDetail">
+    <img src ="images/photos/offn.jpg"/>
+    <div class="data-container">
+        <p class="string-s">淡路遠征!!!</p>
+        <div><span class="string-sss">加藤 勇作.Spotify</span><span class="string-mini">2023/09/29</span></div>
+    </div>
+</div>
+
+@code{
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public ProviderEnum provider { get; set; } = 0;
+    [Parameter] public string UserName { get; set; } = "";
+    [Parameter] public DateTime days { get; set; }
+
+    private Task ToDetail()
+    {
+        NavManager.NavigateTo("/app/playlist/detail");
+        return Task.CompletedTask;
+    }
+}

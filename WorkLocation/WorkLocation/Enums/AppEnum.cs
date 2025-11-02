@@ -6,4 +6,11 @@
         Spotify=1,
         AppleMusic =2,
     }
+    public enum FriendRequestEnum
+    {
+        Default = 0,
+        SearchSccess = 1,
+        SearchFail = 2,
+        Requested = 3,
+    }
 }

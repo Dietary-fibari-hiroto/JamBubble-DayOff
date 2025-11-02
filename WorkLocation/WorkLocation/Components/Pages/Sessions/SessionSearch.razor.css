@@ -1,0 +1,54 @@
+﻿.serach-container{
+    position:fixed;
+    top:15%;
+    left:0;
+    z-index:5;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}
+    .serach-container > * + *{
+        margin-top:20px;
+    }
+    .operation-button-container {
+        width: 220px;
+        height: 30px;
+        display: flex;
+        border-radius: 10px;
+        background: var(--color-anselected);
+    }
+.operation-button-container > *{
+    width:110px;
+    height:100%;
+    border-radius:10px;
+    text-align:center;
+}
+.active{
+    background:white;
+    color:black;
+}
+
+.serach-aria{
+    width:250px;
+    height:40px;
+    border-radius:10px;
+    border:var(--color-gray) 1px solid;
+    background:#111111;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    overflow-x:scroll;
+}
+.serach-aria > *{
+    margin-left:10px;
+    color:white;
+}
+.session-list{
+    margin-top:200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}

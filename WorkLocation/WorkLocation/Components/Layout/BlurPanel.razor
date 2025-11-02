@@ -1,0 +1,9 @@
+﻿@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<section class="dialog-conainer">
+    @ChildContent
+ </section>
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

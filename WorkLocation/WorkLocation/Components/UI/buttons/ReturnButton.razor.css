@@ -2,7 +2,12 @@
     display:flex;
     justify-content:start;
     align-items:center;
+    position:fixed;
+    top:5%;
+    left:0%;
+    z-index:10;
 }
 .return-button > *{
     margin-left:30px;
 }
+

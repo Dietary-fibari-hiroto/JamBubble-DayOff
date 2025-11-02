@@ -1,0 +1,30 @@
+﻿@page "/app/playlist"
+@rendermode InteractiveServer
+
+<section class="page-header">
+    <div class = "setting-bar string-sss">
+        <button @onclick="PlaylistMode" class="button @(IsViewMode ? "" : "active")">プレイリスト</button>
+        <button @onclick="CanSaveMode" class="button @(IsViewMode ? "active" : "")" >保存できるセッション</button>
+    </div>
+    <UserIcon/>
+</section>
+
+<section class="playlist-container">
+    <PlaylistBar/>
+    <PlaylistBar /> <PlaylistBar />
+</section>
+
+@code{
+    private bool IsViewMode = false;
+
+    private Task PlaylistMode()
+    {
+        IsViewMode = false;
+        return Task.CompletedTask;
+    }
+    private Task CanSaveMode()
+    {
+        IsViewMode = true;
+        return Task.CompletedTask;
+    }
+}

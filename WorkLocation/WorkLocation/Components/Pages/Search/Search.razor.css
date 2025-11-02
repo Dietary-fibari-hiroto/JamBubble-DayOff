@@ -1,0 +1,67 @@
+﻿.input-container{
+    width:95%;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%, 0%);
+    z-index:10;
+    margin-top:50px;
+}
+.container{
+    position:absolute;
+    top:0;
+    left:0;
+    min-width:100vw;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}
+.bg-spotify {
+    background:linear-gradient(to bottom,#000000,var(--color-spotify-secondary));
+}
+.bg-applemusic {
+    background: linear-gradient(to bottom,#000000,#721420);
+}
+
+
+.provider-swich {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+    .provider-swich > button {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        border-radius: 100%;
+    }
+        .provider-swich > button > img{
+            border-radius:100%;
+        }
+        .spotify-container {
+            background-color: var(--color-spotify-secondary);
+        }
+.applemusic-container {
+    background-color: #721420;
+}
+
+.spotify{
+    background:var(--color-spotify-secondary);
+}
+.applemusic {
+    background:var(--color-applemusic) ;
+}
+
+.non-active {
+    filter: grayscale(100%);
+    background:none;
+}

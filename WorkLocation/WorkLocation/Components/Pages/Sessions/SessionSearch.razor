@@ -1,0 +1,26 @@
+﻿@page "/app/session/search"
+<ReturnButton path="/app/playlist" />
+<UserIcon CssClass="fixed"/>
+<section class="serach-container">
+    <div class="operation-button-container string-sss">
+        <button class="active">
+            タグで探す
+        </button>
+        <button>
+            名前で探す
+        </button>
+    </div>
+    <div class="serach-aria" >
+        <img src ="images/elementicons/search.svg"/>
+        <input class="string-ss" type="text" />
+    </div>
+</section>
+<section class="session-list">
+    <SessionCardBig/>
+    <SessionCardBig />
+    <SessionCardBig />
+</section>
+
+@code {
+
+}

@@ -20,7 +20,7 @@
     private bool ShouldShowGlobalElement()
     {
         var path = Nav.Uri.Replace(Nav.BaseUri, "");
-        string[] hidePaths = { "app/main", "/test" };
+        string[] hidePaths = { "app/main", "app/playlist", "app/session", "app/search", "app/friend" };
 
         // hidePathsのどれかで始まっていたらtrue
         return hidePaths.Any(p => path.StartsWith(p));
@@ -32,7 +32,7 @@
     {
         var path = Nav.Uri.Replace(Nav.BaseUri, "");
         // app系のパスで MainBg を使いたい場合
-        string[] mainBgPaths = { "app", "dashboard", "home" };
+        string[] mainBgPaths = { "app" };
 
         if (mainBgPaths.Any(p => path.StartsWith(p)))
         {

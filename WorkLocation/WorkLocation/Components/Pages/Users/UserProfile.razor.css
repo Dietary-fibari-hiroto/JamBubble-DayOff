@@ -1,4 +1,7 @@
-﻿.profile-container
+﻿section{
+    margin:10px 0;
+}
+.profile-container
 {
     
     width:100%;
@@ -27,6 +30,7 @@
 .name-container{
     display:flex;
     align-items:center;
+    margin:10px 0;
 }
 
 .section-frame {
@@ -60,6 +64,4 @@
     bottom:0;
     right:0;
 }
-.align-jus{
-    margin:-10px 0;
-}
+
