@@ -35,6 +35,7 @@ public class User:TimestampedEntity {
     [StringLength(255)]
     public string? ImgUrl { get; set; }
 
+    public UserHistory? UserHistory { get; set; }
 
 }
 
