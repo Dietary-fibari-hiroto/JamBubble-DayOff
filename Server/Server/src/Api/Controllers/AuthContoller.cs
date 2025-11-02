@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Server.src.Interfaces;
+using Server.src.DTOs;
 
 namespace Server.src.Api.Controllers
 {
@@ -15,14 +15,15 @@ namespace Server.src.Api.Controllers
         {
             _authService = authService; // コンストラクタ
         }
-        
+
+        /// <summary>
+        /// ログイン
+        /// </summary>
+        [AllowAnonymous]
         [HttpPost("login")]
+        [ProducesResponseType(typeof(TokenResponse), StatusCodes.Status200OK)] // 成功時のレスポンス型 
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            // ModelStateでのリクエストのバリデーションチェック
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             // 認証処理
             var token = await _authService.LoginAsync(request.Email, request.Password);
             if (token == null)

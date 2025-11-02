@@ -9,6 +9,8 @@ using Server.src.Configrations;
 using System.Reflection;
 using System.Security.Cryptography.Xml;
 using Server.src.DTOs;
+using Server.src.Entities;
+using Microsoft.AspNetCore.Identity;
 
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
@@ -57,6 +59,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
+
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
 // JWT認証の設定
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
