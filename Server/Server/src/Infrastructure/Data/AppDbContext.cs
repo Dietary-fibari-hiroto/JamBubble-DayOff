@@ -77,7 +77,8 @@ namespace Server.Data
 
             modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
 
-
+            // ユニーク制約の定義
+            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
         }
 
         //INSERTやUPDATEでDBに反映させるタイミングで呼び出される関数
