@@ -24,9 +24,9 @@ namespace Server.src.Services
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-            _jwtKey = Environment.GetEnvironmentVariable("jwt__key")!;
-            _jwtIssuer = Environment.GetEnvironmentVariable("jwt__Issuer")!;
-            _jwtAudience = Environment.GetEnvironmentVariable("jwt__Audience")!;
+            _jwtKey = Environment.GetEnvironmentVariable("JWT__KEY")!;
+            _jwtIssuer = Environment.GetEnvironmentVariable("JWT__ISSUER")!;
+            _jwtAudience = Environment.GetEnvironmentVariable("JWT__AUDIENCE")!;
 
             _logger = logger;
         }
