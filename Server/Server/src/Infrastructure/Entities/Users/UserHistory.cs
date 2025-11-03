@@ -10,6 +10,7 @@ namespace Server.src.Entities
         [Key]
         [Required]
         public int UserId { get; set; }
+        [ForeignKey(nameof(UserId))]
         public required User User { get; set; }
 
         [Required]

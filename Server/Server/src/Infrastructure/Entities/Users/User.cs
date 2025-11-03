@@ -36,6 +36,7 @@ public class User:TimestampedEntity {
     public string? ImgUrl { get; set; }
 
     public UserHistory? UserHistory { get; set; }
-
+    public FavoriteMusic? FavoriteMusic { get; set; }
+    public ICollection<UserProvider>? UserProviders { get; set; }
 }
 
