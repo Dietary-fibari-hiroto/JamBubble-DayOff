@@ -20,15 +20,15 @@ namespace Server.src.Services
             _logger = logger;
         }
 
-        public async Task<User?> GetUserAsync(int userId)
+        public async Task<UserAllDataResponseDto?> GetUserAllDataAsync(int userId)
         {
             // IDで取得
             var user = await _repo.GetByIdAsync(userId);
             if (user == null) return null;
 
-            // パスワードを空に
-            user.Password = "";
-            return user;
+            var userResponseDto = new UserAllDataResponseDto(user);
+
+            return userResponseDto;
         }
         public async Task<User?> AddUserAsync(User user)
         {

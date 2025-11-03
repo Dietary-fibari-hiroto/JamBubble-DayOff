@@ -26,11 +26,11 @@ namespace Server.src.Api.Controllers
         }
 
         /// <summary>
-        /// ユーザー情報を返す
+        /// ユーザーのすべての情報を返す
         /// </summary>
         [Authorize]
         [HttpGet]
-        [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetUser()
         {
             // JWTのクレームからユーザーID取得
@@ -46,7 +46,7 @@ namespace Server.src.Api.Controllers
                 return BadRequest("Invalid user ID format in token.");
             }
             
-            var user = await _userService.GetUserAsync(userId);
+            var user = await _userService.GetUserAllDataAsync(userId);
             if (user == null)
             {
                 return NotFound("User not found.");
