@@ -69,10 +69,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            ValidIssuer = Environment.GetEnvironmentVariable("jwt__Issuer")!,
-            ValidAudience = Environment.GetEnvironmentVariable("jwt__Audience")!,
+            ValidIssuer = Environment.GetEnvironmentVariable("JWT__ISSUER")!,
+            ValidAudience = Environment.GetEnvironmentVariable("JWT__AUDIENCE")!,
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("jwt__key")!)
+                System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT__KEY")!)
             ),
             ValidateIssuer = true, // 発行者の検証
             ValidateAudience = true, // 対象者の検証

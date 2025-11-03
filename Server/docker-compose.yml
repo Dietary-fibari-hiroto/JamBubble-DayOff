@@ -29,8 +29,13 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
       - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
+      - JWT__KEY=${JWT__KEY}
+      - JWT__ISSUER=${JWT__ISSUER}
+      - JWT__AUDIENCE=${JWT__AUDIENCE}
     # ↑ 重要：ここで MySQL への接続文字列を渡す
     # "server=mysql" ← docker-compose 内のサービス名で接続
+    # Macの場合、コード内で.envの変数を直接使えない？
+    # そのため.env->docker-compose.yml->コンテナ環境変数の順で渡す
 
 volumes:
   jambubble:
