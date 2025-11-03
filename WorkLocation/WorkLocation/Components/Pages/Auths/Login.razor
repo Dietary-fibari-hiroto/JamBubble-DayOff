@@ -1,0 +1,35 @@
+﻿@page "/auth/login"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<AuthBgPannel>
+    <img class="app-icon" src="images/icons/jumbubblelogo.png" />
+    <h2 class="string-md">ログイン</h2>
+    <section>
+        <TextInput LabelText="メールアドレス" />
+        <TextInput LabelText="パスワード" SupplementText="半角英数、数字を含む8文字以上" />
+
+
+
+
+    </section>
+    <section class="button-container">
+        <Submit OnClick="OnSubmit" label="次へ" CssClass="primary" />
+        <RawTextButton OnClick="OnReturn" label="もどる" IsUnderline=true />
+    </section>
+</AuthBgPannel>
+
+@code {
+    private Task OnReturn()
+    {
+        NavManager.NavigateTo("/auth/welcomescreen");
+        return Task.CompletedTask;
+    }
+
+    private Task OnSubmit()
+    {
+        NavManager.NavigateTo("/auth/registerconfirm");
+        return Task.CompletedTask;
+    }
+}

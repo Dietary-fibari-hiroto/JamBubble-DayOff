@@ -1,0 +1,23 @@
+﻿@using WorkLocation.DTOs
+
+<section>
+    <div class="label-container">
+        <p class="string-reg-bold">@title</p>
+        <button class="string-sss more-button">
+            もっとみる<div class="arrow-container"><div class="arrow-right"></div><div class="arrow-right-after"></div></div>
+        </button>
+    </div>
+    <div class="card-container">
+        <SessionCard /><SessionCard />
+        <SessionCard/>
+        @foreach(SessionCardDto session in Sessions)
+        {
+            //DTOで渡す準備だけしとく
+            <SessionCard title ="@session" />
+        }
+    </div>
+</section>
+@code {
+    [Parameter] public string title { get; set; } = "";
+    private List<SessionCardDto> Sessions = new();
+}

@@ -1,0 +1,12 @@
+﻿
+.chip-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px 20px;
+    border-bottom: solid white 1px;
+}
+.music-data > * + *{
+    margin-left:10px;
+}

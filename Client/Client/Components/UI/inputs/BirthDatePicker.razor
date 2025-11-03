@@ -1,0 +1,83 @@
+﻿<div>
+    <p class="string-label">@LabelText</p>
+
+    <div class="birthdate-container">
+        <select class="input-element" @bind="SelectedYear">
+            <!--@onchange="OnDateChanged"-->
+            <option value="">年</option>
+            @foreach(var year in Years)
+            {
+                <option value = "@year">@year</option>
+            }
+        </select>
+
+        <select class="input-element" @bind ="SelectedMonth">
+            <option value ="">月</option>
+            @foreach(var month in Months)
+            {
+                <option value = "@month">@month</option>
+            }
+        </select>
+
+        <select class="input-element" @bind="SelectedDay">
+            <option value ="">日</option>
+            @foreach(var day in Days)
+            {
+                <option value = "@day">@day</option>
+            }
+        </select>
+    </div>
+    <p class="string-ss supplement-text">@SupplementText</p>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = "生年月日";
+    [Parameter] public string SupplementText { get; set; } = "生年月日を入力してください";
+    [Parameter] public DateOnly? Value { get; set; }
+    [Parameter] public EventCallback<DateOnly?> ValueChanged { get; set; }
+
+    private List<int> Years = Enumerable.Range(DateTime.Now.Year - 100, 101).Reverse().ToList();
+    private List<int> Months = Enumerable.Range(1, 12).ToList();
+    private List<int> Days = new();
+
+    private int? SelectedYear;
+    private int? SelectedMonth;
+    private int? SelectedDay;
+
+    protected override void OnParametersSet()
+    {
+        if(Value != null)
+        {
+            SelectedYear = Value.Value.Year;
+            SelectedMonth = Value.Value.Month;
+            SelectedDay = Value.Value.Day;
+        }
+        UpdateDays();
+    }
+
+    private void UpdateDays()
+    {
+        Days.Clear();
+        if(SelectedYear.HasValue && SelectedMonth.HasValue)
+        {
+            var daysInMonth = DateTime.DaysInMonth(SelectedYear.Value, SelectedMonth.Value);
+            Days = Enumerable.Range(1, daysInMonth).ToList();
+        }
+    }
+
+    private async Task OnDateChanged(ChangeEventArgs e)
+    {
+        UpdateDays();
+
+        if(SelectedYear.HasValue && SelectedMonth.HasValue && SelectedDay.HasValue)
+        {
+            var date = new DateOnly(SelectedYear.Value,SelectedMonth.Value,SelectedDay.Value);
+            await ValueChanged.InvokeAsync(date);
+        }
+        else
+        {
+            await ValueChanged.InvokeAsync(null);
+        }
+    }
+
+}

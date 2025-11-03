@@ -1,0 +1,29 @@
+﻿@page "/auth/loadingscreen"
+@layout GateScreenLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<div class="flex-all-center loading-screen">
+    <img class="app-logo" src="images/icons/jumbubblelogo.png"/>
+    <div class="flex-all-center title-container">
+        <h1 class="string-big-bold">JamBubble</h1>
+        <p class="string-s">A shared playlist colored by everyone’s taste.</p>
+    </div>
+    <div class="flex-all-center loading-container">
+        <div class="loading-element"></div>
+        <p class="string-s">Now loading...</p>
+    </div>
+    <p class="string-s">Version 1.0.0</p>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(3000);
+
+            NavManager.NavigateTo("/auth/welcomescreen");
+        }
+    }
+}

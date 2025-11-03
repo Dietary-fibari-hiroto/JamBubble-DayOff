@@ -1,0 +1,27 @@
+﻿<div>
+    <p class="string-label">@LabelText</p>
+    <select  placeholder="example" class="input-element" >
+        @foreach(var option in Options)
+        {
+            <option class="options" value="@option" selected="@(option == Value)">
+                @option
+            </option>
+        }
+    </select>
+    <p class="string-ss supplement-text">@SupplementText</p>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = "";
+    [Parameter] public string SupplementText { get; set; } = "";
+
+    [Parameter] public List<string> Options { get; set; } = new();
+    [Parameter] public string Value { get; set; } = "";
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+
+    private async Task OnChangeHandler(ChangeEventArgs e)
+    {
+        await ValueChanged.InvokeAsync(e.Value?.ToString());
+    }
+
+}

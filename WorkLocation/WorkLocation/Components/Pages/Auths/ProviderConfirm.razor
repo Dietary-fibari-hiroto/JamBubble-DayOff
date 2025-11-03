@@ -1,0 +1,29 @@
+﻿@page "/auth/providerconfirm"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+<AuthBgPannel>
+    
+    <img class="icons" src="images/icons/jumbubblelogo.png" />
+    <div class="flex-all-center container">
+        <p class="string-md">プロバイダにログイン</p>
+        <p class="text-margin string-ss text-center">
+            アプリの主要な機能を使うにはプロバイダアカウントでログインしていただく必要があります。下記に当てはまるプロバイダへログインしてください。<br/>
+            <br />
+            AppleMusic/Spotify
+        </p>
+        <div class="submit-container">
+            <Submit Label="Spotifyでログイン" CssClass="spotify-primary mini-margin"><img class="provider-icon" src="images/icons/spotify_icon.png" /></Submit>
+            <Submit Label="Spotifyでログイン" CssClass="applemusic-primary mini-margin"><img class="provider-icon" src="images/icons/applemusic_icon.png" /></Submit>
+            <Submit OnClick="ToNext" Label="プロバイダなしで進む" CssClass="deep-gray" />
+        </div>
+    </div>
+</AuthBgPannel>
+
+@code{
+    private Task ToNext()
+    {
+        NavManager.NavigateTo("/auth/registercomplete");
+        return Task.CompletedTask;
+    }
+}

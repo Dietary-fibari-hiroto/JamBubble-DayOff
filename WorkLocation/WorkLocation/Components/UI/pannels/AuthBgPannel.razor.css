@@ -1,0 +1,9 @@
+﻿.register-container {
+    width: 90%;
+    min-height:70%;
+    margin: 50px 0;
+    padding: 50px 0;
+    background: linear-gradient(to bottom,#00000088,#00000088);
+    border-radius: 30px;
+}
+

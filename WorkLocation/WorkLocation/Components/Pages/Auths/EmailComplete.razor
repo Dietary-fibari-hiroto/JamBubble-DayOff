@@ -1,0 +1,20 @@
+﻿@page "/auth/emailcomplete"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+<AuthBgPannel>
+    <div class="container">
+        <img class="icons" src="images/icons/jumbubblelogo.png" />
+        <p class="string-s margin-content">メールアドレスを確認できました！</p>
+        <Submit OnClick="ToNext" Label="次へ" CssClass="primary" />
+    </div>
+</AuthBgPannel>
+
+
+@code{
+    private Task ToNext()
+    {
+        NavManager.NavigateTo("/auth/providerconfirm");
+        return Task.CompletedTask;
+    }
+}

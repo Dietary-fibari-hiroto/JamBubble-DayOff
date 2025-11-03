@@ -1,0 +1,44 @@
+﻿@page "/auth/registerconfirm"
+@layout AuthLayout
+@rendermode InteractiveServer
+@inject NavigationManager NavManager
+<AuthBgPannel>
+    <img class="icons" src="images/icons/jumbubblelogo.png" />
+    <h2 class="string-md">確認画面</h2>
+    <section>
+        <FormConfirmLabel LabelText="アカウント名" Value="@name"/>
+        <FormConfirmLabel LabelText="メールアドレス" Value="@email" />
+        <FormConfirmLabel LabelText="パスワード" Value="@password" />
+        <FormConfirmLabel LabelText="性別" Value="@gender" />
+        <FormConfirmLabel LabelText="生年月日" Value="@birthday" />
+        <div>
+            <p class="string-label">プロフィール画像</p>
+            <figure class="img-container">
+                <img class="icons" src="@img_url" />
+            </figure>
+        </div>
+    </section>
+    <section class="button-container">
+        <Submit OnClick="OnSubmit" label="確定" CssClass="primary" />
+        <RawTextButton OnClick="OnReturn" label="もどる" IsUnderline=true />
+    </section>
+</AuthBgPannel>
+@code {
+    private string name ="ゆずき";
+    private string email = "yuzu@email.com";
+    private string password = "・・・・";
+    private string gender = "男性";
+    private string birthday = "2004/11/11";
+    private string img_url = "https://dawn-waiting.com/static/media/dawn_cat_ani.863d6550f404cf074627.png";
+
+    private Task OnSubmit()
+    {
+        NavManager.NavigateTo("/auth/emailconfirm");
+        return Task.CompletedTask;
+    } 
+    private Task OnReturn()
+    {
+        NavManager.NavigateTo("/auth/register");
+        return Task.CompletedTask;
+    }
+}

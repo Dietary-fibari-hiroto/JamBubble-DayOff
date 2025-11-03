@@ -1,0 +1,62 @@
+﻿
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.Three-dot-leader {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.album-container {
+    text-align: center;
+    margin-top:100px;
+}
+
+    .album-container > * + * {
+        margin-top: 10px;
+    }
+
+.alubm-img {
+    width: 200px;
+    height: 200px;
+}
+
+
+.data-container{
+    width:90%;
+}
+.data-container > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.data-container > p > * + *{
+    margin-left:10px;
+}

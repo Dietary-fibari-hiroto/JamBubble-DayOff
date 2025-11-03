@@ -1,0 +1,9 @@
+﻿<div>
+    <p class="string-label">@LabelText</p>
+    <p class = "string-s value-element">@Value</p>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = "";
+    [Parameter] public string Value { get; set; } = "";
+}

@@ -1,0 +1,20 @@
+﻿@rendermode InteractiveServer
+<button @onclick="OpenMenu" class="user-icon flex-all-center @CssClass">
+    <img class="user-img" src = "images/photos/offn.jpg"/>
+</button>
+
+@if (isDialog)
+{
+    <UserIconDialog OnClick="OpenMenu"/>
+}
+
+@code {
+    [Parameter] public string CssClass{get;set;} = "";
+
+    private bool isDialog = false;
+    private Task OpenMenu()
+    {
+        isDialog = !isDialog;
+        return Task.CompletedTask;
+    }
+}

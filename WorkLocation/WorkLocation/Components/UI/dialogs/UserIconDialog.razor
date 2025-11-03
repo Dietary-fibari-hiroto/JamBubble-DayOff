@@ -1,0 +1,21 @@
+﻿@rendermode InteractiveServer
+@inject NavigationManager NavManager
+
+<section @onclick="OnClick" class="dialog-conainer">
+    <img @onclick="OnClick" class="cancel-button" src = "images/elementicons/x.svg"/>
+    <p @onclick='()=>ToNext("/app/user/profile")' class="menu-content string-md-bold">プロフィールを見る</p>
+    <p @onclick='() => ToNext("/app/user/setting")' class="menu-content string-md-bold">
+        設定
+
+    </p>    <p @onclick='() => ToNext("/app/user/help")' class="menu-content string-md-bold">ヘルプ</p>
+</section>
+
+@code {
+    [Parameter] public EventCallback OnClick { get; set; }
+
+    private Task ToNext(string path)
+    {
+        NavManager.NavigateTo(path);
+        return Task.CompletedTask;
+    }
+}

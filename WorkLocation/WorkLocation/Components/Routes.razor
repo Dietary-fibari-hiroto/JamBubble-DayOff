@@ -1,6 +1,43 @@
 ﻿<Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="routeData" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        <LayoutView Layout="@GetLayout(routeData)">
+            <RouteView RouteData="routeData" />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+
+            @if (ShouldShowGlobalElement())
+            {
+                <FooterMenu/>
+            }
+        </LayoutView>
     </Found>
 </Router>
+
+
+@code{
+        [Inject] NavigationManager Nav { get; set; }
+
+
+    private bool ShouldShowGlobalElement()
+    {
+        var path = Nav.Uri.Replace(Nav.BaseUri, "");
+        string[] hidePaths = { "app/main", "app/playlist", "app/session", "app/search", "app/friend" };
+
+        // hidePathsのどれかで始まっていたらtrue
+        return hidePaths.Any(p => path.StartsWith(p));
+
+    }
+
+
+    private Type GetLayout(RouteData routeData)
+    {
+        var path = Nav.Uri.Replace(Nav.BaseUri, "");
+        // app系のパスで MainBg を使いたい場合
+        string[] mainBgPaths = { "app" };
+
+        if (mainBgPaths.Any(p => path.StartsWith(p)))
+        {
+            return typeof(MainBg);
+        }
+        return null;
+    }
+}

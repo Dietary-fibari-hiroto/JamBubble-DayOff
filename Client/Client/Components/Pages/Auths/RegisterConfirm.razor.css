@@ -1,0 +1,14 @@
+﻿.icons {
+    width: 143px;
+    height: 143px;
+}
+
+.form-area > * + * {
+    margin-top: 20px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

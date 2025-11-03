@@ -5,20 +5,224 @@
       "PackagePath": "staticwebassets\\Client.styles.css"
     },
     {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\Variable.css",
+      "PackagePath": "staticwebassets\\css\\Variable.css"
+    },
+    {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\fonts.css",
+      "PackagePath": "staticwebassets\\css\\fonts.css"
     },
     {
-      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
-      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\utils.css",
+      "PackagePath": "staticwebassets\\css\\utils.css"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Black.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\fonts\\Noto_Sans_JP\\NotoSansJP-Thin.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Noto_Sans_JP\\NotoSansJP-Thin.ttf"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\arrow-up-from-line.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\arrow-up-from-line.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\check.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\check.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\chevron-down.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\chevron-down.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\circle-check-big.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\circle-check-big.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\circle-user-round.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\circle-user-round.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\contact.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\contact.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\ellipsis.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\ellipsis.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\eye.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\eye.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\fast-forward.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\fast-forward.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\focus.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\focus.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\git-pull-request-create-arrow.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\git-pull-request-create-arrow.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\heart.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\heart.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\house.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\house.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\list-minus.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\list-minus.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\list-music.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\list-music.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\mail.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\mail.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\map-pinned.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\map-pinned.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\menu.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\menu.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\message-circle-plus.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\message-circle-plus.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\play.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\play.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\qr-code.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\qr-code.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\radio.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\radio.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\repeat-1.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\repeat-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\repeat.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\repeat.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\search.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\search.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\share.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\share.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\shell.png",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\shell.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\shell.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\shell.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\shield-ban.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\shield-ban.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\shuffle.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\shuffle.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\square-pen.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\square-pen.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\undo-2.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\undo-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\user-round-plus.png",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\user-round-plus.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\user-round-plus.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\user-round-plus.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\users.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\users.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\x.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\x.svg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\icons\\DayoffWhiteLogo.png",
+      "PackagePath": "staticwebassets\\images\\icons\\DayoffWhiteLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\icons\\applemusic_icon.png",
+      "PackagePath": "staticwebassets\\images\\icons\\applemusic_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\icons\\jumbubblelogo.png",
+      "PackagePath": "staticwebassets\\images\\icons\\jumbubblelogo.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\icons\\spotify_icon.png",
+      "PackagePath": "staticwebassets\\images\\icons\\spotify_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\pexels-thevibrantmachine-3066867.jpg",
+      "PackagePath": "staticwebassets\\images\\photos\\pexels-thevibrantmachine-3066867.jpg"
     },
     {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\index.html",

@@ -43,14 +43,167 @@
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\bootstrap\bootstrap.min.css">
-      <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\fonts.css">
+      <PackagePath>wwwroot\css\fonts.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\bootstrap\bootstrap.min.css.map">
-      <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\index.css">
+      <PackagePath>wwwroot\css\index.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\favicon.png">
-      <PackagePath>wwwroot\favicon.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\utils.css">
+      <PackagePath>wwwroot\css\utils.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\Variable.css">
+      <PackagePath>wwwroot\css\Variable.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Bold.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Bold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-ExtraBold.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-ExtraBold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-ExtraLight.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-ExtraLight.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Light.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Light.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Medium.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Medium.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Regular.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-SemiBold.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-SemiBold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Thin.ttf">
+      <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Thin.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\arrow-up-from-line.svg">
+      <PackagePath>wwwroot\images\elementIcons\arrow-up-from-line.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\check.svg">
+      <PackagePath>wwwroot\images\elementIcons\check.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\chevron-down.svg">
+      <PackagePath>wwwroot\images\elementIcons\chevron-down.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\circle-check-big.svg">
+      <PackagePath>wwwroot\images\elementIcons\circle-check-big.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\circle-user-round.svg">
+      <PackagePath>wwwroot\images\elementIcons\circle-user-round.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\contact.svg">
+      <PackagePath>wwwroot\images\elementIcons\contact.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\ellipsis.svg">
+      <PackagePath>wwwroot\images\elementIcons\ellipsis.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\eye.svg">
+      <PackagePath>wwwroot\images\elementIcons\eye.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\fast-forward.svg">
+      <PackagePath>wwwroot\images\elementIcons\fast-forward.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\focus.svg">
+      <PackagePath>wwwroot\images\elementIcons\focus.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\git-pull-request-create-arrow.svg">
+      <PackagePath>wwwroot\images\elementIcons\git-pull-request-create-arrow.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\heart.svg">
+      <PackagePath>wwwroot\images\elementIcons\heart.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\house.svg">
+      <PackagePath>wwwroot\images\elementIcons\house.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\list-minus.svg">
+      <PackagePath>wwwroot\images\elementIcons\list-minus.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\list-music.svg">
+      <PackagePath>wwwroot\images\elementIcons\list-music.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\mail.svg">
+      <PackagePath>wwwroot\images\elementIcons\mail.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\map-pinned.svg">
+      <PackagePath>wwwroot\images\elementIcons\map-pinned.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\menu.svg">
+      <PackagePath>wwwroot\images\elementIcons\menu.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\message-circle-plus.svg">
+      <PackagePath>wwwroot\images\elementIcons\message-circle-plus.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\play.svg">
+      <PackagePath>wwwroot\images\elementIcons\play.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\qr-code.svg">
+      <PackagePath>wwwroot\images\elementIcons\qr-code.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\radio.svg">
+      <PackagePath>wwwroot\images\elementIcons\radio.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\repeat.svg">
+      <PackagePath>wwwroot\images\elementIcons\repeat.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\repeat-1.svg">
+      <PackagePath>wwwroot\images\elementIcons\repeat-1.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\search.svg">
+      <PackagePath>wwwroot\images\elementIcons\search.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\share.svg">
+      <PackagePath>wwwroot\images\elementIcons\share.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shell.png">
+      <PackagePath>wwwroot\images\elementIcons\shell.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shell.svg">
+      <PackagePath>wwwroot\images\elementIcons\shell.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shield-ban.svg">
+      <PackagePath>wwwroot\images\elementIcons\shield-ban.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shuffle.svg">
+      <PackagePath>wwwroot\images\elementIcons\shuffle.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\square-pen.svg">
+      <PackagePath>wwwroot\images\elementIcons\square-pen.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\undo-2.svg">
+      <PackagePath>wwwroot\images\elementIcons\undo-2.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\user-round-plus.png">
+      <PackagePath>wwwroot\images\elementIcons\user-round-plus.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\user-round-plus.svg">
+      <PackagePath>wwwroot\images\elementIcons\user-round-plus.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\users.svg">
+      <PackagePath>wwwroot\images\elementIcons\users.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\x.svg">
+      <PackagePath>wwwroot\images\elementIcons\x.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\icons\applemusic_icon.png">
+      <PackagePath>wwwroot\images\icons\applemusic_icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\icons\DayoffWhiteLogo.png">
+      <PackagePath>wwwroot\images\icons\DayoffWhiteLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\icons\jumbubblelogo.png">
+      <PackagePath>wwwroot\images\icons\jumbubblelogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\icons\spotify_icon.png">
+      <PackagePath>wwwroot\images\icons\spotify_icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\pexels-thevibrantmachine-3066867.jpg">
+      <PackagePath>wwwroot\images\photos\pexels-thevibrantmachine-3066867.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
@@ -509,13 +662,76 @@
       <PackagePath>wwwroot\Client.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Client.bundle.scp.css">
-      <PackagePath>wwwroot\Client.naz922xf9y.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\Client.02lothpoku.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\MainLayout.razor.css">
-      <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\AuthLayout.razor.css">
+      <PackagePath>Components\Layout\AuthLayout.razor.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\NavMenu.razor.css">
-      <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\GateScreenLayout.razor.css">
+      <PackagePath>Components\Layout\GateScreenLayout.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\EmailComplete.razor.css">
+      <PackagePath>Components\Pages\Auths\EmailComplete.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\EmailConfirm.razor.css">
+      <PackagePath>Components\Pages\Auths\EmailConfirm.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\Explain.razor.css">
+      <PackagePath>Components\Pages\Auths\Explain.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\LoadingScreen.razor.css">
+      <PackagePath>Components\Pages\Auths\LoadingScreen.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\Login.razor.css">
+      <PackagePath>Components\Pages\Auths\Login.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\ProviderConfirm.razor.css">
+      <PackagePath>Components\Pages\Auths\ProviderConfirm.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\Register.razor.css">
+      <PackagePath>Components\Pages\Auths\Register.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\RegisterComplete.razor.css">
+      <PackagePath>Components\Pages\Auths\RegisterComplete.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\RegisterConfirm.razor.css">
+      <PackagePath>Components\Pages\Auths\RegisterConfirm.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\WelcomeScreen.razor.css">
+      <PackagePath>Components\Pages\Auths\WelcomeScreen.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Home.razor.css">
+      <PackagePath>Components\Pages\Home.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\EditButton.razor.css">
+      <PackagePath>Components\UI\buttons\EditButton.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\RawTextButton.razor.css">
+      <PackagePath>Components\UI\buttons\RawTextButton.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\Submit.razor.css">
+      <PackagePath>Components\UI\buttons\Submit.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\Bubble.razor.css">
+      <PackagePath>Components\UI\elements\Bubble.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\BirthDatePicker.razor.css">
+      <PackagePath>Components\UI\inputs\BirthDatePicker.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\InputImage.razor.css">
+      <PackagePath>Components\UI\inputs\InputImage.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\SelecterBox.razor.css">
+      <PackagePath>Components\UI\inputs\SelecterBox.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\TextInput.razor.css">
+      <PackagePath>Components\UI\inputs\TextInput.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\pannels\AuthBgPannel.razor.css">
+      <PackagePath>Components\UI\pannels\AuthBgPannel.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\typographies\FormConfirmLabel.razor.css">
+      <PackagePath>Components\UI\typographies\FormConfirmLabel.razor.css</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,38 @@
+﻿<div>
+    <p class="string-label">@LabelText</p>
+
+    <InputFile OnChange="OnFileSelected" accept="image/*" class="input-element" />
+
+
+   <div class="img-container">
+        <img src="@ImageDataUrl" alt="選択画像" class="preview-image" />
+        <div class="edit-icon"><EditButton CssClass="spotify-primary"/></div>
+    </div>
+
+    <p class="string-ss supplement-text">@SupplementText</p>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = "画像を選択";
+    [Parameter] public string SupplementText { get; set; } = "画像をアップロードしてください";
+    [Parameter] public EventCallback<IBrowserFile> OnImageSelected { get; set; }
+
+    private string ImageDataUrl = "images/icons/jumbubblelogo.png";
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            // 最大 5MB まで読み込む
+            var buffer = new byte[file.Size];
+            await file.OpenReadStream(5_000_000).ReadAsync(buffer);
+
+            // Base64 に変換して表示用 URL 作成
+            ImageDataUrl = $"data:{file.ContentType};base64,{Convert.ToBase64String(buffer)}";
+
+            // 親コンポーネントにファイルを渡す
+            await OnImageSelected.InvokeAsync(file);
+        }
+    }
+}

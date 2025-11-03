@@ -1,0 +1,62 @@
+﻿section{
+    margin-top:10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+    .menu > * {
+        margin-left: 20px;
+    }
+
+.fornow-container {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-x: scroll;
+    margin:10px 0;
+}
+
+.label-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    overflow-x: scroll;
+}
+
+
+.more-button {
+    display: flex;
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-right {
+    display: inline-block;
+    width: 50px; /* 矢印の長さ */
+    height: 1px; /* 線の太さ */
+    background-color: white; /* 線の色 */
+    position: relative;
+}
+
+.arrow-right-after {
+    border: 5px solid transparent; /* 矢印のサイズ */
+    border-left-color: white; /* 矢印の色 */
+}
+
