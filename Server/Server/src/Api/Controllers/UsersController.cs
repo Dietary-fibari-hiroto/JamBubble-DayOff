@@ -30,7 +30,7 @@ namespace Server.src.Api.Controllers
         /// </summary>
         [Authorize]
         [HttpGet]
-        [ProducesResponseType(typeof(UserResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetUser()
         {
             // JWTのクレームからユーザーID取得
@@ -60,7 +60,7 @@ namespace Server.src.Api.Controllers
         /// </summary>
         [AllowAnonymous]
         [HttpPost]
-        [ProducesResponseType(typeof(UserResponse), StatusCodes.Status201Created)] // 成功時のレスポンス型 
+        [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status201Created)] // 成功時のレスポンス型 
         public async Task<IActionResult> Register([FromBody] User user)
         {
             var addedUser = await _userService.AddUserAsync(user);

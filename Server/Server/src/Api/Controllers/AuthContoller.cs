@@ -21,8 +21,8 @@ namespace Server.src.Api.Controllers
         /// </summary>
         [AllowAnonymous]
         [HttpPost("login")]
-        [ProducesResponseType(typeof(TokenResponse), StatusCodes.Status200OK)] // 成功時のレスポンス型 
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        [ProducesResponseType(typeof(TokenResponseDto), StatusCodes.Status200OK)] // 成功時のレスポンス型 
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
             // 認証処理
             var token = await _authService.LoginAsync(request.Email, request.Password);
