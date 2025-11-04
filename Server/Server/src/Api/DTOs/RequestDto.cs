@@ -27,8 +27,85 @@ namespace Server.src.DTOs
         public int Gender { get; set; } = 0;
         [Required]
         public DateOnly Birthday { get; set; }
-        public bool? IsStreetPass { get; set; } = false;
-        public string? ImgUrl { get; set; } = null;
+    }
+
+    public class UpdateUserRequestDto
+    {
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? ImgUrl {  get; set; }
+        public string? Message {  get; set; }
+        public bool IsStreetPass { get; set; } = false;
+
+        // Userの型に変換
+        public User RequestToUser(User user)
+        {
+            if (!string.IsNullOrEmpty(this.Name))
+            {
+                user.Name = this.Name;
+            }
+
+            if (!string.IsNullOrEmpty(this.Email))
+            { 
+                user.Email = this.Email;
+            }
+
+            if (!string.IsNullOrEmpty(this.ImgUrl))
+            {
+                user.ImgUrl = this.ImgUrl;
+            }
+
+            if (!string.IsNullOrEmpty(this.Message))
+            {
+                user.Message = this.Message;
+            }
+
+            if (this.IsStreetPass != user.IsStreetPass)
+            {
+                user.IsStreetPass = this.IsStreetPass;
+            }
+
+            return user;
+        }
+    }
+
+    public class UpdateFavoriteMusicRequestDto
+    {
+        public string? MusicId { get; set; }
+
+        // FavoriteMusicの型に変換
+        public FavoriteMusic RequestToFavoriteMusic(FavoriteMusic favoriteMusic)
+        {
+            if (!string.IsNullOrEmpty (this.MusicId))
+            {
+                favoriteMusic.MusicId = this.MusicId;
+            }
+
+            return favoriteMusic;
+        }
+    }
+
+    public class UpdateUserAllDataRequestDto
+    {
+        public UpdateUserRequestDto? userDto { get; set; }
+        public UpdateFavoriteMusicRequestDto? FavoriteMusicDto { get; set; }
+
+        public User RequestDtoToEntitie(User user)
+        {
+            if(userDto != null)
+            {
+                user = userDto.RequestToUser(user);
+            }
+
+            if(userDto != null)
+            {
+                user.FavoriteMusic = FavoriteMusicDto.RequestToFavoriteMusic(user.FavoriteMusic);
+            }
+
+            return user;
+
+        }
     }
 
     public class RequestFilter : ISchemaFilter
@@ -44,7 +121,6 @@ namespace Server.src.DTOs
                     ["email"] = new OpenApiString("test@test.com"),
                     ["password"] = new OpenApiString("password"),
                     ["gender"] = new OpenApiInteger(0),
-                    ["isStreetPass"] = new OpenApiBoolean(false),
                     ["imgUrl"] = new OpenApiString("")
                 };
             }
