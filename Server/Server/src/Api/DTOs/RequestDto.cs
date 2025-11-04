@@ -93,14 +93,14 @@ namespace Server.src.DTOs
 
         public User RequestDtoToEntitie(User user)
         {
-            if(userDto != null)
+            if(this.userDto != null)
             {
-                user = userDto.RequestToUser(user);
+                user = this.userDto.RequestToUser(user);
             }
 
-            if(userDto != null)
+            if(this.FavoriteMusicDto != null && user.FavoriteMusic != null)
             {
-                user.FavoriteMusic = FavoriteMusicDto.RequestToFavoriteMusic(user.FavoriteMusic);
+                user.FavoriteMusic = this.FavoriteMusicDto.RequestToFavoriteMusic(user.FavoriteMusic);
             }
 
             return user;
