@@ -30,7 +30,7 @@ namespace Server.src.Services
 
             return userResponseDto;
         }
-        public async Task<User?> AddUserAsync(User user)
+        public async Task<UserResponseDto?> AddUserAsync(User user)
         {
             // すでに同じEmailのユーザーが存在するか確認
             var existingUser = await _repo.GetByEmailAsync(user.Email);
@@ -42,9 +42,8 @@ namespace Server.src.Services
             var addedUser = await _repo.AddAsync(user);
             if (addedUser == null) return null;
 
-            // TODO:レスポンス内容をどうするか
-            addedUser.Password = "";
-            return addedUser;
+            var userResponseDto = new UserResponseDto(addedUser);
+            return userResponseDto;
         }
 
         public async Task<User?> UpdateUserAsync(User updateData, int userId)

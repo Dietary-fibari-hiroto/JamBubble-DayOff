@@ -70,7 +70,7 @@ namespace Server.src.Api.Controllers
             }
 
             //return Ok(new { addedUser });
-            return CreatedAtAction(nameof(Register), new { id = addedUser.Id }, addedUser);
+            return CreatedAtAction(nameof(Register), addedUser);
         }
 
 
