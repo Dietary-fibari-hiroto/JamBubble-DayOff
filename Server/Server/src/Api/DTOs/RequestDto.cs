@@ -10,23 +10,41 @@ namespace Server.src.DTOs
     public class LoginRequestDto
     {
         [Required]
-        public string Email { get; set; } = string.Empty;
+        public required string Email { get; set; }
         [Required]
-        public string Password { get; set; } = string.Empty;
+        public required string Password { get; set; }
     }
 
     public class RegisterUserRequestDto
     {
         [Required]
-        public string Name { get; set; } = string.Empty;
+        public required string Name { get; set; }
         [Required]
-        public string Email { get; set; } = string.Empty;
+        public required string Email { get; set; }
         [Required]
-        public string Password { get; set; } = string.Empty;
+        public required string Password { get; set; }
         [Required]
-        public int Gender { get; set; } = 0;
+        public required int Gender { get; set; }
         [Required]
-        public DateOnly Birthday { get; set; }
+        public required DateOnly Birthday { get; set; }
+        public string? ImgUrl { get; set; } = string.Empty;
+
+        // Userの型に変換
+        public User RequestToUser(User user)
+        {
+            user.Name = this.Name;
+            user.Email = this.Email;
+            user.Password = this.Password;
+            user.Gender = this.Gender;
+            user.Birthday = this.Birthday;
+
+            if (!string.IsNullOrEmpty(this.ImgUrl))
+            {
+                user.ImgUrl = this.ImgUrl;
+            }
+
+            return user;
+        }
     }
 
     public class UpdateUserRequestDto
@@ -49,6 +67,11 @@ namespace Server.src.DTOs
             if (!string.IsNullOrEmpty(this.Email))
             { 
                 user.Email = this.Email;
+            }
+
+            if(!string.IsNullOrEmpty(this.Password))
+            {
+                user.Password = this.Password;
             }
 
             if (!string.IsNullOrEmpty(this.ImgUrl))
@@ -110,18 +133,28 @@ namespace Server.src.DTOs
 
     public class RequestFilter : ISchemaFilter
     {
+        // キャメルケースに変換するヘルパー
+        private string ToCamelCase(string str)
+        {
+            if (string.IsNullOrEmpty(str) || char.IsLower(str[0]))
+            {
+                return str;
+            }
+            return char.ToLowerInvariant(str[0]) + str.Substring(1);
+        }
+
         void ISchemaFilter.Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
             if (context.Type == typeof(User))
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["name"] = new OpenApiString("test"),
-                    ["birthday"] = new OpenApiString("2025-11-01"),
-                    ["email"] = new OpenApiString("test@test.com"),
-                    ["password"] = new OpenApiString("password"),
-                    ["gender"] = new OpenApiInteger(0),
-                    ["imgUrl"] = new OpenApiString("")
+                    [ToCamelCase(nameof(User.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(User.Birthday))] = new OpenApiString("2025-11-01"),
+                    [ToCamelCase(nameof(User.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(User.Password))] = new OpenApiString("password"),
+                    [ToCamelCase(nameof(User.Gender))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(User.ImgUrl))] = new OpenApiString("")
                 };
             }
 
@@ -129,10 +162,77 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["Email"] = new OpenApiString("test@test.com"),
-                    ["Password"] = new OpenApiString("password")
+                    [ToCamelCase(nameof(LoginRequestDto.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(LoginRequestDto.Password))] = new OpenApiString("password")
                 };
             }
+
+            if (context.Type == typeof(RegisterUserRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(RegisterUserRequestDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(RegisterUserRequestDto.Birthday))] = new OpenApiString("2025-11-01"),
+                    [ToCamelCase(nameof(RegisterUserRequestDto.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(RegisterUserRequestDto.Password))] = new OpenApiString("password"),
+                    [ToCamelCase(nameof(RegisterUserRequestDto.Gender))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(RegisterUserRequestDto.ImgUrl))] = new OpenApiString(""),
+                };
+            }
+
+            if (context.Type == typeof(UpdateFavoriteMusicRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(UpdateFavoriteMusicRequestDto.MusicId))] = new OpenApiString("")
+                };
+            }
+
+            if (context.Type == typeof(UpdateUserRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(UpdateUserRequestDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(UpdateUserRequestDto.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(UpdateUserRequestDto.Password))] = new OpenApiString("password"),
+                    [ToCamelCase(nameof(UpdateUserRequestDto.ImgUrl))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserRequestDto.Message))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserRequestDto.IsStreetPass))] = new OpenApiBoolean(false),
+
+                };
+            }
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //          
+            //    };
+            //}
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //          
+            //    };
+            //}
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //          
+            //    };
+            //}
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //          
+            //    };
+            //}
         }
     }
 }
