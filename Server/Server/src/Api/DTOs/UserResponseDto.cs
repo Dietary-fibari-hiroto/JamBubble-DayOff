@@ -101,19 +101,28 @@ namespace Server.src.DTOs
     // SwaggerUI上でのExample Valueの設定
     public class ResponseFilter : ISchemaFilter
     {
+        // キャメルケースに変換するヘルパー
+        private string ToCamelCase(string str)
+        {
+            if (string.IsNullOrEmpty(str) || char.IsLower(str[0]))
+            {
+                return str;
+            }
+            return char.ToLowerInvariant(str[0]) + str.Substring(1);
+        }
         void ISchemaFilter.Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
             if (context.Type == typeof(UserResponseDto))
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["name"] = new OpenApiString("test"),
-                    ["birthday"] = new OpenApiString("2025-11-01"),
-                    ["email"] = new OpenApiString("test@test.com"),
-                    ["gender"] = new OpenApiInteger(0),
-                    ["isStreetPass"] = new OpenApiBoolean(false),
-                    ["imgUrl"] = new OpenApiString(""),
-                    ["message"] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserResponseDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(UserResponseDto.Birthday))] = new OpenApiString("2025-11-01"),
+                    [ToCamelCase(nameof(UserResponseDto.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(UserResponseDto.Gender))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserResponseDto.IsStreetPass))] = new OpenApiBoolean(false),
+                    [ToCamelCase(nameof(UserResponseDto.ImgUrl))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserResponseDto.Message))] = new OpenApiString(""),
                 };
             }
 
@@ -121,7 +130,7 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["sessionCount"] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(UserHistoryResponseDto.SessionCount))] = new OpenApiInteger(1),
                 };
             }
 
@@ -129,7 +138,7 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["musicId"] = new OpenApiInteger(0)
+                    [ToCamelCase(nameof(FavoriteMusicResponseDto.MusicId))] = new OpenApiInteger(0)
                 };
             }
 
@@ -137,9 +146,9 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["providerId"] = new OpenApiInteger(0),
-                    ["name"] = new OpenApiString("test"),
-                    ["password"] = new OpenApiString("password")
+                    [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserProviderResponseDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(UserProviderResponseDto.Password))] = new OpenApiString("password")
                 };
             }
         }
