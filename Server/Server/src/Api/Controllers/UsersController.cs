@@ -4,18 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Server.src.DTOs;
 using Server.src.Entities;
 using Server.src.Interfaces;
+using Server.src.Extensions;
 
 namespace Server.src.Api.Controllers
 {
-
-    [ApiController]
-    [Route("/api/[controller]")]
-    public class TestController : ControllerBase
-    {
-        [HttpGet]
-        public async Task<IActionResult> GetTest() =>Ok("DayOff");
-    }
-
     [ApiController]
     [Route("/api/[controller]")]
     public class UserController : ControllerBase
@@ -34,20 +26,14 @@ namespace Server.src.Api.Controllers
         [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetUser()
         {
-            // JWTのクレームからユーザーID取得
-            var userIdString = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userIdString))
+            var userId = User.GetUserId(); // JWTからIDを取得
+
+            if (userId == null)
             {
-                return Unauthorized("ID claim not found in token.");
+                return Unauthorized("Invalid user ID format in token.");
             }
 
-            // intに変換
-            if (!int.TryParse(userIdString, out var userId))
-            {
-                return BadRequest("Invalid user ID format in token.");
-            }
-
-            var user = await _userService.GetUserAllDataAsync(userId);
+            var user = await _userService.GetUserAllDataAsync(userId.Value);
             if (user == null)
             {
                 return NotFound("User not found.");
@@ -62,15 +48,10 @@ namespace Server.src.Api.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status201Created)]
-        public async Task<IActionResult> Register([FromBody] User user)
+        public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto user)
         {
             var addedUser = await _userService.AddUserAsync(user);
-            if (addedUser == null)
-            {
-                return Conflict("ユーザーの登録に失敗しました。");
-            }
 
-            //return Ok(new { addedUser });
             return CreatedAtAction(nameof(Register), addedUser);
         }
 
@@ -80,22 +61,22 @@ namespace Server.src.Api.Controllers
         [Authorize]
         [HttpPut]
         [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Update([FromBody] UserAllDataResponseDto user)
+        public async Task<IActionResult> Update([FromBody] UpdateUserAllDataRequestDto user)
         {
-            // JWTのクレームからユーザーID取得
-            var userIdString = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userIdString))
+            var userId = User.GetUserId(); // JWTからIDを取得
+
+            if (userId == null)
             {
-                return Unauthorized("ID claim not found in token.");
+                return Unauthorized("Invalid user ID in token.");
             }
 
-            // intに変換
-            if (!int.TryParse(userIdString, out var userId))
+            var updatedUser = await _userService.UpdateUserAsync(user, userId.Value);
+            if (updatedUser == null)
             {
-                return BadRequest("Invalid user ID format in token.");
+                return NotFound("User not found.");
             }
 
-            return Ok(user);
+            return Ok(updatedUser);
         }
     }
 }
