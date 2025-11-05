@@ -9,13 +9,13 @@ namespace Server.src.Api.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-    public class AuthController : ControllerBase
+    public class authController : ControllerBase
     {
         private readonly IAuthService _authService; // 依存性の注入
 
-        private readonly ILogger<AuthController> _logger;
+        private readonly ILogger<authController> _logger;
 
-        public AuthController(IAuthService authService, ILogger<AuthController> logger)
+        public authController(IAuthService authService, ILogger<authController> logger)
         {
             _authService = authService; // コンストラクタ
 
