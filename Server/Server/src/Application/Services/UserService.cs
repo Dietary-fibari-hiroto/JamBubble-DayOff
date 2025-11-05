@@ -83,7 +83,13 @@ namespace Server.src.Services
 
         public async Task<bool> DeleteUserAsync(int userId)
         {
-            return false;
+            // IDで取得
+            var deleteUser = await _repo.GetByIdAsync(userId);
+            if (deleteUser == null) return false;
+
+            await _repo.DeleteAsync(deleteUser);
+
+            return true;
         }
     }
 }

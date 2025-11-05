@@ -78,5 +78,28 @@ namespace Server.src.Api.Controllers
 
             return Ok(updatedUser);
         }
+
+        /// <summary>
+        /// ユーザー削除
+        /// </summary>
+        [Authorize]
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Delete()
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID in token.");
+            }
+
+            var result = await _userService.DeleteUserAsync(userId.Value);
+            if (!result)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }
     }
 }
