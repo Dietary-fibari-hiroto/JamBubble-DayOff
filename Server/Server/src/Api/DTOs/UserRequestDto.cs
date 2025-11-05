@@ -7,14 +7,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Server.src.DTOs
 {
-    public class LoginRequestDto
-    {
-        [Required]
-        public required string Email { get; set; }
-        [Required]
-        public required string Password { get; set; }
-    }
-
     public class RegisterUserRequestDto
     {
         [Required]
@@ -158,7 +150,7 @@ namespace Server.src.DTOs
         public required int ProviderId { get; set; }
     }
 
-    public class RequestFilter : ISchemaFilter
+    public class UserRequestFilter : ISchemaFilter
     {
         // キャメルケースに変換するヘルパー
         private string ToCamelCase(string str)
@@ -182,15 +174,6 @@ namespace Server.src.DTOs
                     [ToCamelCase(nameof(User.Password))] = new OpenApiString("password"),
                     [ToCamelCase(nameof(User.Gender))] = new OpenApiInteger(0),
                     [ToCamelCase(nameof(User.ImgUrl))] = new OpenApiString("")
-                };
-            }
-
-            if (context.Type == typeof(LoginRequestDto))
-            {
-                schema.Example = new OpenApiObject
-                {
-                    [ToCamelCase(nameof(LoginRequestDto.Email))] = new OpenApiString("test@test.com"),
-                    [ToCamelCase(nameof(LoginRequestDto.Password))] = new OpenApiString("password")
                 };
             }
 

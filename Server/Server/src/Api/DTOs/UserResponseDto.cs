@@ -6,11 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Server.src.DTOs
 {
-    public class TokenResponseDto
-    {
-        public string Token { get; set; } = string.Empty;
-    }
-
     public class UserResponseDto
     {
         public string Name { get; set; } = string.Empty;
@@ -93,7 +88,7 @@ namespace Server.src.DTOs
     }
 
     // SwaggerUI上でのExample Valueの設定
-    public class ResponseFilter : ISchemaFilter
+    public class UserResponseFilter : ISchemaFilter
     {
         // キャメルケースに変換するヘルパー
         private string ToCamelCase(string str)
