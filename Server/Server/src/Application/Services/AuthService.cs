@@ -24,11 +24,24 @@ namespace Server.src.Services
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
+            _logger = logger;
+
             _jwtKey = Environment.GetEnvironmentVariable("JWT__KEY")!;
             _jwtIssuer = Environment.GetEnvironmentVariable("JWT__ISSUER")!;
             _jwtAudience = Environment.GetEnvironmentVariable("JWT__AUDIENCE")!;
 
-            _logger = logger;
+            if (string.IsNullOrEmpty(_jwtKey))
+            {
+                throw new InvalidOperationException("JWT Key ('JWT__KEY') is not configured in environment variables.");
+            }
+            if (string.IsNullOrEmpty(_jwtIssuer))
+            {
+                throw new InvalidOperationException("JWT Issuer ('JWT__ISSUER') is not configured in environment variables.");
+            }
+            if (string.IsNullOrEmpty(_jwtAudience))
+            {
+                throw new InvalidOperationException("JWT Audience ('JWT__AUDIENCE') is not configured in environment variables.");
+            }
         }
 
         public async Task<string?> LoginAsync(string email, string password)
@@ -38,7 +51,10 @@ namespace Server.src.Services
 
             // 検証
             if (!(user != null && VerifyPassword(user, password)))
+            {
+                _logger.LogDebug("Not Found User or Password is Incorrect.");
                 return null;
+            }
 
             // JWTトークンの生成
             var claims = new[]
@@ -68,10 +84,12 @@ namespace Server.src.Services
             // パスワード ハッシュ比較
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, password);
 
-            _logger.LogDebug("パスワード比較結果 : {result}", result);
+            _logger.LogDebug("Password comparison results : {result}", result);
 
             if (result == PasswordVerificationResult.Success) return true;
             else return false;
         }
+
+
     }
 }
