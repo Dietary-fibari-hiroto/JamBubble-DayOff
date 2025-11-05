@@ -21,7 +21,6 @@ namespace Server.src.Repositories
             var user = await _context.Users
                 .Include(u => u.UserHistory) // 先行読み込み
                 .Include(u => u.FavoriteMusic)
-                .Include(u => u.UserProviders)
                 //.AsNoTracking() // 読み込み専用 // ここで追跡しておくとupdate時に変更保存するだけで済むらしい
                 .FirstOrDefaultAsync(u => u.Id == id);
             return user;

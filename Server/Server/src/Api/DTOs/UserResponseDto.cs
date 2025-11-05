@@ -73,7 +73,7 @@ namespace Server.src.DTOs
         public UserResponseDto User { get; set; }
         public UserHistoryResponseDto? UserHistory { get; set; } = null;
         public FavoriteMusicResponseDto? FavoriteMusic { get; set; } = null;
-        public List<UserProviderResponseDto>? UserProviders { get; set; } = null;
+        // public List<UserProviderResponseDto>? UserProviders { get; set; } = null;
 
         public UserAllDataResponseDto(User user)
         {
@@ -89,12 +89,12 @@ namespace Server.src.DTOs
                 FavoriteMusic = new FavoriteMusicResponseDto(user.FavoriteMusic);
             }
 
-            if (user.UserProviders != null && user.UserProviders.Any())
-            {
-                UserProviders = user.UserProviders
-                    .Select(provider => new UserProviderResponseDto(provider))
-                    .ToList();
-            }
+            // if (user.UserProviders != null && user.UserProviders.Any())
+            // {
+            //     UserProviders = user.UserProviders
+            //         .Select(provider => new UserProviderResponseDto(provider))
+            //         .ToList();
+            // }
         }
     }
 
