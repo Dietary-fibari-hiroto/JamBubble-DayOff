@@ -56,5 +56,33 @@ namespace Server.src.Repositories
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<UserProvider>?> GetUserProvidersByUserIdAsync(int userId)
+        {
+            return await _context.UserProviders
+                .Include(up => up.Provider)
+                .Where(up => up.UserId == userId)
+                .ToListAsync();
+        }
+
+        public async Task<UserProvider?> GetUserProviderByIdsAsync(int userId, int provideId)
+        {
+            return await _context.UserProviders
+                .Include(up => up.Provider)
+                .FirstOrDefaultAsync(up => up.UserId == userId && up.ProviderId == provideId);
+        }
+
+        public async Task<UserProvider> AddUserProviderAsync(UserProvider userProvider)
+        {
+            var entry = await _context.UserProviders.AddAsync(userProvider);
+            await _context.SaveChangesAsync();
+            return entry.Entity;
+        }
+        
+        public async Task DeleteUserProviderAsync(UserProvider userProvider)
+        {
+            _context.UserProviders.Remove(userProvider);
+            await _context.SaveChangesAsync();
+        }
     }
 }

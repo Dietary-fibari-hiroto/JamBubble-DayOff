@@ -39,6 +39,10 @@ namespace Server.src.Middlewares
                     statusCode = HttpStatusCode.Conflict; // 409
                     errorMessage = "The specified Email is already in use.";
                     break;
+                case InvalidOperationException ex when ex.Message == "UserProviderConflict":
+                    statusCode = HttpStatusCode.Conflict; // 409
+                    errorMessage = "The specified User Provider is already register.";
+                    break;
             }
 
             _logger.LogError(exception, "An exception occurred: {Message}", exception.Message);

@@ -91,5 +91,33 @@ namespace Server.src.Services
 
             return true;
         }
+
+        public async Task<List<UserProviderResponseDto>?> GetUserProvidersAsync(int userId)
+        {
+            var userProviders = await _repo.GetUserProvidersByUserIdAsync(userId);
+            if (userProviders == null)
+            {
+                return null;
+            }
+
+            return userProviders.Select(up => new UserProviderResponseDto(up)).ToList();
+        }
+
+        public async Task<UserProviderResponseDto?> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId)
+        {
+            // すでに存在するか確認
+            var existingUserProvider = await _repo.GetUserProviderByIdsAsync(userId, userProviderDto.ProviderId);
+            if (existingUserProvider != null)
+            {
+                throw new InvalidOperationException("UserProviderConflict"); // 例外スロー
+            }
+
+            var userProvider = userProviderDto.RequestToUserProvider(new UserProvider(), userId);
+        }
+
+        public async Task<bool> DeleteUserProviderAsync(DeleteUserProviderRequestDto providerDto, int userId)
+        {
+            
+        }
     }
 }

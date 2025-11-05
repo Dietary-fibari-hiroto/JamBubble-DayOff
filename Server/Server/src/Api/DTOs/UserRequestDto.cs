@@ -116,12 +116,12 @@ namespace Server.src.DTOs
 
         public User RequestDtoToEntitie(User user)
         {
-            if(this.userDto != null)
+            if (this.userDto != null)
             {
                 user = this.userDto.RequestToUser(user);
             }
 
-            if(this.FavoriteMusicDto != null && user.FavoriteMusic != null)
+            if (this.FavoriteMusicDto != null && user.FavoriteMusic != null)
             {
                 user.FavoriteMusic = this.FavoriteMusicDto.RequestToFavoriteMusic(user.FavoriteMusic);
             }
@@ -129,6 +129,33 @@ namespace Server.src.DTOs
             return user;
 
         }
+    }
+
+    public class RegisterUserProviderRequestDto
+    {
+        // TODO:プロバイダー登録時のレクエスト内容を考える
+        [Required]
+        public required int ProviderId { get; set; }
+        [Required]
+        public required string Name { get; set; }
+        [Required]
+        public required string Password { get; set; }
+
+        public UserProvider RequestToUserProvider(UserProvider userProvider, int userId)
+        {
+            userProvider.UserId = userId;
+            userProvider.ProviderId = this.ProviderId;
+            userProvider.Name = this.Name;
+            userProvider.Password = this.Password;
+
+            return userProvider;
+        }
+    }
+
+    public class DeleteUserProviderRequestDto
+    {
+        [Required]
+        public required int ProviderId { get; set; }
     }
 
     public class RequestFilter : ISchemaFilter
@@ -202,21 +229,23 @@ namespace Server.src.DTOs
                 };
             }
 
-            //if (context.Type == typeof())
-            //{
-            //    schema.Example = new OpenApiObject
-            //    {
-            //          
-            //    };
-            //}
+            if (context.Type == typeof(RegisterUserProviderRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.ProviderId))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.Password))] = new OpenApiString("password"),
+                };
+            }
 
-            //if (context.Type == typeof())
-            //{
-            //    schema.Example = new OpenApiObject
-            //    {
-            //          
-            //    };
-            //}
+            if (context.Type == typeof(DeleteUserProviderRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(DeleteUserProviderRequestDto.ProviderId))] = new OpenApiInteger(1),
+                };
+            }
 
             //if (context.Type == typeof())
             //{

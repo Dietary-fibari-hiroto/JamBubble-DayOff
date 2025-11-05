@@ -10,10 +10,10 @@ namespace Server.src.Api.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-    public class UserController : ControllerBase
+    public class userController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        public userController(IUserService userService)
         {
             _userService = userService;
         }
@@ -48,11 +48,11 @@ namespace Server.src.Api.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status201Created)]
-        public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto user)
+        public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto user)
         {
             var addedUser = await _userService.AddUserAsync(user);
 
-            return CreatedAtAction(nameof(Register), addedUser);
+            return CreatedAtAction(nameof(RegisterUser), addedUser);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Server.src.Api.Controllers
         [Authorize]
         [HttpPut]
         [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Update([FromBody] UpdateUserAllDataRequestDto user)
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserAllDataRequestDto user)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
 
@@ -85,7 +85,7 @@ namespace Server.src.Api.Controllers
         [Authorize]
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete()
+        public async Task<IActionResult> DeleteUser()
         {
             var userId = User.GetUserId(); // JWTからIDを取得
             if (userId == null)
@@ -97,6 +97,64 @@ namespace Server.src.Api.Controllers
             if (!result)
             {
                 return NotFound();
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// ユーザーの加入しているプロバイダーを取得
+        /// </summary>
+        [Authorize]
+        [HttpGet("provider")]
+        [ProducesResponseType(typeof(List<UserProviderResponseDto>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetUserProviders()
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID in token.");
+            }
+
+            var userProviders = await _userService.GetUserProvidersAsync(userId.Value);
+            if (userProviders == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(userProviders);
+        }
+
+        /// <summary>
+        /// プロバイダーの紐づけ
+        /// </summary>
+        [Authorize]
+        [HttpPost("provider")]
+        [ProducesResponseType(typeof(List<UserProviderResponseDto>), StatusCodes.Status201Created)]
+        public async Task<IActionResult> RegisterUserProvider([FromBody] RegisterUserProviderRequestDto RequestDto)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID in token.");
+            }
+
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// 紐づけしたプロバイダーを削除
+        /// </summary>
+        [Authorize]
+        [HttpDelete("provider")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> DeleteUserProvider([FromBody] DeleteUserProviderRequestDto requestDto)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID in token.");
             }
 
             return NoContent();
