@@ -20,14 +20,16 @@ namespace Server.src.Repositories
         {
             var user = await _context.Users
                 .Include(u => u.UserHistory) // 先行読み込み
-                .AsNoTracking() // 読み込み専用
+                .Include(u => u.FavoriteMusic)
+                .Include(u => u.UserProviders)
+                //.AsNoTracking() // 読み込み専用 // ここで追跡しておくとupdate時に変更保存するだけで済むらしい
                 .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
         // Emailでユーザーを取得
         public async Task<User?> GetByEmailAsync(string email) => await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         // ユーザー登録
-        public async Task<User?> AddAsync(User user)
+        public async Task<User> AddAsync(User user)
         {
             // ユーザーの履歴も同時に作成
             user.UserHistory = new UserHistory
@@ -35,17 +37,19 @@ namespace Server.src.Repositories
                 User = user,
                 SessionCount = 0
             };
+
+            // TODO:お気に入り音楽IDをnull許容にして、ユーザー作成時に同時に作成するのはどうだろうか？
             
             var entry = await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return entry.Entity;
         }
         // ユーザー情報更新
-        public async Task<User?> UpdateAsync(User user)
+        public async Task UpdateAsync(User user)
         {
-            _context.Users.Update(user);
+            // なんか情報取得時に追跡しているのでupdateはいらないらしい
+            //_context.Users.Update(user);
             await _context.SaveChangesAsync();
-            return user;
         }
         // ユーザー情報の削除
         public async Task DeleteAsync(User user)
