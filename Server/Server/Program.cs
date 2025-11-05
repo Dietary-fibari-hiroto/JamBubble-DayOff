@@ -11,6 +11,7 @@ using System.Security.Cryptography.Xml;
 using Server.src.DTOs;
 using Server.src.Entities;
 using Microsoft.AspNetCore.Identity;
+using Server.src.Middlewares;
 
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
@@ -94,6 +95,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
+
+app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理ミドルウェア
 
 app.UseAuthentication(); // 認証ミドルウェア
 app.UseAuthorization(); // 認可ミドルウェア
