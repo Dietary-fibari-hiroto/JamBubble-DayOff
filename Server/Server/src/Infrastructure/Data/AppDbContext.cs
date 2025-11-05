@@ -77,6 +77,23 @@ namespace Server.Data
 
             modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
 
+            // カスケード削除の設定
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.UserHistory)
+                .WithOne(h => h.User)
+                .HasForeignKey<UserHistory>(h => h.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.FavoriteMusic)
+                .WithOne(f => f.User)
+                .HasForeignKey<FavoriteMusic>(f => f.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.UserProviders)
+                .WithOne(p => p.User)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             // ユニーク制約の定義
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
         }

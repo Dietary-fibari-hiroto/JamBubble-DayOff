@@ -39,7 +39,7 @@ namespace Server.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("favorite_musics");
+                    b.ToTable("favorite_musics", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.FavoriteMusicSummary", b =>
@@ -55,7 +55,7 @@ namespace Server.Migrations
 
                     b.HasKey("MusicId");
 
-                    b.ToTable("favorite_music_summaries");
+                    b.ToTable("favorite_music_summaries", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Fornow", b =>
@@ -93,7 +93,7 @@ namespace Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("fornows");
+                    b.ToTable("fornows", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.FornowLike", b =>
@@ -113,7 +113,7 @@ namespace Server.Migrations
                     b.HasIndex("FornowId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("fornow_likes");
+                    b.ToTable("fornow_likes", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Friend", b =>
@@ -137,7 +137,7 @@ namespace Server.Migrations
                     b.HasIndex("User1Id", "User2Id")
                         .IsUnique();
 
-                    b.ToTable("friends");
+                    b.ToTable("friends", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.FriendRequest", b =>
@@ -172,7 +172,7 @@ namespace Server.Migrations
 
                     b.HasIndex("PassUserId");
 
-                    b.ToTable("friend_requests");
+                    b.ToTable("friend_requests", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Guest", b =>
@@ -207,7 +207,7 @@ namespace Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("guests");
+                    b.ToTable("guests", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Message", b =>
@@ -246,7 +246,7 @@ namespace Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("messages");
+                    b.ToTable("messages", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Provider", b =>
@@ -266,7 +266,7 @@ namespace Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("providers");
+                    b.ToTable("providers", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Request", b =>
@@ -298,7 +298,7 @@ namespace Server.Migrations
 
                     b.HasIndex("SessionId");
 
-                    b.ToTable("requests");
+                    b.ToTable("requests", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.RequestCache", b =>
@@ -334,7 +334,7 @@ namespace Server.Migrations
 
                     b.HasIndex("SessionId");
 
-                    b.ToTable("request_caches");
+                    b.ToTable("request_caches", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Scene", b =>
@@ -353,7 +353,7 @@ namespace Server.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("scenes");
+                    b.ToTable("scenes", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Session", b =>
@@ -433,7 +433,7 @@ namespace Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("sessions");
+                    b.ToTable("sessions", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.SessionSortSetting", b =>
@@ -458,7 +458,7 @@ namespace Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("session_sort_settings");
+                    b.ToTable("session_sort_settings", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.SessionTag", b =>
@@ -478,7 +478,7 @@ namespace Server.Migrations
                     b.HasIndex("SessionId", "TagId")
                         .IsUnique();
 
-                    b.ToTable("session_tags");
+                    b.ToTable("session_tags", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.StreetPassHistory", b =>
@@ -516,7 +516,7 @@ namespace Server.Migrations
 
                     b.HasIndex("PassedUser2Id");
 
-                    b.ToTable("street_pass_histories");
+                    b.ToTable("street_pass_histories", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.StreetPassOption", b =>
@@ -541,7 +541,7 @@ namespace Server.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("street_pass_options");
+                    b.ToTable("street_pass_options", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.Tag", b =>
@@ -561,7 +561,7 @@ namespace Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tags");
+                    b.ToTable("tags", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.User", b =>
@@ -631,7 +631,7 @@ namespace Server.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.UserBlock", b =>
@@ -655,7 +655,7 @@ namespace Server.Migrations
                     b.HasIndex("UserId", "BlockedUserId")
                         .IsUnique();
 
-                    b.ToTable("user_blocks");
+                    b.ToTable("user_blocks", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.UserHistory", b =>
@@ -673,7 +673,7 @@ namespace Server.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("user_histories");
+                    b.ToTable("user_histories", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.UserProvider", b =>
@@ -705,7 +705,7 @@ namespace Server.Migrations
                     b.HasIndex("UserId", "ProviderId")
                         .IsUnique();
 
-                    b.ToTable("user_providers");
+                    b.ToTable("user_providers", (string)null);
                 });
 
             modelBuilder.Entity("Server.src.Entities.FavoriteMusic", b =>
