@@ -90,7 +90,7 @@ namespace Server.Data
                 .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<User>()
                 .HasMany(u => u.UserProviders)
-                .WithOne()
+                .WithOne(up => up.User)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
