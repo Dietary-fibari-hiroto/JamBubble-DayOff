@@ -59,12 +59,26 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXV0aExheW91
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-wid4jrji3k
 
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Layout/BlurPanel.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQmx1clBhbmVsLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-xwwqcsvl4y
+
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Layout/GateScreenLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcR2F0ZVNjcmVlbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-2k118njfyr
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Layout/MainBg.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkJnLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-chkj2z04vn
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Auths/EmailComplete.razor]
 build_metadata.AdditionalFiles.GenKind = 
@@ -136,12 +150,166 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoc1xXZWxj
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-typ38s6gyf
 
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionConfirm.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uQ29uZmlybS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-bmtsla94lm
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionCreate.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-poh2r4vo72
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionFriendInvite.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uRnJpZW5kSW52aXRlLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-e8fliqij1e
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionLink.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uTGluay5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-efhp3v7l8p
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionLoading.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uTG9hZGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-a6ggk69e7u
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionPlaylist.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uUGxheWxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-28oblluqjo
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Features/SessionRequest.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0dXJlc1xTZXNzaW9uUmVxdWVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-fpkc1thxx5
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Friends/Friend.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGcmllbmRzXEZyaWVuZC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-g3r5tdzdwn
+
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-yaa7x8nh74
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Playlists/Playlist.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQbGF5bGlzdHNcUGxheWxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-gnh636721k
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Playlists/PlaylistDetail.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQbGF5bGlzdHNcUGxheWxpc3REZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-muxlw3gehv
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Search/Search.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hcU2VhcmNoLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-nff1e7nsws
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Sessions/Session.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uc1xTZXNzaW9uLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-iz7zt4ceak
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Sessions/SessionDetail.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uc1xTZXNzaW9uRGV0YWlsLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-cbmrugy248
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Sessions/SessionList.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uc1xTZXNzaW9uTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-468twrxx6f
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Sessions/SessionSearch.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uc1xTZXNzaW9uU2VhcmNoLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-hvw7aq0gmx
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Test.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-73u6ue6psq
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Users/Help.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xIZWxwLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-4y3lm02mji
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Users/Main.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xNYWluLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-dns7dk9u5z
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Users/Profile.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xQcm9maWxlLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-ds0wfwt3qq
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Users/Setting.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xTZXR0aW5nLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-l7dgn6q329
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/Pages/Users/UserProfile.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xVc2VyUHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-51xjhdfpbu
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/CancelButton.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXENhbmNlbEJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-ibtxpev4k0
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/EditButton.razor]
 build_metadata.AdditionalFiles.GenKind = 
@@ -150,12 +318,26 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXEVkaXRC
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-qyethb8ywj
 
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/MiniSubmit.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXE1pbmlTdWJtaXQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-5ku5rtzgkx
+
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/RawTextButton.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXFJhd1RleHRCdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-jo6og255ut
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/ReturnButton.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXFJldHVybkJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-jvdq0b04jh
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/Submit.razor]
 build_metadata.AdditionalFiles.GenKind = 
@@ -164,12 +346,159 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXFN1Ym1p
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-aphgzjnh2n
 
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/buttons/UserIcon.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxidXR0b25zXFVzZXJJY29uLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-6doyo973z6
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/cards/MenberCard.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxjYXJkc1xNZW5iZXJDYXJkLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-v4vgxmb0wd
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/cards/SessionCard.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxjYXJkc1xTZXNzaW9uQ2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-2dm4irxgi4
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/cards/SessionCardBig.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxjYXJkc1xTZXNzaW9uQ2FyZEJpZy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-7lhp4ntnom
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/cards/SongCard.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxjYXJkc1xTb25nQ2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-5vvirfxtc4
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/Fornow.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXEZvcm5vdy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-maqjhtgc2t
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/FriendAddDialog.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXEZyaWVuZEFkZERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-yztu4to0jh
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/InvitationDaialog.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXEludml0YXRpb25EYWlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-sa5ca7hgkk
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/MenberDialog.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXE1lbmJlckRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-5ezkza4ptz
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/MessageBox.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXE1lc3NhZ2VCb3gucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-jbusjiwu3b
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/MusicPanel.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXE11c2ljUGFuZWwucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-59k5iqs9y5
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/RequestBox.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXFJlcXVlc3RCb3gucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-o5r4tx2r0l
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/RequestDialog.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXFJlcXVlc3REaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-v50ixnppjq
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/dialogs/UserIconDialog.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxkaWFsb2dzXFVzZXJJY29uRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-r0lyhgd2sz
+
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/Bubble.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xCdWJibGUucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-ki1fh1kdss
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/FooterMenu.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xGb290ZXJNZW51LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-7qs860mlrv
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/FornowIcon.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xGb3Jub3dJY29uLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-jqkswn5h0a
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/HeaderMenu.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xIZWFkZXJNZW51LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-iump08z4lu
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/MusicChip.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xNdXNpY0NoaXAucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-el1psrvkxl
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/MusicListLabel.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xNdXNpY0xpc3RMYWJlbC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-vw50cek3up
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/PlaylistBar.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xQbGF5bGlzdEJhci5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-ppqwuu6nb8
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/elements/Tag.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xUYWcucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-y424fpu79i
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/inputs/BirthDatePicker.razor]
 build_metadata.AdditionalFiles.GenKind = 
@@ -184,6 +513,13 @@ build_metadata.AdditionalFiles.ManifestResourceName =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxpbnB1dHNcSW5wdXRJbWFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-q4s4srp7in
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/inputs/SearchBar.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxpbnB1dHNcU2VhcmNoQmFyLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-4hyg94749b
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/inputs/SelecterBox.razor]
 build_metadata.AdditionalFiles.GenKind = 
@@ -205,6 +541,13 @@ build_metadata.AdditionalFiles.ManifestResourceName =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxwYW5uZWxzXEF1dGhCZ1Bhbm5lbC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-cjxudmptx5
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/pannels/SessionDeck.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxwYW5uZWxzXFNlc3Npb25EZWNrLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-t9mzio6pd7
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Client/Client/Components/UI/typographies/FormConfirmLabel.razor]
 build_metadata.AdditionalFiles.GenKind = 

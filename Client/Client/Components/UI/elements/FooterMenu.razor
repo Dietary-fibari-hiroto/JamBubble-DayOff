@@ -1,0 +1,40 @@
+﻿@inject NavigationManager NavManager
+
+<div class="footer">
+    <div class="footer-container">
+        <div class="transition-container">
+            <button @onclick='()=>Navigate("/app/main")' class="transition-content">
+                <img src = "images/elementicons/house.svg"/>
+                <p class="string-mini">ホーム</p>
+            </button>
+            <button @onclick='() => Navigate("/app/playlist")' class="transition-content">
+                <img src="images/elementicons/list-music.svg" />
+                <p class="string-mini">プレイリスト</p>
+            </button>
+            <button class="transition-content">
+                <img src="images/elementicons/search.svg" />
+                <p class="string-mini">検索</p>
+            </button>
+            <button class="transition-content">
+                <img src="images/elementicons/users.svg" />
+                <p class="string-mini">ホーム</p>
+            </button>
+            <button class="transition-content">
+                <img src="images/elementicons/shell.svg" />
+                <p class="string-mini">ホーム</p>
+            </button>
+
+        </div>
+        <div class="footer-bg" />
+    </div>
+</div>
+
+
+@code{
+
+    private Task Navigate(string path)
+    {
+        NavManager.NavigateTo(path);
+        return Task.CompletedTask;
+    }
+}

@@ -1,6 +1,6 @@
 ﻿@layout AuthLayout
 @inject NavigationManager NavManager
-@page "/emailconfirm"
+@page "/auth/emailconfirm"
 <AuthBgPannel>
     <img class="icons" src="images/icons/jumbubblelogo.png" />
     <p class="string-s">メールアドレスを確認してください</p>
@@ -30,13 +30,13 @@
 
     private Task ToConfirm()
     {
-        NavManager.NavigateTo("/emailcomplete");
+        NavManager.NavigateTo("/auth/emailcomplete");
         return Task.CompletedTask;
     }
 
     private Task ToHome()
     {
-        NavManager.NavigateTo("/welcomescreen");
+        NavManager.NavigateTo("/auth/welcomescreen");
         return Task.CompletedTask;
     }
 }

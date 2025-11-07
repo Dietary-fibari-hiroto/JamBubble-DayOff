@@ -1,4 +1,4 @@
-﻿@page "/registerconfirm"
+﻿@page "/auth/registerconfirm"
 @layout AuthLayout
 @inject NavigationManager NavManager
 <AuthBgPannel>
@@ -32,12 +32,12 @@
 
     private Task OnSubmit()
     {
-        NavManager.NavigateTo("/emailconfirm");
+        NavManager.NavigateTo("/auth/emailconfirm");
         return Task.CompletedTask;
     } 
     private Task OnReturn()
     {
-        NavManager.NavigateTo("/register");
+        NavManager.NavigateTo("/auth/register");
         return Task.CompletedTask;
     }
 }

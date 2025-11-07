@@ -1,4 +1,4 @@
-﻿@page "/providerconfirm"
+﻿@page "/auth/providerconfirm"
 @layout AuthLayout
 @inject NavigationManager NavManager
 <AuthBgPannel>
@@ -22,7 +22,7 @@
 @code{
     private Task ToNext()
     {
-        NavManager.NavigateTo("/registercomplete");
+        NavManager.NavigateTo("/auth/registercomplete");
         return Task.CompletedTask;
     }
 }

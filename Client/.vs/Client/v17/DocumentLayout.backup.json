@@ -3,72 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\loadingscreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\loadingscreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\layout\\gatescreenlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\layout\\gatescreenlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\welcomescreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\welcomescreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\registerconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\registerconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\registercomplete.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\registercomplete.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\providerconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\providerconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\explain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\explain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\emailconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\emailconfirm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\auths\\emailcomplete.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\auths\\emailcomplete.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,208 +26,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Register.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Register.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\Register.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Register.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\Register.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:53:03.468Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProviderConfirm.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\ProviderConfirm.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\ProviderConfirm.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\ProviderConfirm.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\ProviderConfirm.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:52:57.327Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Login.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\Login.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Login.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\Login.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:52:51.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Explain.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Explain.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\Explain.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\Explain.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\Explain.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwIAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:52:35.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EmailConfirm.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\EmailConfirm.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\EmailConfirm.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\EmailConfirm.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\EmailConfirm.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:52:31.902Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EmailComplete.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\EmailComplete.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\EmailComplete.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\EmailComplete.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\EmailComplete.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:52:27.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "Client\\wwwroot\\index.html",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\index.html",
               "RelativeToolTip": "Client\\wwwroot\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-31T01:49:45.259Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:53:30.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoadingScreen.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\LoadingScreen.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\LoadingScreen.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\LoadingScreen.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\LoadingScreen.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T02:02:31.516Z",
+              "WhenOpened": "2025-11-07T06:46:38.713Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RegisterComplete.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\RegisterComplete.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\RegisterComplete.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\RegisterComplete.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\RegisterComplete.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:53:07.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Home.razor.css",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor.css",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Home.razor.css",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Home.razor.css",
-              "RelativeToolTip": "Client\\Components\\Pages\\Home.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-31T02:04:02.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterConfirm.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\RegisterConfirm.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\RegisterConfirm.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\RegisterConfirm.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\RegisterConfirm.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:53:11.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "app.css",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\app.css",
-              "RelativeDocumentMoniker": "Client\\wwwroot\\css\\app.css",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\app.css",
-              "RelativeToolTip": "Client\\wwwroot\\css\\app.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-31T01:53:57.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GateScreenLayout.razor.css",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Layout\\GateScreenLayout.razor.css",
-              "RelativeDocumentMoniker": "Client\\Components\\Layout\\GateScreenLayout.razor.css",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Layout\\GateScreenLayout.razor.css",
-              "RelativeToolTip": "Client\\Components\\Layout\\GateScreenLayout.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-31T01:59:05.944Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WelcomeScreen.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\WelcomeScreen.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Auths\\WelcomeScreen.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Auths\\WelcomeScreen.razor",
-              "RelativeToolTip": "Client\\Components\\Pages\\Auths\\WelcomeScreen.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:53:15.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\_Imports.razor",
-              "RelativeToolTip": "Client\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:51:33.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Routes.razor",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Routes.razor",
-              "RelativeDocumentMoniker": "Client\\Components\\Routes.razor",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Routes.razor",
-              "RelativeToolTip": "Client\\Components\\Routes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-31T01:51:26.614Z"
             }
           ]
         }

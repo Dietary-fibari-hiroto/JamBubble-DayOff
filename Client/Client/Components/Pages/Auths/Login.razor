@@ -1,4 +1,4 @@
-﻿@page "/login"
+﻿@page "/auth/login"
 @layout AuthLayout
 @inject NavigationManager NavManager
 
@@ -22,13 +22,13 @@
 @code {
     private Task OnReturn()
     {
-        NavManager.NavigateTo("/welcomescreen");
+        NavManager.NavigateTo("/auth/welcomescreen");
         return Task.CompletedTask;
     }
 
     private Task OnSubmit()
     {
-        NavManager.NavigateTo("/registerconfirm");
+        NavManager.NavigateTo("/auth/registerconfirm");
         return Task.CompletedTask;
     }
 }

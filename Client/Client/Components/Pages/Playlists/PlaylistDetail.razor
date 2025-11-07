@@ -1,0 +1,45 @@
+﻿@page "/app/playlist/detail"
+
+
+<div class="page-container">
+    <ReturnButton path="/app/playlist" />
+    <div class="Three-dot-leader">
+        <img src="images/elementicons/ellipsis.svg"/>
+    </div>
+    <section class="album-container">
+        <img class="alubm-img" src="images/photos/offn.jpg" />
+        <h1 class = "string-m-bold">淡路遠征!!!</h1>
+        <div>
+            <p class ="string-s">加藤 勇作.Spotify</p>
+            <p class="string-sss">2023/9/29</p>
+        </div>
+    </section>
+    <section class="operation-container">
+        <MiniSubmit Label="再生" CssClass="white" />
+        <div class="margin-x-10" />
+        <MiniSubmit Label="シャッフル再生" CssClass="secondary-bg" />
+        <img class="share" src = "images/elementicons/share.svg"/>
+    </section>
+    @if (IsCanSave)
+    {
+        <section class="save-button-container flex-all-center">
+            <MiniSubmit Label="セッションを保存" CssClass="primary" />
+        </section>
+    }
+    <section class="list-container">
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+        <MusicChip />
+    </section>
+</div>
+<img class="background-img" src="images/photos/offn.jpg" />
+
+@code {
+    private bool IsCanSave = true;
+}

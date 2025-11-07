@@ -1,4 +1,4 @@
-﻿@page "/welcomescreen"
+﻿@page "/auth/welcomescreen"
 @layout GateScreenLayout
 @inject NavigationManager NavManager
 
@@ -26,12 +26,12 @@
 @code {
     private Task LoginSubmit()
     {
-        NavManager.NavigateTo("/login");
+        NavManager.NavigateTo("/auth/login");
         return Task.CompletedTask;
     }
     private Task RegisterSubmit()
     {
-        NavManager.NavigateTo("/explain");
+        NavManager.NavigateTo("/auth/explain");
         return Task.CompletedTask;
     }
 }

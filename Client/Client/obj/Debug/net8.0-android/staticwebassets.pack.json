@@ -5,12 +5,12 @@
       "PackagePath": "staticwebassets\\Client.styles.css"
     },
     {
-      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\Variable.css",
-      "PackagePath": "staticwebassets\\css\\Variable.css"
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\app.css",
-      "PackagePath": "staticwebassets\\css\\app.css"
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\Variable.css",
+      "PackagePath": "staticwebassets\\css\\Variable.css"
     },
     {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\css\\fonts.css",
@@ -97,6 +97,10 @@
       "PackagePath": "staticwebassets\\images\\elementIcons\\fast-forward.svg"
     },
     {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\focus-black.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\focus-black.svg"
+    },
+    {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\focus.svg",
       "PackagePath": "staticwebassets\\images\\elementIcons\\focus.svg"
     },
@@ -157,6 +161,10 @@
       "PackagePath": "staticwebassets\\images\\elementIcons\\repeat.svg"
     },
     {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\return.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\return.svg"
+    },
+    {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\search.svg",
       "PackagePath": "staticwebassets\\images\\elementIcons\\search.svg"
     },
@@ -201,6 +209,10 @@
       "PackagePath": "staticwebassets\\images\\elementIcons\\users.svg"
     },
     {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\x-black.svg",
+      "PackagePath": "staticwebassets\\images\\elementIcons\\x-black.svg"
+    },
+    {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\elementIcons\\x.svg",
       "PackagePath": "staticwebassets\\images\\elementIcons\\x.svg"
     },
@@ -221,8 +233,24 @@
       "PackagePath": "staticwebassets\\images\\icons\\spotify_icon.png"
     },
     {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\movie.jpg",
+      "PackagePath": "staticwebassets\\images\\photos\\movie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\offn.jpg",
+      "PackagePath": "staticwebassets\\images\\photos\\offn.jpg"
+    },
+    {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\pexels-thevibrantmachine-3066867.jpg",
       "PackagePath": "staticwebassets\\images\\photos\\pexels-thevibrantmachine-3066867.jpg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\photo1.jpg",
+      "PackagePath": "staticwebassets\\images\\photos\\photo1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\images\\photos\\testqr.png",
+      "PackagePath": "staticwebassets\\images\\photos\\testqr.png"
     },
     {
       "Id": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\wwwroot\\index.html",

@@ -1,0 +1,59 @@
+﻿@page "/app/friend"
+<section class="page-header">
+    <SearchBar Placeholder="友達を検索" /><UserIcon />
+</section>
+<section class="menu">
+    <button @onclick="SwitchFriendAddDialog"><img src="images/elementicons/user-round-plus.svg" /></button>
+    <button><img src="images/elementicons/map-pinned.svg" /></button>
+    <button><img src="images/elementicons/mail.svg" /></button>
+    <button><img src="images/elementicons/message-circle-plus.svg" /></button>
+</section>
+<section>
+    <p class="string-reg-bold">ForNow</p>
+    <div class="fornow-container"><FornowIcon /><FornowIcon /><FornowIcon /></div>
+</section>
+<SessionDeck title="フレンドのセッション" />
+<section>
+        <div class="label-container">
+            <p class="string-reg-bold">過去の公開セッション</p>
+            <button class="string-sss more-button">
+                もっとみる<div class="arrow-container"><div class="arrow-right"></div><div class="arrow-right-after"></div></div>
+            </button>
+        </div>
+        <div>
+        <PlaylistBar />
+        <PlaylistBar />
+        <PlaylistBar />
+        </div>
+</section>
+<section>
+    <div class="label-container">
+        <p class="string-reg-bold">フレンド</p>
+    </div>
+    <div class="plate-container">
+        <div class="name-plate">
+            <img class="friend-icon" src="images/photos/offn.jpg" />
+            <p>笹山ゆり</p>
+        </div>
+        <div class="name-plate">
+            <img class="friend-icon" src="images/photos/offn.jpg" />
+            <p>笹山ゆり</p>
+        </div>
+    </div>
+</section>
+
+@if (isFriendAddDialog)
+{
+    <FriendAddDialog OnClick="SwitchFriendAddDialog" />
+}
+
+@code{
+    private bool isFriendAddDialog = false;
+
+    private Task SwitchFriendAddDialog()
+    {
+        isFriendAddDialog = !isFriendAddDialog;
+        return Task.CompletedTask;
+    }
+
+}

@@ -1,0 +1,9 @@
+﻿
+
+.session-list {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}

@@ -1,0 +1,115 @@
+﻿
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    overflow-y:hidden;
+}
+
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+section {
+    margin-bottom: 20px;
+}
+
+
+
+.album-container {
+    text-align: center;
+}
+
+    .album-container > * + * {
+        margin-top: 10px;
+    }
+
+.alubm-img {
+    width: 200px;
+    height: 200px;
+}
+
+.operation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+
+.share {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+
+.time-bar-container {
+    width: auto;
+    margin: 20px 0;
+}
+
+    .time-bar-container > .time-bar {
+        width: 300px;
+        border-bottom: white 2px solid;
+    }
+
+    .time-bar-container > .timer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+
+.message-container {
+    position:relative;
+    width:90%;
+    height:auto;
+    padding:20px 0;
+}
+.message-bg {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background:#00000088;
+    border-radius:10px;
+}

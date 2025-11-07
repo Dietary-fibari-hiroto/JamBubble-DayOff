@@ -1,0 +1,9 @@
+﻿
+@inject NavigationManager NavManager
+<img @onclick="@OnClick" class="cancel-button @(BlackMode ? "black" : "")" src="@(BlackMode ? "images/elementicons/x-black.svg" : "images/elementicons/x.svg")" />
+
+@code {
+    [Parameter] public bool BlackMode { get; set; } = false;
+    [Parameter] public EventCallback OnClick { get; set; } 
+
+}

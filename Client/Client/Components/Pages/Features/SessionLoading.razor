@@ -1,0 +1,29 @@
+﻿@page "/app/function/session/loading"
+@inject NavigationManager Nav
+<div @onclick="TestRender" class="loading-container">
+    @if (!IsCompletedLaoding)
+    {
+        <img class="app-icon" src="images/elementicons/shell.svg" />
+        <p class="string-ss">サーバーにリクエストいています...</p>
+    }
+    else
+    {
+        <p class="string-ss">
+            準備ができました！
+        </p>
+        <p class="string-ss">
+            それではお楽しみください！
+        </p>
+    }
+</div>
+
+
+@code{
+    private bool IsCompletedLaoding = false;
+    private async Task TestRender()
+    {
+        IsCompletedLaoding = true;
+        await Task.Delay(2000);
+        Nav.NavigateTo("/app/function/session/link");
+    }
+}
