@@ -43,11 +43,28 @@ namespace Server.src.Api.Controllers
         }
 
         /// <summary>
+        /// ユーザーのプロフィール情報を返す
+        /// </summary>
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(UserProfileResponseDto), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetProfile(int id)
+        {
+            var profile = await _userService.GetUserProfileAsync(id);
+            if (profile == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            return Ok(profile);
+        }
+
+        /// <summary>
         /// ユーザー作成
         /// </summary>
         [AllowAnonymous]
         [HttpPost]
-        [ProducesResponseType(typeof(UserResponseDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status201Created)]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto user)
         {
             var addedUser = await _userService.AddUserAsync(user);

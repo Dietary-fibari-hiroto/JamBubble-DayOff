@@ -29,11 +29,20 @@ namespace Server.src.Services
                 return null;
             }
 
-            var userResponseDto = new UserAllDataResponseDto(user);
-
-            return userResponseDto;
+            return new UserAllDataResponseDto(user);
         }
-        public async Task<UserResponseDto?> AddUserAsync(RegisterUserRequestDto userDto)
+        public async Task<UserProfileResponseDto?> GetUserProfileAsync(int userId)
+        {
+            // IDで取得
+            var user = await _repo.GetUserByIdAsync(userId, false);
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new UserProfileResponseDto(user);
+        }
+        public async Task<UserAllDataResponseDto?> AddUserAsync(RegisterUserRequestDto userDto)
         {
             // すでに同じEmailのユーザーが存在するか確認
             var existingUser = await _repo.GetUserByEmailAsync(userDto.Email);
@@ -61,7 +70,7 @@ namespace Server.src.Services
 
             var addedUser = await _repo.AddUserAsync(user);
 
-            return new UserResponseDto(addedUser);
+            return new UserAllDataResponseDto(addedUser);
         }
 
         public async Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateDataDto, int userId)
@@ -71,7 +80,7 @@ namespace Server.src.Services
             if (updateUser == null) return null;
 
             // Emailが重複していないかをチェック
-            var newEmail = updateDataDto.userDto?.Email;
+            var newEmail = updateDataDto.Email;
             if(newEmail != null && newEmail != updateUser.Email)
             {
                 var existingUser = await _repo.GetUserByEmailAsync(newEmail);
@@ -80,8 +89,8 @@ namespace Server.src.Services
                     throw new InvalidOperationException("EmailConflict");
                 }
             }
-            string? newPassword = updateDataDto.userDto?.Password; // 新しい平文のパスワード一時保存
-            updateUser = updateDataDto.RequestDtoToEntitie(updateUser);
+            string? newPassword = updateDataDto.Password; // 新しい平文のパスワード一時保存
+            updateUser = updateDataDto.RequestToUser(updateUser);
             if (!string.IsNullOrEmpty(newPassword))
             {
                 // パスワードのハッシュ化
