@@ -16,16 +16,20 @@ namespace Server.src.Repositories
         // IDでユーザーを取得
         // public async Task<User?> GetByIdAsync(int id) => await _context.Users.FindAsync(id);
         // IDでユーザーのすべての情報を取得
-        public async Task<User?> GetUserByIdAsync(int id)
+        public async Task<User?> GetUserByIdAsync(int id, bool asTracking = true)
         {
-            var user = await _context.Users
-                .Include(u => u.UserHistory) // 先行読み込み
+            IQueryable<User> query = _context.Users
+                .Include(u => u.UserHistory)
                 .Include(u => u.FavoriteMusic)
-                .Include(u => u.UserProviders)
-                //.AsNoTracking() // 読み込み専用 // ここで追跡しておくとupdate時に変更保存するだけで済むらしい
-                .FirstOrDefaultAsync(u => u.Id == id);
-            return user;
+                .Include(u => u.UserProviders);
+
+            if (!asTracking)
+            {
+                query = query.AsNoTracking(); // 追跡オフ 
+            }
+            return await query.FirstOrDefaultAsync(u => u.Id == id);
         }
+        
         // Emailでユーザーを取得
         public async Task<User?> GetUserByEmailAsync(string email) => await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         // ユーザー登録
