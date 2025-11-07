@@ -1,0 +1,20 @@
+﻿<div class="play-container @(IsPlay?"is-play":"")">
+    @if (IsPlay)
+    {
+        <img class="album" src="images/photos/offn.jpg" />
+    }
+    <p class="string-md-bold">blanket</p>
+    <p class="string-s">Frad&Hyne</p>
+    @if (IsPlay)
+    {
+        <img src="images/elementicons/shell.svg" />
+    }
+    else
+    {
+        <img src="images/elementicons/menu.svg" />  
+    }
+</div>
+
+@code{
+    [Parameter] public bool IsPlay { get; set; } = false;
+}

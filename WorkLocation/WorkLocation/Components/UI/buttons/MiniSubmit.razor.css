@@ -27,6 +27,10 @@
 .deep-gray {
     background-color: var(--color-deep-gray);
 }
+.gray {
+    background-color: var(--color-gray);
+    color:black;
+}
 
 .secondary-bg {
     background-color: var(--color-secondary-bg);
@@ -36,3 +40,4 @@
     background-color: white;
     color:black;
 }
+

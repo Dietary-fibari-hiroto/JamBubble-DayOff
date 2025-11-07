@@ -9,3 +9,8 @@
     --color-gray: #CCCCCC;
     --color-deep-gray:#555555;
 }
+
+
+.text-black{
+    color:black;
+}

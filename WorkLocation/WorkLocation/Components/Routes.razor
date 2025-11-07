@@ -20,7 +20,7 @@
     private bool ShouldShowGlobalElement()
     {
         var path = Nav.Uri.Replace(Nav.BaseUri, "");
-        string[] hidePaths = { "app/main", "app/playlist", "app/session", "app/search", "app/friend" };
+        string[] hidePaths = { "app/main", "app/playlist", "app/session", "app/search", "app/friend", "app/profile" };
 
         // hidePathsのどれかで始まっていたらtrue
         return hidePaths.Any(p => path.StartsWith(p));

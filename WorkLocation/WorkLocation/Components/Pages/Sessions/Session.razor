@@ -1,0 +1,27 @@
+﻿@page "/app/session"
+<section class="header">
+    <p class="string-reg-bold">Session</p>
+    <UserIcon/>
+</section>
+<div class="margin-y-10" />
+<section class="section-menu flex-all-center">
+    <button class="create-session-button">
+        <figure class="create-icon-container">
+            <img src ="images/elementicons/shell.svg" class="session-icon"/>
+            <p class="plus-icon string-big-bold">+</p>
+        </figure>
+        <p class="string-md-bold create-text" >
+            新しいSessionを<br/>
+            開始する
+        </p>
+    </button>
+    <div class="margin-y-10" />
+    <button class="search-session-button">
+        <img src ="images/elementicons/radio.svg"/>
+        <p class="string-md-bold">Sessionをさがす</p>
+    </button>
+
+
+</section>
+<SessionDeck title="フレンドのセッション" />
+<SessionDeck title="人気の公開セッション" />
