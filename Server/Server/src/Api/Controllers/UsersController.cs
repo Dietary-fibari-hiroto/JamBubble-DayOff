@@ -130,7 +130,7 @@ namespace Server.src.Api.Controllers
         /// </summary>
         [Authorize]
         [HttpPost("provider")]
-        [ProducesResponseType(typeof(List<UserProviderResponseDto>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(UserProviderResponseDto), StatusCodes.Status201Created)]
         public async Task<IActionResult> RegisterUserProvider([FromBody] RegisterUserProviderRequestDto RequestDto)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
@@ -139,8 +139,13 @@ namespace Server.src.Api.Controllers
                 return Unauthorized("Invalid user ID in token.");
             }
 
+            var result = await _userService.AddUserProviderAsync(RequestDto, userId.Value);
+            if (!result)
+            {
+                return NotFound();
+            }
 
-            return Ok();
+            return CreatedAtAction(nameof(RegisterUserProvider), RequestDto);
         }
 
         /// <summary>
@@ -155,6 +160,12 @@ namespace Server.src.Api.Controllers
             if (userId == null)
             {
                 return Unauthorized("Invalid user ID in token.");
+            }
+
+            var result = await _userService.DeleteUserProviderAsync(requestDto, userId.Value);
+            if (!result)
+            {
+                return NotFound();
             }
 
             return NoContent();

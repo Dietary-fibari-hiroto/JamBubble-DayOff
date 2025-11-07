@@ -10,7 +10,7 @@ namespace Server.src.Interfaces
         public Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateData, int userId);
         public Task<bool> DeleteUserAsync(int userId);
         public Task<List<UserProviderResponseDto>?> GetUserProvidersAsync(int userId);
-        public Task<UserProviderResponseDto?> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId);
+        public Task<bool> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId);
         public Task<bool> DeleteUserProviderAsync(DeleteUserProviderRequestDto providerDto, int userId);
     }
 }

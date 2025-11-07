@@ -47,7 +47,7 @@ namespace Server.src.Services
         public async Task<string?> LoginAsync(string email, string password)
         {
             _logger.LogDebug("AuthService.LoginAsync");
-            var user = await _userRepository.GetByEmailAsync(email); // Emailでユーザーを取得
+            var user = await _userRepository.GetUserByEmailAsync(email); // Emailでユーザーを取得
 
             // 検証
             if (!(user != null && VerifyPassword(user, password)))

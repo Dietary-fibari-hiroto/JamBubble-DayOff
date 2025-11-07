@@ -44,7 +44,7 @@ namespace Server.src.DTOs
 
     public class FavoriteMusicResponseDto
     {
-        public string MusicId { get; set; } = string.Empty;
+        public string? MusicId { get; set; }
         public FavoriteMusicResponseDto(FavoriteMusic favoriteMusic)
         {
             MusicId = favoriteMusic.MusicId;
@@ -54,13 +54,11 @@ namespace Server.src.DTOs
     public class UserProviderResponseDto
     {
         public int ProviderId { get; set; }
-        public string ProviderName { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public UserProviderResponseDto(UserProvider userProvider)
         {
             ProviderId = userProvider.ProviderId;
-            ProviderName = userProvider.Provider.Name;
             Name = userProvider.Name;
             Password = userProvider.Password;
         }
@@ -135,7 +133,7 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(UserProviderResponseDto.ProviderName))] = new OpenApiString("Spotify"),
+                    [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
                     [ToCamelCase(nameof(UserProviderResponseDto.Name))] = new OpenApiString("test"),
                     [ToCamelCase(nameof(UserProviderResponseDto.Password))] = new OpenApiString("password")
                 };

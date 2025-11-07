@@ -133,14 +133,26 @@ namespace Server.src.DTOs
         [Required]
         public required string Password { get; set; }
 
-        public UserProvider RequestToUserProvider(UserProvider userProvider, int userId)
+        public User RequestToUserProvider(User user)
         {
-            userProvider.UserId = userId;
-            userProvider.ProviderId = this.ProviderId;
-            userProvider.Name = this.Name;
-            userProvider.Password = this.Password;
+            // 中身が空なら作成してから
+            if (user.UserProviders == null)
+            {
+                user.UserProviders = new List<UserProvider>();
+            }
 
-            return userProvider;
+            user.UserProviders.Add(
+                new UserProvider
+                {
+                    UserId = user.Id,
+                    ProviderId = this.ProviderId,
+                    Name = this.Name,
+                    Password = this.Password
+                }
+            );
+            
+
+            return user;
         }
     }
 

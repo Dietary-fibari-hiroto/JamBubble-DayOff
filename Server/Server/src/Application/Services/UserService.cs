@@ -23,7 +23,7 @@ namespace Server.src.Services
         public async Task<UserAllDataResponseDto?> GetUserAllDataAsync(int userId)
         {
             // IDで取得
-            var user = await _repo.GetByIdAsync(userId);
+            var user = await _repo.GetUserByIdAsync(userId);
             if (user == null)
             {
                 return null;
@@ -36,7 +36,7 @@ namespace Server.src.Services
         public async Task<UserResponseDto?> AddUserAsync(RegisterUserRequestDto userDto)
         {
             // すでに同じEmailのユーザーが存在するか確認
-            var existingUser = await _repo.GetByEmailAsync(userDto.Email);
+            var existingUser = await _repo.GetUserByEmailAsync(userDto.Email);
             if (existingUser != null)
             {
                 throw new InvalidOperationException("EmailConflict");
@@ -44,10 +44,22 @@ namespace Server.src.Services
 
             var user = userDto.RequestToUser(new User());
 
+            user.UserHistory = new UserHistory
+            {
+                User = user,
+                SessionCount = 0
+            };
+
+            user.FavoriteMusic = new FavoriteMusic
+            {
+                User = user,
+                MusicId = null!
+            };
+
             // パスワードのハッシュ化
             user.Password = _passwordHasher.HashPassword(user, user.Password);
 
-            var addedUser = await _repo.AddAsync(user);
+            var addedUser = await _repo.AddUserAsync(user);
 
             return new UserResponseDto(addedUser);
         }
@@ -55,14 +67,14 @@ namespace Server.src.Services
         public async Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateDataDto, int userId)
         {
             // IDで取得
-            var updateUser = await _repo.GetByIdAsync(userId);
+            var updateUser = await _repo.GetUserByIdAsync(userId);
             if (updateUser == null) return null;
 
             // Emailが重複していないかをチェック
             var newEmail = updateDataDto.userDto?.Email;
             if(newEmail != null && newEmail != updateUser.Email)
             {
-                var existingUser = await _repo.GetByEmailAsync(newEmail);
+                var existingUser = await _repo.GetUserByEmailAsync(newEmail);
                 if (existingUser != null && existingUser.Id != userId)
                 {
                     throw new InvalidOperationException("EmailConflict");
@@ -84,10 +96,10 @@ namespace Server.src.Services
         public async Task<bool> DeleteUserAsync(int userId)
         {
             // IDで取得
-            var deleteUser = await _repo.GetByIdAsync(userId);
+            var deleteUser = await _repo.GetUserByIdAsync(userId);
             if (deleteUser == null) return false;
 
-            await _repo.DeleteAsync(deleteUser);
+            await _repo.DeleteUserAsync(deleteUser);
 
             return true;
         }
@@ -103,21 +115,49 @@ namespace Server.src.Services
             return userProviders.Select(up => new UserProviderResponseDto(up)).ToList();
         }
 
-        public async Task<UserProviderResponseDto?> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId)
+        public async Task<bool> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId)
         {
+            // ユーザー情報を引っ張ってきてその中にくっついているプロバイダー情報を書き換えて保存し登録する
+            // ユーザーが存在するか確認
+            var userEntity = await _repo.GetUserByIdAsync(userId);
+            if (userEntity == null)
+            {
+                return false;
+            }
+
             // すでに存在するか確認
-            var existingUserProvider = await _repo.GetUserProviderByIdsAsync(userId, userProviderDto.ProviderId);
-            if (existingUserProvider != null)
+            if (userEntity.UserProviders != null &&
+                userEntity.UserProviders.Any(up => up.ProviderId == userProviderDto.ProviderId))
             {
                 throw new InvalidOperationException("UserProviderConflict"); // 例外スロー
             }
 
-            var userProvider = userProviderDto.RequestToUserProvider(new UserProvider(), userId);
+            userEntity = userProviderDto.RequestToUserProvider(userEntity);
+            await _repo.UpdateAsync(userEntity);
+
+            return true;
         }
 
         public async Task<bool> DeleteUserProviderAsync(DeleteUserProviderRequestDto providerDto, int userId)
         {
-            
+            // ユーザーとプロバイダーリストが存在するか確認
+            var userEntity = await _repo.GetUserByIdAsync(userId);
+            if (userEntity == null || userEntity.UserProviders == null)
+            {
+                return false;
+            }
+
+            // プロバイダー情報の検索
+            var targetProvider = userEntity.UserProviders.FirstOrDefault(up => up.ProviderId == providerDto.ProviderId);
+            if (targetProvider != null)
+            {
+                await _repo.DeleteUserProviderAsync(targetProvider);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

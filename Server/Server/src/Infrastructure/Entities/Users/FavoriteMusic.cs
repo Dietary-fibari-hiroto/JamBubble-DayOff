@@ -13,8 +13,7 @@ namespace Server.src.Entities
         [ForeignKey(nameof(UserId))]
         public required User User { get; set; }
 
-        [Required]
         [StringLength(50)]
-        public string MusicId { get; set; }= null!;
+        public string? MusicId { get; set; }
     }
 }

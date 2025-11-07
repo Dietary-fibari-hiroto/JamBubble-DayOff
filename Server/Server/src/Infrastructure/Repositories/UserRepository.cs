@@ -16,29 +16,21 @@ namespace Server.src.Repositories
         // IDでユーザーを取得
         // public async Task<User?> GetByIdAsync(int id) => await _context.Users.FindAsync(id);
         // IDでユーザーのすべての情報を取得
-        public async Task<User?> GetByIdAsync(int id)
+        public async Task<User?> GetUserByIdAsync(int id)
         {
             var user = await _context.Users
                 .Include(u => u.UserHistory) // 先行読み込み
                 .Include(u => u.FavoriteMusic)
+                .Include(u => u.UserProviders)
                 //.AsNoTracking() // 読み込み専用 // ここで追跡しておくとupdate時に変更保存するだけで済むらしい
                 .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
         // Emailでユーザーを取得
-        public async Task<User?> GetByEmailAsync(string email) => await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        public async Task<User?> GetUserByEmailAsync(string email) => await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         // ユーザー登録
-        public async Task<User> AddAsync(User user)
+        public async Task<User> AddUserAsync(User user)
         {
-            // ユーザーの履歴も同時に作成
-            user.UserHistory = new UserHistory
-            {
-                User = user,
-                SessionCount = 0
-            };
-
-            // TODO:お気に入り音楽IDをnull許容にして、ユーザー作成時に同時に作成するのはどうだろうか？
-            
             var entry = await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return entry.Entity;
@@ -51,7 +43,7 @@ namespace Server.src.Repositories
             await _context.SaveChangesAsync();
         }
         // ユーザー情報の削除
-        public async Task DeleteAsync(User user)
+        public async Task DeleteUserAsync(User user)
         {
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
@@ -60,7 +52,6 @@ namespace Server.src.Repositories
         public async Task<List<UserProvider>?> GetUserProvidersByUserIdAsync(int userId)
         {
             return await _context.UserProviders
-                .Include(up => up.Provider)
                 .Where(up => up.UserId == userId)
                 .ToListAsync();
         }
@@ -68,15 +59,7 @@ namespace Server.src.Repositories
         public async Task<UserProvider?> GetUserProviderByIdsAsync(int userId, int provideId)
         {
             return await _context.UserProviders
-                .Include(up => up.Provider)
                 .FirstOrDefaultAsync(up => up.UserId == userId && up.ProviderId == provideId);
-        }
-
-        public async Task<UserProvider> AddUserProviderAsync(UserProvider userProvider)
-        {
-            var entry = await _context.UserProviders.AddAsync(userProvider);
-            await _context.SaveChangesAsync();
-            return entry.Entity;
         }
         
         public async Task DeleteUserProviderAsync(UserProvider userProvider)
