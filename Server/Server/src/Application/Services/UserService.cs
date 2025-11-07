@@ -133,6 +133,9 @@ namespace Server.src.Services
             }
 
             userEntity = userProviderDto.RequestToUserProvider(userEntity);
+            // TODO:ハッシュ化したパスは複号不可だから保存しても意味ないのでは？
+            //userEntity.Password = _passwordHasher.HashPassword(userEntity, userEntity.Password);
+
             await _repo.UpdateAsync(userEntity);
 
             return true;
