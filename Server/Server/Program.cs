@@ -20,28 +20,9 @@ Env.Load();
 
 builder.Services.AddControllers(); //API�ŃR���g���[���g���܂����܂��Ȃ�
 builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
-// Swaggerの設定
-builder.Services.AddSwaggerGen(options =>
-{
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "JWT認証用トークンを入力してください。例: Bearer {token}",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT"
-    });
 
-    options.OperationFilter<AuthOperationFilter>();
+builder.Services.AddCustomSwagger(); // Swaggerの設定
 
-    // XMLの読み込み
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
-
-    // 作成したスキーマフィルターを登録
-    options.SchemaFilter<RequestFilter>();
-});
 var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
     ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
