@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Server.src.DTOs
 {
-    public class UserResponseDto
+    public class UserAllDataResponseDto
     {
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
@@ -17,37 +17,29 @@ namespace Server.src.DTOs
         public string? Message { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { set; get; }
+        public int SessionCount { get; set; }
+        public string? MusicId { get; set; } = string.Empty;
 
         // コンストラクタ
-        public UserResponseDto(User user)
+        public UserAllDataResponseDto(User user)
         {
-            Name = user.Name;
-            Email = user.Email;
-            Gender = user.Gender;
-            Birthday = user.Birthday;
-            IsStreetPass = user.IsStreetPass;
-            ImgUrl = user.ImgUrl;
-            Message = user.Message;
-            CreatedAt = user.CreatedAt;
-            UpdatedAt = user.UpdatedAt;
-        }
-    }
-
-    public class UserHistoryResponseDto
-    {
-        public int SessionCount { get; set; }
-        public UserHistoryResponseDto(UserHistory userHistory)
-        {
-            SessionCount = userHistory.SessionCount;
-        }
-    }
-
-    public class FavoriteMusicResponseDto
-    {
-        public string? MusicId { get; set; }
-        public FavoriteMusicResponseDto(FavoriteMusic favoriteMusic)
-        {
-            MusicId = favoriteMusic.MusicId;
+            this.Name = user.Name;
+            this.Email = user.Email;
+            this.Gender = user.Gender;
+            this.Birthday = user.Birthday;
+            this.IsStreetPass = user.IsStreetPass;
+            this.ImgUrl = user.ImgUrl;
+            this.Message = user.Message;
+            this.CreatedAt = user.CreatedAt;
+            this.UpdatedAt = user.UpdatedAt;
+            if (user.UserHistory != null)
+            {
+                this.SessionCount = user.UserHistory.SessionCount;
+            }
+            if (user.FavoriteMusic != null)
+            {
+                this.MusicId = user.FavoriteMusic!.MusicId;
+            }
         }
     }
 
@@ -58,32 +50,34 @@ namespace Server.src.DTOs
         public string Password { get; set; } = string.Empty;
         public UserProviderResponseDto(UserProvider userProvider)
         {
-            ProviderId = userProvider.ProviderId;
-            Name = userProvider.Name;
-            Password = userProvider.Password;
+            this.ProviderId = userProvider.ProviderId;
+            this.Name = userProvider.Name;
+            this.Password = userProvider.Password;
         }
     }
-    public class UserAllDataResponseDto
+
+
+    public class UserProfileResponseDto
     {
-        public UserResponseDto User { get; set; }
-        public UserHistoryResponseDto? UserHistory { get; set; } = null;
-        public FavoriteMusicResponseDto? FavoriteMusic { get; set; } = null;
+        public string Name { get; set; }
+        public int Gender { get; set; }
+        public string? ImgUrl { get; set; }
+        public string? Message { get; set; }
+        public int SessionCount { get; set; }
+        public string? MusicId { get; set; }
 
-        public UserAllDataResponseDto(User user)
+        public UserProfileResponseDto(User user)
         {
-            User = new UserResponseDto(user);
-
-            if (user.UserHistory != null)
-            {
-                UserHistory = new UserHistoryResponseDto(user.UserHistory);
-            }
-
-            if (user.FavoriteMusic != null)
-            {
-                FavoriteMusic = new FavoriteMusicResponseDto(user.FavoriteMusic);
-            }
+            this.Name = user.Name;
+            this.Gender = user.Gender;
+            this.ImgUrl = user.ImgUrl;
+            this.Message = user.Message;
+            this.SessionCount = user.UserHistory!.SessionCount;
+            this.MusicId = user.FavoriteMusic!.MusicId;
         }
     }
+
+
 
     // SwaggerUI上でのExample Valueの設定
     public class UserResponseFilter : ISchemaFilter
@@ -99,33 +93,20 @@ namespace Server.src.DTOs
         }
         void ISchemaFilter.Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            if (context.Type == typeof(UserResponseDto))
+            if (context.Type == typeof(UserAllDataResponseDto))
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(UserResponseDto.Name))] = new OpenApiString("test"),
-                    [ToCamelCase(nameof(UserResponseDto.Birthday))] = new OpenApiString("2025-11-01"),
-                    [ToCamelCase(nameof(UserResponseDto.Email))] = new OpenApiString("test@test.com"),
-                    [ToCamelCase(nameof(UserResponseDto.Gender))] = new OpenApiInteger(0),
-                    [ToCamelCase(nameof(UserResponseDto.IsStreetPass))] = new OpenApiBoolean(false),
-                    [ToCamelCase(nameof(UserResponseDto.ImgUrl))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UserResponseDto.Message))] = new OpenApiString(""),
-                };
-            }
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Birthday))] = new OpenApiString("2025-11-01"),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Email))] = new OpenApiString("test@test.com"),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Gender))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.IsStreetPass))] = new OpenApiBoolean(false),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.ImgUrl))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Message))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.SessionCount))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.MusicId))] = new OpenApiString(""),
 
-            if (context.Type == typeof(UserHistoryResponseDto))
-            {
-                schema.Example = new OpenApiObject
-                {
-                    [ToCamelCase(nameof(UserHistoryResponseDto.SessionCount))] = new OpenApiInteger(1),
-                };
-            }
-
-            if (context.Type == typeof(FavoriteMusicResponseDto))
-            {
-                schema.Example = new OpenApiObject
-                {
-                    [ToCamelCase(nameof(FavoriteMusicResponseDto.MusicId))] = new OpenApiInteger(0)
                 };
             }
 
@@ -138,6 +119,44 @@ namespace Server.src.DTOs
                     [ToCamelCase(nameof(UserProviderResponseDto.Password))] = new OpenApiString("password")
                 };
             }
+
+            if (context.Type == typeof(UserProfileResponseDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(UserProfileResponseDto.Name))] = new OpenApiString("test"),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Gender))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.ImgUrl))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.Message))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.SessionCount))] = new OpenApiInteger(0),
+                    [ToCamelCase(nameof(UserAllDataResponseDto.MusicId))] = new OpenApiString("Test"),
+                };
+            }
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //        [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
+            //    };
+            //}
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //        [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
+            //    };
+            //}
+
+            //if (context.Type == typeof())
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //        [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
+            //    };
+            //}
+
         }
     }
 }

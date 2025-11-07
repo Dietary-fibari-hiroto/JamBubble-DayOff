@@ -6,7 +6,8 @@ namespace Server.src.Interfaces
     public interface IUserService
     {
         public Task<UserAllDataResponseDto?> GetUserAllDataAsync(int userId);
-        public Task<UserResponseDto?> AddUserAsync(RegisterUserRequestDto user);
+        public Task<UserProfileResponseDto?> GetUserProfileAsync(int userId);
+        public Task<UserAllDataResponseDto?> AddUserAsync(RegisterUserRequestDto user);
         public Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateData, int userId);
         public Task<bool> DeleteUserAsync(int userId);
         public Task<List<UserProviderResponseDto>?> GetUserProvidersAsync(int userId);

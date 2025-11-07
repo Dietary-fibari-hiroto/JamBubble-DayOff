@@ -4,7 +4,7 @@ namespace Server.src.Interfaces
     public interface IUserRepository
     {
         Task<IEnumerable<User>> GetAllAsync();
-        Task<User?> GetUserByIdAsync(int id); // IDでユーザーを取得
+        Task<User?> GetUserByIdAsync(int id, bool asTracking = true); // IDでユーザー取得
         Task<User?> GetUserByEmailAsync(string email); // Emailでユーザーを取得
         Task<User> AddUserAsync(User user); // 新しいユーザーを追加
         Task UpdateAsync(User user); // 既存のデータを更新

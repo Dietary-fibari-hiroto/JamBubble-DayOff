@@ -39,7 +39,7 @@ namespace Server.src.DTOs
         }
     }
 
-    public class UpdateUserRequestDto
+    public class UpdateUserAllDataRequestDto
     {
         public string? Name { get; set; }
         public string? Email { get; set; }
@@ -47,6 +47,7 @@ namespace Server.src.DTOs
         public string? ImgUrl {  get; set; }
         public string? Message {  get; set; }
         public bool IsStreetPass { get; set; } = false;
+        public string? MusicId { get; set; }
 
         // Userの型に変換
         public User RequestToUser(User user)
@@ -81,45 +82,12 @@ namespace Server.src.DTOs
                 user.IsStreetPass = this.IsStreetPass;
             }
 
-            return user;
-        }
-    }
-
-    public class UpdateFavoriteMusicRequestDto
-    {
-        public string? MusicId { get; set; }
-
-        // FavoriteMusicの型に変換
-        public FavoriteMusic RequestToFavoriteMusic(FavoriteMusic favoriteMusic)
-        {
-            if (!string.IsNullOrEmpty (this.MusicId))
+            if (user.FavoriteMusic != null && !string.IsNullOrEmpty(this.MusicId))
             {
-                favoriteMusic.MusicId = this.MusicId;
-            }
-
-            return favoriteMusic;
-        }
-    }
-
-    public class UpdateUserAllDataRequestDto
-    {
-        public UpdateUserRequestDto? userDto { get; set; }
-        public UpdateFavoriteMusicRequestDto? FavoriteMusicDto { get; set; }
-
-        public User RequestDtoToEntitie(User user)
-        {
-            if (this.userDto != null)
-            {
-                user = this.userDto.RequestToUser(user);
-            }
-
-            if (this.FavoriteMusicDto != null && user.FavoriteMusic != null)
-            {
-                user.FavoriteMusic = this.FavoriteMusicDto.RequestToFavoriteMusic(user.FavoriteMusic);
+                user.FavoriteMusic.MusicId = this.MusicId;
             }
 
             return user;
-
         }
     }
 
@@ -202,25 +170,17 @@ namespace Server.src.DTOs
                 };
             }
 
-            if (context.Type == typeof(UpdateFavoriteMusicRequestDto))
+            if (context.Type == typeof(UpdateUserAllDataRequestDto))
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(UpdateFavoriteMusicRequestDto.MusicId))] = new OpenApiString("")
-                };
-            }
-
-            if (context.Type == typeof(UpdateUserRequestDto))
-            {
-                schema.Example = new OpenApiObject
-                {
-                    [ToCamelCase(nameof(UpdateUserRequestDto.Name))] = new OpenApiString("test"),
-                    [ToCamelCase(nameof(UpdateUserRequestDto.Email))] = new OpenApiString("test@test.com"),
-                    [ToCamelCase(nameof(UpdateUserRequestDto.Password))] = new OpenApiString("password"),
-                    [ToCamelCase(nameof(UpdateUserRequestDto.ImgUrl))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserRequestDto.Message))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserRequestDto.IsStreetPass))] = new OpenApiBoolean(false),
-
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Name))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Email))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Password))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.ImgUrl))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Message))] = new OpenApiString(""),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.IsStreetPass))] = new OpenApiBoolean(false),
+                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.MusicId))] = new OpenApiString("")
                 };
             }
 
