@@ -9,11 +9,11 @@ using Server.src.Extensions;
 namespace Server.src.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
-    public class userController : ControllerBase
+    [Route("/api/user")]
+    public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public userController(IUserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }
