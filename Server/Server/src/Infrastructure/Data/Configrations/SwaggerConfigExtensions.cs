@@ -31,6 +31,8 @@ namespace Server.src.Configrations
                     options.SchemaFilter<UserResponseFilter>();
                     options.SchemaFilter<AuthRequestFilter>();
                     options.SchemaFilter<AuthResponseFilter>();
+                    options.SchemaFilter<MessageRequestFilter>();
+                    options.SchemaFilter<MessageResponseFilter>();
 
                 });
         }

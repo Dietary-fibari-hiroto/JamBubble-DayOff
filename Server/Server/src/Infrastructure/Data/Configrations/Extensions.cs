@@ -8,11 +8,13 @@ namespace Server.Data.Configrations
         public static void RegisterRepositories(this IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services) { 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IMessageService, MessageService>();
 
         }
     }
