@@ -8,14 +8,14 @@ using Server.src.Services;
 namespace Server.src.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
-    public class authController : ControllerBase
+    [Route("/api/auth")]
+    public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService; // 依存性の注入
 
-        private readonly ILogger<authController> _logger;
+        private readonly ILogger<AuthController> _logger;
 
-        public authController(IAuthService authService, ILogger<authController> logger)
+        public AuthController(IAuthService authService, ILogger<AuthController> logger)
         {
             _authService = authService; // コンストラクタ
 
