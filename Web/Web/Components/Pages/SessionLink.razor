@@ -1,6 +1,61 @@
 ﻿@page "/sessionlink"
-<h3>SessionLink</h3>
+@rendermode InteractiveServer
+@using Components.UI
+<div id="wrapper" >
+    <img  id="background" src="/images/elementIcons/shell.svg"/>
+    <div id="contact-container">
+        <img src="/images/elementIcons/contact.svg"/>
+    </div>
+    <div id="music-container">
+        <h1 class="string-reg-bold" id="music-information">基本情報</h1>
+        <div id="title-container">
+            <h2 class="string-ss" id="title">タイトル：</h2>
+            <p class ="string-s" id="music-title">夜景ドライブ</p>
+        </div>
+        <div id="scene-container">
+            <h2 class="string-ss" id="scene">シーン：</h2>
+            <p class="string-s" id="scene-title">夜ドライブ</p>
+        </div>
+        <div id="tag-container">
+            <h2 class="string-ss" id="tag-title">タグ：</h2>
+            <p class="string-s" id="tag">#夜ドラ</p>
+            <p class="string-s" id="tag">#Chill</p>
+        </div>
+        <div id="open-btn">
+            <p @onclick="OpenDialog" class="string-reg-bold" id="open-text">セッションを退出する</p>
+        </div>
+    </div>
+    <Web.Components.UI.MenuBar />
+</div>
+
+
+
+
+@if (isOpen)
+{
+    /* e = exit */
+    <div id="exitConfirmDialog">
+        <img @onclick="CloseDialog" id="cancel-img" src="/images/elementIcons/x-1.svg" />
+        <div>
+            <h1 class="string-s-bold" id="e-title">セッションを抜ける</h1>
+        </div>
+        <div>
+            <p class="string-s" id ="e-description">セッションを退出します。<br>よろしいですか？</p>
+        </div>
+        <div id="button-container">
+            <button @onclick="CloseDialog" class="string-s" id="cancel-btn">いいえ</button>
+            <button class="string-s" id="exit-btn">退出</button>
+        </div>
+    </div>
+}
 
 @code {
+    private bool isOpen = false; /*初期化*/
+    private Task OpenDialog()
+    {
+        isOpen = !isOpen;
+        return Task.CompletedTask;
+    }
+    private void CloseDialog() => isOpen = false;
 
 }

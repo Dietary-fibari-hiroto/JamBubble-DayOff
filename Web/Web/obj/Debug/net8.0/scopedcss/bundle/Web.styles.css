@@ -120,3 +120,232 @@ main[b-739djkm78g] {
     margin:10px 0 ;
     cursor:pointer;
 }
+/* _content/Web/Components/Pages/SessionLink.razor.rz.scp.css */
+#wrapper[b-nrkreluhnm]{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+#background[b-nrkreluhnm]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit:cover;
+    filter: blur(20px);
+    z-index:0;
+}
+#wrapper[b-nrkreluhnm]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    filter: brightness(40%);
+    opacity: 0.5; /*ぼかし*/
+    z-index: 1;
+}
+
+#contact-container[b-nrkreluhnm] {
+    position: absolute;
+    margin: 43px 0px 0px 24px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+}
+
+#music-container[b-nrkreluhnm] {
+    position: absolute;
+    margin-top: 302px;
+    left: 50%;
+    /*transformで中央に置く*/
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+}
+h1#music-informaion[b-nrkreluhnm]{
+    margin-bottom: 20px;
+}
+#title-container[b-nrkreluhnm],
+#scene-container[b-nrkreluhnm] {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ← これで中央揃え */
+    text-align: left; /* 行内の文字は自然な左寄せ */
+    white-space: nowrap;
+    margin-bottom: 12px;
+    gap: 17px;
+}
+h2#title[b-nrkreluhnm]{
+    margin: 0;
+    padding: 0;
+}
+h2#scene[b-nrkreluhnm]{
+    margin:0;
+    padding:0;
+}
+
+#music-title[b-nrkreluhnm],
+#scene-title[b-nrkreluhnm]
+{
+    margin: 0;
+    padding: 0;
+}
+
+#tag-container[b-nrkreluhnm] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    white-space: nowrap;
+    margin-bottom: 53px;
+}
+#tag-title[b-nrkreluhnm] {
+    margin: 0px 10px 0px 0px;
+}
+
+#tag[b-nrkreluhnm] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+    width: 70px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.80);
+}
+
+#open-btn[b-nrkreluhnm] {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--color-applemusic);
+    z-index: 4;
+}
+
+
+
+#open-text[b-nrkreluhnm] {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/*------------------ dialog ------------------*/
+#exitConfirmDialog[b-nrkreluhnm] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    height: 251px;
+    opacity: 0.8;
+    background-color: white;
+    backdrop-filter: blur(5px); /*背景だけぼかす*/
+    border: none;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+#cancel-img[b-nrkreluhnm] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    margin: 12px 0px 0px 9px;
+    padding: 0;
+}
+#e-title[b-nrkreluhnm] {
+    color: black;
+    text-align: center;
+    align-items: center;
+    margin-top: 41px;
+    padding: 0;
+}
+#e-description[b-nrkreluhnm] {
+    color: black;
+    text-align: center;
+    align-items: center;
+    margin-top: 38px;
+    padding: 0;
+}
+#button-container[b-nrkreluhnm]{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 47px;
+    padding: 0;
+    gap: 31px;
+}
+#cancel-btn[b-nrkreluhnm]{
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-deep-gray);
+}
+#exit-btn[b-nrkreluhnm]{
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-applemusic);
+}
+
+
+
+/* _content/Web/Components/UI/MenuBar.razor.rz.scp.css */
+/*===========menu_bar============*/
+#menu-container[b-rswppccu2v] {
+    display: flex;
+    justify-content: center;
+    margin-top: 704px;
+}
+
+#menu-bar[b-rswppccu2v] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 216px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    list-style: none;
+    gap: 54px;
+    z-index: 5;
+}
+
+#menu-bar button[b-rswppccu2v] {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none; /* ← この1行が重要！ */
+}
+
+#menu-bar img[b-rswppccu2v] {
+    width: 24px;
+    height: 24px;
+}
