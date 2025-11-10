@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 using Server.Data;
 using Server.src.DTOs;
 using Server.src.Entities;
@@ -15,15 +16,25 @@ namespace Server.src.Services
             _repo = repo;
         }
 
-        async Task<List<MessagesResponseDto>> IMessageService.GetMessagesAsync(int userId)
+        public async Task<List<MessageNoContentResponseDto>> GetMessagesAsync(int userId)
         {
             var messages = await _repo.GetMessagesByUserIdAsync(userId, false);
             if (messages == null || messages.Count == 0)
             {
-                return new List<MessagesResponseDto>(); // 空のリスト
+                return new List<MessageNoContentResponseDto>(); // 空のリスト
             }
-            return messages.Select(m => new MessagesResponseDto(m)).ToList();
+            return messages.Select(m => new MessageNoContentResponseDto(m)).ToList();
         }
+
+        public async Task<MessageResponseDto?> GetMessageAsync(int userId, int messageId)
+        {
+            var message = await _repo.GetMessageByIdAsync(userId, messageId);
+            if (message == null)
+            {
+                return null;
+            }
+            return new MessageResponseDto(message);
+        } 
 
         public async Task<bool> UpdateMessageAsync(int userId, int messageId)
         {
@@ -38,7 +49,7 @@ namespace Server.src.Services
             return true;
         }
 
-        async Task<bool> IMessageService.DeleteMessageAsync(int userId, int messageId)
+        public async Task<bool> DeleteMessageAsync(int userId, int messageId)
         {
             var message = await _repo.GetMessageByIdAsync(userId, messageId);
             if (message == null)

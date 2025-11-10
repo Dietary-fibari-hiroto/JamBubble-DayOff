@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Server.src.DTOs
 {
-    public class MessagesResponseDto
+    public class MessageResponseDto
     {
         public int Id { get; set; }
         public string Title { get; set; } = null!;
@@ -14,11 +14,27 @@ namespace Server.src.DTOs
         public bool IsRead { get; set; } = false;
         public DateTime CreatedAt { get; set; }
 
-        public MessagesResponseDto(Message message)
+        public MessageResponseDto(Message message)
         {
             this.Id = message.Id;
             this.Title = message.Title;
             this.Content = message.Content;
+            this.IsRead = message.IsRead;
+            this.CreatedAt = message.CreatedAt;
+        }
+    }
+
+    public class MessageNoContentResponseDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = null!;
+        public bool IsRead { get; set; } = false;
+        public DateTime CreatedAt { get; set; }
+
+        public MessageNoContentResponseDto(Message message)
+        {
+            this.Id = message.Id;
+            this.Title = message.Title;
             this.IsRead = message.IsRead;
             this.CreatedAt = message.CreatedAt;
         }
@@ -38,15 +54,26 @@ namespace Server.src.DTOs
         }
         void ISchemaFilter.Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            if (context.Type == typeof(MessagesResponseDto))
+            if (context.Type == typeof(MessageResponseDto))
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(MessagesResponseDto.Id))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(MessagesResponseDto.Title))] = new OpenApiString("Title"),
-                    [ToCamelCase(nameof(MessagesResponseDto.Content))] = new OpenApiString("Content."),
-                    [ToCamelCase(nameof(MessagesResponseDto.IsRead))] = new OpenApiBoolean(false),
-                    [ToCamelCase(nameof(MessagesResponseDto.CreatedAt))] = new OpenApiDateTime(DateTime.UtcNow),
+                    [ToCamelCase(nameof(MessageResponseDto.Id))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(MessageResponseDto.Title))] = new OpenApiString("Title"),
+                    [ToCamelCase(nameof(MessageResponseDto.Content))] = new OpenApiString("Content"),
+                    [ToCamelCase(nameof(MessageResponseDto.IsRead))] = new OpenApiBoolean(false),
+                    [ToCamelCase(nameof(MessageResponseDto.CreatedAt))] = new OpenApiDateTime(DateTime.UtcNow),
+                };
+            }
+
+            if (context.Type == typeof(MessageNoContentResponseDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(MessageNoContentResponseDto.Id))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(MessageNoContentResponseDto.Title))] = new OpenApiString("Title"),
+                    [ToCamelCase(nameof(MessageNoContentResponseDto.IsRead))] = new OpenApiBoolean(false),
+                    [ToCamelCase(nameof(MessageNoContentResponseDto.CreatedAt))] = new OpenApiDateTime(DateTime.UtcNow),
                 };
             }
 

@@ -5,6 +5,7 @@ using Server.src.DTOs;
 using Server.src.Entities;
 using Server.src.Interfaces;
 using Server.src.Extensions;
+using System.Runtime.Serialization;
 
 namespace Server.src.Api.Controllers
 {
@@ -23,7 +24,7 @@ namespace Server.src.Api.Controllers
         /// </summary>
         [Authorize]
         [HttpGet]
-        [ProducesResponseType(typeof(List<MessagesResponseDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<MessageNoContentResponseDto>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetMessages()
         {
             var userId = User.GetUserId(); // JWTからIDを取得
@@ -36,6 +37,32 @@ namespace Server.src.Api.Controllers
             return Ok(messages);
         }
 
+        /// <summary>
+        /// メッセージ内容を返す
+        /// </summary>
+        [Authorize]
+        [HttpGet("{id}/detail")]
+        [ProducesResponseType(typeof(MessageResponseDto), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetMessage(int id)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+
+            var message = await _messageService.GetMessageAsync(userId.Value, id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(message);
+        }
+
+        /// <summary>
+        /// メッセージに既読をつける
+        /// </summary>
         [Authorize]
         [HttpPatch("{id}/is-read")]
         [ProducesResponseType(StatusCodes.Status200OK)]
