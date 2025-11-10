@@ -374,6 +374,99 @@ h2#scene[b-nrkreluhnm]{
     align-items: center;
     z-index: 10;
 }
+/* _content/Web/Components/Pages/SessionRequestBoard.razor.rz.scp.css */
+#wrapper[b-airo7hijbe] {
+    position: relative;
+    top:0;
+    width:100%;
+    height:100%;
+}
+
+
+/*====ArrowLeftIcon====*/
+.icon-container[b-airo7hijbe]{
+    margin-top: 25px;
+    margin-left: 18px;
+}
+.arrow-left-icon[b-airo7hijbe] {
+    width: 48px;
+    height: 47px;
+    transform: rotate(90deg); /*iconを90°の角度で回転させる*/
+}
+
+.img-container[b-airo7hijbe] {
+    display: flex;
+    justify-content: center;
+}
+
+.music-pic[b-airo7hijbe] {
+    margin-top: 139px;
+    width: 225px;
+    height: 225px;
+}
+
+
+.music-info-container[b-airo7hijbe] {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+#song-title[b-airo7hijbe]{
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    margin: 0;
+}
+#artist[b-airo7hijbe] {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+
+#button-container[b-airo7hijbe]{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:100px;
+
+}
+
+.request-icon[b-airo7hijbe] {
+    width: 16px;
+    height: 16px;
+
+}
+
+#button-style[b-airo7hijbe] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding:0;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: darkviolet;
+
+}
+#request-text[b-airo7hijbe] {
+    color: #FFF;
+    text-align: center;
+    margin: 0 0 0 15px;
+}
+
+/*==========MenuBar==========*/
+#menu-container[b-airo7hijbe] {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 /* _content/Web/Components/UI/cards/ArtistLabel.razor.rz.scp.css */
 .artist-label[b-b5derkp35q] {
     display: flex;
@@ -521,4 +614,18 @@ height: 16px;*/
     width: 32px;
     height: 32px;
     transform: rotate(-90deg); /*iconを90°の角度で回転させる*/
+}
+/* _content/Web/Components/UI/icons/ArrowUpIcon.razor.rz.scp.css */
+.icon-container[b-v5hj9jgl5z] {
+    background-color: #5A189A;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.arrow-up-icon[b-v5hj9jgl5z] {
+    margin: 7px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
 }

@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionrequestboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionrequestboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionrequestboard.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionrequestboard.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\icons\\arrowrighticon.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\icons\\arrowrighticon.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\icons\\arrowrighticon.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\icons\\arrowrighticon.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionlink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionlink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionrequest.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionrequest.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\cards\\musiclabel.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\cards\\musiclabel.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\cards\\artistlabel.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\cards\\artistlabel.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\cards\\artistlabel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\cards\\artistlabel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionrequest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,33 +74,137 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SessionLink.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor.css",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor.css",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-10T04:57:08.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MusicLabel.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\MusicLabel.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\cards\\MusicLabel.razor.css",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\MusicLabel.razor.css",
+              "RelativeToolTip": "Web\\Components\\UI\\cards\\MusicLabel.razor.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-10T04:35:17.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ArtistLabel.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\ArtistLabel.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\cards\\ArtistLabel.razor.css",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\ArtistLabel.razor.css",
+              "RelativeToolTip": "Web\\Components\\UI\\cards\\ArtistLabel.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-10T04:34:57.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ArtistLabel.razor",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\ArtistLabel.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\cards\\ArtistLabel.razor",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\cards\\ArtistLabel.razor",
+              "RelativeToolTip": "Web\\Components\\UI\\cards\\ArtistLabel.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T04:34:42.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SessionRequestBoard.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequestBoard.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequestBoard.razor.css",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequestBoard.razor.css",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequestBoard.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-10T02:59:45.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SessionRequestBoard.razor",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequestBoard.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequestBoard.razor",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequestBoard.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequestBoard.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T02:52:58.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArrowRightIcon.razor",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\icons\\ArrowRightIcon.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\icons\\ArrowRightIcon.razor",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\icons\\ArrowRightIcon.razor",
+              "RelativeToolTip": "Web\\Components\\UI\\icons\\ArrowRightIcon.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T02:56:33.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArrowRightIcon.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\icons\\ArrowRightIcon.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\icons\\ArrowRightIcon.razor.css",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\icons\\ArrowRightIcon.razor.css",
+              "RelativeToolTip": "Web\\Components\\UI\\icons\\ArrowRightIcon.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-10T02:56:43.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SessionRequest.razor.css",
               "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor.css",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequest.razor.css",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor.css*",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor.css*",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor.css",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-11-07T07:53:40.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "SessionRequest.razor",
               "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionRequest.razor",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor*",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor*",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwCIAAAAaAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionRequest.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionRequest.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-07T07:51:19.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Variable.css",
               "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
               "RelativeDocumentMoniker": "Web\\wwwroot\\css\\Variable.css",
@@ -81,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "undo-2.svg",
               "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
               "RelativeDocumentMoniker": "Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
@@ -94,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Layout\\MainLayout.razor",
