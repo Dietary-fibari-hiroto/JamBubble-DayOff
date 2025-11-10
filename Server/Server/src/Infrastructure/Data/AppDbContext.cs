@@ -93,6 +93,11 @@ namespace Server.Data
                 .WithOne(up => up.User)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Messages)
+                .WithOne(m => m.User)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // ユニーク制約の定義
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
