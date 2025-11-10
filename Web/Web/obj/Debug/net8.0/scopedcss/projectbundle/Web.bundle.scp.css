@@ -315,15 +315,158 @@ h2#scene[b-nrkreluhnm]{
 
 
 
-/* _content/Web/Components/UI/MenuBar.razor.rz.scp.css */
+/* _content/Web/Components/Pages/SessionRequest.razor.rz.scp.css */
+#wrapper[b-tklsusd25y] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#title[b-tklsusd25y] {
+    margin: 59px 150px 31px 150px;
+    padding: 0;
+    color: white;
+}
+
+#search-box[b-tklsusd25y] {
+    width: 250px;
+    height: 40px;
+    margin: 0px 70px 41px 70px;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #919191;
+    background-color: #0D0E10;
+}
+
+.search-mark[b-tklsusd25y] {
+    width: 12px;
+    height: 12px;
+    margin: 14px 4px 14px 13px;
+}
+
+#search[b-tklsusd25y] {
+    color: #919191;
+    outline: none;
+    background: none;
+    border: none;
+}
+
+#music-list[b-tklsusd25y] {
+    display: flex;
+    justify-content: center;
+    border:none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/*=======menu-bar=======*/
+.menu-container[b-tklsusd25y] {
+    position: fixed;
+    top:0;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+/* _content/Web/Components/UI/cards/ArtistLabel.razor.rz.scp.css */
+.artist-label[b-b5derkp35q] {
+    display: flex;
+    align-content: center;
+    margin-bottom: 14px;
+    width: 350px;
+    height: 61px;
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+.artist-pic[b-b5derkp35q] {
+    display: flex;
+    justify-content: center;
+    margin: 0 13px;
+    width: 50px;
+    height: 50px;
+}
+
+.artist-info[b-b5derkp35q] {
+    display: flex;
+}
+
+.artist[b-b5derkp35q] {
+    display: flex;
+    align-content: center;
+    margin: 16px 0px;
+    padding: 0;
+}
+
+.arrow-icon[b-b5derkp35q] {
+    margin-left: auto; /* ← 念のため右端に寄せる補助 */
+    margin-right: 22px;
+    align-content: center;
+    padding: 0;
+}
+/* _content/Web/Components/UI/cards/MusicLabel.razor.rz.scp.css */
+
+.music-label[b-3nzndewyj3] {
+    display: flex;
+    align-content: center;
+    margin-bottom: 14px;
+    width: 350px;
+    height: 61px;
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+.music-pic[b-3nzndewyj3] {
+    display: flex;
+    justify-content: center;
+    margin: 0 13px;
+    width: 50px;
+    height: 50px;
+}
+
+.music-info[b-3nzndewyj3] {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    align-content: center;
+    gap: 7px;
+}
+
+.music-title[b-3nzndewyj3] {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.music-artist[b-3nzndewyj3] {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.arrow-icon[b-3nzndewyj3] {
+    margin-left: auto; /* ← 念のため右端に寄せる補助 */
+    margin-right: 22px;
+    align-content: center;
+    padding: 0;
+}
+/* _content/Web/Components/UI/elements/MenuBar.razor.rz.scp.css */
 /*===========menu_bar============*/
-#menu-container[b-rswppccu2v] {
+#menu-container[b-gz835h6ids] {
     display: flex;
     justify-content: center;
     margin-top: 704px;
 }
 
-#menu-bar[b-rswppccu2v] {
+#menu-bar[b-gz835h6ids] {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -338,14 +481,44 @@ h2#scene[b-nrkreluhnm]{
     z-index: 5;
 }
 
-#menu-bar button[b-rswppccu2v] {
+#menu-bar button[b-gz835h6ids] {
     margin: 0px;
     padding: 0px;
     border: none;
     background: none; /* ← この1行が重要！ */
 }
 
-#menu-bar img[b-rswppccu2v] {
+#menu-bar img[b-gz835h6ids] {
     width: 24px;
     height: 24px;
+}
+/* _content/Web/Components/UI/elements/Request.razor.rz.scp.css */
+.request-item[b-pf9efy7k4h] {
+    background-color: #5A189A;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+.request[b-pf9efy7k4h]{
+    margin: 7px;
+    width: 16px;
+    height: 16px;
+}
+/*requestitem
+color: color-secondary-bg
+width: 30px
+height: 30px
+border:none;
+border-radius: 10px;
+
+request
+margin: 7px;
+width: 16px;
+height: 16px;*/
+/* _content/Web/Components/UI/icons/ArrowRightIcon.razor.rz.scp.css */
+.arrow-right-icon[b-zughe1vubi] {
+    width: 32px;
+    height: 32px;
+    transform: rotate(-90deg); /*iconを90°の角度で回転させる*/
 }

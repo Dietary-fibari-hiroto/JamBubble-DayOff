@@ -1,5 +1,40 @@
 ﻿@page "/sessionrequest"
-<h3>SessionRequest</h3>
+@using Web.Components.UI.cards
+@using Web.Components.UI.elements
+<div id="wrapper">
+    <div>
+        <h1 class="string-reg-bold" id="title">リクエスト</h1>
+        <div id="search-box">
+            <img class="search-mark" src="/images/elementIcons/search.svg" />
+            <input class="string-ss" id="search" type="text" placeholder="検索" autocomplete="off" />
+        </div>
+        <div>
+            <ul id="music-list">
+                <ArtistLabel />
+            </ul>
+        </div>
+        <div>
+            <ul id="music-list">
+                <MusicLabel />
+            </ul>
+        </div>
+        <div>
+            <ul id="music-list">
+                <ArtistLabel />
+            </ul>
+        </div>
+        <div>
+            <ul id="music-list">
+                <MusicLabel />
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="menu-container">
+    <MenuBar />
+</div>
 
 @code {
 
