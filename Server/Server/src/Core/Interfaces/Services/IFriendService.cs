@@ -5,7 +5,7 @@ namespace Server.src.Interfaces
 {
     public interface IFriendService
     {
-        public Task<List<Friend>> GetFriendsAsync(int userId);
+        public Task<List<FriendResposeDto>> GetFriendsAsync(int userId, int number);
         public Task<List<Session>> GetFriendSessionsAsync(int userId, int friendId);
         public Task<List<Fornow>> GetFriendFornowsAsync(int userId, int friendId);
         public Task<Fornow> GetFriendFornowAsync(int userId, int friendId, int id);

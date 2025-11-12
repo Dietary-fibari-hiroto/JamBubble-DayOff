@@ -13,10 +13,12 @@ namespace Server.src.Infrastructure.Repositories
             _context = context;
         }
 
-        async Task<List<Friend>> IFriendRepository.GetFrindsByUserIdAsync(int userId, int number, bool asTracking)
+        public async Task<List<Friend>> GetFriendsByUserIdAsync(int userId, int number, bool asTracking = true)
         {
             IQueryable<Friend> query = _context.Friends
                 .Where(f => f.User1Id == userId || f.User2Id == userId)
+                .Include(f => f.User1)
+                .Include(f => f.User2)
                 .Take(number);
 
             if (!asTracking)
@@ -25,6 +27,21 @@ namespace Server.src.Infrastructure.Repositories
             }
 
             return await query.ToListAsync();
+        }
+
+        public async Task<Friend?> GetFriendByUserIdAsync(int userId, int friendId, bool asTracking = true)
+        {
+            IQueryable<Friend> query = _context.Friends
+                .Where(f => (f.User1Id == userId && f.User2Id == friendId) || (f.User2Id == userId && f.User1Id == friendId))
+                .Include(f => f.User1)
+                .Include(f => f.User2);
+
+            if (!asTracking)
+            {
+                query = query.AsNoTracking(); // 追跡オフ 
+            }
+
+            return await query.FirstOrDefaultAsync();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Server.src.Entities;
+﻿using Server.src.DTOs;
+using Server.src.Entities;
 using Server.src.Interfaces;
 
 namespace Server.src.Services
@@ -12,37 +13,48 @@ namespace Server.src.Services
             _repo = repo;
         }
 
-        Task<Fornow> IFriendService.GetFriendFornowAsync(int userId, int friendId, int id)
+        public async Task<List<FriendResposeDto>> GetFriendsAsync(int userId, int number)
+        {
+            var friends = await _repo.GetFriendsByUserIdAsync(userId, number, false);
+            if (friends == null || friends.Count == 0)
+            {
+                return new List<FriendResposeDto>(); // からのリストを送る
+            }
+            return friends.Select(f =>
+                {
+                    // フレンドのユーザーだけを取り出す
+                    var friendUser = f.User1Id == userId ? f.User2 : f.User1;
+                    return new FriendResposeDto(friendUser); // Dto
+                }
+            ).ToList();
+        }
+
+        public async Task<Fornow> GetFriendFornowAsync(int userId, int friendId, int id)
         {
             throw new NotImplementedException();
         }
 
-        Task<List<Fornow>> IFriendService.GetFriendFornowsAsync(int userId, int friendId)
+        public async Task<List<Fornow>> GetFriendFornowsAsync(int userId, int friendId)
         {
             throw new NotImplementedException();
         }
 
-        Task<List<Friend>> IFriendService.GetFriendsAsync(int userId)
+        public async Task<List<Session>> GetFriendSessionsAsync(int userId, int friendId)
         {
             throw new NotImplementedException();
         }
 
-        Task<List<Session>> IFriendService.GetFriendSessionsAsync(int userId, int friendId)
+        public async Task<bool> ProprietyFriendAsync(int userId, int friendId)
         {
             throw new NotImplementedException();
         }
 
-        Task<bool> IFriendService.ProprietyFriendAsync(int userId, int friendId)
+        public async Task<bool> RequestFriendAsync(int userId, int friendId)
         {
             throw new NotImplementedException();
         }
 
-        Task<bool> IFriendService.RequestFriendAsync(int userId, int friendId)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<bool> IFriendService.SetFavoriteToFornowAsync(int userId, int friendId, int id)
+        public async Task<bool> SetFavoriteToFornowAsync(int userId, int friendId, int id)
         {
             throw new NotImplementedException();
         }

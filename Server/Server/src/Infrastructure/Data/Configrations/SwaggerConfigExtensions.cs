@@ -33,6 +33,7 @@ namespace Server.src.Configrations
                     options.SchemaFilter<AuthResponseFilter>();
                     options.SchemaFilter<MessageRequestFilter>();
                     options.SchemaFilter<MessageResponseFilter>();
+                    options.SchemaFilter<FriendResponseFilter>();
 
                 });
         }
