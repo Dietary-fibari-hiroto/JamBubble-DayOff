@@ -1,0 +1,10 @@
+﻿/* 全体を中央に配置 */
+.splash-container {
+    display: flex;
+    flex-direction: column; /* 上から下へ縦並び */
+    justify-content: center; /* 縦方向中央 */
+    align-items: center; /* 横方向中央 */
+    height: 100vh; /* 画面全体の高さ */
+    background-color: black; /* ← 背景を黒に */
+    text-align: center;
+}
