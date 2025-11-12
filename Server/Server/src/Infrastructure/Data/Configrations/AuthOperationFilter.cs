@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.OpenApi.Models;
+using Server.src.Extensions;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Server.src.Configrations
@@ -41,5 +44,24 @@ namespace Server.src.Configrations
                 };
             }
         }
+    }
+
+    // JWTからユーザーIDを取得
+    // 存在しないならエラー
+    // いらないかも
+    public class UserIdFilter : IActionFilter
+    {
+        public void OnActionExecuting(ActionExecutingContext context)
+        {
+            var userId = context.HttpContext.User.GetUserId();
+            if (userId == null)
+            {
+                context.Result = new UnauthorizedObjectResult("Invalid user ID format in token.");
+                return;
+            }
+            context.HttpContext.Items["UserId"] = userId.Value;
+        }
+
+        public void OnActionExecuted(ActionExecutedContext context) { }
     }
 }
