@@ -315,6 +315,135 @@ h2#scene[b-nrkreluhnm]{
 
 
 
+/* _content/Web/Components/Pages/SessionPlaylist.razor.rz.scp.css */
+.wrapper[b-pnoxgtz2z2] {
+    position: relative;
+    top: 0;
+    width: 100%; /*　画面の幅を広げる*/
+    height: 100vh; /*　画面全体に広げる*/
+    display: flex;
+    flex-direction: column; /* 改行する*/
+    justify-content: flex-start; /* 上下上部に置く */
+    align-items: center; /* 左右中央 */
+}
+
+.list-container[b-pnoxgtz2z2] {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column; /* 改行する*/
+    justify-content: flex-start; /* 上下上部に置く */
+    align-items: center; /* 左右中央 */
+}
+
+/*　track(曲の情報）　*/
+.track[b-pnoxgtz2z2] {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 26px;
+    width: 300px;
+    height: 24px;
+}
+    /*　trackの白いライン　*/
+    .track[b-pnoxgtz2z2]::after {
+        content: "";
+        position: absolute; /*配置を自由に*/
+        bottom:0;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+    }
+
+.track-row[b-pnoxgtz2z2] {
+    display: flex;
+    align-items:baseline; /*テキストの基準線を合わせる*/
+    width: 300px;
+    height: 24px;
+    gap:21px;
+}
+
+/*　曲のアルバム　*/
+.album[b-pnoxgtz2z2] {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+/*　曲のアルバム　*/
+#track-title[b-pnoxgtz2z2] {
+    margin: 0 0 5px 5px;
+    padding: 0;
+    width: 150px; /* 幅を自動に */
+    white-space: nowrap; /*改行しない*/
+    overflow: hidden; /*はみ出す場合に隠す*/
+    text-overflow: ellipsis; /* ← はみ出したとき「…」で省略表示 */
+}
+/*　曲のアルバム　*/
+#track-artist[b-pnoxgtz2z2] {
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+/* .track　と .track 要素名の優先順位は.track 要素名が先に優先される　*/
+/*===== 音楽再生済 =====*/
+.track.isplayed[b-pnoxgtz2z2]{
+}
+
+.track.isplayed[b-pnoxgtz2z2]::after {
+    background-color: gray;
+}
+.track.isplayed #track-title[b-pnoxgtz2z2] {
+    color: gray;
+}
+.track.isplayed #track-artist[b-pnoxgtz2z2] {
+    color: gray;
+}
+
+
+/*===== 音楽再生中 =====*/
+.track.iscurrent[b-pnoxgtz2z2] {
+    width: 350px;
+    height: 58px;
+    align-items: center;  /*画像と文字が上下中央で揃う*/
+    padding-bottom: 7px;
+}
+
+.track.iscurrent .track-row[b-pnoxgtz2z2] {
+}
+
+.track.iscurrent .album[b-pnoxgtz2z2] {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+
+.track.iscurrent #track-title[b-pnoxgtz2z2] {
+    width: 110px; /* 幅を自動に */
+    white-space: nowrap; /*改行しない*/
+    overflow: hidden; /*はみ出す場合に隠す*/
+    text-overflow: ellipsis; /* ← はみ出したとき「…」で省略表示 */
+}
+
+
+
+
+/*===== 音楽未再生 =====*/
+.track.isupcoming[b-pnoxgtz2z2]{
+
+}
+
+.menu-container[b-pnoxgtz2z2] {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 /* _content/Web/Components/Pages/SessionRequest.razor.rz.scp.css */
 #wrapper[b-tklsusd25y] {
     position: relative;
@@ -415,13 +544,13 @@ h2#scene[b-nrkreluhnm]{
 #song-title[b-airo7hijbe]{
     display: flex;
     justify-content:center;
-    align-content:center;
+    align-items:center;
     margin: 0;
 }
 #artist[b-airo7hijbe] {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     margin: 0;
 }
 
@@ -465,7 +594,7 @@ h2#scene[b-nrkreluhnm]{
     width: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 /* _content/Web/Components/UI/cards/ArtistLabel.razor.rz.scp.css */
 .artist-label[b-b5derkp35q] {
@@ -498,54 +627,6 @@ h2#scene[b-nrkreluhnm]{
 }
 
 .arrow-icon[b-b5derkp35q] {
-    margin-left: auto; /* ← 念のため右端に寄せる補助 */
-    margin-right: 22px;
-    align-content: center;
-    padding: 0;
-}
-/* _content/Web/Components/UI/cards/MusicLabel.razor.rz.scp.css */
-
-.music-label[b-3nzndewyj3] {
-    display: flex;
-    align-content: center;
-    margin-bottom: 14px;
-    width: 350px;
-    height: 61px;
-    list-style: none;
-    border-bottom: 1px solid white;
-}
-
-.music-pic[b-3nzndewyj3] {
-    display: flex;
-    justify-content: center;
-    margin: 0 13px;
-    width: 50px;
-    height: 50px;
-}
-
-.music-info[b-3nzndewyj3] {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-    align-content: center;
-    gap: 7px;
-}
-
-.music-title[b-3nzndewyj3] {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.music-artist[b-3nzndewyj3] {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.arrow-icon[b-3nzndewyj3] {
     margin-left: auto; /* ← 念のため右端に寄せる補助 */
     margin-right: 22px;
     align-content: center;

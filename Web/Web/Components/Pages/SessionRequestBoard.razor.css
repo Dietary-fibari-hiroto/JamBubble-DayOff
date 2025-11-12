@@ -38,13 +38,13 @@
 #song-title{
     display: flex;
     justify-content:center;
-    align-content:center;
+    align-items:center;
     margin: 0;
 }
 #artist {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     margin: 0;
 }
 
@@ -88,5 +88,5 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
