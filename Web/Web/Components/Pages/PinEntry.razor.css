@@ -1,0 +1,59 @@
+﻿/*--全体レイアウト--*/
+.splash-container {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 横方向中央寄せ */
+    justify-content: center; /* 縦方向中央寄せ */
+    height: 100vh; /* 画面いっぱいに表示 */
+}
+
+/*--テキスト設定--*/
+p {
+    text-align: center; /* すべての<p>を中央寄せ */
+}
+
+/*--PIN入力エリア--*/
+.pin-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* 各ボックスの間隔 */
+    margin: 20px 0;
+}
+
+/* PIN入力ボックス（見た目の設定） */
+.pin-box {
+    width: 40px; /* 横幅 */
+    height: 50px; /* 高さ */
+    text-align: center; /* 入力文字を中央寄せ */
+    font-size: 24px; /* 文字サイズ */
+    color: white; /* 文字色 */
+    background-color: transparent; /* 背景色 */
+    border: 2px solid white; /* 枠線の色 */
+    border-radius: 8px; /* 角丸 */
+    outline: none; /* フォーカス時の青枠を消す */
+    caret-color: transparent; /* 入力カーソルを非表示にする */
+}
+
+    /* フォーカス時のエフェクト（入力中の強調） */
+    .pin-box:focus {
+        border: 2px solid #ffb84d; /* 枠をオレンジに */
+        box-shadow: 0 0 8px #ffb84d; /* 光る効果 */
+    }
+
+/*--認証ボタン--*/
+.auth-button {
+    background-color: darkorange;
+    color: white;
+    border: none;
+    padding: 15px 150px; /* 上下15px・左右150px */
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s; /* ホバー時の滑らかな変化 */
+    margin-top: 25px; /* ← この行を追加！ 下に30px分下げる */
+}
+
+.string-m-bold {
+    font-weight: bold; /* 太字（すでに指定されているなら省略可） */
+    font-size: 15px; /* ← 文字の大きさを変更（例：20px） */
+}

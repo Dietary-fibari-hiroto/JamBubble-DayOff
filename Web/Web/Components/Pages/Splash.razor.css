@@ -1,0 +1,47 @@
+﻿/* 全体を中央に配置 */
+.splash-container {
+    display: flex;
+    flex-direction: column;     /* 上から下へ縦並び */
+    justify-content: center;    /* 縦方向中央 */
+    align-items: center;        /* 横方向中央 */
+    height: 100vh;              /* 画面全体の高さ */
+    background-color: black;    /* ← 背景を黒に */
+    text-align: center;
+}
+
+/* ロゴ列を横並びに */
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* タイトル */
+h1 {
+    margin: 10px 0 5px 0;
+    font-size: 2.5rem;
+}
+
+/* サブタイトル */
+h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* By の文字を少し控えめに */
+h5 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.main-logo {
+    margin-top: -100px;             /* 上方向に100px動かす */
+    transform: translateX(30px);    /* 右へ30px動かす */
+}
+
+.string-s {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: -50px; /* ← ここを調整。-50px くらいが自然 */
+}

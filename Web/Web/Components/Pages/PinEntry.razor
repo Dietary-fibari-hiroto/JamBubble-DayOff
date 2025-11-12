@@ -1,6 +1,32 @@
 ﻿@page "/pinentry"
-<h3>PinEntry</h3>
+@page "/pinentry/{HostName}" 
+<div class="splash-container">
+    <!-- 上段：説明とホスト名 -->
+    <div class="logo-row">
+        <p>ホストに表示されているパスワードを<br>
+            入力してください</p>
+        <!-- ここで受け取ったホスト名を表示 -->
+<p class="string-m-bold">ホスト名: @(string.IsNullOrEmpty(HostName) ? "ECC太郎" : HostName)</p>
+    </div>
+
+    <!-- PIN入力エリア（4桁の数字のみ入力可能） -->
+    <div class="pin-container">
+        <input class="pin-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+        <input class="pin-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+        <input class="pin-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+        <input class="pin-box" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+    </div>
+
+    <!-- 認証ボタン -->
+    <button class="auth-button">認証</button>
+</div>
 
 @code {
-
+    // 他ページから渡された「ホスト名」を受け取るためのプロパティ
+    [Parameter]
+    public string? HostName { get; set; }
 }

@@ -1,0 +1,76 @@
+/* 全体レイアウト */
+.splash-container {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 横方向中央寄せ */
+    justify-content: center; /* 縦方向中央寄せ */
+    height: 100vh; /* 画面いっぱいに表示 */
+}
+
+/* 上段：説明テキスト */
+.instruction-text {
+    font-size: 14px; /* テキストサイズ */
+    color: #ffffff; /* 白色 */
+    text-align: center; /* 中央揃え */
+    margin-top: -70px; /* 上に10px上げる */
+    margin-bottom: 10px; /* 下の入力ボックスとの間隔 */
+}
+
+/* ニックネーム入力エリア */
+.nickname-container {
+    display: flex;
+    flex-direction: column; /* ラベルと入力ボックスを縦に並べる */
+    align-items: center; /* 入力ボックスを中央に配置 */
+    background-color: transparent; /* 背景透明 */
+    border: none; /* 枠線なし */
+    border-radius: 15px; /* 角丸 */
+    padding: 25px 15px; /* 内側の余白: 上下25px、左右15px */
+    margin-bottom: 25px; /* 下のボタンとの間隔 */
+}
+
+/* 「ニックネーム」ラベル */
+.nickname-label {
+    width: 330px; /* 入力ボックスと同じ幅 */
+    text-align: left; /* 左寄せ */
+    margin-bottom: 5px; /* 入力ボックスとの間隔 */
+    font-size: 16px; /* 文字サイズ */
+    color: white; /* 白文字 */
+}
+
+/* 入力欄（PINボックス） */
+.pin-box {
+    width: 330px; /* 横幅 */
+    height: 50px; /* 縦幅 */
+    font-size: 24px; /* 文字サイズ */
+    color: white; /* 文字色 */
+    background-color: transparent; /* 背景透明 */
+    border: 2px solid white; /* 枠線白 */
+    border-radius: 8px; /* 角丸 */
+    outline: none; /* フォーカス時の青枠を消す */
+    caret-color: transparent; /* カーソル非表示 */
+    box-sizing: border-box; /* パディング込みで幅を計算 */
+}
+
+    /* PINボックス フォーカス時の効果 */
+    .pin-box:focus {
+        border: 2px solid #ffb84d; /* 枠線をオレンジに */
+        box-shadow: 0 0 8px #ffb84d; /* 光る効果 */
+    }
+
+/* 認証ボタン */
+.auth-button {
+    background-color: darkorange; /* ボタン背景色 */
+    color: white; /* ボタン文字色 */
+    border: none; /* 枠線なし */
+    padding: 15px 150px; /* 上下15px、左右150px */
+    border-radius: 8px; /* 角丸 */
+    font-size: 18px; /* 文字サイズ */
+    cursor: pointer; /* マウス時の指アイコン */
+    transition: 0.2s; /* ホバー時の変化を滑らかに */
+    margin-top: 5px; /* 上の入力ボックスとの距離 */
+}
+
+    /* 認証ボタン ホバー時 */
+    .auth-button:hover {
+        background-color: orangered; /* マウスを乗せた時の色 */
+    }

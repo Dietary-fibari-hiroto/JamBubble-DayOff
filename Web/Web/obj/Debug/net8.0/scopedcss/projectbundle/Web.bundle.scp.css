@@ -95,6 +95,17 @@ main[b-739djkm78g] {
         right: 0.75rem;
         top: 0.5rem;
     }
+/* _content/Web/Components/Pages/Connecting.razor.rz.scp.css */
+/* 全体を中央に配置 */
+.splash-container[b-9bfmh9gm7z] {
+    display: flex;
+    flex-direction: column; /* 上から下へ縦並び */
+    justify-content: center; /* 縦方向中央 */
+    align-items: center; /* 横方向中央 */
+    height: 100vh; /* 画面全体の高さ */
+    background-color: black; /* ← 背景を黒に */
+    text-align: center;
+}
 /* _content/Web/Components/Pages/Home.razor.rz.scp.css */
 .developer-section-container[b-l0gfn74exd]{
     padding-top:100px;
@@ -120,6 +131,143 @@ main[b-739djkm78g] {
     margin:10px 0 ;
     cursor:pointer;
 }
+/* _content/Web/Components/Pages/PinEntry.razor.rz.scp.css */
+/*--全体レイアウト--*/
+.splash-container[b-ezqjnsqnwz] {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 横方向中央寄せ */
+    justify-content: center; /* 縦方向中央寄せ */
+    height: 100vh; /* 画面いっぱいに表示 */
+}
+
+/*--テキスト設定--*/
+p[b-ezqjnsqnwz] {
+    text-align: center; /* すべての<p>を中央寄せ */
+}
+
+/*--PIN入力エリア--*/
+.pin-container[b-ezqjnsqnwz] {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* 各ボックスの間隔 */
+    margin: 20px 0;
+}
+
+/* PIN入力ボックス（見た目の設定） */
+.pin-box[b-ezqjnsqnwz] {
+    width: 40px; /* 横幅 */
+    height: 50px; /* 高さ */
+    text-align: center; /* 入力文字を中央寄せ */
+    font-size: 24px; /* 文字サイズ */
+    color: white; /* 文字色 */
+    background-color: transparent; /* 背景色 */
+    border: 2px solid white; /* 枠線の色 */
+    border-radius: 8px; /* 角丸 */
+    outline: none; /* フォーカス時の青枠を消す */
+    caret-color: transparent; /* 入力カーソルを非表示にする */
+}
+
+    /* フォーカス時のエフェクト（入力中の強調） */
+    .pin-box:focus[b-ezqjnsqnwz] {
+        border: 2px solid #ffb84d; /* 枠をオレンジに */
+        box-shadow: 0 0 8px #ffb84d; /* 光る効果 */
+    }
+
+/*--認証ボタン--*/
+.auth-button[b-ezqjnsqnwz] {
+    background-color: darkorange;
+    color: white;
+    border: none;
+    padding: 15px 150px; /* 上下15px・左右150px */
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s; /* ホバー時の滑らかな変化 */
+    margin-top: 25px; /* ← この行を追加！ 下に30px分下げる */
+}
+
+.string-m-bold[b-ezqjnsqnwz] {
+    font-weight: bold; /* 太字（すでに指定されているなら省略可） */
+    font-size: 15px; /* ← 文字の大きさを変更（例：20px） */
+}
+/* _content/Web/Components/Pages/ProfileSetup.razor.rz.scp.css */
+/* �S�̃��C�A�E�g */
+.splash-container[b-5fhzlylbml] {
+    display: flex;
+    flex-direction: column; /* �c�����ɕ��ׂ� */
+    align-items: center; /* ������������ */
+    justify-content: center; /* �c���������� */
+    height: 100vh; /* ��ʂ����ς��ɕ\�� */
+}
+
+/* ��i�F����e�L�X�g */
+.instruction-text[b-5fhzlylbml] {
+    font-size: 14px; /* �e�L�X�g�T�C�Y */
+    color: #ffffff; /* ���F */
+    text-align: center; /* �������� */
+    margin-top: -70px; /* ���10px�グ�� */
+    margin-bottom: 10px; /* ���̓��̓{�b�N�X�Ƃ̊Ԋu */
+}
+
+/* �j�b�N�l�[�����̓G���A */
+.nickname-container[b-5fhzlylbml] {
+    display: flex;
+    flex-direction: column; /* ���x���Ɠ��̓{�b�N�X��c�ɕ��ׂ� */
+    align-items: center; /* ���̓{�b�N�X�𒆉��ɔz�u */
+    background-color: transparent; /* �w�i���� */
+    border: none; /* �g���Ȃ� */
+    border-radius: 15px; /* �p�� */
+    padding: 25px 15px; /* ����̗]��: �㉺25px�A���E15px */
+    margin-bottom: 25px; /* ���̃{�^���Ƃ̊Ԋu */
+}
+
+/* �u�j�b�N�l�[���v���x�� */
+.nickname-label[b-5fhzlylbml] {
+    width: 330px; /* ���̓{�b�N�X�Ɠ����� */
+    text-align: left; /* ���� */
+    margin-bottom: 5px; /* ���̓{�b�N�X�Ƃ̊Ԋu */
+    font-size: 16px; /* �����T�C�Y */
+    color: white; /* ������ */
+}
+
+/* ���͗��iPIN�{�b�N�X�j */
+.pin-box[b-5fhzlylbml] {
+    width: 330px; /* ���� */
+    height: 50px; /* �c�� */
+    font-size: 24px; /* �����T�C�Y */
+    color: white; /* �����F */
+    background-color: transparent; /* �w�i���� */
+    border: 2px solid white; /* �g���� */
+    border-radius: 8px; /* �p�� */
+    outline: none; /* �t�H�[�J�X���̐g����� */
+    caret-color: transparent; /* �J�[�\����\�� */
+    box-sizing: border-box; /* �p�f�B���O���݂ŕ���v�Z */
+}
+
+    /* PIN�{�b�N�X �t�H�[�J�X���̌��� */
+    .pin-box:focus[b-5fhzlylbml] {
+        border: 2px solid #ffb84d; /* �g����I�����W�� */
+        box-shadow: 0 0 8px #ffb84d; /* ������� */
+    }
+
+/* �F�؃{�^�� */
+.auth-button[b-5fhzlylbml] {
+    background-color: darkorange; /* �{�^���w�i�F */
+    color: white; /* �{�^�������F */
+    border: none; /* �g���Ȃ� */
+    padding: 15px 150px; /* �㉺15px�A���E150px */
+    border-radius: 8px; /* �p�� */
+    font-size: 18px; /* �����T�C�Y */
+    cursor: pointer; /* �}�E�X���̎w�A�C�R�� */
+    transition: 0.2s; /* �z�o�[���̕ω�����炩�� */
+    margin-top: 5px; /* ��̓��̓{�b�N�X�Ƃ̋��� */
+}
+
+    /* �F�؃{�^�� �z�o�[�� */
+    .auth-button:hover[b-5fhzlylbml] {
+        background-color: orangered; /* �}�E�X��悹�����̐F */
+    }
 /* _content/Web/Components/Pages/SessionLink.razor.rz.scp.css */
 #wrapper[b-nrkreluhnm]{
     position: relative;
@@ -315,6 +463,64 @@ h2#scene[b-nrkreluhnm]{
 
 
 
+/* _content/Web/Components/Pages/Splash.razor.rz.scp.css */
+/* 全体を中央に配置 */
+.splash-container[b-a9qbeh1rql] {
+    display: flex;
+    flex-direction: column;     /* 上から下へ縦並び */
+    justify-content: center;    /* 縦方向中央 */
+    align-items: center;        /* 横方向中央 */
+    height: 100vh;              /* 画面全体の高さ */
+    background-color: black;    /* ← 背景を黒に */
+    text-align: center;
+}
+
+/* ロゴ列を横並びに */
+.logo-row[b-a9qbeh1rql] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* タイトル */
+h1[b-a9qbeh1rql] {
+    margin: 10px 0 5px 0;
+    font-size: 2.5rem;
+}
+
+/* サブタイトル */
+h3[b-a9qbeh1rql] {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* By の文字を少し控えめに */
+h5[b-a9qbeh1rql] {
+    margin: 0;
+    font-weight: normal;
+}
+
+.main-logo[b-a9qbeh1rql] {
+    margin-top: -100px;             /* 上方向に100px動かす */
+    transform: translateX(30px);    /* 右へ30px動かす */
+}
+
+.string-s[b-a9qbeh1rql] {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: -50px; /* ← ここを調整。-50px くらいが自然 */
+}
+/* _content/Web/Components/Pages/Welcome.razor.rz.scp.css */
+/* 全体を中央に配置 */
+.splash-container[b-ubzrejv1of] {
+    display: flex;
+    flex-direction: column; /* 上から下へ縦並び */
+    justify-content: center; /* 縦方向中央 */
+    align-items: center; /* 横方向中央 */
+    height: 100vh; /* 画面全体の高さ */
+    text-align: center;
+}
 /* _content/Web/Components/UI/MenuBar.razor.rz.scp.css */
 /*===========menu_bar============*/
 #menu-container[b-rswppccu2v] {

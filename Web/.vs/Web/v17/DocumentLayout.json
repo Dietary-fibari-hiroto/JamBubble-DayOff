@@ -1,34 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\",
+  "WorkspaceRootPath": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionlink.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionlink.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\ProfileSetup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\pages\\sessionlink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionlink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\ProfileSetup.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\menubar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\menubar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\Home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\ui\\menubar.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\menubar.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Connecting.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\Connecting.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\wwwroot\\css\\variable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\variable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\SessionLink.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\wwwroot\\images\\elementicons\\undo-2.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\images\\elementicons\\undo-2.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\UI\\MenuBar.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230233\\source\\repos\\jambubble-dayoff\\web\\web\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\UI\\MenuBar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Pages\\SessionLink.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\wwwroot\\css\\Variable.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\wwwroot\\images\\elementIcons\\undo-2.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Web\\Components\\Layout\\MainLayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,51 +66,100 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MenuBar.razor.css",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor.css",
-              "RelativeDocumentMoniker": "Web\\Components\\UI\\MenuBar.razor.css",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor.css",
-              "RelativeToolTip": "Web\\Components\\UI\\MenuBar.razor.css",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-07T07:11:57.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuBar.razor",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\UI\\MenuBar.razor",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor*",
-              "RelativeToolTip": "Web\\Components\\UI\\MenuBar.razor*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-07T07:10:04.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SessionLink.razor.css",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor.css",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor.css",
-              "ViewState": "AgIAALYAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA==",
+              "Title": "ProfileSetup.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\ProfileSetup.razor.css",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor.css",
+              "RelativeToolTip": "Web\\Components\\Pages\\ProfileSetup.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-03T04:35:06.62Z",
+              "WhenOpened": "2025-11-12T05:53:48.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProfileSetup.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\ProfileSetup.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\ProfileSetup.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\ProfileSetup.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T05:53:46.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T05:52:25.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Connecting.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Connecting.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Connecting.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\Connecting.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Connecting.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T05:52:24.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MenuBar.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\MenuBar.razor.css",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor.css",
+              "RelativeToolTip": "Web\\Components\\UI\\MenuBar.razor.css",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-07T07:11:57.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuBar.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\MenuBar.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\MenuBar.razor",
+              "RelativeToolTip": "Web\\Components\\UI\\MenuBar.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-07T07:10:04.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SessionLink.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor.css",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor.css",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor.css",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-03T04:35:06.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SessionLink.razor",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionLink.razor",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor*",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor*",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionLink.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionLink.razor",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-03T04:13:46.258Z",
@@ -102,11 +167,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Variable.css",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
               "RelativeDocumentMoniker": "Web\\wwwroot\\css\\Variable.css",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\css\\Variable.css",
               "RelativeToolTip": "Web\\wwwroot\\css\\Variable.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -114,23 +179,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "undo-2.svg",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
               "RelativeDocumentMoniker": "Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
               "RelativeToolTip": "Web\\wwwroot\\images\\elementIcons\\undo-2.svg",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATvSURBVEhLtZZrbFRFFMd/d193724ppYUt2NKHtCAPoYCAgiAIKiRKAMGGgJpoKIJfRIh\u002BMX4RY0KsIESIWBLU4gdqVURJNCiIiYQIbWmxIFCQllcLTbul3b37uHP8cLfbhaIhMZ5k7kwmM//fmTMzZy78nyYi2p19ANXV1duBNdhj6K3vbKeUHStWrFh7u8q/WHV1tdyr1dbWSlVVlezZs2f7nToAjjs7Uq3XQyWCUoIohRKFUgqlLCzL4sKFCyxduhSl1JqKiop\u002BkLsCkqEAQlELK1hL7PonWJcnYNYMpvtng9BvYxDzUnJsaWkplmWt2bp1622QfnuQvvoL1/opvlh86Ciwmpk3fC9j0k5iXD\u002BPisZxBl5COcbhcJpE/tzGwei7LFu2jFgsRiQSYdeuXfj9/h2rVq1a2w8w9PWvC4dkDqwoKRz8\u002BJOTspmZuYn7Yrvo/NXJUVlCI3NIHzaFl2cU4HJo3Pg0m9OFVbS0tBCJRIhGoxQUFHD16lXKyso0AFef\u002BDf5gYy0/U/MGlc8vyjINH0FaZ0HuXRsNvVj36bB9RDnW7u5\u002BMdlrnV08/YzY/EMn8/kyZMoKCggbIYxvAbZ2dlUVlYmnXaQCEtWxoDd82Y9OLL0gRbPLH0JaWcPcmz/LDZa77PneAZtLZ3kBdIZPb6QuqCDd75txF38AobPR25uLsUjisnJycHn8yX3JQnIyhr49Oj8QNGCojZXiWMl7voGTtYtILD8Oz5eXkL5omImpFm0NjaT7nEzJGcItW1hmhyTQAQQRFNJ0X6AAT7XosWTXZmPGGWaq\u002Bk0J2unU/LKAfKzfAAMS/fy4rRcOjpvMdDhxuFy4vL7\u002BLLmalII0RIwUKoP5gLIG6RPmZm12fB1HeX0pefZlLWOjo\u002BOEbOslNuqMHx\u002BTCcYbifidnPqyk0QQbC1e09M6gpcAKunHc/LVZ9rLQcncnj6e4z3BuxJ2B9bwAZZEQurB2JKYcUtFKAJaNigfgDpGTOzp2ObETyky74Z\u002B7UO52D55cAJTcVjtncCQiIPiaCUQhA0hIcLM9HEjk6vI/0BodaFzmvtzn3WumibleGJRq1brmhP\u002Bg\u002BvzyUWj9kC9jQk4a0NtEMiCWUbagfptk2WrvZHg2f0rh\u002BtpTfONbcLSvyB/PvY8FUjp64EiSuhJxqn8VoXr\u002B2tZ86WI8z\u002B4AhzPzxCVe2VpKCG1pdiUlcQatHGeAaqytq64DhPO4MG\u002BLy\u002BnKI8Il3dbDx0iRs3ghgeJ\u002BnpaRSOKmbKSAdtN7u41dTE4gnDEsuzxe8aImViZS6MvZq3vjugm/GfTtWpwpwR\u002Bf7sIQMoLBnN/YnTF41btNwMEmxtJ97RzuZnJ\u002BB0aH2B/wdzaA6\u002Bb/uMN5vLn2sbTv1TWueZmusNdZyuOcPvNWc50fAXp\u002BrP09RwjuDFZgbFeviotISigD95AJKU3ip1DzSXvKG5mX95C7I7460jlb6yA1ON1sMzcvxkhm/hvnmd4WIyNcvF\u002BsfyqVg5kbxMOx3climlD5QKuKtVVFQcFxGJREwxI6aYpimmGRYzHBYzHBIzHJZwOCThUEjC4R4JpdQiIuXl5UnCPz04kwE8Hh3do6PrOrruRfd60b0GuteL12vgNQy8Xh9GSp2Yn9Tq9\u002BAA7Ny5c7uIrOm9vUop\u002B5TcpZAQTG0DOzZs2HDvPwH/xf4Gb5LkTqfRE7EAAAAASUVORK5CYII=",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMfSURBVDhPjZTvaxt1HMdf37t87y6JWXLmGjMTG6mbIPHJfgjdaFWoWB/oCoWCqKWrtj6X5YE\u002BEp8L/QcU0YdFEYaCTGTOSR3UueG6B1pltprRadtr0/TussvlfLBd6JKU7QX34Ph83q/vr7uvYH\u002BU6enp41NTU4PpdNrqLEZ4nrcxPz\u002B/ODc39xNh2Ip1NtxFVCqVV0ZHR18tlUqDlmXFhBCdPQDU6/WmaZqfAZcQQnQJTdNMTU5ODo\u002BPj79eLBaHDMPIJxIJ9hMGQYCUMgsIAGVvsVAoZMfGxk7OzMy8WS6Xn0smk3lFuadlP9qjtbszmUxqZGTkeKVSeWtgYOBlwzD6AMIwjFoeiLZwYmJieHZ2dtayrFO\u002B70vHcWg0GrRarXsT9yESKrlcbrBQKDyraZoWLUEaCVyZ5NdtWN6BbR\u002BC\u002B0w4EopEIpFNpVJWPB7HMAwCKfnF1Tm7qnP1imD9AuxeAv8vCL0Oyx7aS1ZVFU3TkJqkqbX4PfA5f7PF4qKC8lWTxOdrKF/\u002BR3DBofUnhLeBHrPtOsLbYZN/gjW\u002B2LjF9Rsupasw8mODQ1cuY36/QOzsMsF5l7AGYdCZ7iFs4HHZX\u002BLa9r9sew3iT0PmA4i/b6DlP0Gufoj6xw\u002BEN4FmZ7qHsEnAerDJjvyNrdwa9ScD1Gck4sRjiJckoriE2LyIMJogutfcJZRI\u002BtWDaMllNh/5lqX8N5zTL3JNX2Dn8C1EsYbQNhDpFuJOOty7m11CQ\u002Bgck09x9KGAormAHf\u002BU72ofccP\u002BGDf2N\u002BTTiP4c4gCgdqZ7CDWhUlT7OKMP8Z7Rxyn1OofqX1N2fuZAYEHpBBw7AnENlO7/u0t455vW6NOP8LzxAqfli7wWH6XfOoP2xLtw8m0YHOoMtekpFEJBqjlS8SGs9Gkezr6DZr6BcnAYHj0MGbMz1KYtDO/Sfhc6gZLHj5XxlKN4PI6vmwSaTth9A3UdSuj7/obruquO41Sjp16vV2u1WnVra6tq23a1VqtVd3d323XHcaqu6676vr8eSaMLNrRt\u002B9zKyoptGEY2Gu1B8Dxv3bbtxUj4P5M0LJYoUlCgAAAAAElFTkSuQmCC",
               "WhenOpened": "2025-10-31T04:21:45.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Web\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\2230233\\source\\repos\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "Web\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",

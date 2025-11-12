@@ -1,7 +1,22 @@
 ﻿@page "/profilesetup"
 
-<h3>ProfileSetup</h3>
+<div class="splash-container">
+    <!-- 上段：説明 -->
+    <div class="logo-row">
+        <p class="instruction-text">ニックネームを教えてください！</p>
+    </div>
+
+    <!-- ニックネーム入力エリア -->
+    <div class="nickname-container">
+        <label class="nickname-label">ニックネーム</label>
+        <input class="pin-box" type="text" maxlength="20" />
+    </div>
+
+    <!-- 登録ボタン -->
+    <button class="auth-button">確定</button>
+</div>
 
 @code {
-
+    [Parameter]
+    public string? HostName { get; set; }
 }

@@ -3,8 +3,20 @@
 @inject NavigationManager NavManager
 @rendermode InteractiveServer
 
-<h3 @onclick="BackTo">Splash</h3>
 
+<div class="splash-container">
+    <!-- 上段：ロゴ＋By＋Dayoffロゴ -->
+        <div class="logo-row">
+            <img src="images/icons/jumbubblelogo .png" alt="JumBubbleロゴ" width="150" class="main-logo" />
+            <p class="string-m-bold">By</p>
+            <img src="images/icons/DayoffWhiteLogo.png" alt="Dayoffロゴ" width="100" />
+        </div>
+        <!-- 中央タイトル -->
+    <p class="string-big-bold">JamBubble</p>
+
+    <!-- サブタイトル -->
+    <p class="string-s">A shared playlist colored by everyone’s taste.</p>
+</div>
 @code {
     private void BackTo()
     {
