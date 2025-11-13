@@ -41,5 +41,6 @@ public class User:TimestampedEntity {
     public FavoriteMusic? FavoriteMusic { get; set; }
     public List<UserProvider>? UserProviders { get; set; }
     public List<Message>? Messages { get; set; }
+    public List<Session>? Sessions { get; set; }
 }
 

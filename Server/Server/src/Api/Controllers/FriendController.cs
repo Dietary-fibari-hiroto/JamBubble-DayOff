@@ -33,5 +33,12 @@ namespace Server.src.Api.Controllers
             var friends = await _friendService.GetFriendsAsync(userId.Value, n);
             return Ok(friends);
         }
+
+        [Authorize]
+        [HttpGet("{friendId}/sessions")]
+        public async Task<IActionResult> GetFriendSessions(int friendId)
+        {
+            return Ok();
+        }
     }
 }
