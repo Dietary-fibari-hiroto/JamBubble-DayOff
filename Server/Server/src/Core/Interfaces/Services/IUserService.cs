@@ -7,6 +7,7 @@ namespace Server.src.Interfaces
     {
         public Task<UserAllDataResponseDto?> GetUserAllDataAsync(int userId);
         public Task<UserProfileResponseDto?> GetUserProfileAsync(int userId);
+        public Task<User?> UserExistsAsync(string email);
         public Task<UserAllDataResponseDto?> AddUserAsync(RegisterUserRequestDto user);
         public Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateData, int userId);
         public Task<bool> DeleteUserAsync(int userId);

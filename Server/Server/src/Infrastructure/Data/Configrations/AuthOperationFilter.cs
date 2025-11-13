@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.OpenApi.Models;
-using Server.src.Extensions;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Server.src.Configrations

@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="src\Api\Extensions\" />
     <Folder Include="src\Core\Exceptions\" />
     <Folder Include="src\BlazorServerApp\" />
     <Folder Include="src\Infrastructure\Migrations\" />

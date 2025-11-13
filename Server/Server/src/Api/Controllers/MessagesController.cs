@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Server.src.DTOs;
 using Server.src.Entities;
 using Server.src.Interfaces;
-using Server.src.Extensions;
 using System.Runtime.Serialization;
+using Server.src.Configrations;
 
 namespace Server.src.Api.Controllers
 {

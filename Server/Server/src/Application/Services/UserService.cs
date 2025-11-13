@@ -42,6 +42,12 @@ namespace Server.src.Services
 
             return new UserProfileResponseDto(user);
         }
+
+        public Task<User?> UserExistsAsync(string email)
+        {
+            return _repo.GetUserByEmailAsync(email);
+        }
+
         public async Task<UserAllDataResponseDto?> AddUserAsync(RegisterUserRequestDto userDto)
         {
             // すでに同じEmailのユーザーが存在するか確認
