@@ -31,6 +31,7 @@ namespace Server.Data
         public DbSet<SessionTag> SessionTags => Set<SessionTag>();
         public DbSet<Scene> Scenes => Set<Scene>();
         public DbSet<SessionSortSetting> SessionSortSettings => Set<SessionSortSetting>();
+        public DbSet<SessionInvitation> SessionInvitations => Set<SessionInvitation>();
         public DbSet<Guest> Guests => Set<Guest>();
         public DbSet<Request> Requests => Set<Request>();
         public DbSet<RequestCache> RequestCaches => Set<RequestCache>();
@@ -74,6 +75,7 @@ namespace Server.Data
             modelBuilder.Entity<UserBlock>().HasKey( p=> new {p.UserId,p.BlockedUserId});
 
             modelBuilder.Entity<SessionTag>().HasKey(p => new { p.SessionId, p.TagId });
+            modelBuilder.Entity<SessionInvitation>().HasKey(p => new { p.SessionId, p.UserId });
 
             modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
 
