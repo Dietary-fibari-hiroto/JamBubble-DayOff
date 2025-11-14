@@ -29,17 +29,17 @@ namespace Server.src.Services
             ).ToList();
         }
 
+        public async Task<List<SessionResposeDto>> GetFriendSessionsAsync(int userId, int friendId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Fornow> GetFriendFornowAsync(int userId, int friendId, int id)
         {
             throw new NotImplementedException();
         }
 
         public async Task<List<Fornow>> GetFriendFornowsAsync(int userId, int friendId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<Session>> GetFriendSessionsAsync(int userId, int friendId)
         {
             throw new NotImplementedException();
         }
