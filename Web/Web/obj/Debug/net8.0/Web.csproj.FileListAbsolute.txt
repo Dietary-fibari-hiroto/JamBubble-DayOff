@@ -106,3 +106,5 @@ C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\refi
 C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\Web.pdb
 C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\ref\Web.dll
+C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\SessionPlaylistDuplicationDialog.razor.rz.scp.css
+C:\Users\2230165\JamBubble-DayOff\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\Pages\SessionPlaylist.razor.rz.scp.css

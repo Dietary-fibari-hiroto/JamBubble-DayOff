@@ -32,10 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTWVuYmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/Pages/SessionPlaylist.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUGxheWxpc3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/Pages/SessionRequest.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUmVxdWVzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope = b-5fhzlylbml
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTGluay5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-nrkreluhnm
 
+[C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/Pages/SessionPlaylist.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUGxheWxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-pnoxgtz2z2
+
 [C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/Pages/Splash.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGxhc2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-a9qbeh1rql
@@ -87,3 +87,7 @@ build_metadata.AdditionalFiles.CssScope = b-ubzrejv1of
 [C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/UI/MenuBar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxNZW51QmFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-rswppccu2v
+
+[C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/UI/SessionPlaylistDuplicationDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZXNzaW9uUGxheWxpc3REdXBsaWNhdGlvbkRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-fo7lugppwy

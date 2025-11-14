@@ -463,6 +463,90 @@ h2#scene[b-nrkreluhnm]{
 
 
 
+/* _content/Web/Components/Pages/SessionPlaylist.razor.rz.scp.css */
+/* --- 画面中央配置 --- */
+.center-wrapper[b-pnoxgtz2z2] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* --- ダイアログ（背景を黒に変更） --- */
+.request-dialog[b-pnoxgtz2z2] {
+    border: 1px solid #444;
+    padding: 20px;
+    width: 300px;
+    background-color: #000; /* ← 背景を黒 */
+    border-radius: 8px;
+    color: #fff; /* 文字を白 */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* --- pタグの余白をさらに狭くする --- */
+    .request-dialog p[b-pnoxgtz2z2] {
+        margin: 2px 0; /* ← かなり近づけた */
+    }
+
+/* --- ボタンを縦に並べる --- */
+.button-group[b-pnoxgtz2z2] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px; /* ちょい詰め */
+}
+
+/* --- ボタン --- */
+.action-btn[b-pnoxgtz2z2] {
+    margin: 6px 0;
+    padding: 8px 12px; /* ← 少しコンパクトに */
+    width: 45%; /* ← ボタンを細く */
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex; /* ← アイコンと文字を横並び中央 */
+    align-items: center;
+    justify-content: center;
+}
+
+    /* リクエスト（紫） */
+    .action-btn.request[b-pnoxgtz2z2] {
+        background-color: #8A2BE2;
+        color: white;
+    }
+
+        .action-btn.request:hover[b-pnoxgtz2z2] {
+            background-color: #7725C8;
+        }
+
+    /* もどる（薄い黒） */
+    .action-btn.back[b-pnoxgtz2z2] {
+        background-color: #151515; /* 黒より少し薄い黒 */
+        color: white;
+    }
+
+        .action-btn.back:hover[b-pnoxgtz2z2] {
+            background-color: #1c1c1c;
+        }
+
+/* --- アイコン（リクエスト左の画像）--- */
+.btn-icon[b-pnoxgtz2z2] {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px; /* アイコンと文字の距離 */
+    vertical-align: middle;
+}
+
+/* --- メッセージ --- */
+.message[b-pnoxgtz2z2] {
+    color: #4caf50;
+    margin-top: 10px;
+}
 /* _content/Web/Components/Pages/Splash.razor.rz.scp.css */
 /* 全体を中央に配置 */
 .splash-container[b-a9qbeh1rql] {
@@ -555,3 +639,4 @@ h5[b-a9qbeh1rql] {
     width: 24px;
     height: 24px;
 }
+/* _content/Web/Components/UI/SessionPlaylistDuplicationDialog.razor.rz.scp.css */
