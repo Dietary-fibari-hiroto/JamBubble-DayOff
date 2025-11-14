@@ -36,10 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQcm9maWxlU2V0dXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionEnd.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uRW5kLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/Splash.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGxhc2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -63,6 +59,10 @@ build_metadata.AdditionalFiles.CssScope = b-739djkm78g
 [C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-l0gfn74exd
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionEnd.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uRW5kLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-j6z6oonwt1
 
 [C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionLink.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTGluay5yYXpvcg==
