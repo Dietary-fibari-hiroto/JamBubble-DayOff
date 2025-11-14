@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Server.Data;
 using Server.src.DTOs;
 using Server.src.Entities;
 using Server.src.Interfaces;
@@ -12,12 +14,29 @@ namespace Server.src.Configrations
         public static async Task SeedAsync(IServiceProvider serviceProvider)
         {
             using var scope = serviceProvider.CreateScope(); // スコープを作成
+            var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             var userService = scope.ServiceProvider.GetRequiredService<IUserService>(); // サービスを解決
-
+            
             var pasTemp = "password";
 
             // ランダム生成用のインスタンス
             var random = new Random();
+
+            var addedDummyUsers = new List<User>();
+
+            // プロバイダー挿入
+            var provider = await dbContext.Providers.FirstOrDefaultAsync(p => p.Id == 1);
+            if (provider == null)
+            {
+                await dbContext.Providers.AddAsync(new Provider
+                {
+                    Id = 1,
+                    Name = "Spotipy"
+                });
+                await dbContext.SaveChangesAsync();
+            }
+
+
 
             // ダミーデータのリスト
             var dummyUsers = new List<RegisterUserRequestDto>
@@ -125,7 +144,11 @@ namespace Server.src.Configrations
                 await userService.AddUserAsync(user);
                 userData = await userService.UserExistsAsync(user.Email);
                 if (userData == null) continue;
+                addedDummyUsers.Add(userData);
+            }
 
+            foreach (var user in addedDummyUsers)
+            {
                 // ランダムなメッセージを生成
                 var randomMessage = $"This is a random message {Guid.NewGuid()}";
 
@@ -137,20 +160,49 @@ namespace Server.src.Configrations
                     Message = randomMessage,
                     IsStreetPass = randomBoolean,
                     MusicId = $"music-{random.Next(1, 100)}" // ランダムな MusicId を生成
-                }, userData.Id);
-
-                await userService.DeleteUserProviderAsync(new DeleteUserProviderRequestDto
-                {
-                    ProviderId = 1
-                }, userData.Id);
+                }, user.Id);
 
                 await userService.AddUserProviderAsync(new RegisterUserProviderRequestDto
                 {
                     ProviderId = 1,
                     Name = user.Name,
                     Password = pasTemp
+                }, user.Id);
 
-                }, userData.Id);
+                // 友達追加
+                foreach (var inUser in addedDummyUsers)
+                {
+                    if (user.Id == inUser.Id)
+                    {
+                        continue;
+                    }
+
+                    var exists = await dbContext.Friends.AnyAsync(f => (f.User1Id == user.Id && f.User2Id == inUser.Id) || (f.User2Id == user.Id && f.User1Id == inUser.Id));
+                    if(!exists)
+                    {
+                        await dbContext.Friends.AddAsync(new Friend
+                        {
+                            User1Id = user.Id,
+                            User1 = user,
+                            User2Id = inUser.Id,
+                            User2 = inUser
+                        });
+                        await dbContext.SaveChangesAsync();
+                    }
+                }
+
+                // メッセージ作成
+                for(int i = 0; i < 5; i++)
+                {
+                    await dbContext.Messages.AddAsync(new Message
+                    {
+                        UserId = user.Id,
+                        User = user,
+                        Title = "Dummy Message!",
+                        Content = $"This is a random message {Guid.NewGuid()}"
+                    });
+                }
+                await dbContext.SaveChangesAsync();
             }
         }
     }
