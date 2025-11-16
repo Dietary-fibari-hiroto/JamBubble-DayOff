@@ -1,5 +1,4 @@
-﻿using Server.src.DTOs;
-using Server.src.Entities;
+﻿using Server.src.Entities;
 
 namespace Server.src.Interfaces
 {

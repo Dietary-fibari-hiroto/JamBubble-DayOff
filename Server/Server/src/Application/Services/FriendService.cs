@@ -10,13 +10,17 @@ namespace Server.src.Services
         private readonly ISessionRepository _sessionRepo;
         private readonly IFornowRepository _fornowRepo;
         private readonly IFornowLikeRepository _fornowLikeRepo;
+        private readonly IFriendRequestRepository _friendRequestRepo;
+        private readonly IUserRepository _userRepo;
 
-        public FriendService(IFriendRepository friendrRepo, ISessionRepository sessionRepo, IFornowRepository fornowRepo, IFornowLikeRepository fornowLikeRepo)
+        public FriendService(IFriendRepository friendrRepo, ISessionRepository sessionRepo, IFornowRepository fornowRepo, IFornowLikeRepository fornowLikeRepo, IFriendRequestRepository friendRequestReo, IUserRepository userRepo)
         {
             _friendRepo = friendrRepo;
             _sessionRepo = sessionRepo;
             _fornowRepo = fornowRepo;
             _fornowLikeRepo = fornowLikeRepo;
+            _friendRequestRepo = friendRequestReo;
+            _userRepo = userRepo;
         }
 
         // フレンド一覧を取得
@@ -97,6 +101,7 @@ namespace Server.src.Services
             return new FornowDetailResponseDto(fornow, likeCount, isLiked);
         }
 
+        // フレンドのFornowにいいねを付ける
         public async Task<bool> SetLikeToFornowAsync(int userId, int friendId)
         {
             // フレンド関係を確認
@@ -127,14 +132,81 @@ namespace Server.src.Services
             return true;
         }
 
-        public async Task<bool> ProprietyFriendAsync(int userId, int fornowId)
-        {
-            throw new NotImplementedException();
-        }
-
+        // フレンドリクエストを送信
         public async Task<bool> RequestFriendAsync(int userId, int friendId)
         {
-            throw new NotImplementedException();
+            // ユーザーが存在するか確認
+            var existingUser = await _userRepo.GetUserByIdAsync(friendId, false);
+            if (existingUser == null)
+            {
+                return false;
+            }
+
+            // すでにフレンドか確認
+            var existingFriend = await _friendRepo.GetFriendByUserIdAsync(userId, friendId, false);
+            if (existingFriend != null)
+            {
+                return false;
+            }
+
+            // すでにリクエストがあるか確認
+            var existingRequest = await _friendRequestRepo.GetFriendRequestByIdsAsync(userId, friendId, false);
+            if (existingRequest != null)
+            {
+                return false;
+            }
+
+            // フレンドリクエストを追加
+            await _friendRequestRepo.AddFriendRequestAsync(new FriendRequest
+            {
+                SendUserId = userId,
+                PassUserId = friendId
+            });
+            return true;
+        }
+
+
+        // フレンドリクエストの可否を決定
+        public async Task<bool> ProprietyFriendAsync(int userId, int friendId, bool propriety)
+        {
+            // フレンドリクエストが存在するか確認
+            var friendRequest = await _friendRequestRepo.GetFriendRequestByIdsAsync(friendId, userId, true);
+            if (friendRequest == null)
+            {
+                return false;
+            }
+            
+            if (propriety)
+            {
+                // フレンドリクエストを承認に変更
+                friendRequest.State = 1;
+                await _friendRequestRepo.UpdateAsync(friendRequest);
+                // フレンド関係を追加
+                await _friendRepo.AddFriendAsync(new Friend
+                {
+                    User1Id = userId < friendId ? userId : friendId,
+                    User2Id = userId > friendId ? userId : friendId
+                });
+            }
+            else
+            {
+                // フレンドリクエストを拒否に変更
+                friendRequest.State = 2;
+                await _friendRequestRepo.UpdateAsync(friendRequest);
+            }
+            return true;
+        }
+
+        // フレンドリクエストを削除
+        public async Task<bool> DeleteFriendRequestAsync(int userId, int friendId)
+        {
+            var friendRequest = await _friendRequestRepo.GetFriendRequestByIdsAsync(userId, friendId, true);
+            if (friendRequest == null)
+            {
+                return false;
+            }
+            await _friendRequestRepo.DeleteAsync(friendRequest);
+            return true;
         }
     }
 }

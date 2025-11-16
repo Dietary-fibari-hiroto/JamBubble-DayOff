@@ -9,16 +9,15 @@ namespace Server.src.Entities
         [Required]
         public int SendUserId { get; set; }
         [ForeignKey(nameof(SendUserId))]
-        public required User SendUser { get; set; }
+        public User? SendUser { get; set; }
 
         [Required]
         public int PassUserId { get; set; }
         [ForeignKey(nameof(PassUserId))]
-        public required User PassUser { get; set; }
+        public User? PassUser { get; set; }
 
         [Required]
         public int State { get; set; } = 0;
-
-       
+        
     }
 }

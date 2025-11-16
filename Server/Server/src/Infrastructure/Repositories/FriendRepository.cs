@@ -13,6 +13,7 @@ namespace Server.src.Repositories
             _context = context;
         }
 
+        // ユーザーIDでフレンド一覧を取得
         public async Task<List<Friend>> GetFriendsByUserIdAsync(int userId, int number, bool asTracking = true)
         {
             IQueryable<Friend> query = _context.Friends
@@ -29,6 +30,8 @@ namespace Server.src.Repositories
             return await query.ToListAsync();
         }
 
+
+        // ユーザーIDとフレンドIDでフレンドを取得
         public async Task<Friend?> GetFriendByUserIdAsync(int userId, int friendId, bool asTracking = true)
         {
             IQueryable<Friend> query = _context.Friends
@@ -43,5 +46,19 @@ namespace Server.src.Repositories
 
             return await query.FirstOrDefaultAsync();
         }
-    }
+
+        // フレンドを追加
+        public async Task<Friend> AddFriendAsync(Friend friend)
+        {
+            _context.Friends.Add(friend);
+            await _context.SaveChangesAsync();
+            return friend;
+        }
+
+        // フレンドを削除
+        public async Task DeleteFriendAsync(Friend friend)
+        {
+            _context.Friends.Remove(friend);
+            await _context.SaveChangesAsync();
+        }
 }
