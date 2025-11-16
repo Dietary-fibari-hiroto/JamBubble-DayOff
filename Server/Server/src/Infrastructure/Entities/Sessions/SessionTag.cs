@@ -9,11 +9,11 @@ namespace Server.src.Entities
         [Required]
         public int SessionId { get; set; }
         [ForeignKey(nameof(SessionId))]
-        public required Session Session { get; set; }
+        public Session? Session { get; set; }
 
         [Required]
         public int TagId { get; set; }
         [ForeignKey(nameof(TagId))]
-        public required Tag Tag { get; set; }
+        public Tag? Tag { get; set; }
     }
 }

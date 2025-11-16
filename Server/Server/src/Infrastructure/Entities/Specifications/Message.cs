@@ -12,7 +12,7 @@ namespace Server.src.Entities
         [Required]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [Required]
         [StringLength(50)]

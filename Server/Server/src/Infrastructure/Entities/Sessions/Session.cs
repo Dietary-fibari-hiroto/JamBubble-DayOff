@@ -13,7 +13,7 @@ namespace Server.src.Entities
         [Required]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -30,7 +30,7 @@ namespace Server.src.Entities
         [Required]
         public int ProviderId { get; set; }
         [ForeignKey(nameof(ProviderId))]
-        public required Provider Provider { get; set; }
+        public Provider? Provider { get; set; }
 
         [Required]
         [StringLength(16)]
@@ -39,12 +39,12 @@ namespace Server.src.Entities
         [Required]
         public int SceneId { get; set; }
         [ForeignKey(nameof(SceneId))]
-        public required Scene Scene { get; set; }
+        public Scene? Scene { get; set; }
 
         [Required]
         public int DefaultSortId { get; set; }
         [ForeignKey(nameof(DefaultSortId))]
-        public required SessionSortSetting SessionSortSetting { get; set; }
+        public SessionSortSetting? SessionSortSetting { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -58,8 +58,7 @@ namespace Server.src.Entities
         [Required]
         public int UserCapacity { get; set; } = 10;
 
-
-
+        public List<SessionTag>? SessionTag { get; set; }
     }
 }
 

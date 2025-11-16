@@ -9,12 +9,12 @@ namespace Server.src.Entities
         [Required]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [Required]
         public int BlockedUserId { get; set; }
         [ForeignKey(nameof(BlockedUserId))]
-        public required User BlockedUser { get; set; }
+        public User? BlockedUser { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

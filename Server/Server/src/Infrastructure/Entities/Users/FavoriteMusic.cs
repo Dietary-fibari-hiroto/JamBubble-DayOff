@@ -11,7 +11,7 @@ namespace Server.src.Entities
         [Required]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [StringLength(50)]
         public string? MusicId { get; set; }

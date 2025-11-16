@@ -10,12 +10,12 @@ namespace Server.src.Entities
         [Required]
         public int FornowId { get; set; }
         [ForeignKey(nameof(FornowId))]
-        public required Fornow Fornow { get; set; }
+        public Fornow? Fornow { get; set; }
 
         [Required]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
     }
 }
