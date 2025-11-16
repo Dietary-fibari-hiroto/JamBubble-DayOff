@@ -1,5 +1,4 @@
-﻿using Server.src.Infrastructure.Repositories;
-using Server.src.Interfaces;
+﻿using Server.src.Interfaces;
 using Server.src.Repositories;
 using Server.src.Services;
 namespace Server.Data.Configrations
@@ -11,6 +10,9 @@ namespace Server.Data.Configrations
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<IFriendRepository, FriendRepository>();
+            services.AddScoped<ISessionRepository, SessionRepository>();
+            services.AddScoped<IFornowRepository, FornowRepository>();
+            services.AddScoped<IFornowLikeRepository, FornowLikeRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services) { 
@@ -18,6 +20,7 @@ namespace Server.Data.Configrations
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<IFriendService, FriendService>();
+            services.AddScoped<ISessionService, SessionService>();
         }
     }
 }

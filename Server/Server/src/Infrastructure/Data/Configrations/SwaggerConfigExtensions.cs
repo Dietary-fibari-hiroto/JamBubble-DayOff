@@ -34,7 +34,7 @@ namespace Server.src.Configrations
                     options.SchemaFilter<MessageRequestFilter>();
                     options.SchemaFilter<MessageResponseFilter>();
                     options.SchemaFilter<FriendResponseFilter>();
-
+                    options.SchemaFilter<SessionResponseFilter>();
                 });
         }
     }
