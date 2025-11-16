@@ -14,12 +14,17 @@ namespace Server.src.Configrations
         public static async Task SeedAsync(IServiceProvider serviceProvider)
         {
             var tempPas = "password";
+            var tagCount = 3;
+
             using var scope = serviceProvider.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             var userService = scope.ServiceProvider.GetRequiredService<IUserService>();
 
-            // プロバイダーの作成
+            // マスタ作成
             await AddProviderAsync(dbContext);
+            await AddTagAsync(dbContext, tagCount);
+            await AddSessionSortSettingAsync(dbContext);
+            await AddSceneAsync(dbContext);
 
             // ユーザーの作成
             var dummyUsers = GenerateDummyUsers();
@@ -31,6 +36,8 @@ namespace Server.src.Configrations
                 await AddFriendsAsync(dbContext, user, addedDummyUsers);
                 await AddMessagesAsync(dbContext, user, 5);
                 await AddUserProviderAsync(userService, user, tempPas);
+                await AddSessionsAsync(dbContext, user, 2);
+                await AddFornowAsync(dbContext, user);
             }
         }
 
@@ -48,6 +55,52 @@ namespace Server.src.Configrations
                 await dbContext.SaveChangesAsync();
             }
         }
+
+        private static async Task AddTagAsync(AppDbContext dbContext, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                var tag = await dbContext.Tags.FirstOrDefaultAsync(t => t.Id == i);
+                if (tag == null)
+                {
+                    await dbContext.Tags.AddAsync(new Tag
+                    {
+                        Id = i,
+                        Label = $"Tag{i}",
+                    });
+                    await dbContext.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task AddSessionSortSettingAsync(AppDbContext dbContext)
+        {
+            var setting = await dbContext.SessionSortSettings.FirstOrDefaultAsync(s => s.Id == 1);
+            if (setting == null)
+            {
+                await dbContext.SessionSortSettings.AddAsync(new SessionSortSetting
+                {
+                    Id = 1,
+                    Label = "Default",
+                    Description = "Default Sort Setting"
+                });
+                await dbContext.SaveChangesAsync();
+            }
+        }
+
+        private static async Task AddSceneAsync(AppDbContext dbContext)
+        {
+            var scene = await dbContext.Scenes.FirstOrDefaultAsync(s => s.Id == 1);
+            if (scene == null)
+            {
+                await dbContext.Scenes.AddAsync(new Scene
+                {
+                    Id = 1,
+                    Name = "None"
+                });
+            }
+        }
+
 
         private static List<RegisterUserRequestDto> GenerateDummyUsers()
         {
@@ -150,6 +203,44 @@ namespace Server.src.Configrations
                 Name = user.Name,
                 Password = password
             }, user.Id);
+        }
+
+        private static async Task AddSessionsAsync(AppDbContext dbContext, User user, int count)
+        {
+            for(int i = 1; i <= count; i++)
+            {
+                await dbContext.Sessions.AddAsync(new Session
+                {
+                    UserId = user.Id,
+                    Title = $"Session Title{i}",
+                    ProviderId = 1,
+                    Password = "password",
+                    SceneId = 1,
+                    DefaultSortId = 1,
+                    ImgUrl = "images/sessions/default.png",
+                    Description = "This is a sample session.",
+                    IsPublic = true,
+                    UserCapacity = 10,
+                    SessionTag = new List<SessionTag>
+                    {
+                        new SessionTag { TagId = 1 },
+                        new SessionTag { TagId = 2 },
+                        new SessionTag { TagId = 3 }
+                    }
+                });
+            }
+            await dbContext.SaveChangesAsync();
+        }
+
+        private static async Task AddFornowAsync(AppDbContext dbContext, User user)
+        {
+            await dbContext.Fornows.AddAsync(new Fornow
+            {
+                UserId = user.Id,
+                MusicId = $"music-{user.Id}",
+                Message = "This is a sample.",
+            });
+            await dbContext.SaveChangesAsync();
         }
     }
 }
