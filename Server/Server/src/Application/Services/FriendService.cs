@@ -35,7 +35,12 @@ namespace Server.src.Services
                 {
                     // フレンドのユーザーだけを取り出す
                     var friendUser = f.User1Id == userId ? f.User2 : f.User1;
-                    return new FriendResposeDto(friendUser); // Dto
+                    if (friendUser == null)
+                    {
+                        // TODO : ここの処理どうするか考える
+                        throw new Exception("Friend user not found");
+                    }
+                    return new FriendResposeDto(friendUser);
                 }
             ).ToList();
         }
