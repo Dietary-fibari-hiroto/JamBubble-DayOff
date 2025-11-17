@@ -1,0 +1,37 @@
+﻿.download-box {
+    width: 300px;
+    height: 100px;
+    background-color: #000; /* 黒背景 */
+    border-radius: 10px;
+    opacity: 1;
+    display: flex;
+    align-items: center; /* 縦中央揃え */
+    justify-content: center; /* 横中央揃え */
+    flex-direction: row; /* 横並び */
+
+    gap: 10px; /* アイコンとテキストの間隔 */
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+.song-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.download-text {
+    font-size: 18px;
+    color: #fff; /* 白文字 */
+    margin: 0;
+}
+
+.page-center {
+    display: flex;
+    justify-content: center; /* 横方向センター */
+    align-items: center; /* 縦方向センター */
+    height: 100vh; /* 画面全体の高さを使用 */
+}
+
+.song-icon {
+    width: 85px;
+    height: 85px;
+}
