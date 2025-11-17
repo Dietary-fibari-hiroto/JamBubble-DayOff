@@ -714,6 +714,76 @@ h5[b-a9qbeh1rql] {
     margin-top: 10px;
 }
 /* _content/Web/Components/UI/Session_playlist_dialog.razor.rz.scp.css */
-body[b-dzhdb94xto]
-{
+.song-item-box[b-dzhdb94xto] {
+    display: flex;
+    align-items: flex-start; /* 上寄せベース */
+    justify-content: center; /* 横中央 */
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 300px;
+    height: 180px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    opacity: 1;
+    transform: rotate(0deg);
+    color: #fff;
+}
+
+
+.song-icon[b-dzhdb94xto] {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.song-details[b-dzhdb94xto] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 横中央 */
+    justify-content: flex-start; /* 上寄せ */
+    margin-top: 30px;
+}
+
+.song-top[b-dzhdb94xto] {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.song-sender[b-dzhdb94xto] {
+    margin-top: 20px; /* 送信者を下段に下げる */
+    margin-left: -20px; /* 左にほんの少し移動 */
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.song-details[b-dzhdb94xto] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 横中央 */
+    justify-content: flex-start; /* 上寄せ */
+    margin-top: 50px; /* ここを調整して少し下げる */
+}
+
+.song-artist[b-dzhdb94xto] {
+    font-size: 0.8em; /* お好みのサイズに調整 */
+    color: #fff; /* 文字色は白のまま */
+    margin-top: 3px; /* 下に少し下げる */
+}
+
+.sender-label[b-dzhdb94xto] {
+    color: #ccc; /* ラベルは薄め */
+    font-size: 0.9em;
+    margin-right: 5px; /* 名前との間に少しだけスペース */
+}
+
+.sender-name[b-dzhdb94xto] {
+    color: #fff; /* 名前は白で少し強調 */
+    font-size: 1em; /* ラベルより少し大きくしたいなら調整OK */
 }

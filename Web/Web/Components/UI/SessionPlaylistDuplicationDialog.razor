@@ -1,25 +1,35 @@
-@page "/sessionplaylist"
 
-<div class="song-item-box">
-    <!-- アイコン -->
-    <img src="/images/photos/289964.jpg" alt="アイコン" class="song-icon" />
+<div class="center-wrapper">
+    <div class="request-dialog">
+        <p>この曲はキューに存在します。</p>
+        <p>もう一度リクエストしますか？</p>
 
-    <!-- テキスト群 -->
-    <div class="song-details">
-        <!-- 横並び：曲の題名 + アーティスト -->
-        <div class="song-top">
-            <span class="song-title">More than words</span>
-            <span class="song-artist">羊文学</span>
+        <div class="button-group">
+            <button class="action-btn request" @onclick="RequestAgain">
+                <img src="/images/elementIcons/arrow-up-from-line.svg" class="btn-icon" />
+                リクエスト
+            </button>
+            <button class="action-btn back" @onclick="GoBack">もどる</button>
         </div>
 
-        <!-- 下段：送信者 -->
-        <div class="song-sender">
-            <span class="sender-label">送信者:</span>
-            <span class="sender-name">ゆうと</span>
-        </div>
+
+        @if (!string.IsNullOrEmpty(Message))
+        {
+            <p class="message">@Message</p>
+        }
     </div>
 </div>
 
 @code {
-    // 後で曲情報リストをC#で管理する場合ここに書けます
+    private string Message { get; set; }
+
+    private void RequestAgain()
+    {
+        Message = "リクエストを送信しました！";
+    }
+
+    private void GoBack()
+    {
+        Message = string.Empty;
+    }
 }
