@@ -464,78 +464,42 @@ h2#scene[b-nrkreluhnm]{
 
 
 /* _content/Web/Components/Pages/SessionPlaylist.razor.rz.scp.css */
-.song-item-box[b-pnoxgtz2z2] {
-    display: flex;
-    align-items: flex-start; /* 上寄せベース */
-    justify-content: center; /* 横中央 */
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 15px;
+.download-box[b-pnoxgtz2z2] {
     width: 300px;
-    height: 180px;
-    border: 1px solid #444;
+    height: 100px;
+    background-color: #000; /* 黒背景 */
     border-radius: 10px;
-    background-color: #000;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     opacity: 1;
-    transform: rotate(0deg);
-    color: #fff;
-}
+    display: flex;
+    align-items: center; /* 縦中央揃え */
+    justify-content: center; /* 横中央揃え */
+    flex-direction: row; /* 横並び */
 
+    gap: 10px; /* アイコンとテキストの間隔 */
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
 
 .song-icon[b-pnoxgtz2z2] {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-top: 30px;
+    width: 40px;
+    height: 40px;
 }
 
-.song-details[b-pnoxgtz2z2] {
+.download-text[b-pnoxgtz2z2] {
+    font-size: 18px;
+    color: #fff; /* 白文字 */
+    margin: 0;
+}
+
+.page-center[b-pnoxgtz2z2] {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* 横中央 */
-    justify-content: flex-start; /* 上寄せ */
-    margin-top: 30px;
+    justify-content: center; /* 横方向センター */
+    align-items: center; /* 縦方向センター */
+    height: 100vh; /* 画面全体の高さを使用 */
 }
 
-.song-top[b-pnoxgtz2z2] {
-    display: flex;
-    gap: 15px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.song-sender[b-pnoxgtz2z2] {
-    margin-top: 20px; /* 送信者を下段に下げる */
-    margin-left: -20px; /* 左にほんの少し移動 */
-    font-size: 0.9em;
-    color: #ccc;
-}
-
-.song-details[b-pnoxgtz2z2] {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 横中央 */
-    justify-content: flex-start; /* 上寄せ */
-    margin-top: 50px; /* ここを調整して少し下げる */
-}
-
-.song-artist[b-pnoxgtz2z2] {
-    font-size: 0.8em; /* お好みのサイズに調整 */
-    color: #fff; /* 文字色は白のまま */
-    margin-top: 3px; /* 下に少し下げる */
-}
-
-.sender-label[b-pnoxgtz2z2] {
-    color: #ccc; /* ラベルは薄め */
-    font-size: 0.9em;
-    margin-right: 5px; /* 名前との間に少しだけスペース */
-}
-
-.sender-name[b-pnoxgtz2z2] {
-    color: #fff; /* 名前は白で少し強調 */
-    font-size: 1em; /* ラベルより少し大きくしたいなら調整OK */
+.song-icon[b-pnoxgtz2z2] {
+    width: 85px;
+    height: 85px;
 }
 /* _content/Web/Components/Pages/Splash.razor.rz.scp.css */
 /* 全体を中央に配置 */
