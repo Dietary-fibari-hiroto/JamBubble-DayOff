@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\pages\\sessionplaylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionplaylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\pages\\sessionplaylist.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionplaylist.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\ui\\sessionplaylistduplicationdialog.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\sessionplaylistduplicationdialog.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\pages\\sessionplaylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\pages\\sessionplaylist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\ui\\sessionplaylistduplicationdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\sessionplaylistduplicationdialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\ui\\session_playlist_dialog.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\session_playlist_dialog.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|c:\\users\\2230165\\jambubble-dayoff\\jambubble-dayoff\\web\\web\\components\\ui\\session_playlist_dialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E59C855-8343-4C1F-9941-9DB713059293}|Web\\Web.csproj|solutionrelative:web\\components\\ui\\session_playlist_dialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,54 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SessionPlaylist.razor",
-              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T07:44:22.418Z",
+              "DocumentIndex": 2,
+              "Title": "Session_playlist_dialog.razor.css",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\Session_playlist_dialog.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\Session_playlist_dialog.razor.css",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\Session_playlist_dialog.razor.css",
+              "RelativeToolTip": "Web\\Components\\UI\\Session_playlist_dialog.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-17T04:34:32.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SessionPlaylist.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAQwBIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T04:34:20.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "SessionPlaylist.razor.css",
               "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor.css",
               "RelativeDocumentMoniker": "Web\\Components\\Pages\\SessionPlaylist.razor.css",
               "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\Pages\\SessionPlaylist.razor.css",
               "RelativeToolTip": "Web\\Components\\Pages\\SessionPlaylist.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-14T05:08:37.556Z",
+              "WhenOpened": "2025-11-17T04:35:01.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SessionPlaylistDuplicationDialog.razor",
-              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor",
-              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor",
-              "RelativeToolTip": "Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor",
+              "Title": "Session_playlist_dialog.razor",
+              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\Session_playlist_dialog.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\UI\\Session_playlist_dialog.razor",
+              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\Session_playlist_dialog.razor",
+              "RelativeToolTip": "Web\\Components\\UI\\Session_playlist_dialog.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-12T07:34:34.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SessionPlaylistDuplicationDialog.razor.css",
-              "DocumentMoniker": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor.css",
-              "RelativeDocumentMoniker": "Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor.css",
-              "ToolTip": "C:\\Users\\2230165\\JamBubble-DayOff\\JamBubble-DayOff\\Web\\Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor.css",
-              "RelativeToolTip": "Web\\Components\\UI\\SessionPlaylistDuplicationDialog.razor.css",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAUwFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-14T04:47:24.517Z",
+              "WhenOpened": "2025-11-17T04:34:31.097Z",
               "EditorCaption": ""
             }
           ]

@@ -91,3 +91,7 @@ build_metadata.AdditionalFiles.CssScope = b-rswppccu2v
 [C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/UI/SessionPlaylistDuplicationDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZXNzaW9uUGxheWxpc3REdXBsaWNhdGlvbkRpYWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-fo7lugppwy
+
+[C:/Users/2230165/JamBubble-DayOff/JamBubble-DayOff/Web/Web/Components/UI/Session_playlist_dialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZXNzaW9uX3BsYXlsaXN0X2RpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-dzhdb94xto

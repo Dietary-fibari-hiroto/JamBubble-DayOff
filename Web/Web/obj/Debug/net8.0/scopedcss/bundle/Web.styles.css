@@ -464,88 +464,78 @@ h2#scene[b-nrkreluhnm]{
 
 
 /* _content/Web/Components/Pages/SessionPlaylist.razor.rz.scp.css */
-/* --- 画面中央配置 --- */
-.center-wrapper[b-pnoxgtz2z2] {
+.song-item-box[b-pnoxgtz2z2] {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* --- ダイアログ（背景を黒に変更） --- */
-.request-dialog[b-pnoxgtz2z2] {
-    border: 1px solid #444;
-    padding: 20px;
+    align-items: flex-start; /* 上寄せベース */
+    justify-content: center; /* 横中央 */
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     width: 300px;
-    background-color: #000; /* ← 背景を黒 */
-    border-radius: 8px;
-    color: #fff; /* 文字を白 */
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 180px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    opacity: 1;
+    transform: rotate(0deg);
+    color: #fff;
 }
 
-    /* --- pタグの余白をさらに狭くする --- */
-    .request-dialog p[b-pnoxgtz2z2] {
-        margin: 2px 0; /* ← かなり近づけた */
-    }
 
-/* --- ボタンを縦に並べる --- */
-.button-group[b-pnoxgtz2z2] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 12px; /* ちょい詰め */
+.song-icon[b-pnoxgtz2z2] {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 30px;
 }
 
-/* --- ボタン --- */
-.action-btn[b-pnoxgtz2z2] {
-    margin: 6px 0;
-    padding: 8px 12px; /* ← 少しコンパクトに */
-    width: 45%; /* ← ボタンを細く */
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
+.song-details[b-pnoxgtz2z2] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 横中央 */
+    justify-content: flex-start; /* 上寄せ */
+    margin-top: 30px;
+}
+
+.song-top[b-pnoxgtz2z2] {
+    display: flex;
+    gap: 15px;
     font-weight: bold;
-    display: flex; /* ← アイコンと文字を横並び中央 */
-    align-items: center;
-    justify-content: center;
+    color: #fff;
 }
 
-    /* リクエスト（紫） */
-    .action-btn.request[b-pnoxgtz2z2] {
-        background-color: #8A2BE2;
-        color: white;
-    }
-
-        .action-btn.request:hover[b-pnoxgtz2z2] {
-            background-color: #7725C8;
-        }
-
-    /* もどる（薄い黒） */
-    .action-btn.back[b-pnoxgtz2z2] {
-        background-color: #151515; /* 黒より少し薄い黒 */
-        color: white;
-    }
-
-        .action-btn.back:hover[b-pnoxgtz2z2] {
-            background-color: #1c1c1c;
-        }
-
-/* --- アイコン（リクエスト左の画像）--- */
-.btn-icon[b-pnoxgtz2z2] {
-    width: 16px;
-    height: 16px;
-    margin-right: 6px; /* アイコンと文字の距離 */
-    vertical-align: middle;
+.song-sender[b-pnoxgtz2z2] {
+    margin-top: 20px; /* 送信者を下段に下げる */
+    margin-left: -20px; /* 左にほんの少し移動 */
+    font-size: 0.9em;
+    color: #ccc;
 }
 
-/* --- メッセージ --- */
-.message[b-pnoxgtz2z2] {
-    color: #4caf50;
-    margin-top: 10px;
+.song-details[b-pnoxgtz2z2] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 横中央 */
+    justify-content: flex-start; /* 上寄せ */
+    margin-top: 50px; /* ここを調整して少し下げる */
+}
+
+.song-artist[b-pnoxgtz2z2] {
+    font-size: 0.8em; /* お好みのサイズに調整 */
+    color: #fff; /* 文字色は白のまま */
+    margin-top: 3px; /* 下に少し下げる */
+}
+
+.sender-label[b-pnoxgtz2z2] {
+    color: #ccc; /* ラベルは薄め */
+    font-size: 0.9em;
+    margin-right: 5px; /* 名前との間に少しだけスペース */
+}
+
+.sender-name[b-pnoxgtz2z2] {
+    color: #fff; /* 名前は白で少し強調 */
+    font-size: 1em; /* ラベルより少し大きくしたいなら調整OK */
 }
 /* _content/Web/Components/Pages/Splash.razor.rz.scp.css */
 /* 全体を中央に配置 */
@@ -640,3 +630,90 @@ h5[b-a9qbeh1rql] {
     height: 24px;
 }
 /* _content/Web/Components/UI/SessionPlaylistDuplicationDialog.razor.rz.scp.css */
+/* --- ��ʒ����z�u --- */
+.center-wrapper[b-fo7lugppwy] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* --- �_�C�A���O�i�w�i����ɕύX�j --- */
+.request-dialog[b-fo7lugppwy] {
+    border: 1px solid #444;
+    padding: 20px;
+    width: 300px;
+    background-color: #000; /* �� �w�i��� */
+    border-radius: 8px;
+    color: #fff; /* ������ */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* --- p�^�O�̗]�������ɋ������� --- */
+    .request-dialog p[b-fo7lugppwy] {
+        margin: 2px 0; /* �� ���Ȃ�߂Â��� */
+    }
+
+/* --- �{�^����c�ɕ��ׂ� --- */
+.button-group[b-fo7lugppwy] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px; /* ���傢�l�� */
+}
+
+/* --- �{�^�� --- */
+.action-btn[b-fo7lugppwy] {
+    margin: 6px 0;
+    padding: 8px 12px; /* �� �����R���p�N�g�� */
+    width: 45%; /* �� �{�^����ׂ� */
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex; /* �� �A�C�R���ƕ���������ђ��� */
+    align-items: center;
+    justify-content: center;
+}
+
+    /* ���N�G�X�g�i���j */
+    .action-btn.request[b-fo7lugppwy] {
+        background-color: #8A2BE2;
+        color: white;
+    }
+
+        .action-btn.request:hover[b-fo7lugppwy] {
+            background-color: #7725C8;
+        }
+
+    /* ��ǂ�i�������j */
+    .action-btn.back[b-fo7lugppwy] {
+        background-color: #151515; /* ����菭�������� */
+        color: white;
+    }
+
+        .action-btn.back:hover[b-fo7lugppwy] {
+            background-color: #1c1c1c;
+        }
+
+/* --- �A�C�R���i���N�G�X�g���̉摜�j--- */
+.btn-icon[b-fo7lugppwy] {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px; /* �A�C�R���ƕ����̋��� */
+    vertical-align: middle;
+}
+
+/* --- ���b�Z�[�W --- */
+.message[b-fo7lugppwy] {
+    color: #4caf50;
+    margin-top: 10px;
+}
+/* _content/Web/Components/UI/Session_playlist_dialog.razor.rz.scp.css */
+body[b-dzhdb94xto]
+{
+}
