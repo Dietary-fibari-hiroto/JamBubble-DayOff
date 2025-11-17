@@ -25,6 +25,32 @@ namespace Server.src.Repositories
             return await query.FirstOrDefaultAsync();
         }
 
+        // 送信者IDでフレンドリクエスト一覧を取得
+        public async Task<List<FriendRequest>> GetFriendRequestsBySenderUserIdAsync(int senderUserId, bool asTracking = true)
+        {
+            IQueryable<FriendRequest> query = _context.FriendRequests
+                .Where(fr => fr.SendUserId == senderUserId)
+                .Include(fr => fr.PassUser);
+            if (!asTracking)
+            {
+                query = query.AsNoTracking(); // 追跡オフ 
+            }
+            return await query.ToListAsync();
+        }
+
+        // 受信者IDでフレンドリクエスト一覧を取得
+        public async Task<List<FriendRequest>> GetFriendRequestsByReceiverUserIdAsync(int receiverUserId, bool asTracking = true)
+        {
+            IQueryable<FriendRequest> query = _context.FriendRequests
+                .Where(fr => fr.PassUserId == receiverUserId)
+                .Include(fr => fr.SendUser);
+            if (!asTracking)
+            {
+                query = query.AsNoTracking(); // 追跡オフ 
+            }
+            return await query.ToListAsync();
+        }
+
         // フレンドリクエストを追加
         public async Task<FriendRequest> AddFriendRequestAsync(FriendRequest friendRequest)
         {

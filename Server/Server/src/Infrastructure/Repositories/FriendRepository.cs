@@ -61,4 +61,5 @@ namespace Server.src.Repositories
             _context.Friends.Remove(friend);
             await _context.SaveChangesAsync();
         }
+    }
 }

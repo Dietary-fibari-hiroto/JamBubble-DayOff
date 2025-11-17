@@ -121,5 +121,117 @@ namespace Server.src.Api.Controllers
             }
             return Ok();
         }
+
+        /// <summary>
+        /// 送信・受信したフレンドリクエスト一覧を取得
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [HttpGet("requests")]
+        [ProducesResponseType(typeof(FriendRequestSndRcvDto), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetFriendRequests()
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+
+            var friendRequests = await _friendService.GetfriendRequestSndRcv(userId.Value);
+            return Ok(friendRequests);
+        }
+
+        /// <summary>
+        /// フレンドリクエストを送信
+        /// </summary>
+        /// <param name="targetuserid">ターゲットのユーザーID</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("{targetuserid}/request")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> RequestFriend(int targetuserid)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+
+            var result = await _friendService.RequestFriendAsync(userId.Value, targetuserid);
+            if (!result)
+            {
+                return BadRequest("Failed to send friend request.");
+            }
+            return Ok();
+        }
+
+        /// <summary>
+        /// フレンドリクエストを承認
+        /// </summary>
+        /// <param name="requestuserid">リクエストしたユーザーID</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("{requestuserid}/accept")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AcceptFriendRequest(int requestuserid)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            var result = await _friendService.ProprietyFriendAsync(userId.Value, requestuserid, true);
+            if (!result)
+            {
+                return BadRequest("Failed to accept friend request.");
+            }
+            return Ok();
+        }
+
+        /// <summary>
+        /// フレンドリクエストを拒否
+        /// </summary>
+        /// <param name="requestuserid">リクエストしたユーザーID</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("{requestuserid}/reject")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> RejectFriendRequest(int requestuserid)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            var result = await _friendService.ProprietyFriendAsync(userId.Value, requestuserid, false);
+            if (!result)
+            {
+                return BadRequest("Failed to reject friend request.");
+            }
+            return Ok();
+        }
+
+        /// <summary>
+        /// フレンドリクエストを削除(どちら側からでも可能)
+        /// </summary>
+        /// <param name="targetuserid">ターゲットのユーザーId</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpDelete("{targetuserid}/request")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> DeleteRequestFriend(int targetuserid)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            var result = await _friendService.DeleteFriendRequestAsync(userId.Value, targetuserid);
+            if (!result)
+            {
+                return BadRequest("Failed to delete friend request.");
+            }
+            return NoContent();
+        }
     }
 }

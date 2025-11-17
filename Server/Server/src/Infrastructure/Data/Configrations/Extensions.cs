@@ -10,6 +10,7 @@ namespace Server.Data.Configrations
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<IFriendRepository, FriendRepository>();
+            services.AddScoped<IFriendRequestRepository, FriendRequestRepository>();
             services.AddScoped<ISessionRepository, SessionRepository>();
             services.AddScoped<IFornowRepository, FornowRepository>();
             services.AddScoped<IFornowLikeRepository, FornowLikeRepository>();
