@@ -1,9 +1,13 @@
 ﻿using Server.src.Entities;
+using Server.src.DTOs;
 namespace Server.src.Interfaces
 {
     public interface ISessionRepository
     {
         Task<List<Session>> GetSessionsByUserIdAsync(int userId);
-        Task<Session?> GetSessionByIdAsync(int sessionId, bool asTracking = true);  
+        Task<Session?> GetSessionDetailByIdAsync(int sessionId, bool asTracking = true);  
+        Task<Session?> GetSessionSimpByIdAsync(int sessionId, bool asTracking = true);
+        Task<Session?> GetActPubSessionsByUserIdAsync(int userId);
+        Task<List<SessionPopularResponseDto>> GetSessionPopularAsync(int n, int skip);
     }
 }

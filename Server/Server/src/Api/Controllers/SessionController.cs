@@ -45,5 +45,43 @@ namespace Server.src.Api.Controllers
             }
             return Ok(session);
         }
+
+        /// <summary>
+        /// 人気なセッションを取得
+        /// </summary>
+        /// <param name="n">取得件数</param>
+        /// <param name="skip">スキップする件数</param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet("popular")]
+        [ProducesResponseType(typeof(List<SessionPopularResponseDto>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetSessionPopular([FromQuery] int? n , [FromQuery ]int? skip)
+        {
+            int takeCount = n ?? 100000;
+            int skipCount = skip ?? 0;
+            var sessions = await _sessionService.GetSessionPopularAsync(takeCount, skipCount);
+            return Ok(sessions);
+        }
+        
+        /// <summary>
+        /// 全フレンドのアクティブな公開セッションを取得
+        /// </summary>
+        /// <param name="n">取得件数</param>
+        /// <param name="skip">スキップする件数</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpGet("friend")]
+        [ProducesResponseType(typeof(List<SessionResponseDto>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetSessionFriends([FromQuery] int? n, [FromQuery] int? skip)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            int takeCount = n ?? 100000;
+            int skipCount = skip ?? 0;
+            return Ok();
+        }
     }
 }

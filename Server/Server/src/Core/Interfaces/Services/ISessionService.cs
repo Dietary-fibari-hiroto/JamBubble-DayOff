@@ -7,5 +7,7 @@ namespace Server.src.Interfaces
     {
         Task<List<SessionResponseDto>> GetSessionsAsync(int userId);
         Task<SessionDetailResponseDto?> GetSessionAsync(int sessionId);
+        Task<List<SessionPopularResponseDto>> GetSessionPopularAsync(int n, int skip);
+        Task<List<SessionResponseDto>> GetSessionActPubFrinedAsync(int userId, int n, int skip);
     }
 }

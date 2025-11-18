@@ -48,6 +48,7 @@ namespace Server.src.DTOs
         public int ProviderId { get; set; }
         public string ProviderName { get; set; } = string.Empty;
         public int SceneId { get; set; }
+        public string SceneName { get; set; } = string.Empty;
         public int DefaultSortId { get; set; }
         public bool Finished { get; set; }
         public bool IsPublic { get; set; }
@@ -55,7 +56,6 @@ namespace Server.src.DTOs
         public List<SessionTagDto>? SessionTag { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
-
 
         public SessionDetailResponseDto(Session session)
         {
@@ -70,6 +70,10 @@ namespace Server.src.DTOs
                 ProviderName = session.Provider.Name;
             }
             SceneId = session.SceneId;
+            if (session.Scene != null)
+            {
+                SceneName = session.Scene.Name;
+            }
             DefaultSortId = session.DefaultSortId;
             Finished = session.Finished;
             IsPublic = session.IsPublic;
@@ -81,6 +85,28 @@ namespace Server.src.DTOs
             CreatedAt = session.CreatedAt;
             FinishedAt = session.FinishedAt;
 
+        }
+    }
+
+    public class SessionPopularDto
+    {
+        public Session Session { get; set; } = null!;
+        public int GuestCount { get; set; }
+    }
+
+    public class SessionPopularResponseDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string ImgUrl { get; set; } = string.Empty;
+        public int UserCount { get; set; }
+
+        public SessionPopularResponseDto(Session session, int userCount)
+        {
+            Id = session.Id;
+            Title = session.Title;
+            ImgUrl = session.ImgUrl;
+            UserCount = userCount;
         }
     }
 
@@ -121,6 +147,7 @@ namespace Server.src.DTOs
                     [ToCamelCase(nameof(SessionDetailResponseDto.ProviderId))] = new OpenApiInteger(2),
                     [ToCamelCase(nameof(SessionDetailResponseDto.ProviderName))] = new OpenApiString("Provider Name"),
                     [ToCamelCase(nameof(SessionDetailResponseDto.SceneId))] = new OpenApiInteger(3),
+                    [ToCamelCase(nameof(SessionDetailResponseDto.SceneName))] = new OpenApiString("Scene Name"),
                     [ToCamelCase(nameof(SessionDetailResponseDto.DefaultSortId))] = new OpenApiInteger(1),
                     [ToCamelCase(nameof(SessionDetailResponseDto.Finished))] = new OpenApiBoolean(false),
                     [ToCamelCase(nameof(SessionDetailResponseDto.IsPublic))] = new OpenApiBoolean(true),
