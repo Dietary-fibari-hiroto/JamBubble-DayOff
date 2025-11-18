@@ -14,6 +14,7 @@ namespace Server.Data.Configrations
             services.AddScoped<ISessionRepository, SessionRepository>();
             services.AddScoped<IFornowRepository, FornowRepository>();
             services.AddScoped<IFornowLikeRepository, FornowLikeRepository>();
+            services.AddScoped<IFavoriteMusicSummaryRepository, FavoriteMusicSummaryRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services) { 

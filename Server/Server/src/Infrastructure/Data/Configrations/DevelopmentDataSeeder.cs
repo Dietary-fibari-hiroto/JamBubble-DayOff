@@ -151,7 +151,7 @@ namespace Server.src.Configrations
                 {
                     Message = $"This is a random message {Guid.NewGuid()}",
                     IsStreetPass = random.Next(0, 2) == 1,
-                    MusicId = $"music-{random.Next(1, 100)}"
+                    MusicId = $"music-{random.Next(1, 2)}"
                 }, user.Id);
             }
         }
