@@ -12,6 +12,7 @@ using Server.src.DTOs;
 using Server.src.Entities;
 using Microsoft.AspNetCore.Identity;
 using Server.src.Middlewares;
+using Server.src.Services;
 
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +45,9 @@ builder.Services.RegisterRepositories();
 
 // DIコンテナに登録
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+// 定期実行サービスの登録
+builder.Services.AddHostedService<TimedHostedService>();
 
 // JWT認証の設定
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
