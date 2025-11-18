@@ -14,12 +14,14 @@ namespace Server.src.Repositories
         }
 
         // ユーザーIDでフレンド一覧を取得
-        public async Task<List<Friend>> GetFriendsByUserIdAsync(int userId, int number, bool asTracking = true)
+        public async Task<List<Friend>> GetFriendsByUserIdAsync(int userId, int number, bool asTracking = true, int skip = 0)
         {
             IQueryable<Friend> query = _context.Friends
                 .Where(f => f.User1Id == userId || f.User2Id == userId)
                 .Include(f => f.User1)
                 .Include(f => f.User2)
+                .OrderBy(f => f.CreatedAt)
+                .Skip(skip)
                 .Take(number);
 
             if (!asTracking)
