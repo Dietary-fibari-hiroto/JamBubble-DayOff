@@ -15,12 +15,12 @@ namespace Server.src.Entities
 
         public int? UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [Required]
         public int SessionId { get; set; }
         [ForeignKey(nameof(SessionId))]
-        public required Session Session { get; set; }
+        public Session? Session { get; set; }
 
         [Required]
         public int Authority { get; set; } = 0;
