@@ -52,6 +52,7 @@ namespace Server.src.Services
             return sessions;
         }
 
+        // フレンドのアクティブ公開セッションを取得
         public async Task<List<SessionResponseDto>> GetSessionActPubFrinedAsync(int userId, int n, int skip)
         {
             var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, 100000, false);
@@ -59,12 +60,22 @@ namespace Server.src.Services
             {
                 return new List<SessionResponseDto>();
             }
-            var sessions = friends.Select(f =>
+
+            var sessions = new List<SessionResponseDto>();
+            foreach(var f in friends)
             {
                 // フレンドのユーザーだけを取り出す
                 var friendUser = f.User1Id == userId ? f.User2 : f.User1;
-                var session = 
-            }).ToList();
+                if (friendUser != null)
+                {
+                    var session = await _sessionRepo.GetActPubSessionsByUserIdAsync(friendUser!.Id);
+                    if (session != null)
+                    {
+                        sessions.Add(new SessionResponseDto(session!));
+                    }
+                }
+            }
+            return sessions.Skip(skip).Take(n).ToList();
         }
     }
 }

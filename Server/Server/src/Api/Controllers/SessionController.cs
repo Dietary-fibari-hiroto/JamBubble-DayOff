@@ -81,7 +81,8 @@ namespace Server.src.Api.Controllers
             }
             int takeCount = n ?? 100000;
             int skipCount = skip ?? 0;
-            return Ok();
+            var sessions = await _sessionService.GetSessionActPubFrinedAsync(userId.Value, takeCount, skipCount);
+            return Ok(sessions);
         }
     }
 }
