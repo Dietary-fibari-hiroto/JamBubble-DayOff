@@ -23,6 +23,7 @@ namespace Server.Data.Configrations
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<IFriendService, FriendService>();
             services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<IFavoriteMusicService, FavoriteMusicService>();
         }
     }
 }

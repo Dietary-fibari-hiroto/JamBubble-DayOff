@@ -30,5 +30,17 @@ namespace Server.src.Repositories
             await _context.FavoriteMusicSummaries.AddRangeAsync(aggregatedData);
             await _context.SaveChangesAsync();
         }
+
+        // お気に入り音楽ランキングを取得する
+        public async Task<List<FavoriteMusicSummary>> GetFavoriteMusicRankingAsync(int n, int skip)
+        {
+            return await _context.FavoriteMusicSummaries
+                .OrderByDescending(fms => fms.Count)
+                .Skip(skip)
+                .Take(n)
+                .ToListAsync();
+        }
+
+
     }
 }

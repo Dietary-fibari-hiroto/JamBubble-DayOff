@@ -16,6 +16,11 @@ namespace Server.src.Services
             _favoSumRepo = favoSumRepo;
         }
 
-        
+        public async Task<List<FavoriteMusicSummary>> GetFavoriteMusicRankingAsync(int n, int skip)
+        {
+            return await _favoSumRepo.GetFavoriteMusicRankingAsync(n, skip);
+        }
+
+
     }
 }
