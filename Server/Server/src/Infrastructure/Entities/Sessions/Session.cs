@@ -33,7 +33,7 @@ namespace Server.src.Entities
         public Provider? Provider { get; set; }
 
         [Required]
-        [StringLength(16)]
+        [StringLength(255)]
         public string Password { get; set; } = null!;
 
         [Required]
