@@ -49,8 +49,8 @@ namespace Server.src.Api.Controllers
         /// <summary>
         /// 人気なセッションを取得
         /// </summary>
-        /// <param name="n">取得件数</param>
-        /// <param name="skip">スキップする件数</param>
+        /// <param name="n">取得件数(必須ではない)</param>
+        /// <param name="skip">スキップする件数(必須ではない)</param>
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet("popular")]
@@ -62,12 +62,12 @@ namespace Server.src.Api.Controllers
             var sessions = await _sessionService.GetSessionPopularAsync(takeCount, skipCount);
             return Ok(sessions);
         }
-        
+
         /// <summary>
         /// 全フレンドのアクティブな公開セッションを取得
         /// </summary>
-        /// <param name="n">取得件数</param>
-        /// <param name="skip">スキップする件数</param>
+        /// <param name="n">取得件数(必須ではない)</param>
+        /// <param name="skip">スキップする件数(必須ではない)</param>
         /// <returns></returns>
         [Authorize]
         [HttpGet("friend")]

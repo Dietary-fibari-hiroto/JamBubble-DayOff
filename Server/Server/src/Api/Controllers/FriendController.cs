@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Server.src.DTOs;
@@ -22,12 +22,13 @@ namespace Server.src.Api.Controllers
         /// <summary>
         /// フレンドの一覧を取得
         /// </summary>
-        /// <param name="n">取得件数</param>
+        /// <param name="n">取得件数(必須ではない)</param>
+        /// <param name="skip">スキップする件数(必須ではない)</param>
         /// <returns></returns>
         [Authorize]
-        [HttpGet("{n}")]
+        [HttpGet]
         [ProducesResponseType(typeof(List<FriendResposeDto>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetFriends(int n)
+        public async Task<IActionResult> GetFriends([FromQuery] int? n, [FromQuery] int? skip)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
             if (userId == null)
@@ -35,7 +36,9 @@ namespace Server.src.Api.Controllers
                 return Unauthorized("Invalid user ID format in token.");
             }
 
-            var friends = await _friendService.GetFriendsAsync(userId.Value, n);
+            int takeCount = n ?? 100000;
+            int skipCount = skip ?? 0;
+            var friends = await _friendService.GetFriendsAsync(userId.Value, takeCount, skipCount);
             return Ok(friends);
         }
 
@@ -56,19 +59,23 @@ namespace Server.src.Api.Controllers
         /// <summary>
         /// 全フレンドのFornowを取得
         /// </summary>
-        /// <param name="n">取得件数</param>
+        /// <param name="n">取得件数(必須ではない)</param>
+        /// <param name="skip">スキップする件数(必須ではない)</param>
         /// <returns></returns>
         [Authorize]
-        [HttpGet("fornow/{n}")]
+        [HttpGet("fornow")]
         [ProducesResponseType(typeof(List<FornowSimpResponseDto>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetFriendFornows(int n)
+        public async Task<IActionResult> GetFriendFornows([FromQuery] int? n, [FromQuery] int? skip)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
             if (userId == null)
             {
                 return Unauthorized("Invalid user ID format in token.");
             }
-            var fornows = await _friendService.GetFriendsFornowsAsync(userId.Value, n);
+
+            int takeCount = n ?? 100000;
+            int skipCount = skip ?? 0;
+            var fornows = await _friendService.GetFriendsFornowsAsync(userId.Value, takeCount, skipCount);
             return Ok(fornows);
         }
 

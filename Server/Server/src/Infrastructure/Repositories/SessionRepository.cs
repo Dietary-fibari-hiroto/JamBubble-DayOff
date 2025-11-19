@@ -18,6 +18,7 @@ namespace Server.src.Repositories
         {
             return await _context.Sessions
                 .Where(s => s.UserId == userId)
+                .OrderBy(s => s.CreatedAt)
                 .ToListAsync();
         }
 

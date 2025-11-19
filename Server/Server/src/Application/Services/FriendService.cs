@@ -24,9 +24,9 @@ namespace Server.src.Services
         }
 
         // フレンド一覧を取得
-        public async Task<List<FriendResposeDto>> GetFriendsAsync(int userId, int number)
+        public async Task<List<FriendResposeDto>> GetFriendsAsync(int userId, int number, int skip = 0)
         {
-            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, number, false);
+            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, number, false, skip);
             if (friends == null || friends.Count == 0)
             {
                 return new List<FriendResposeDto>(); // からのリストを送る
@@ -53,10 +53,10 @@ namespace Server.src.Services
         }
 
         // フレンド全員のFornowを取得
-        public async Task<List<FornowSimpResponseDto>> GetFriendsFornowsAsync(int userId, int n)
+        public async Task<List<FornowSimpResponseDto>> GetFriendsFornowsAsync(int userId, int n, int skip = 0)
         {
             // フレンド一覧を取得
-            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, n, false);
+            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, n, false, skip);
             if (friends == null || friends.Count == 0)
             {
                 return new List<FornowSimpResponseDto>(); // 空のリスト

@@ -30,7 +30,8 @@ namespace Server.src.Repositories
         {
             IQueryable<FriendRequest> query = _context.FriendRequests
                 .Where(fr => fr.SendUserId == senderUserId)
-                .Include(fr => fr.PassUser);
+                .Include(fr => fr.PassUser)
+                .OrderBy(fr => fr.CreatedAt);
             if (!asTracking)
             {
                 query = query.AsNoTracking(); // 追跡オフ 
@@ -43,7 +44,8 @@ namespace Server.src.Repositories
         {
             IQueryable<FriendRequest> query = _context.FriendRequests
                 .Where(fr => fr.PassUserId == receiverUserId)
-                .Include(fr => fr.SendUser);
+                .Include(fr => fr.SendUser)
+                .OrderBy(fr => fr.CreatedAt);
             if (!asTracking)
             {
                 query = query.AsNoTracking(); // 追跡オフ 

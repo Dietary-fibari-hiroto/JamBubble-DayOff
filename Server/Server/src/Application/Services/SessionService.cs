@@ -55,7 +55,7 @@ namespace Server.src.Services
         // フレンドのアクティブ公開セッションを取得
         public async Task<List<SessionResponseDto>> GetSessionActPubFrinedAsync(int userId, int n, int skip)
         {
-            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, 100000, false);
+            var friends = await _friendRepo.GetFriendsByUserIdAsync(userId, n, false, skip);
             if (friends == null || friends.Count == 0)
             {
                 return new List<SessionResponseDto>();
@@ -75,7 +75,7 @@ namespace Server.src.Services
                     }
                 }
             }
-            return sessions.Skip(skip).Take(n).ToList();
+            return sessions;
         }
     }
 }
