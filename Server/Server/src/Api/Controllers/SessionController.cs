@@ -84,5 +84,46 @@ namespace Server.src.Api.Controllers
             var sessions = await _sessionService.GetSessionActPubFrinedAsync(userId.Value, takeCount, skipCount);
             return Ok(sessions);
         }
+
+        /// <summary>
+        /// 保存可能なセッションの一覧を取得
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [HttpGet("history")]
+        [ProducesResponseType(typeof(List<SessionResponseDto>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetSavePossibleSessions()
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            var sessions = await _sessionService.GetSavePossibleSessionsAsync(userId.Value);
+            return Ok(sessions);
+        }
+
+        /// <summary>
+        /// 新しいセッションを作成
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost]
+        [ProducesResponseType(typeof(SessionDetailResponseDto), StatusCodes.Status201Created)]
+        public async Task<IActionResult> CreateSession([FromBody] SessionRequestDto request)
+        {
+            var userId = User.GetUserId(); // JWTからIDを取得
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+            var session = await _sessionService.AddSessionAsync(request, userId.Value);
+            if (session == null)
+            {
+                return BadRequest("Failed to create session.");
+            }
+            return CreatedAtAction(nameof(GetSessionDetail), new { sessionid = session.Id }, session);
+        }
     }
 }

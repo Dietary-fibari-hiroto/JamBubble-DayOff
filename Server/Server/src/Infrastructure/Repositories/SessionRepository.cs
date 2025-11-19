@@ -62,6 +62,16 @@ namespace Server.src.Repositories
                 .FirstOrDefaultAsync();
         }
 
+        // 保存可能なセッション一覧を取得
+        public async Task<List<Session>> GetSavePossibleSessionsAsync(int userId)
+        {
+            // TODO:保存可能の定義を考える
+            return await _context.Sessions
+                .Where(s => s.UserId == userId && s.Finished)
+                .OrderBy(s => s.CreatedAt)
+                .ToListAsync();
+        }
+
         // 終了しておらず、公開されているセッションで参加人数が多い順に取得
         public async Task<List<SessionPopularResponseDto>> GetSessionPopularAsync(int n, int skip)
         {
@@ -84,6 +94,20 @@ namespace Server.src.Repositories
             .Select(x => new SessionPopularResponseDto(x.Session, x.GuestCount));
 
             return await query.ToListAsync();
+        }
+
+        // セッション作成
+        public async Task<Session> AddSessionAsync(Session session)
+        {
+            var entry = await _context.Sessions.AddAsync(session);
+            await _context.SaveChangesAsync();
+            return entry.Entity;
+        }
+
+        // セッション更新
+        public async Task UpdateSessionAsync(Session session)
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

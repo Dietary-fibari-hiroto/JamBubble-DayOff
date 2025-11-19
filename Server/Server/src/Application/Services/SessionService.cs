@@ -77,5 +77,35 @@ namespace Server.src.Services
             }
             return sessions;
         }
+
+        // 保存可能なセッション一覧を取得
+        public async Task<List<SessionResponseDto>> GetSavePossibleSessionsAsync(int userId)
+        {
+            var sessions = await _sessionRepo.GetSavePossibleSessionsAsync(userId);
+            if(sessions == null || sessions.Count == 0)
+            {
+                return new List<SessionResponseDto>();
+            }
+            return sessions.Select(s => new SessionResponseDto(s)).ToList();
+        }
+
+        // セッションを追加
+        public async Task<SessionDetailResponseDto?> AddSessionAsync(SessionRequestDto sessionReqDto, int userID)
+        {
+            // DTOからEntityに変換
+            var session = sessionReqDto.ToSessionEntity(userID);
+            if (session == null)
+            {
+                return null;
+            }
+            // セッションを追加
+            var addedSession =  await _sessionRepo.AddSessionAsync(session);
+            // セッションタグを追加
+            var sessionTagList = sessionReqDto.ToSessionTagsEntities(addedSession.Id);
+            addedSession.SessionTag = sessionTagList;
+            await _sessionRepo.UpdateSessionAsync(addedSession);
+
+            return new SessionDetailResponseDto(addedSession);
+        }
     }
 }

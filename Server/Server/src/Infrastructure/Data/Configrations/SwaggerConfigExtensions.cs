@@ -1,4 +1,4 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Server.src.DTOs;
 
@@ -34,7 +34,9 @@ namespace Server.src.Configrations
                     options.SchemaFilter<MessageRequestFilter>();
                     options.SchemaFilter<MessageResponseFilter>();
                     options.SchemaFilter<FriendResponseFilter>();
+                    options.SchemaFilter<FornowResponseFilter>();
                     options.SchemaFilter<SessionResponseFilter>();
+                    options.SchemaFilter<SessionRequestFilter>();
                 });
         }
     }

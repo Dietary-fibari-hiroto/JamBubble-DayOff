@@ -16,7 +16,8 @@ namespace Server.src.Repositories
         public async Task<List<Message>> GetMessagesByUserIdAsync(int userId, bool asTracking = true)
         {
             IQueryable<Message> query = _context.Messages
-                .Where(m => m.UserId == userId);
+                .Where(m => m.UserId == userId)
+                .OrderBy(m => m.CreatedAt);
 
             if (!asTracking)
             {
