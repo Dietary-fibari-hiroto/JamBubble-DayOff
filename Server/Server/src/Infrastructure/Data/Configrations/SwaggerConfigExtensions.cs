@@ -37,6 +37,9 @@ namespace Server.src.Configrations
                     options.SchemaFilter<FornowResponseFilter>();
                     options.SchemaFilter<SessionResponseFilter>();
                     options.SchemaFilter<SessionRequestFilter>();
+
+                    // IFormFile をサポートするための設定
+                    options.OperationFilter<FileUploadOperationFilter>();
                 });
         }
     }

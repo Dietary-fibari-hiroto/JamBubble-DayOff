@@ -111,7 +111,7 @@ namespace Server.src.Api.Controllers
         [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(SessionDetailResponseDto), StatusCodes.Status201Created)]
-        public async Task<IActionResult> CreateSession([FromBody] SessionRequestDto request)
+        public async Task<IActionResult> CreateSession([FromForm] SessionRequestDto request)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
             if (userId == null)

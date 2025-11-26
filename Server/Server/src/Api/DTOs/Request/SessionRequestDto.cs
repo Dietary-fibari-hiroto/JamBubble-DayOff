@@ -20,8 +20,7 @@ namespace Server.src.DTOs
         public required int SceneId { get; set; }
         [Required]
         public int DefaultSortId { get; set; }
-        [Required]
-        public required string ImgUrl { get; set; }
+        public IFormFile? ImgUrl { get; set; } = null;
         public string? Description { get; set; } = null;
         [Required]
         public required bool IsPublic { get; set; }
@@ -31,6 +30,29 @@ namespace Server.src.DTOs
 
         public Session ToSessionEntity(int userId)
         {
+            var imgUrl = string.Empty;
+            if (this.ImgUrl != null && this.ImgUrl.Length > 0)
+            {
+                var sessionImageFolder = Path.Combine("wwwroot", "images", "sessions");
+                if (!Directory.Exists(sessionImageFolder))
+                {
+                    Directory.CreateDirectory(sessionImageFolder);
+                }
+
+                var uniqueFileName = $"{Guid.NewGuid()}_{Path.GetExtension(this.ImgUrl.FileName)}";
+                var filePath = Path.Combine(sessionImageFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    this.ImgUrl.CopyTo(stream);
+                }
+                imgUrl = $"/images/sessions/{uniqueFileName}";
+            }else
+            {
+                // TODO: デフォルト画像はどうするのか？
+                imgUrl = "/default/default_session_image.png"; // デフォルト画像のパス
+            }
+
             return new Session
             {
                 UserId = userId,
@@ -39,10 +61,10 @@ namespace Server.src.DTOs
                 Password = this.Password,
                 SceneId = this.SceneId,
                 DefaultSortId = this.DefaultSortId,
-                ImgUrl = this.ImgUrl,
+                ImgUrl = imgUrl,
                 Description = this.Description,
                 IsPublic = this.IsPublic,
-                UserCapacity = this.UserCapacity,
+                UserCapacity = this.UserCapacity
             };
         }
 
@@ -86,24 +108,24 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(SessionRequestDto.Title))] = new OpenApiString("Sample Session"),
-                    [ToCamelCase(nameof(SessionRequestDto.ProviderId))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(SessionRequestDto.Password))] = new OpenApiString("Password"),
-                    [ToCamelCase(nameof(SessionRequestDto.SceneId))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(SessionRequestDto.DefaultSortId))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(SessionRequestDto.ImgUrl))] = new OpenApiString("https://example.com/image.png"),
-                    [ToCamelCase(nameof(SessionRequestDto.Description))] = new OpenApiString("This is a sample session description."),
-                    [ToCamelCase(nameof(SessionRequestDto.IsPublic))] = new OpenApiBoolean(true),
-                    [ToCamelCase(nameof(SessionRequestDto.UserCapacity))] = new OpenApiInteger(10),
-                    [ToCamelCase(nameof(SessionRequestDto.SessionTags))] = new OpenApiArray
+                    [nameof(SessionRequestDto.Title)] = new OpenApiString("Sample Session"),
+                    [nameof(SessionRequestDto.ProviderId)] = new OpenApiInteger(1),
+                    [nameof(SessionRequestDto.Password)] = new OpenApiString("Password"),
+                    [nameof(SessionRequestDto.SceneId)] = new OpenApiInteger(1),
+                    [nameof(SessionRequestDto.DefaultSortId)] = new OpenApiInteger(1),
+                    [nameof(SessionRequestDto.ImgUrl)] = new OpenApiString("https://example.com/image.png"),
+                    [nameof(SessionRequestDto.Description)] = new OpenApiString("This is a sample session description."),
+                    [nameof(SessionRequestDto.IsPublic)] = new OpenApiBoolean(true),
+                    [nameof(SessionRequestDto.UserCapacity)] = new OpenApiInteger(10),
+                    [nameof(SessionRequestDto.SessionTags)] = new OpenApiArray
                     {
                         new OpenApiObject
                         {
-                            [ToCamelCase(nameof(SessionTagRequestDto.Id))] = new OpenApiInteger(1)
+                            [nameof(SessionTagRequestDto.Id)] = new OpenApiInteger(1)
                         },
                         new OpenApiObject
                         {
-                            [ToCamelCase(nameof(SessionTagRequestDto.Id))] = new OpenApiInteger(2)
+                            [nameof(SessionTagRequestDto.Id)] = new OpenApiInteger(2)
                         }
                     }
                 };

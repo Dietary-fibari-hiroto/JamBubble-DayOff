@@ -65,7 +65,7 @@ namespace Server.src.Api.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status201Created)]
-        public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto user)
+        public async Task<IActionResult> RegisterUser([FromForm] RegisterUserRequestDto user)
         {
             var addedUser = await _userService.AddUserAsync(user);
 
@@ -78,7 +78,7 @@ namespace Server.src.Api.Controllers
         [Authorize]
         [HttpPut]
         [ProducesResponseType(typeof(UserAllDataResponseDto), StatusCodes.Status200OK)]
-        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserAllDataRequestDto user)
+        public async Task<IActionResult> UpdateUser([FromForm] UpdateUserAllDataRequestDto user)
         {
             var userId = User.GetUserId(); // JWTからIDを取得
 

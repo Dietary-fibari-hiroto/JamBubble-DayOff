@@ -1,18 +1,19 @@
-using DotNetEnv; // �� �������ɒǉ�
+﻿using DotNetEnv; // �� �������ɒǉ�
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Server.Data;
 using Server.Data.Configrations;
 using Server.src.Configrations;
-using System.Reflection;
-using System.Security.Cryptography.Xml;
 using Server.src.DTOs;
 using Server.src.Entities;
-using Microsoft.AspNetCore.Identity;
 using Server.src.Middlewares;
 using Server.src.Services;
+using System.Reflection;
+using System.Security.Cryptography.Xml;
+using System.Text.Json;
 
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
@@ -75,6 +76,7 @@ app.MapGet("/", () => "Hello World!");
 //SwaggerUI�̃G���h�|�C���g��UI�ǂݍ��݁��\�z
 if (app.Environment.IsDevelopment())
 {
+    app.UseStaticFiles();
     app.UseSwagger();
     app.UseSwaggerUI();
     await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ

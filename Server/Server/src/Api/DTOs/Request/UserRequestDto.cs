@@ -19,7 +19,7 @@ namespace Server.src.DTOs
         public required int Gender { get; set; }
         [Required]
         public required DateOnly Birthday { get; set; }
-        public string? ImgUrl { get; set; } = string.Empty;
+        public IFormFile? userImage { get; set; } = null;
 
         // Userの型に変換
         public User RequestToUser(User user)
@@ -30,9 +30,27 @@ namespace Server.src.DTOs
             user.Gender = this.Gender;
             user.Birthday = this.Birthday;
 
-            if (!string.IsNullOrEmpty(this.ImgUrl))
+            // 画像がある場合は保存してURLを設定
+            if (this.userImage != null && this.userImage.Length > 0)
             {
-                user.ImgUrl = this.ImgUrl;
+                var userImageFolder = Path.Combine("wwwroot", "images", "users");
+                if (!Directory.Exists(userImageFolder))
+                {
+                    Directory.CreateDirectory(userImageFolder);
+                }
+
+                var uniqueFileName = $"{Guid.NewGuid()}_{Path.GetExtension(this.userImage.FileName)}";
+                var filePath = Path.Combine(userImageFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    this.userImage.CopyTo(stream);
+                }
+                user.ImgUrl = $"/images/users/{uniqueFileName}";
+            }else
+            {
+                // TODO: デフォルト画像はどうするのか？
+                user.ImgUrl = "/default/default_user_image.png"; // デフォルト画像のパス
             }
 
             return user;
@@ -44,10 +62,10 @@ namespace Server.src.DTOs
         public string? Name { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
-        public string? ImgUrl {  get; set; }
         public string? Message {  get; set; }
-        public bool IsStreetPass { get; set; } = false;
+        public bool? IsStreetPass { get; set; }
         public string? MusicId { get; set; }
+        public IFormFile? userImage { get; set; } = null;
 
         // Userの型に変換
         public User RequestToUser(User user)
@@ -67,24 +85,48 @@ namespace Server.src.DTOs
                 user.Password = this.Password;
             }
 
-            if (!string.IsNullOrEmpty(this.ImgUrl))
-            {
-                user.ImgUrl = this.ImgUrl;
-            }
-
             if (!string.IsNullOrEmpty(this.Message))
             {
                 user.Message = this.Message;
             }
 
-            if (this.IsStreetPass != user.IsStreetPass)
+            if (this.IsStreetPass != null && this.IsStreetPass != user.IsStreetPass)
             {
-                user.IsStreetPass = this.IsStreetPass;
+                user.IsStreetPass = (bool)this.IsStreetPass;
             }
 
             if (user.FavoriteMusic != null && !string.IsNullOrEmpty(this.MusicId))
             {
                 user.FavoriteMusic.MusicId = this.MusicId;
+            }
+
+            // 画像がある場合はもとの画像を削除、新しい画像保存してURLを設定
+            if (userImage != null && userImage.Length > 0)
+            {
+                // TODO: 古い画像を削除する処理は必要か？
+                // 既存の画像を削除
+                if (!string.IsNullOrEmpty(user.ImgUrl) && user.ImgUrl != "/default/default_user_image.png")
+                {
+                    // デフォルト画像でない場合のみ削除
+                    var existingFilePath = Path.Combine("wwwroot", user.ImgUrl.TrimStart('/'));
+                    if (File.Exists(existingFilePath))
+                    {
+                        File.Delete(existingFilePath);
+                    }
+                }
+
+                var userImageFolder = Path.Combine("wwwroot", "images", "users");
+                if (!Directory.Exists(userImageFolder))
+                {
+                    Directory.CreateDirectory(userImageFolder);
+                }
+                var uniqueFileName = $"{Guid.NewGuid()}_{Path.GetExtension(userImage.FileName)}";
+                var filePath = Path.Combine(userImageFolder, uniqueFileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    userImage.CopyTo(stream);
+                }
+                user.ImgUrl = $"/images/users/{uniqueFileName}";
             }
 
             return user;
@@ -130,6 +172,8 @@ namespace Server.src.DTOs
         public required int ProviderId { get; set; }
     }
 
+    
+
     public class UserRequestFilter : ISchemaFilter
     {
         // キャメルケースに変換するヘルパー
@@ -161,12 +205,11 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(RegisterUserRequestDto.Name))] = new OpenApiString("test"),
-                    [ToCamelCase(nameof(RegisterUserRequestDto.Birthday))] = new OpenApiString("2025-11-01"),
-                    [ToCamelCase(nameof(RegisterUserRequestDto.Email))] = new OpenApiString("test@test.com"),
-                    [ToCamelCase(nameof(RegisterUserRequestDto.Password))] = new OpenApiString("password"),
-                    [ToCamelCase(nameof(RegisterUserRequestDto.Gender))] = new OpenApiInteger(0),
-                    [ToCamelCase(nameof(RegisterUserRequestDto.ImgUrl))] = new OpenApiString(""),
+                    [nameof(RegisterUserRequestDto.Name)] = new OpenApiString("test"),
+                    [nameof(RegisterUserRequestDto.Birthday)] = new OpenApiString("2025-11-01"),
+                    [nameof(RegisterUserRequestDto.Email)] = new OpenApiString("test@test.com"),
+                    [nameof(RegisterUserRequestDto.Password)] = new OpenApiString("password"),
+                    [nameof(RegisterUserRequestDto.Gender)] = new OpenApiInteger(0)
                 };
             }
 
@@ -174,13 +217,12 @@ namespace Server.src.DTOs
             {
                 schema.Example = new OpenApiObject
                 {
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Name))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Email))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Password))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.ImgUrl))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.Message))] = new OpenApiString(""),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.IsStreetPass))] = new OpenApiBoolean(false),
-                    [ToCamelCase(nameof(UpdateUserAllDataRequestDto.MusicId))] = new OpenApiString("")
+                    [nameof(UpdateUserAllDataRequestDto.Name)] = new OpenApiString(""),
+                    [nameof(UpdateUserAllDataRequestDto.Email)] = new OpenApiString(""),
+                    [nameof(UpdateUserAllDataRequestDto.Password)] = new OpenApiString(""),
+                    [nameof(UpdateUserAllDataRequestDto.Message)] = new OpenApiString(""),
+                    [nameof(UpdateUserAllDataRequestDto.IsStreetPass)] = new OpenApiBoolean(false),
+                    [nameof(UpdateUserAllDataRequestDto.MusicId)] = new OpenApiString("")
                 };
             }
 

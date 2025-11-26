@@ -114,6 +114,17 @@ namespace Server.src.Services
             var deleteUser = await _repo.GetUserByIdAsync(userId);
             if (deleteUser == null) return false;
 
+            // TODO :画像データの削除処理は必要か？あとここに書くべきか？
+            // 画像を削除
+            if (!string.IsNullOrEmpty(deleteUser.ImgUrl) && deleteUser.ImgUrl != "/default/default_user_image.png")
+            {
+                var existingFilePath = Path.Combine("wwwroot", deleteUser.ImgUrl.TrimStart('/'));
+                if (File.Exists(existingFilePath))
+                {
+                    File.Delete(existingFilePath);
+                }
+            }
+
             await _repo.DeleteUserAsync(deleteUser);
 
             return true;

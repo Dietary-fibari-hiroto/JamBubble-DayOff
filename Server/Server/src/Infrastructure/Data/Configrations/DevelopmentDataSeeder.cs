@@ -107,16 +107,16 @@ namespace Server.src.Configrations
             var pasTemp = "password";
             return new List<RegisterUserRequestDto>
             {
-                new RegisterUserRequestDto { Name = "Alice", Email = "test10@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1995, 5, 15), ImgUrl = "images/users/alice.png" },
-                new RegisterUserRequestDto { Name = "Bob", Email = "test11@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1990, 3, 10), ImgUrl = "images/users/bob.png" },
-                new RegisterUserRequestDto { Name = "Charlie", Email = "test12@test.com", Password = pasTemp, Gender = 0, Birthday = new DateOnly(1988, 7, 20), ImgUrl = "images/users/charlie.png" },
-                new RegisterUserRequestDto { Name = "Diana", Email = "test13@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1992, 11, 5), ImgUrl = "images/users/diana.png" },
-                new RegisterUserRequestDto { Name = "Eve", Email = "test14@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1997, 1, 25), ImgUrl = "images/users/eve.png" },
-                new RegisterUserRequestDto { Name = "Frank", Email = "test15@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1985, 9, 30), ImgUrl = "images/users/frank.png" },
-                new RegisterUserRequestDto { Name = "Grace", Email = "test16@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1993, 4, 18), ImgUrl = "images/users/grace.png" },
-                new RegisterUserRequestDto { Name = "Hank", Email = "test17@test.com", Password = pasTemp, Gender = 0, Birthday = new DateOnly(1989, 6, 12), ImgUrl = "images/users/hank.png" },
-                new RegisterUserRequestDto { Name = "Ivy", Email = "test18@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1996, 8, 22), ImgUrl = "images/users/ivy.png" },
-                new RegisterUserRequestDto { Name = "Jack", Email = "test19@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1991, 12, 3), ImgUrl = "images/users/jack.png" }
+                new RegisterUserRequestDto { Name = "Alice", Email = "test10@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1995, 5, 15) },
+                new RegisterUserRequestDto { Name = "Bob", Email = "test11@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1990, 3, 10) },
+                new RegisterUserRequestDto { Name = "Charlie", Email = "test12@test.com", Password = pasTemp, Gender = 0, Birthday = new DateOnly(1988, 7, 20) },
+                new RegisterUserRequestDto { Name = "Diana", Email = "test13@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1992, 11, 5) },
+                new RegisterUserRequestDto { Name = "Eve", Email = "test14@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1997, 1, 25) },
+                new RegisterUserRequestDto { Name = "Frank", Email = "test15@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1985, 9, 30) },
+                new RegisterUserRequestDto { Name = "Grace", Email = "test16@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1993, 4, 18) },
+                new RegisterUserRequestDto { Name = "Hank", Email = "test17@test.com", Password = pasTemp, Gender = 0, Birthday = new DateOnly(1989, 6, 12) },
+                new RegisterUserRequestDto { Name = "Ivy", Email = "test18@test.com", Password = pasTemp, Gender = 1, Birthday = new DateOnly(1996, 8, 22) },
+                new RegisterUserRequestDto { Name = "Jack", Email = "test19@test.com", Password = pasTemp, Gender = 2, Birthday = new DateOnly(1991, 12, 3) }
             };
         }
 
@@ -217,7 +217,7 @@ namespace Server.src.Configrations
                     Password = "password",
                     SceneId = 1,
                     DefaultSortId = 1,
-                    ImgUrl = "images/sessions/default.png",
+                    ImgUrl = "/default/default_session_image.png",
                     Description = "This is a sample session.",
                     IsPublic = true,
                     UserCapacity = 10,
