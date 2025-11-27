@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\components\\pages\\test2.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\test2.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\services\\ispotifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\services\\ispotifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\platforms\\android\\services\\spotifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\platforms\\android\\services\\spotifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\platforms\\android\\mainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\platforms\\android\\mainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\client\\client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{552B95C5-E9C3-45F4-B822-98FC83FA3DC5}|Client\\Client.csproj|solutionrelative:client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,70 +43,89 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e21a0b2b-0c64-4724-8384-38f57753210c}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SpotifyService.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\Services\\SpotifyService.cs",
-              "RelativeDocumentMoniker": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\Services\\SpotifyService.cs",
-              "RelativeToolTip": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:32:11.806Z",
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Client\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\MainPage.xaml",
+              "RelativeToolTip": "Client\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-27T13:29:47.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainApplication.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\MainApplication.cs",
-              "RelativeDocumentMoniker": "Client\\Platforms\\Android\\MainApplication.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\MainApplication.cs",
-              "RelativeToolTip": "Client\\Platforms\\Android\\MainApplication.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:29:00.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainActivity.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\MainActivity.cs",
-              "RelativeDocumentMoniker": "Client\\Platforms\\Android\\MainActivity.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\MainActivity.cs",
-              "RelativeToolTip": "Client\\Platforms\\Android\\MainActivity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:28:58.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AndroidManifest.xml",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeDocumentMoniker": "Client\\Platforms\\Android\\AndroidManifest.xml",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeToolTip": "Client\\Platforms\\Android\\AndroidManifest.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-11-27T12:25:32.591Z",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\appsettings.json",
+              "RelativeDocumentMoniker": "Client\\appsettings.json",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\appsettings.json",
+              "RelativeToolTip": "Client\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-27T13:29:06.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Client.csproj",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Client.csproj",
-              "RelativeDocumentMoniker": "Client\\Client.csproj",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Client.csproj",
-              "RelativeToolTip": "Client\\Client.csproj",
-              "ViewState": "AgIAACYAAAAAAAAAAAAowEEAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-27T12:06:53.408Z",
+              "Title": "Test2.razor",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Test2.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Test2.razor",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Components\\Pages\\Test2.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Test2.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T13:28:25.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISpotifyService.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Services\\ISpotifyService.cs",
+              "RelativeDocumentMoniker": "Client\\Services\\ISpotifyService.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Services\\ISpotifyService.cs",
+              "RelativeToolTip": "Client\\Services\\ISpotifyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T13:27:38.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Client\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\MauiProgram.cs",
+              "RelativeToolTip": "Client\\MauiProgram.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T13:24:31.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpotifyService.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\Services\\SpotifyService.cs",
+              "RelativeDocumentMoniker": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\Services\\SpotifyService.cs",
+              "RelativeToolTip": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T12:32:11.806Z",
               "EditorCaption": ""
             }
           ]

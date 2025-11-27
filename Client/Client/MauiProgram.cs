@@ -33,6 +33,12 @@ namespace Client
             builder.Services.AddSingleton<SpotifyAuthService>();
             builder.Services.AddSingleton<SpotifyApiService>();
 
+#if ANDROID
+            builder.Services.AddSingleton<ISpotifyService, SpotifyService>();
+#else
+            // 他のプラットフォーム用のダミー実装
+            builder.Services.AddSingleton<ISpotifyService, DummySpotifyService>();
+#endif
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

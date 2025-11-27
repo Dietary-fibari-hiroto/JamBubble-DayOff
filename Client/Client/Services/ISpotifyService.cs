@@ -44,4 +44,23 @@ namespace Client.Platforms.Android.Services
         public long PositionMs { get; set; }
         public long DurationMs { get; set; }
     }
+
+    // ダミー実装 (Android以外のプラットフォーム用)
+    public class DummySpotifyService : ISpotifyService
+    {
+        public event EventHandler<SpotifyConnectionEventArgs> ConnectionChanged;
+        public event EventHandler<PlayerStateEventArgs> PlayerStateChanged;
+        public bool IsConnected => false;
+
+        public Task<bool> ConnectAsync() => Task.FromResult(false);
+        public void Disconnect() { }
+        public void Play(string uri) { }
+        public void Pause() { }
+        public void Resume() { }
+        public void SkipNext() { }
+        public void SkipPrevious() { }
+        public void SeekTo(long positionMs) { }
+        public Task<PlayerStateInfo> GetCurrentPlayerStateAsync() =>
+            Task.FromResult(new PlayerStateInfo());
+    }
 }
