@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System.Reflection;
 using Client.Services.SpotifyServices.Auths;
 using Client.Services.SpotifyServices.Apis;
-
+using Client.Platforms.Android.Services;
 namespace Client
 {
     public static class MauiProgram
@@ -27,6 +27,8 @@ namespace Client
                 });
 
             builder.Services.AddMauiBlazorWebView();
+
+
             builder.Services.AddSingleton<HttpClient>();
             builder.Services.AddSingleton<SpotifyAuthService>();
             builder.Services.AddSingleton<SpotifyApiService>();
@@ -36,6 +38,11 @@ namespace Client
             builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+#if DEBUG
+            builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
+#endif
+
 
             return builder.Build();
         }
