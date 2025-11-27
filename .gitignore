@@ -170,3 +170,9 @@ appsettings.*.json
 !App.razor
 !App.xaml
 !App.xaml.cs
+
+
+
+Client/Client/appsettings.json
+
+Client/Client/Platforms/Android/Resources/values/strings.xml

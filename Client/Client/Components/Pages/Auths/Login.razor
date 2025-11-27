@@ -18,7 +18,7 @@
         <RawTextButton OnClick="OnReturn" label="もどる" IsUnderline=true />
     </section>
 </AuthBgPannel>
-
+    
 @code {
     private Task OnReturn()
     {
@@ -28,7 +28,7 @@
 
     private Task OnSubmit()
     {
-        NavManager.NavigateTo("/auth/registerconfirm");
+        NavManager.NavigateTo("/app/main");
         return Task.CompletedTask;
     }
 }

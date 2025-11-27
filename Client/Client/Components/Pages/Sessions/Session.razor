@@ -1,11 +1,12 @@
 ﻿@page "/app/session"
+@inject NavigationManager Nav
 <section class="header">
     <p class="string-reg-bold">Session</p>
     <UserIcon/>
 </section>
 <div class="margin-y-10" />
 <section class="section-menu flex-all-center">
-    <button class="create-session-button">
+    <button @onclick = '()=>Nav.NavigateTo("/app/fuction/session/create")' class="create-session-button">
         <figure class="create-icon-container">
             <img src ="images/elementicons/shell.svg" class="session-icon"/>
             <p class="plus-icon string-big-bold">+</p>
@@ -16,7 +17,7 @@
         </p>
     </button>
     <div class="margin-y-10" />
-    <button class="search-session-button">
+    <button @onclick='() => Nav.NavigateTo("/app/session/list")' class="search-session-button">
         <img src ="images/elementicons/radio.svg"/>
         <p class="string-md-bold">Sessionをさがす</p>
     </button>

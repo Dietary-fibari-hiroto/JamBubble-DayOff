@@ -3,25 +3,25 @@
 <div class="footer">
     <div class="footer-container">
         <div class="transition-container">
-            <button @onclick='()=>Navigate("/app/main")' class="transition-content">
-                <img src = "images/elementicons/house.svg"/>
+            <button @onclick='()=>NavManager.NavigateTo("/app/main")' class="transition-content">
+                <img src="images/elementicons/house.svg" />
                 <p class="string-mini">ホーム</p>
             </button>
-            <button @onclick='() => Navigate("/app/playlist")' class="transition-content">
-                <img src="images/elementicons/list-music.svg" />
+            <button @onclick='() => NavManager.NavigateTo("/app/playlist")' class="transition-content">
+                <img src="/images/elementicons/list-music.svg" />
                 <p class="string-mini">プレイリスト</p>
             </button>
-            <button class="transition-content">
-                <img src="images/elementicons/search.svg" />
+            <button @onclick='() => NavManager.NavigateTo("/app/search")' class="transition-content">
+                <img src="/images/elementicons/search.svg" />
                 <p class="string-mini">検索</p>
             </button>
-            <button class="transition-content">
-                <img src="images/elementicons/users.svg" />
-                <p class="string-mini">ホーム</p>
+            <button @onclick='() => NavManager.NavigateTo("/app/friend")' class="transition-content">
+                <img src="/images/elementicons/users.svg" />
+                <p class="string-mini">フレンド</p>
             </button>
-            <button class="transition-content">
-                <img src="images/elementicons/shell.svg" />
-                <p class="string-mini">ホーム</p>
+            <button @onclick='() => NavManager.NavigateTo("/app/session")' class="transition-content">
+                <img src="/images/elementicons/shell.svg" />
+                <p class="string-mini">セッション</p>
             </button>
 
         </div>
@@ -29,12 +29,3 @@
     </div>
 </div>
 
-
-@code{
-
-    private Task Navigate(string path)
-    {
-        NavManager.NavigateTo(path);
-        return Task.CompletedTask;
-    }
-}

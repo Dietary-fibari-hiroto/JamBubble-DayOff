@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System.Reflection;
+using Client.Services.SpotifyServices.Auths;
+using Client.Services.SpotifyServices.Apis;
 
 namespace Client
 {
@@ -7,6 +11,14 @@ namespace Client
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            var a = Assembly.GetExecutingAssembly();
+            using var stream = a.GetManifestResourceStream("Client.appsettings.json");
+            var config = new ConfigurationBuilder()
+                .AddJsonStream(stream!)
+                .Build();
+            builder.Configuration.AddConfiguration(config);
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -15,9 +27,13 @@ namespace Client
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddSingleton<HttpClient>();
+            builder.Services.AddSingleton<SpotifyAuthService>();
+            builder.Services.AddSingleton<SpotifyApiService>();
+
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 

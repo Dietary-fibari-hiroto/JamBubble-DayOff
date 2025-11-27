@@ -29,33 +29,33 @@
     <AppXManifest Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-10-31T01:58:39.424</Modified>
+      <Modified>2025-11-21T07:43:28.316</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-10-31T01:56:58.600</Modified>
+      <Modified>2025-11-21T07:43:28.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Client.runtimeconfig.json">
       <PackagePath>Client.runtimeconfig.json</PackagePath>
-      <Modified>2025-10-15T04:08:58.670</Modified>
+      <Modified>2025-11-21T07:39:40.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Client.dll">
       <PackagePath>Client.dll</PackagePath>
-      <Modified>2025-10-31T01:53:40.106</Modified>
+      <Modified>2025-11-21T07:43:27.892</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Client.exe</PackagePath>
-      <Modified>2025-10-31T01:53:40.150</Modified>
+      <Modified>2025-11-21T07:43:27.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2025-10-15T04:08:26.676</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\app.css">
-      <PackagePath>wwwroot\css\app.css</PackagePath>
-      <Modified>2025-10-31T01:57:59.172</Modified>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\app.css">
+      <PackagePath>wwwroot\app.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\fonts.css">
       <PackagePath>wwwroot\css\fonts.css</PackagePath>
@@ -67,11 +67,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\utils.css">
       <PackagePath>wwwroot\css\utils.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.894</Modified>
+      <Modified>2025-11-07T06:49:44.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\css\Variable.css">
       <PackagePath>wwwroot\css\Variable.css</PackagePath>
-      <Modified>2025-10-29T06:58:06.653</Modified>
+      <Modified>2025-11-07T06:49:44.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf">
       <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf</PackagePath>
@@ -109,149 +109,161 @@
       <PackagePath>wwwroot\fonts\Noto_Sans_JP\NotoSansJP-Thin.ttf</PackagePath>
       <Modified>2025-10-29T06:58:07.067</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\arrow-up-from-line.svg">
-      <PackagePath>wwwroot\images\elementIcons\arrow-up-from-line.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\arrow-up-from-line.svg">
+      <PackagePath>wwwroot\images\elementicons\arrow-up-from-line.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.069</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\check.svg">
-      <PackagePath>wwwroot\images\elementIcons\check.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\check.svg">
+      <PackagePath>wwwroot\images\elementicons\check.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.069</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\chevron-down.svg">
-      <PackagePath>wwwroot\images\elementIcons\chevron-down.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\chevron-down.svg">
+      <PackagePath>wwwroot\images\elementicons\chevron-down.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.070</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\circle-check-big.svg">
-      <PackagePath>wwwroot\images\elementIcons\circle-check-big.svg</PackagePath>
-      <Modified>2025-10-29T06:58:07.070</Modified>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\circle-check-big.svg">
+      <PackagePath>wwwroot\images\elementicons\circle-check-big.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.330</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\circle-user-round.svg">
-      <PackagePath>wwwroot\images\elementIcons\circle-user-round.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\circle-user-round.svg">
+      <PackagePath>wwwroot\images\elementicons\circle-user-round.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.071</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\contact.svg">
-      <PackagePath>wwwroot\images\elementIcons\contact.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\contact.svg">
+      <PackagePath>wwwroot\images\elementicons\contact.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.071</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\ellipsis.svg">
-      <PackagePath>wwwroot\images\elementIcons\ellipsis.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\ellipsis.svg">
+      <PackagePath>wwwroot\images\elementicons\ellipsis.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.071</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\eye.svg">
-      <PackagePath>wwwroot\images\elementIcons\eye.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\eye.svg">
+      <PackagePath>wwwroot\images\elementicons\eye.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.072</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\fast-forward.svg">
-      <PackagePath>wwwroot\images\elementIcons\fast-forward.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\fast-forward.svg">
+      <PackagePath>wwwroot\images\elementicons\fast-forward.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.072</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\focus.svg">
-      <PackagePath>wwwroot\images\elementIcons\focus.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\focus.svg">
+      <PackagePath>wwwroot\images\elementicons\focus.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.073</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\git-pull-request-create-arrow.svg">
-      <PackagePath>wwwroot\images\elementIcons\git-pull-request-create-arrow.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\focus-black.svg">
+      <PackagePath>wwwroot\images\elementicons\focus-black.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\git-pull-request-create-arrow.svg">
+      <PackagePath>wwwroot\images\elementicons\git-pull-request-create-arrow.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.073</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\heart.svg">
-      <PackagePath>wwwroot\images\elementIcons\heart.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\heart.svg">
+      <PackagePath>wwwroot\images\elementicons\heart.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.073</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\house.svg">
-      <PackagePath>wwwroot\images\elementIcons\house.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\house.svg">
+      <PackagePath>wwwroot\images\elementicons\house.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.074</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\list-minus.svg">
-      <PackagePath>wwwroot\images\elementIcons\list-minus.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\list-minus.svg">
+      <PackagePath>wwwroot\images\elementicons\list-minus.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.074</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\list-music.svg">
-      <PackagePath>wwwroot\images\elementIcons\list-music.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\list-music.svg">
+      <PackagePath>wwwroot\images\elementicons\list-music.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.074</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\mail.svg">
-      <PackagePath>wwwroot\images\elementIcons\mail.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\mail.svg">
+      <PackagePath>wwwroot\images\elementicons\mail.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.075</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\map-pinned.svg">
-      <PackagePath>wwwroot\images\elementIcons\map-pinned.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\map-pinned.svg">
+      <PackagePath>wwwroot\images\elementicons\map-pinned.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.075</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\menu.svg">
-      <PackagePath>wwwroot\images\elementIcons\menu.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\menu.svg">
+      <PackagePath>wwwroot\images\elementicons\menu.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.075</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\message-circle-plus.svg">
-      <PackagePath>wwwroot\images\elementIcons\message-circle-plus.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\message-circle-plus.svg">
+      <PackagePath>wwwroot\images\elementicons\message-circle-plus.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.076</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\play.svg">
-      <PackagePath>wwwroot\images\elementIcons\play.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\play.svg">
+      <PackagePath>wwwroot\images\elementicons\play.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.076</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\qr-code.svg">
-      <PackagePath>wwwroot\images\elementIcons\qr-code.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\qr-code.svg">
+      <PackagePath>wwwroot\images\elementicons\qr-code.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\radio.svg">
-      <PackagePath>wwwroot\images\elementIcons\radio.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\radio.svg">
+      <PackagePath>wwwroot\images\elementicons\radio.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\repeat.svg">
-      <PackagePath>wwwroot\images\elementIcons\repeat.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\repeat.svg">
+      <PackagePath>wwwroot\images\elementicons\repeat.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\repeat-1.svg">
-      <PackagePath>wwwroot\images\elementIcons\repeat-1.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\repeat-1.svg">
+      <PackagePath>wwwroot\images\elementicons\repeat-1.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\search.svg">
-      <PackagePath>wwwroot\images\elementIcons\search.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\return.svg">
+      <PackagePath>wwwroot\images\elementicons\return.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.331</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\search.svg">
+      <PackagePath>wwwroot\images\elementicons\search.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.078</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\share.svg">
-      <PackagePath>wwwroot\images\elementIcons\share.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\share.svg">
+      <PackagePath>wwwroot\images\elementicons\share.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.078</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shell.png">
-      <PackagePath>wwwroot\images\elementIcons\shell.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\shell.png">
+      <PackagePath>wwwroot\images\elementicons\shell.png</PackagePath>
       <Modified>2025-10-29T06:58:07.079</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shell.svg">
-      <PackagePath>wwwroot\images\elementIcons\shell.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\shell.svg">
+      <PackagePath>wwwroot\images\elementicons\shell.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.079</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shield-ban.svg">
-      <PackagePath>wwwroot\images\elementIcons\shield-ban.svg</PackagePath>
-      <Modified>2025-10-29T06:58:07.079</Modified>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\shield-ban.svg">
+      <PackagePath>wwwroot\images\elementicons\shield-ban.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.331</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\shuffle.svg">
-      <PackagePath>wwwroot\images\elementIcons\shuffle.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\shuffle.svg">
+      <PackagePath>wwwroot\images\elementicons\shuffle.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.080</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\square-pen.svg">
-      <PackagePath>wwwroot\images\elementIcons\square-pen.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\square-pen.svg">
+      <PackagePath>wwwroot\images\elementicons\square-pen.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.080</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\undo-2.svg">
-      <PackagePath>wwwroot\images\elementIcons\undo-2.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\undo-2.svg">
+      <PackagePath>wwwroot\images\elementicons\undo-2.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.080</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\user-round-plus.png">
-      <PackagePath>wwwroot\images\elementIcons\user-round-plus.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\user-round-plus.png">
+      <PackagePath>wwwroot\images\elementicons\user-round-plus.png</PackagePath>
       <Modified>2025-10-29T06:58:07.081</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\user-round-plus.svg">
-      <PackagePath>wwwroot\images\elementIcons\user-round-plus.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\user-round-plus.svg">
+      <PackagePath>wwwroot\images\elementicons\user-round-plus.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.332</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\users.svg">
+      <PackagePath>wwwroot\images\elementicons\users.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.081</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\users.svg">
-      <PackagePath>wwwroot\images\elementIcons\users.svg</PackagePath>
-      <Modified>2025-10-29T06:58:07.081</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementIcons\x.svg">
-      <PackagePath>wwwroot\images\elementIcons\x.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\x.svg">
+      <PackagePath>wwwroot\images\elementicons\x.svg</PackagePath>
       <Modified>2025-10-29T06:58:07.082</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\elementicons\x-black.svg">
+      <PackagePath>wwwroot\images\elementicons\x-black.svg</PackagePath>
+      <Modified>2025-11-07T06:49:44.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\icons\applemusic_icon.png">
       <PackagePath>wwwroot\images\icons\applemusic_icon.png</PackagePath>
@@ -269,33 +281,49 @@
       <PackagePath>wwwroot\images\icons\spotify_icon.png</PackagePath>
       <Modified>2025-10-29T06:58:07.084</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\movie.jpg">
+      <PackagePath>wwwroot\images\photos\movie.jpg</PackagePath>
+      <Modified>2025-11-07T06:49:44.333</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\offn.jpg">
+      <PackagePath>wwwroot\images\photos\offn.jpg</PackagePath>
+      <Modified>2025-11-07T06:49:44.337</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\pexels-thevibrantmachine-3066867.jpg">
       <PackagePath>wwwroot\images\photos\pexels-thevibrantmachine-3066867.jpg</PackagePath>
       <Modified>2025-10-30T14:47:11.907</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\photo1.jpg">
+      <PackagePath>wwwroot\images\photos\photo1.jpg</PackagePath>
+      <Modified>2025-11-07T06:49:44.338</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\images\photos\testqr.png">
+      <PackagePath>wwwroot\images\photos\testqr.png</PackagePath>
+      <Modified>2025-11-07T06:49:44.338</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2025-10-31T01:58:36.105</Modified>
+      <Modified>2025-11-07T06:49:44.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:50.519</Modified>
+      <Modified>2025-11-21T07:38:17.243</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:50.519</Modified>
+      <Modified>2025-11-21T07:38:17.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:50.537</Modified>
+      <Modified>2025-11-21T07:38:17.280</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:50.573</Modified>
+      <Modified>2025-11-21T07:38:17.306</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:50.664</Modified>
+      <Modified>2025-11-21T07:38:17.406</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -303,211 +331,211 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.450</Modified>
+      <Modified>2025-11-21T07:38:18.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.450</Modified>
+      <Modified>2025-11-21T07:38:18.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.450</Modified>
+      <Modified>2025-11-21T07:38:18.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.451</Modified>
+      <Modified>2025-11-21T07:38:18.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.450</Modified>
+      <Modified>2025-11-21T07:38:18.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.450</Modified>
+      <Modified>2025-11-21T07:38:18.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-10-15T04:08:51.447</Modified>
+      <Modified>2025-11-21T07:38:18.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Client.deps.json">
       <PackagePath>Client.deps.json</PackagePath>
-      <Modified>2025-10-31T01:53:40.854</Modified>
+      <Modified>2025-11-21T07:43:28.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -863,7 +891,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\staticwebassets.build.endpoints.json">
       <PackagePath>Client.staticwebassets.endpoints.json</PackagePath>
-      <Modified>2025-10-31T01:58:39.150</Modified>
+      <Modified>2025-11-21T07:38:16.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\.nuget\packages\microsoft.maui.controls.compatibility\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -879,19 +907,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\Client.styles.css">
       <PackagePath>wwwroot\Client.styles.css</PackagePath>
-      <Modified>2025-10-31T01:51:19.282</Modified>
+      <Modified>2025-11-21T07:38:16.175</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Client.bundle.scp.css">
-      <PackagePath>wwwroot\Client.02lothpoku.bundle.scp.css</PackagePath>
-      <Modified>2025-10-31T01:51:19.286</Modified>
+      <PackagePath>wwwroot\Client.wuyb52q7tc.bundle.scp.css</PackagePath>
+      <Modified>2025-11-21T07:38:16.182</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\AuthLayout.razor.css">
       <PackagePath>Components\Layout\AuthLayout.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.874</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\BlurPanel.razor.css">
+      <PackagePath>Components\Layout\BlurPanel.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.255</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\GateScreenLayout.razor.css">
       <PackagePath>Components\Layout\GateScreenLayout.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.875</Modified>
+      <Modified>2025-11-07T06:49:44.255</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Layout\MainBg.razor.css">
+      <PackagePath>Components\Layout\MainBg.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\EmailComplete.razor.css">
       <PackagePath>Components\Pages\Auths\EmailComplete.razor.css</PackagePath>
@@ -907,7 +943,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\LoadingScreen.razor.css">
       <PackagePath>Components\Pages\Auths\LoadingScreen.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.878</Modified>
+      <Modified>2025-11-07T08:13:01.050</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\Login.razor.css">
       <PackagePath>Components\Pages\Auths\Login.razor.css</PackagePath>
@@ -919,7 +955,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\Register.razor.css">
       <PackagePath>Components\Pages\Auths\Register.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.880</Modified>
+      <Modified>2025-11-07T06:49:44.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\RegisterComplete.razor.css">
       <PackagePath>Components\Pages\Auths\RegisterComplete.razor.css</PackagePath>
@@ -931,27 +967,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Auths\WelcomeScreen.razor.css">
       <PackagePath>Components\Pages\Auths\WelcomeScreen.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.883</Modified>
+      <Modified>2025-11-07T07:09:43.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionConfirm.razor.css">
+      <PackagePath>Components\Pages\Features\SessionConfirm.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.262</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionCreate.razor.css">
+      <PackagePath>Components\Pages\Features\SessionCreate.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.263</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionFriendInvite.razor.css">
+      <PackagePath>Components\Pages\Features\SessionFriendInvite.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.263</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionLink.razor.css">
+      <PackagePath>Components\Pages\Features\SessionLink.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.264</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionLoading.razor.css">
+      <PackagePath>Components\Pages\Features\SessionLoading.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.265</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionPlaylist.razor.css">
+      <PackagePath>Components\Pages\Features\SessionPlaylist.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.265</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Features\SessionRequest.razor.css">
+      <PackagePath>Components\Pages\Features\SessionRequest.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Friends\Friend.razor.css">
+      <PackagePath>Components\Pages\Friends\Friend.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Home.razor.css">
       <PackagePath>Components\Pages\Home.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.884</Modified>
+      <Modified>2025-11-07T07:09:18.051</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Playlists\Playlist.razor.css">
+      <PackagePath>Components\Pages\Playlists\Playlist.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.268</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Playlists\PlaylistDetail.razor.css">
+      <PackagePath>Components\Pages\Playlists\PlaylistDetail.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.269</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Search\Search.razor.css">
+      <PackagePath>Components\Pages\Search\Search.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.270</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Sessions\Session.razor.css">
+      <PackagePath>Components\Pages\Sessions\Session.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.271</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Sessions\SessionDetail.razor.css">
+      <PackagePath>Components\Pages\Sessions\SessionDetail.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.272</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Sessions\SessionList.razor.css">
+      <PackagePath>Components\Pages\Sessions\SessionList.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.272</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Sessions\SessionSearch.razor.css">
+      <PackagePath>Components\Pages\Sessions\SessionSearch.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.273</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Test.razor.css">
+      <PackagePath>Components\Pages\Test.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.274</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Users\Help.razor.css">
+      <PackagePath>Components\Pages\Users\Help.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.274</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Users\Main.razor.css">
+      <PackagePath>Components\Pages\Users\Main.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.275</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Users\Profile.razor.css">
+      <PackagePath>Components\Pages\Users\Profile.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Users\Setting.razor.css">
+      <PackagePath>Components\Pages\Users\Setting.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\Pages\Users\UserProfile.razor.css">
+      <PackagePath>Components\Pages\Users\UserProfile.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.277</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\CancelButton.razor.css">
+      <PackagePath>Components\UI\buttons\CancelButton.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.278</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\EditButton.razor.css">
       <PackagePath>Components\UI\buttons\EditButton.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.885</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\MiniSubmit.razor.css">
+      <PackagePath>Components\UI\buttons\MiniSubmit.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.279</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\RawTextButton.razor.css">
       <PackagePath>Components\UI\buttons\RawTextButton.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.885</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\ReturnButton.razor.css">
+      <PackagePath>Components\UI\buttons\ReturnButton.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.279</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\Submit.razor.css">
       <PackagePath>Components\UI\buttons\Submit.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.886</Modified>
+      <Modified>2025-11-07T06:49:44.280</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\buttons\UserIcon.razor.css">
+      <PackagePath>Components\UI\buttons\UserIcon.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.280</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\cards\MenberCard.razor.css">
+      <PackagePath>Components\UI\cards\MenberCard.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.281</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\cards\SessionCard.razor.css">
+      <PackagePath>Components\UI\cards\SessionCard.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.282</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\cards\SessionCardBig.razor.css">
+      <PackagePath>Components\UI\cards\SessionCardBig.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\cards\SongCard.razor.css">
+      <PackagePath>Components\UI\cards\SongCard.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\Fornow.razor.css">
+      <PackagePath>Components\UI\dialogs\Fornow.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.284</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\FriendAddDialog.razor.css">
+      <PackagePath>Components\UI\dialogs\FriendAddDialog.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.285</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\InvitationDaialog.razor.css">
+      <PackagePath>Components\UI\dialogs\InvitationDaialog.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.286</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\MenberDialog.razor.css">
+      <PackagePath>Components\UI\dialogs\MenberDialog.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.286</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\MessageBox.razor.css">
+      <PackagePath>Components\UI\dialogs\MessageBox.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.287</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\MusicPanel.razor.css">
+      <PackagePath>Components\UI\dialogs\MusicPanel.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.287</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\RequestBox.razor.css">
+      <PackagePath>Components\UI\dialogs\RequestBox.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.288</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\RequestDialog.razor.css">
+      <PackagePath>Components\UI\dialogs\RequestDialog.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.289</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\dialogs\UserIconDialog.razor.css">
+      <PackagePath>Components\UI\dialogs\UserIconDialog.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\Bubble.razor.css">
       <PackagePath>Components\UI\elements\Bubble.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\FooterMenu.razor.css">
+      <PackagePath>Components\UI\elements\FooterMenu.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.290</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\FornowIcon.razor.css">
+      <PackagePath>Components\UI\elements\FornowIcon.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.291</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\HeaderMenu.razor.css">
+      <PackagePath>Components\UI\elements\HeaderMenu.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\MusicChip.razor.css">
+      <PackagePath>Components\UI\elements\MusicChip.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\MusicListLabel.razor.css">
+      <PackagePath>Components\UI\elements\MusicListLabel.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.293</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\PlaylistBar.razor.css">
+      <PackagePath>Components\UI\elements\PlaylistBar.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.294</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\elements\Tag.razor.css">
+      <PackagePath>Components\UI\elements\Tag.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\BirthDatePicker.razor.css">
       <PackagePath>Components\UI\inputs\BirthDatePicker.razor.css</PackagePath>
@@ -961,9 +1177,13 @@
       <PackagePath>Components\UI\inputs\InputImage.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.888</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\SearchBar.razor.css">
+      <PackagePath>Components\UI\inputs\SearchBar.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.296</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\SelecterBox.razor.css">
       <PackagePath>Components\UI\inputs\SelecterBox.razor.css</PackagePath>
-      <Modified>2025-10-30T14:47:11.889</Modified>
+      <Modified>2025-11-07T06:49:44.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\inputs\TextInput.razor.css">
       <PackagePath>Components\UI\inputs\TextInput.razor.css</PackagePath>
@@ -972,6 +1192,10 @@
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\pannels\AuthBgPannel.razor.css">
       <PackagePath>Components\UI\pannels\AuthBgPannel.razor.css</PackagePath>
       <Modified>2025-10-30T14:47:11.891</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\pannels\SessionDeck.razor.css">
+      <PackagePath>Components\UI\pannels\SessionDeck.razor.css</PackagePath>
+      <Modified>2025-11-07T06:49:44.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Client\Client\Components\UI\typographies\FormConfirmLabel.razor.css">
       <PackagePath>Components\UI\typographies\FormConfirmLabel.razor.css</PackagePath>

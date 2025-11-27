@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  package="com.dayoff.client">
+
+
+    <application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
+		<meta-data
+			android:name="spotify:client_id"
+			android:value="@string/spotify_client_id" />
+
+		<meta-data
+            android:name="com.spotify.sdk.REDIRECT_URI"
+            android:value="@string/spotify_redirect_uri" />
+	</application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+
+
 </manifest>
