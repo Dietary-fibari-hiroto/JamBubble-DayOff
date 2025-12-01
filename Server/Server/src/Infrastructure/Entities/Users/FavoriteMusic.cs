@@ -10,10 +10,10 @@ namespace Server.src.Entities
         [Key]
         [Required]
         public int UserId { get; set; }
-        public required User User { get; set; }
+        [ForeignKey(nameof(UserId))]
+        public User? User { get; set; }
 
-        [Required]
         [StringLength(50)]
-        public string MusicId { get; set; }= null!;
+        public string? MusicId { get; set; }
     }
 }

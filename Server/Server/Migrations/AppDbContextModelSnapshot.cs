@@ -25,28 +25,18 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.FavoriteMusic", b =>
                 {
                     b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserId"));
-
                     b.Property<string>("MusicId")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("music_id");
-
-                    b.Property<int>("UserId1")
-                        .HasColumnType("int")
-                        .HasColumnName("user_id1");
 
                     b.HasKey("UserId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("favorite_musics");
                 });
@@ -237,9 +227,9 @@ namespace Server.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("created_at");
 
-                    b.Property<bool>("IsReqd")
+                    b.Property<bool>("IsRead")
                         .HasColumnType("tinyint(1)")
-                        .HasColumnName("is_reqd");
+                        .HasColumnName("is_read");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -348,19 +338,20 @@ namespace Server.Migrations
 
             modelBuilder.Entity("Server.src.Entities.Scene", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Name")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("int")
+                        .HasColumnType("varchar(255)")
                         .HasColumnName("name");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("scenes");
                 });
@@ -406,8 +397,8 @@ namespace Server.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("varchar(16)")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
                         .HasColumnName("password");
 
                     b.Property<int>("ProviderId")
@@ -443,6 +434,30 @@ namespace Server.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("sessions");
+                });
+
+            modelBuilder.Entity("Server.src.Entities.SessionInvitation", b =>
+                {
+                    b.Property<int>("SessionId")
+                        .HasColumnType("int")
+                        .HasColumnName("session_id");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("user_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("created_at");
+
+                    b.HasKey("SessionId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("SessionId", "UserId")
+                        .IsUnique();
+
+                    b.ToTable("session_invitations");
                 });
 
             modelBuilder.Entity("Server.src.Entities.SessionSortSetting", b =>
@@ -582,8 +597,8 @@ namespace Server.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Birthday")
-                        .HasColumnType("datetime(6)")
+                    b.Property<DateOnly>("Birthday")
+                        .HasColumnType("date")
                         .HasColumnName("birthday");
 
                     b.Property<DateTime>("CreatedAt")
@@ -612,6 +627,10 @@ namespace Server.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasColumnName("is_street_pass");
 
+                    b.Property<string>("Message")
+                        .HasColumnType("longtext")
+                        .HasColumnName("message");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -632,6 +651,9 @@ namespace Server.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlComputedColumn(b.Property<DateTime>("UpdatedAt"));
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("users");
                 });
@@ -663,26 +685,17 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.UserHistory", b =>
                 {
                     b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("user_id");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserId"));
 
                     b.Property<int>("SessionCount")
                         .HasColumnType("int")
                         .HasColumnName("session_count");
 
-                    b.Property<int>("UserId1")
-                        .HasColumnType("int")
-                        .HasColumnName("user_id1");
-
                     b.HasKey("UserId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("user_histories");
                 });
@@ -711,8 +724,6 @@ namespace Server.Migrations
 
                     b.HasKey("UserId", "ProviderId");
 
-                    b.HasIndex("ProviderId");
-
                     b.HasIndex("UserId", "ProviderId")
                         .IsUnique();
 
@@ -722,8 +733,8 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.FavoriteMusic", b =>
                 {
                     b.HasOne("Server.src.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId1")
+                        .WithOne("FavoriteMusic")
+                        .HasForeignKey("Server.src.Entities.FavoriteMusic", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -744,7 +755,7 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.FornowLike", b =>
                 {
                     b.HasOne("Server.src.Entities.Fornow", "Fornow")
-                        .WithMany()
+                        .WithMany("FornowLikes")
                         .HasForeignKey("FornowId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -818,7 +829,7 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.Message", b =>
                 {
                     b.HasOne("Server.src.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Messages")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -885,7 +896,7 @@ namespace Server.Migrations
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Sessions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -899,10 +910,29 @@ namespace Server.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Server.src.Entities.SessionTag", b =>
+            modelBuilder.Entity("Server.src.Entities.SessionInvitation", b =>
                 {
                     b.HasOne("Server.src.Entities.Session", "Session")
                         .WithMany()
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Server.src.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Session");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Server.src.Entities.SessionTag", b =>
+                {
+                    b.HasOne("Server.src.Entities.Session", "Session")
+                        .WithMany("SessionTag")
                         .HasForeignKey("SessionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -970,8 +1000,8 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.UserHistory", b =>
                 {
                     b.HasOne("Server.src.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId1")
+                        .WithOne("UserHistory")
+                        .HasForeignKey("Server.src.Entities.UserHistory", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -980,21 +1010,36 @@ namespace Server.Migrations
 
             modelBuilder.Entity("Server.src.Entities.UserProvider", b =>
                 {
-                    b.HasOne("Server.src.Entities.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Server.src.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("UserProviders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Provider");
-
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Server.src.Entities.Fornow", b =>
+                {
+                    b.Navigation("FornowLikes");
+                });
+
+            modelBuilder.Entity("Server.src.Entities.Session", b =>
+                {
+                    b.Navigation("SessionTag");
+                });
+
+            modelBuilder.Entity("Server.src.Entities.User", b =>
+                {
+                    b.Navigation("FavoriteMusic");
+
+                    b.Navigation("Messages");
+
+                    b.Navigation("Sessions");
+
+                    b.Navigation("UserHistory");
+
+                    b.Navigation("UserProviders");
                 });
 #pragma warning restore 612, 618
         }

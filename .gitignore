@@ -154,6 +154,12 @@ appsettings.*.json
 *.mdf
 *.ldf
 
+# 静的なイメージファイル
+**/wwwroot/images/**/*.png*
+**/wwwroot/images/**/*.jpg*
+**/wwwroot/images/**/*.jpeg*
+**/wwwroot/images/**/*.gif*
+
 # JSONデバッグ情報
 *.json~
 

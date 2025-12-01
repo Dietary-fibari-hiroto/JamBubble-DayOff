@@ -31,6 +31,7 @@ namespace Server.Data
         public DbSet<SessionTag> SessionTags => Set<SessionTag>();
         public DbSet<Scene> Scenes => Set<Scene>();
         public DbSet<SessionSortSetting> SessionSortSettings => Set<SessionSortSetting>();
+        public DbSet<SessionInvitation> SessionInvitations => Set<SessionInvitation>();
         public DbSet<Guest> Guests => Set<Guest>();
         public DbSet<Request> Requests => Set<Request>();
         public DbSet<RequestCache> RequestCaches => Set<RequestCache>();
@@ -74,10 +75,34 @@ namespace Server.Data
             modelBuilder.Entity<UserBlock>().HasKey( p=> new {p.UserId,p.BlockedUserId});
 
             modelBuilder.Entity<SessionTag>().HasKey(p => new { p.SessionId, p.TagId });
+            modelBuilder.Entity<SessionInvitation>().HasKey(p => new { p.SessionId, p.UserId });
 
             modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
 
+            // カスケード削除の設定
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.UserHistory)
+                .WithOne(h => h.User)
+                .HasForeignKey<UserHistory>(h => h.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.FavoriteMusic)
+                .WithOne(f => f.User)
+                .HasForeignKey<FavoriteMusic>(f => f.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.UserProviders)
+                .WithOne(up => up.User)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Messages)
+                .WithOne(m => m.User)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
 
+            // ユニーク制約の定義
+            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
         }
 
         //INSERTやUPDATEでDBに反映させるタイミングで呼び出される関数

@@ -9,11 +9,10 @@ namespace Server.src.Entities
     {
         [Required]
         public int UserId { get; set; }
-        public required User User { get; set; }
+        public User? User { get; set; } = null; 
 
         [Required]
         public int ProviderId { get; set; }
-        public required Provider Provider { get; set; }
 
         [Required]
         [StringLength(255)]

@@ -1,7 +1,20 @@
-using DotNetEnv; // �� �������ɒǉ�
+﻿using DotNetEnv; // �� �������ɒǉ�
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Server.Data;
-using Server.Data.Configrations; 
+using Server.Data.Configrations;
+using Server.src.Configrations;
+using Server.src.DTOs;
+using Server.src.Entities;
+using Server.src.Middlewares;
+using Server.src.Services;
+using System.Reflection;
+using System.Security.Cryptography.Xml;
+using System.Text.Json;
+
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +22,9 @@ Env.Load();
 
 builder.Services.AddControllers(); //API�ŃR���g���[���g���܂����܂��Ȃ�
 builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
-builder.Services.AddSwaggerGen(); //SwaggerUI����
-//���ϐ�����ڑ��������ǂ݂���
+
+builder.Services.AddCustomSwagger(); // Swaggerの設定
+
 var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
     ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
@@ -30,6 +44,31 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
 
+// DIコンテナに登録
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+// 定期実行サービスの登録
+builder.Services.AddHostedService<TimedHostedService>();
+
+// JWT認証の設定
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidIssuer = Environment.GetEnvironmentVariable("JWT__ISSUER")!,
+            ValidAudience = Environment.GetEnvironmentVariable("JWT__AUDIENCE")!,
+            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT__KEY")!)
+            ),
+            ValidateIssuer = true, // 発行者の検証
+            ValidateAudience = true, // 対象者の検証
+            ValidateLifetime = false, // 有効期限の検証
+            ValidateIssuerSigningKey = true, // 署名キーの検証
+        };
+    }
+    );
+
 var app = builder.Build();//��L�݌v�}����ɍ\�z
 
 app.MapGet("/", () => "Hello World!");
@@ -37,12 +76,19 @@ app.MapGet("/", () => "Hello World!");
 //SwaggerUI�̃G���h�|�C���g��UI�ǂݍ��݁��\�z
 if (app.Environment.IsDevelopment())
 {
+    app.UseStaticFiles();
     app.UseSwagger();
     app.UseSwaggerUI();
+    await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
 }
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
-app.UseAuthorization(); //�F���~�h���E�F�A�p�C�v���C���ɒǉ�
+
+app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理ミドルウェア
+
+app.UseAuthentication(); // 認証ミドルウェア
+app.UseAuthorization(); // 認可ミドルウェア
+
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 
 app.Run();//���s�I�I�I

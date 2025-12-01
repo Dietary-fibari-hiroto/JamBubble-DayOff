@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 namespace Server.src.Entities;
 public class User:TimestampedEntity {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [JsonIgnore]
     [Key]
     public int Id { get; set; }
 
@@ -11,7 +13,7 @@ public class User:TimestampedEntity {
     public string Name { get; set; } = null!;
 
     [Required]
-    public DateTime Birthday { get; set; }
+    public DateOnly Birthday { get; set; }
 
     [Required]
     [StringLength(255)]
@@ -24,6 +26,7 @@ public class User:TimestampedEntity {
     [Required]
     public int Gender { get; set; } = 0;
 
+    // TODO:ここのRequiredの必要性
     [Column("is_street_pass")]
     [Required]
     public bool IsStreetPass { get; set; } = false;
@@ -32,6 +35,12 @@ public class User:TimestampedEntity {
     [StringLength(255)]
     public string? ImgUrl { get; set; }
 
+    public string? Message { get; set; }
 
+    public UserHistory? UserHistory { get; set; }
+    public FavoriteMusic? FavoriteMusic { get; set; }
+    public List<UserProvider>? UserProviders { get; set; }
+    public List<Message>? Messages { get; set; }
+    public List<Session>? Sessions { get; set; }
 }
 

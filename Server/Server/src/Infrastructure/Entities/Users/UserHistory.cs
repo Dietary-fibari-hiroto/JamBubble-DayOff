@@ -10,7 +10,8 @@ namespace Server.src.Entities
         [Key]
         [Required]
         public int UserId { get; set; }
-        public required User User { get; set; }
+        [ForeignKey(nameof(UserId))]
+        public User? User { get; set; }
 
         [Required]
         public int SessionCount { get; set; } = 0;

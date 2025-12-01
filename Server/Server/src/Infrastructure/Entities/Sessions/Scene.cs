@@ -6,10 +6,10 @@ namespace Server.src.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public int Name { get; set; }
+        public required string Name { get; set; }
     }
 }
