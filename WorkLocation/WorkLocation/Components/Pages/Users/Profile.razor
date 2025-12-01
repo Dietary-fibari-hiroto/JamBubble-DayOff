@@ -1,0 +1,96 @@
+﻿@page "/app/profile"
+@rendermode InteractiveServer
+
+<ReturnButton label="Profile" />
+<div class="profile-container">
+<div class="Three-dot-leader">
+        <img @onclick="OpenDialog" src="images/elementicons/ellipsis.svg" />
+</div>
+    <figure class="img-figure">
+        <img src="images/photos/offn.jpg" />
+    </figure>
+    <div class="name-container"><p class="string-m-bold">ゆずき</p></div>
+    <p class="string-sss text-center">
+        ローファイとシティポップが日常のBGM。
+        朝はコーヒーとゆるめのビート、夜はギターが心地いい曲を。
+        最近はインディ系を掘るのがマイブーム。
+    </p>
+    <section class="section-frame">
+        <h1 class="string-reg-bold">Favorite song</h1>
+        <figure class="favorite-song-content">
+            <img src="images/photos/movie.jpg" />
+        </figure>
+        <div class="text-center music-info">
+            <p class="string-md-bold align-jus">Movie</p>
+            <p class="string-ss">Tom misch.Spotify</p>
+        </div>
+    </section>
+    <MiniSubmit Label="保存" CssClass="primary" />
+    <section class="section-frame">
+        <h1 class="string-reg-bold">過去の履歴</h1>
+        <div>
+            <p class="align-jus string-ss-bold">セッション数</p>
+            <p><span class="string-big-bold">12</span><span class="string-ss-bold">回</span></p>
+        </div>
+    </section>
+
+</div>
+
+@if (isUserOption != processEnum.Default)
+{
+    <BlurPanel>
+       
+        <div class="dialog-container flex-all-center string-s-bold">
+            <CancelButton OnClick='() => ChangeProcess(processEnum.Default)' BlackMode=true />
+        @if (isUserOption == processEnum.IsOpen)
+        {
+
+                <div @onclick='() => ChangeProcess(processEnum.IsBlock)' class="menu-content block-bar under-bar">
+                    <img src="images/elementicons/shield-ban.svg" />
+                    <p>ユーザーをブロック</p>
+                </div>
+                <div class="menu-content request-bar under-bar">
+                    <img src="images/elementicons/user-round-plus.svg" />
+                    <p>フレンド申請</p>
+                </div>
+
+
+            
+        }
+        @if (isUserOption == processEnum.IsBlock)
+        {
+            <div class="block-bar flex-all-center-horizontal">
+                <img src="images/elementicons/shield-ban.svg" />
+                <p>ユーザーをブロック</p>
+            </div>
+            <p class="string-s text-black">ゆずきをブロックしてよろしいでしょうか？</p>
+                <div class="flex-all-center-horizontal space-x-20">
+                <MiniSubmit label="いいえ" CssClass="deep-gray"/>
+                <MiniSubmit label="ブロック" CssClass="applemusic-primary " />
+            </div>
+        }
+        </div>
+    </BlurPanel>
+}
+
+@code {
+
+    private enum processEnum{
+        Default = 0,
+        IsOpen = 1,
+        IsBlock = 2,
+        IsRequest = 3,
+    }
+    private processEnum isUserOption = processEnum.Default;
+    private Task OpenDialog()
+    {
+        isUserOption = processEnum.IsOpen;
+        return Task.CompletedTask;
+    }
+
+    private Task ChangeProcess(processEnum value)
+    {
+        isUserOption = value;
+        return Task.CompletedTask;
+    }
+}

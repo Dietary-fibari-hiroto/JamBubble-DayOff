@@ -1,0 +1,35 @@
+﻿
+@page "/app/search"
+<div class="container @(isApple ? "bg-applemusic" : "bg-spotify")">
+    <div class="input-container">
+        <section class="page-header">
+            <SearchBar Placeholder="友達を検索"/><UserIcon/>
+        </section>
+        <section class="flex-all-center margin-y-10">
+            <div class="provider-swich @(isApple ? "applemusic-container" : "spotify-container")">
+                <button @onclick="SpotifyMode" class="spotify @(isApple ? "non-active" : "")"><img src="images/icons/spotify_icon.png" width="40" height="40" /></button>
+                <button @onclick="ApplemusicMode" class="applemusic @(isApple ? "" : "non-active")"><img src="images/icons/applemusic_icon.png" width="40" height="40" /></button>
+            </div>
+        </section>
+    </div>
+    <section>
+        <!--ここに検索結果-->
+    </section>
+</div>
+
+@code{
+    private bool isApple = false;
+
+    private Task SpotifyMode()
+    {
+        isApple = false;
+        return Task.CompletedTask;
+    }
+
+    private Task ApplemusicMode()
+    {
+        isApple = true;
+        return Task.CompletedTask;
+    }
+
+}

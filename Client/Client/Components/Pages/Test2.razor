@@ -1,0 +1,102 @@
+﻿@page "/test2"
+@using Client.Platforms.Android.Services
+@inject ISpotifyService SpotifyService
+
+@inject ISpotifyService SpotifyService
+
+<h3>Spotify Controller</h3>
+
+<div>
+    <p>
+        接続状態：
+        @if (isConnected)
+        {
+            <span style="color: green;">Connected</span>
+        }
+        else
+        {
+            <span style="color: red;">Disconnected</span>
+        }
+    </p>
+
+    <button @onclick="Connect">Connect</button>
+    <button @onclick="Disconnect" disabled="@(!isConnected)">Disconnect</button>
+</div>
+
+<hr />
+
+@if (isConnected)
+{
+    <div>
+        <h4>Player Controls</h4>
+
+        <button @onclick="PlaySample">▶ Play Sample Track</button>
+        <button @onclick="Pause">⏸ Pause</button>
+        <button @onclick="Resume">▶ Resume</button>
+        <button @onclick="Next">⏭ Next</button>
+        <button @onclick="Previous">⏮ Prev</button>
+
+        <p>Position: @playerState.PositionMs ms / @playerState.DurationMs ms</p>
+
+        <button @onclick="@(() => Seek(0))">⏮ Seek to Start</button>
+    </div>
+
+    <hr />
+
+    <h4>Now Playing</h4>
+    <p><b>@playerState.TrackName</b></p>
+    <p>@playerState.ArtistName</p>
+
+}
+
+
+@code {
+    bool isConnected = false;
+
+    PlayerStateInfo playerState = new()
+    {
+        TrackName = "Unknown",
+        ArtistName = "Unknown",
+        DurationMs = 0,
+        PositionMs = 0
+    };
+
+    protected override void OnInitialized()
+    {
+        //SpotifyService のイベント購読
+        SpotifyService.ConnectionChanged += (_, args) =>
+        {
+            isConnected = args.IsConnected;
+            InvokeAsync(StateHasChanged);
+        };
+
+        SpotifyService.PlayerStateChanged += (_, args) =>
+        {
+            playerState = args.State;
+            InvokeAsync(StateHasChanged);
+        };
+    }
+
+    private async Task Connect()
+    {
+        await SpotifyService.ConnectAsync();
+    }
+
+    private void Disconnect()
+    {
+        SpotifyService.Disconnect();
+    }
+
+    private void PlaySample()
+    {
+        //サンプルトラック
+        SpotifyService.Play("spotify:track:4uLU6hMCjMI75M1A2tKUQC");
+    }
+
+    private void Pause() => SpotifyService.Pause();
+    private void Resume() => SpotifyService.Resume();
+    private void Next() => SpotifyService.SkipNext();
+    private void Previous() => SpotifyService.SkipPrevious();
+
+    private void Seek(long pos) => SpotifyService.SeekTo(pos);
+}

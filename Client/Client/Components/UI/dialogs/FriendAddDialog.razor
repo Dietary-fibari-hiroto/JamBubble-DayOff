@@ -1,0 +1,72 @@
+﻿@using WorkLocation.Enums
+
+<BlurPanel>
+    <CancelButton OnClick="@OnClick" />
+    @if (state == FriendRequestEnum.Default)
+    {
+        <section class="container">
+            <div class="header">
+                <SearchBar Placeholder="IDで検索" />
+                <img width="32" height="32" src="images/elementicons/focus-black.svg" />
+            </div>
+            <div class="string-m-bold">
+                <p>名前:ゆずき</p>
+                <p>ID:132</p>
+            </div>
+            <div>
+                <p class="string-s">リクエスト用QRコード</p>
+                <img width="186" height="186" src="images/photos/testqr.png" />
+            </div>
+        </section>
+    }
+    @if(state == FriendRequestEnum.SearchSccess){
+        <section class="container">
+            <div class="header">
+                <SearchBar Placeholder="IDで検索" />
+            </div>
+            <p>ユーザーが見つかりました！</p>
+            <div class="string-m-bold">
+                <p>名前:ゆずき</p>
+                <p>ID:132</p>
+            </div>
+            <div>
+                <img class="user-img" src="images/photos/offn.jpg" />
+            </div>
+            <Submit OnClick="FriendRequest" label="フレンドリクエスト" CssClass="spotify-primary" />
+        </section>
+    }
+    @if (state == FriendRequestEnum.Requested)
+    {
+        <section class="requested-container">
+ 
+            <p>ユーザーが見つかりました！</p>
+            
+
+                <img class="user-img" src="images/elementicons/circle-check-big.svg" />
+
+
+            <span />
+            <Submit OnClick="FriendRequest" label="フレンドリクエスト" CssClass="spotify-primary" />
+            <span/>
+            <Submit OnClick="@OnClick" label="閉じる" CssClass="deep-gray" />
+        </section>
+    }
+
+</BlurPanel>
+
+@code {
+    [Parameter] public EventCallback OnClick { get; set; }
+    private FriendRequestEnum state = FriendRequestEnum.SearchSccess;
+
+    private Task ReturnDefault()
+    {
+        state = FriendRequestEnum.Default;
+        return Task.CompletedTask;
+    }
+    private Task FriendRequest()
+    {
+        state = FriendRequestEnum.Requested;
+        return Task.CompletedTask;
+    }
+
+}

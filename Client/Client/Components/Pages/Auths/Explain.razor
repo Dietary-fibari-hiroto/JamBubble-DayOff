@@ -1,4 +1,4 @@
-﻿@page "/explain"
+﻿@page "/auth/explain"
 @layout AuthLayout
 @inject NavigationManager NavManager
 <div class="page-container">
@@ -40,7 +40,7 @@
 
         if (explain2Panel)
         {
-            NavManager.NavigateTo("/register");
+            NavManager.NavigateTo("/auth/register");
         }
         else
         {

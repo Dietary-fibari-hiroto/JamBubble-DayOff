@@ -1,0 +1,67 @@
+﻿section{
+    margin:10px 0;
+}
+.profile-container
+{
+    
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}
+.img-figure {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    
+}
+    .img-figure > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+.edit-button{
+    position:absolute;
+    bottom:10%;
+    right:10%;
+}
+
+.name-container{
+    display:flex;
+    align-items:center;
+    margin:10px 0;
+}
+
+.section-frame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.section-frame > h1 {
+    width:100%;
+    text-align: start;
+}
+
+.favorite-song-content{
+    position:relative;
+    width:150px;
+    height:150px;
+}
+.favorite-song-content > img{
+    width:120px;
+    height:120px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.favorite-song-edit{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+

@@ -1,0 +1,13 @@
+﻿.dialog-container
+{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+
+}
+
+.button-container{
+    width:300px;
+}

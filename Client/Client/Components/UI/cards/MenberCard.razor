@@ -1,0 +1,39 @@
+﻿
+
+<div  class="space-y-20 card-container @(isOpen ? "open" : "")">
+    <div @onclick="OpenDetail" class="menber-container">
+    
+        <div class="flex-all-center-horizontal">
+            <img class="user-icon" src="images/photos/offn.jpg" />
+            <div>
+                <p class="string-md-bold">ゆづき</p>
+                <p class="color-gray string-ss">ホスト</p>
+            </div>
+        </div>
+        <p class="string-ss color-gray">管理者</p>
+    </div>
+    @if (isOpen)
+    {
+        <div class="space-y-20 flex-all-center">
+            <p class="string-label select-label ">ゲストの権限設定</p>
+            <select class="select-element">
+                <option value="test" selected ="test">
+                    test
+                </option>
+            </select>
+            <div class="space-x-20">
+                <MiniSubmit CssClass="gray" label="確定" />
+                <MiniSubmit CssClass="applemusic-primary" label="退出させる" />
+            </div>
+        </div>
+    }
+</div>
+
+@code{
+    private bool isOpen = false;
+    private Task OpenDetail()
+    {
+        isOpen = !isOpen;
+        return Task.CompletedTask;
+    }
+}

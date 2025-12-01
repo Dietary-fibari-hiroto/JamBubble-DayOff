@@ -1,0 +1,31 @@
+﻿@inject NavigationManager NavManager
+
+<div class="footer">
+    <div class="footer-container">
+        <div class="transition-container">
+            <button @onclick='()=>NavManager.NavigateTo("/app/main")' class="transition-content">
+                <img src="images/elementicons/house.svg" />
+                <p class="string-mini">ホーム</p>
+            </button>
+            <button @onclick='() => NavManager.NavigateTo("/app/playlist")' class="transition-content">
+                <img src="/images/elementicons/list-music.svg" />
+                <p class="string-mini">プレイリスト</p>
+            </button>
+            <button @onclick='() => NavManager.NavigateTo("/app/search")' class="transition-content">
+                <img src="/images/elementicons/search.svg" />
+                <p class="string-mini">検索</p>
+            </button>
+            <button @onclick='() => NavManager.NavigateTo("/app/friend")' class="transition-content">
+                <img src="/images/elementicons/users.svg" />
+                <p class="string-mini">フレンド</p>
+            </button>
+            <button @onclick='() => NavManager.NavigateTo("/app/session")' class="transition-content">
+                <img src="/images/elementicons/shell.svg" />
+                <p class="string-mini">セッション</p>
+            </button>
+
+        </div>
+        <div class="footer-bg" />
+    </div>
+</div>
+

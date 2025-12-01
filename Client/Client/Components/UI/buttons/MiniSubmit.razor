@@ -1,0 +1,9 @@
+﻿<button onclick="OnClick" class="string-sss @CssClass">
+    @Label
+</button>
+
+@code{
+    [Parameter] public string Label { get; set; } = "";
+    [Parameter] public string CssClass { get; set; } = "";
+    [Parameter] public EventCallback OnClick { get; set; }
+}

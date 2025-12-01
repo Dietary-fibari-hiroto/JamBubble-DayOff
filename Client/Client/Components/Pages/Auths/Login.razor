@@ -1,4 +1,4 @@
-﻿@page "/login"
+﻿@page "/auth/login"
 @layout AuthLayout
 @inject NavigationManager NavManager
 
@@ -18,17 +18,17 @@
         <RawTextButton OnClick="OnReturn" label="もどる" IsUnderline=true />
     </section>
 </AuthBgPannel>
-
+    
 @code {
     private Task OnReturn()
     {
-        NavManager.NavigateTo("/welcomescreen");
+        NavManager.NavigateTo("/auth/welcomescreen");
         return Task.CompletedTask;
     }
 
     private Task OnSubmit()
     {
-        NavManager.NavigateTo("/registerconfirm");
+        NavManager.NavigateTo("/app/main");
         return Task.CompletedTask;
     }
 }

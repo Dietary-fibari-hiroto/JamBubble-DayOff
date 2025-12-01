@@ -1,0 +1,25 @@
+﻿
+.serach-aria {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: var(--color-gray) 1px solid;
+    background: #111111;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+    .serach-aria > * {
+        margin-left: 10px;
+        color: white;
+    }
+
+.session-list {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}

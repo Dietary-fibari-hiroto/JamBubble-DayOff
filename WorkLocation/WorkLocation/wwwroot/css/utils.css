@@ -41,8 +41,12 @@
 .app-mini-icon {
     width: 60px;
     height: 60px;
+    border-radius:100%;
 }
 
+.text-black{
+    color:black;
+}
 .margin-y-10{
     margin:10px 0;
 }
@@ -52,9 +56,21 @@
 .margin-x-10 {
     margin: 0px 10px;
 }
-
+.margin-x-20 {
+    margin: 0px 20px;
+}
 .margin-x-50 {
     margin: 0px 50px;
+}
+
+.space-x-20 > * + *{
+    margin-left:20px;
+}
+.space-y-20 > * + * {
+    margin-top: 20px;
+}
+.space-y-10 > * + * {
+    margin-top: 10px;
 }
 .page-header {
     display: flex;
@@ -78,3 +94,8 @@
 .plate-container > *{
     margin-top:20px;
 }
+
+.provider-selector{
+    width:300px;
+}
+

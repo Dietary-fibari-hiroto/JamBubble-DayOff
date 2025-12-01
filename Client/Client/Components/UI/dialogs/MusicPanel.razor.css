@@ -1,0 +1,126 @@
+﻿
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+   
+
+    .background-img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
+    }
+
+
+.down-mark {
+    transform:rotate(180deg);
+    margin:50px 0;
+}
+
+
+section {
+    margin-bottom: 20px;
+    
+}
+
+.Three-dot-leader {
+    width: 300px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.album-container {
+    text-align: center;
+}
+
+    .album-container > * + * {
+        margin-top: 10px;
+    }
+
+.alubm-img {
+    width: 200px;
+    height: 200px;
+}
+
+.operation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+
+.share {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.order-button-container{
+    width:90%;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+}
+.order-button-container {
+    width: 300px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+    .order-button-container > * + *{
+        margin-left:20px;
+    }
+
+
+.time-bar-container{
+    width:auto;
+    margin:20px 0;
+}
+    .time-bar-container > .time-bar {
+        width: 300px;
+        border-bottom:white 2px solid;
+    }
+    .time-bar-container > .timer {
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+    }
+
+.control-button-container{
+    width:300px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:100px 0;
+}
+.control-button-container > *:first-child{
+    transform:rotate(180deg);
+}

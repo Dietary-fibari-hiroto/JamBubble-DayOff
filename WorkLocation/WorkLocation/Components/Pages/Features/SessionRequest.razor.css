@@ -1,0 +1,26 @@
+﻿.page-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+}
+
+.switch-button-container {
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background: var(--color-deep-gray);
+}
+    .switch-button-container > button {
+        width: 110px;
+        height: 100%;
+        text-align: center;
+        border-radius: 10px;
+    }
+.active{
+    background:white;
+    color:black;
+}

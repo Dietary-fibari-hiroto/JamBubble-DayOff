@@ -1,0 +1,23 @@
+﻿.confirm-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+.icons {
+    width: 143px;
+    height: 143px;
+}
+
+
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.provider-content{
+    width:300px;
+}

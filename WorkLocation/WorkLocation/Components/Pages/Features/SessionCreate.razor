@@ -1,0 +1,42 @@
+﻿@page "/app/session/create"
+@rendermode InteractiveServer
+
+<CancelButton/>
+
+<section class="form-container space-y-10 margin-y-50">
+    <InputImage/>
+    <TextInput LabelText="セッション名" />
+    <TextInput LabelText="パスワード" />
+    <TextInput LabelText=" 説明" />
+    <SelecterBox LabelText="シーン設定" />
+    <SelecterBox LabelText="ジャンル設定" />
+    <SelecterBox LabelText="ゲスト権限設定" />
+    <SelecterBox LabelText="公開設定" />
+  
+    
+
+    <section class="provider-selector margin-y-10">
+        <p>プロバイダ</p>
+        <div class="provider-swich @(isApple ? "applemusic-container" : "spotify-container")">
+            <button @onclick="SpotifyMode" class="spotify @(isApple ? "non-active" : "")"><img src="images/icons/spotify_icon.png" width="40" height="40" /></button>
+            <button @onclick="ApplemusicMode" class="applemusic @(isApple ? "" : "non-active")"><img src="images/icons/applemusic_icon.png" width="40" height="40" /></button>
+        </div>
+    </section>
+    <Submit CssClass="spotify-primary" label="次へ"/>
+</section>
+
+@code{
+    private bool isApple = false;
+
+    private Task SpotifyMode()
+    {
+        isApple = false;
+        return Task.CompletedTask;
+    }
+
+    private Task ApplemusicMode()
+    {
+        isApple = true;
+        return Task.CompletedTask;
+    }
+}

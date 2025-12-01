@@ -1,0 +1,95 @@
+﻿@page "/test"
+@using Client.Services.SpotifyServices.Auths;
+@using Client.Services.SpotifyServices.Apis;
+@using Client.Services.SpotifyServices;
+@using Microsoft.Extensions.Configuration;
+@inject SpotifyAuthService SpotifyAuth
+@inject SpotifyApiService SpotifyApi
+
+@inject IConfiguration _configuration
+
+<button @onclick="Login">Login</button>
+<button @onclick="profile">profile</button>
+<button @onclick="Confirm">confirm</button>
+<div>@user.display_name</div>
+<div>@confirmText</div>
+
+@if (isLoggedIn)
+{
+    <p>ログイン済み 👍</p>
+}
+else
+{
+    <p>ログインしてません</p>
+}
+@code {
+    bool isLoggedIn = false;
+    private string confirmText;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoggedIn = await SpotifyAuth.StartUpRestore();
+    }
+
+    SpotifyUserProfile user = new();
+    private async Task Login()
+    {
+        if (isLoggedIn)
+        {
+            Console.WriteLine("すでにログイン済みなのでログイン処理はスキップ");
+            return;
+        }
+        var code = await SpotifyAuth.LoginWithSpotifyAsync();
+        if (code == null)
+        {
+            System.Diagnostics.Debug.WriteLine("[SpotifyAuth] 認可コードの取得に失敗しました");
+            return;
+        }
+        System.Diagnostics.Debug.WriteLine($"[SpotifyAuth] 認可コード: {code}");
+
+        var token = await SpotifyAuth.ExchangeCodeForTokenAsync(code);
+
+        if (token == null)
+        {
+            System.Diagnostics.Debug.WriteLine("[SpotifyAuth] アクセストークンの取得に失敗しました");
+            return;
+        }
+
+        System.Diagnostics.Debug.WriteLine("[SpotifyAuth] アクセストークン取得成功");
+        System.Diagnostics.Debug.WriteLine($"Access Token: {token.access_token}");
+        System.Diagnostics.Debug.WriteLine($"Refresh Token: {token.refresh_token}");
+        System.Diagnostics.Debug.WriteLine($"Expires In: {token.expires_in}");
+
+        isLoggedIn = true;
+        StateHasChanged();
+
+    }
+
+    private async Task profile()
+    {
+        user = await SpotifyApi.GetUserProfileAsync();
+        StateHasChanged();
+
+
+    }
+
+    private async Task Confirm()
+    {
+        //confirmText = await SpotifyAuth.GetAccessTokenAsync();
+        System.Diagnostics.Debug.WriteLine(_configuration["StorageName:SpotifyRefreshTokenPath"]);
+        System.Diagnostics.Debug.WriteLine("Stored Verifier: " + await SecureStorage.GetAsync("spotify_code_verifier"));
+
+        System.Diagnostics.Debug.WriteLine(await SpotifyAuth.GetAccessTokenAsync());
+        try
+        {
+            var value = await SecureStorage.GetAsync("spotify_access_token");
+
+            Console.WriteLine($"SecureStorage Test Value: {value}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("SecureStorage ERROR: " + ex.Message);
+        }
+
+    }
+}

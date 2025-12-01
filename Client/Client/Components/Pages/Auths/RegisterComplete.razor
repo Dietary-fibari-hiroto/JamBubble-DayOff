@@ -1,4 +1,4 @@
-﻿@page "/registercomplete"
+﻿@page "/auth/registercomplete"
 @layout AuthLayout
 @inject NavigationManager NavManager
 <AuthBgPannel>
@@ -14,7 +14,11 @@
         </p>
         <div class="submit-container">
            
-            <Submit  Label="はじめる" CssClass="primary" />
+            <Submit  Label="はじめる" CssClass="primary"OnClick='()=> NavManager.NavigateTo("/app/main")' />
         </div>
     </div>
 </AuthBgPannel>
+
+@code{
+   
+}
