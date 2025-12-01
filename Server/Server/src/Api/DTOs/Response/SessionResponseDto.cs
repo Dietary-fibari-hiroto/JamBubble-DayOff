@@ -38,6 +38,19 @@ namespace Server.src.DTOs
         }
     }
 
+    public class RequestsDto
+    {
+        public int Id {get; set; }
+        public int GuestId {get; set; }
+        public string MusicId {get; set; }
+        public RequestsDto(Request request)
+        {
+            Id = request.Id;
+            GuestId = request.GuestId;
+            MusicId = request.MusicId;
+        }
+    }
+
     public class SessionDetailResponseDto
     {
         public int Id { get; set; }
@@ -56,6 +69,7 @@ namespace Server.src.DTOs
         public List<SessionTagDto>? SessionTag { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
+        public List<RequestsDto>? requests { get; set; } 
 
         public SessionDetailResponseDto(Session session)
         {
@@ -84,6 +98,11 @@ namespace Server.src.DTOs
             }
             CreatedAt = session.CreatedAt;
             FinishedAt = session.FinishedAt;
+
+            if (session.Requests != null)
+            {
+                requests = session.Requests.Select(r => new RequestsDto(r)).ToList();
+            }
 
         }
     }

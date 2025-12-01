@@ -59,6 +59,8 @@ namespace Server.src.Entities
         public int UserCapacity { get; set; } = 10;
 
         public List<SessionTag>? SessionTag { get; set; }
+        public List<Request>? Requests{get; set;}
+        public List<RequestCache>? RequestCaches{get; set;}
     }
 }
 
