@@ -60,8 +60,7 @@
               "RelativeToolTip": "Client\\MainPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-27T13:29:47.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:29:47.345Z"
             },
             {
               "$type": "Document",
@@ -73,8 +72,7 @@
               "RelativeToolTip": "Client\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-27T13:29:06.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:29:06.92Z"
             },
             {
               "$type": "Document",
@@ -86,8 +84,7 @@
               "RelativeToolTip": "Client\\Components\\Pages\\Test2.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T13:28:25.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:28:25.367Z"
             },
             {
               "$type": "Document",
@@ -99,8 +96,7 @@
               "RelativeToolTip": "Client\\Services\\ISpotifyService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:27:38.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:27:38.54Z"
             },
             {
               "$type": "Document",
@@ -112,8 +108,7 @@
               "RelativeToolTip": "Client\\MauiProgram.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:24:31.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:24:31.591Z"
             },
             {
               "$type": "Document",
@@ -123,7 +118,7 @@
               "RelativeDocumentMoniker": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Client\\Client\\Platforms\\Android\\Services\\SpotifyService.cs",
               "RelativeToolTip": "Client\\Platforms\\Android\\Services\\SpotifyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T12:32:11.806Z",
               "EditorCaption": ""
