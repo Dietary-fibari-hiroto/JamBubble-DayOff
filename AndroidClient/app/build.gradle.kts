@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.ui.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -61,5 +62,7 @@ dependencies {
 
     debugImplementation(libs.ui.tooling)
     implementation(libs.androidx.activity.compose)
+
+    implementation(libs.coil.compose)
 
 }

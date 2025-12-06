@@ -37,7 +37,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>48924</FileLength>
-      <LastWriteTime>Thu, 27 Nov 2025 13:24:15 GMT</LastWriteTime>
+      <LastWriteTime>Fri, 05 Dec 2025 01:52:35 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Client.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\fonts.css'))">
@@ -1277,8 +1277,28 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>669</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 04 Dec 2025 11:54:56 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\spotify-player.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Client</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>js/spotify-player.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>eni4knxlsa</Fingerprint>
+      <Integrity>atd4ZF0js1YWvLvEIXCcSpZKV76FPhGAqTzz2Mhu5kE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>7188</FileLength>
+      <LastWriteTime>Fri, 05 Dec 2025 06:40:59 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\spotify-player.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
