@@ -15,6 +15,7 @@ namespace Server.Data.Configrations
             services.AddScoped<IFornowRepository, FornowRepository>();
             services.AddScoped<IFornowLikeRepository, FornowLikeRepository>();
             services.AddScoped<IFavoriteMusicSummaryRepository, FavoriteMusicSummaryRepository>();
+            services.AddScoped<IProviderRepository, ProviderRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services) { 
@@ -24,6 +25,7 @@ namespace Server.Data.Configrations
             services.AddScoped<IFriendService, FriendService>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IFavoriteMusicService, FavoriteMusicService>();
+            services.AddScoped<IProviderService, ProviderService>();
         }
     }
 }

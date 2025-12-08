@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.Extensions.Logging;
 using Server.src.DTOs;
 using Server.src.Interfaces;
@@ -44,5 +45,26 @@ namespace Server.src.Api.Controllers
             return Ok(new { token });
         }
 
+        /// <summary>
+        /// 本人確認メール送信（未実装）
+        /// </summary>
+        [AllowAnonymous]
+        [HttpPost("verify")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> SendVerificationEmail([FromBody] SendVerificationEmailRequestDto request)
+        {
+            return Ok();
+        }
+
+        /// <summary>
+        /// 確認メールのパスによる本人確認（未実装）
+        /// </summary>
+        [AllowAnonymous]
+        [HttpPost("verify/pass")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailRequestDto request)
+        {
+            return Ok();
+        }
     }
 }

@@ -38,6 +38,19 @@ namespace Server.src.DTOs
         }
     }
 
+    public class RequestsDto
+    {
+        public int Id {get; set; }
+        public int GuestId {get; set; }
+        public string MusicId {get; set; }
+        public RequestsDto(Request request)
+        {
+            Id = request.Id;
+            GuestId = request.GuestId;
+            MusicId = request.MusicId;
+        }
+    }
+
     public class SessionDetailResponseDto
     {
         public int Id { get; set; }
@@ -56,6 +69,7 @@ namespace Server.src.DTOs
         public List<SessionTagDto>? SessionTag { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
+        public List<RequestsDto>? requests { get; set; } 
 
         public SessionDetailResponseDto(Session session)
         {
@@ -84,6 +98,11 @@ namespace Server.src.DTOs
             }
             CreatedAt = session.CreatedAt;
             FinishedAt = session.FinishedAt;
+
+            if (session.Requests != null)
+            {
+                requests = session.Requests.OrderBy(r => r.Id).Select(r => new RequestsDto(r)).ToList();
+            }
 
         }
     }
@@ -154,6 +173,23 @@ namespace Server.src.DTOs
                     [ToCamelCase(nameof(SessionDetailResponseDto.UserCapacity))] = new OpenApiInteger(10),
                     [ToCamelCase(nameof(SessionDetailResponseDto.CreatedAt))] = new OpenApiString(DateTime.UtcNow.ToString("o")),
                     [ToCamelCase(nameof(SessionDetailResponseDto.FinishedAt))] = new OpenApiNull(),
+                    [ToCamelCase(nameof(SessionDetailResponseDto.SessionTag))] = new OpenApiArray
+                    {
+                        new OpenApiObject
+                        {
+                            [ToCamelCase(nameof(SessionTagDto.Id))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(SessionTagDto.Label))] = new OpenApiString("Sample Tag"),
+                        }
+                    },
+                    [ToCamelCase(nameof(SessionDetailResponseDto.requests))] = new OpenApiArray
+                    {
+                        new OpenApiObject
+                        {
+                            [ToCamelCase(nameof(RequestsDto.Id))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(RequestsDto.GuestId))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(RequestsDto.MusicId))] = new OpenApiInteger(1),
+                        }
+                    }
                 };
             }
 
@@ -166,13 +202,15 @@ namespace Server.src.DTOs
                 };
             }
 
-            //if (context.Type == typeof())
-            //{
-            //    schema.Example = new OpenApiObject
-            //    {
-            //        [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
-            //    };
-            //}
+            if (context.Type == typeof(RequestsDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(RequestsDto.Id))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(RequestsDto.GuestId))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(RequestsDto.MusicId))] = new OpenApiInteger(1),
+                };
+            }
 
             //if (context.Type == typeof())
             //{

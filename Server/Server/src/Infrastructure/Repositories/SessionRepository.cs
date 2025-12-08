@@ -30,6 +30,7 @@ namespace Server.src.Repositories
                 .Include(s => s.Provider)
                 .Include(s => s.Scene)
                 .Include(s => s.SessionSortSetting)
+                .Include(s => s.Requests)
                 .Include(s => s.SessionTag!)
                     .ThenInclude(st => st.Tag);
 

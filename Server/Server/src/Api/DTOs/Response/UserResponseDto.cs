@@ -47,12 +47,10 @@ namespace Server.src.DTOs
     {
         public int ProviderId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
         public UserProviderResponseDto(UserProvider userProvider)
         {
             this.ProviderId = userProvider.ProviderId;
             this.Name = userProvider.Name;
-            this.Password = userProvider.Password;
         }
     }
 
@@ -115,8 +113,7 @@ namespace Server.src.DTOs
                 schema.Example = new OpenApiObject
                 {
                     [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(UserProviderResponseDto.Name))] = new OpenApiString("test"),
-                    [ToCamelCase(nameof(UserProviderResponseDto.Password))] = new OpenApiString("password")
+                    [ToCamelCase(nameof(UserProviderResponseDto.Name))] = new OpenApiString("test")
                 };
             }
 

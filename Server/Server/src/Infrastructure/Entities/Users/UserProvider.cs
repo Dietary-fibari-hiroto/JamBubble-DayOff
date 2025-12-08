@@ -17,10 +17,5 @@ namespace Server.src.Entities
         [Required]
         [StringLength(255)]
         public string Name { get; set; } = null!;
-
-        [Required]
-        [StringLength(255)]
-        public string Password { get; set; } = null!;
-
     }
 }

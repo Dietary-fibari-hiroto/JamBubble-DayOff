@@ -35,7 +35,7 @@ namespace Server.src.Configrations
                 await UpdateUsersAsync(userService, addedDummyUsers);
                 await AddFriendsAsync(dbContext, user, addedDummyUsers);
                 await AddMessagesAsync(dbContext, user, 5);
-                await AddUserProviderAsync(userService, user, tempPas);
+                await AddUserProviderAsync(userService, user);
                 await AddSessionsAsync(dbContext, user, 2);
                 await AddFornowAsync(dbContext, user);
             }
@@ -195,13 +195,12 @@ namespace Server.src.Configrations
             await dbContext.SaveChangesAsync();
         }
 
-        private static async Task AddUserProviderAsync(IUserService userService, User user, string password)
+        private static async Task AddUserProviderAsync(IUserService userService, User user)
         {
             await userService.AddUserProviderAsync(new RegisterUserProviderRequestDto
             {
                 ProviderId = 1,
-                Name = user.Name,
-                Password = password
+                Name = user.Name
             }, user.Id);
         }
 
