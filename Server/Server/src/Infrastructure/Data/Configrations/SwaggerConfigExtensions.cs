@@ -4,6 +4,9 @@ using Server.src.DTOs;
 
 namespace Server.src.Configrations
 {
+    /// <summary>
+    /// APIドキュメント生成のための設定をまとめた拡張メソッドを提供するクラス
+    /// </summary>
     public static class SwaggerConfigExtensions
     {
         public static void AddCustomSwagger(this IServiceCollection services)

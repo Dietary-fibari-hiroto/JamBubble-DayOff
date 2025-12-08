@@ -2,6 +2,9 @@
 
 namespace Server.src.Configrations
 {
+    /// <summary>
+    /// JWTの認証トークンからユーザーIDを取得するクラス
+    /// </summary>
     public static class ClaimsPrincipalExtensions
     {
         public static int? GetUserId(this ClaimsPrincipal user)

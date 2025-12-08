@@ -6,6 +6,10 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Server.src.Configrations
 {
+    /// <summary>
+    /// Swagger の API ドキュメント生成時のみ処理されるクラス
+    /// [Authorize] 属性が付与されたエンドポイントに対して、認証が必要であることを示すレスポンスを返す
+    /// </summary>
     public class AuthOperationFilter : IOperationFilter
     {
         void IOperationFilter.Apply(OpenApiOperation operation, OperationFilterContext context)
@@ -43,24 +47,5 @@ namespace Server.src.Configrations
                 };
             }
         }
-    }
-
-    // JWTからユーザーIDを取得
-    // 存在しないならエラー
-    // いらないかも
-    public class UserIdFilter : IActionFilter
-    {
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
-            var userId = context.HttpContext.User.GetUserId();
-            if (userId == null)
-            {
-                context.Result = new UnauthorizedObjectResult("Invalid user ID format in token.");
-                return;
-            }
-            context.HttpContext.Items["UserId"] = userId.Value;
-        }
-
-        public void OnActionExecuted(ActionExecutedContext context) { }
     }
 }

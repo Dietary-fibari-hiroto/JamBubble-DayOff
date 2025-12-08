@@ -79,7 +79,7 @@ if (app.Environment.IsDevelopment())
     app.UseStaticFiles();
     app.UseSwagger();
     app.UseSwaggerUI();
-    await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
+    // await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
 }
 
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
