@@ -1,0 +1,86 @@
+package com.example.jambubble_client.ui.screens.auths
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.jambubble_client.R
+import com.example.jambubble_client.ui.components.buttons.RowTextButton
+import com.example.jambubble_client.ui.components.buttons.Submit
+import com.example.jambubble_client.ui.components.inputs.TextInput
+import com.example.jambubble_client.ui.components.pannels.AuthBgPanel
+
+@Composable
+fun LoginScreen(navController: NavController) {
+    var email by remember{mutableStateOf("")}
+    var password  by remember{mutableStateOf("")}
+
+        AuthBgPanel {
+            // Logo
+            Image(
+                painter = painterResource(id = R.drawable.jumbubblelogo),
+                contentDescription = "App Icon",
+                modifier = Modifier
+                    .size(143.dp)
+            )
+
+            Spacer(Modifier.height(20.dp))
+
+            Text(
+                text = "ログイン",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+
+            )
+
+            Spacer(Modifier.height(20.dp))
+
+            // ---- Input area ----
+            Column(
+                Modifier.padding(horizontal = 24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                TextInput(label = "メールアドレス",value=email,onValueChange = {email=it})
+                Spacer(Modifier.height(16.dp))
+                TextInput(
+                    label = "パスワード",
+                    supplement = "半角英数、数字を含む8文字以上",
+                    value = password,
+                    onValueChange = { password = it }
+                )
+            }
+
+            Spacer(Modifier.height(30.dp))
+
+            // ---- Buttons ----
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
+                Submit(label = "次へ", onClick = { navController.navigate("") })
+
+                Spacer(Modifier.height(12.dp))
+
+                RowTextButton(
+                    text = "もどる",
+                    underline = true,
+                    onClick = { navController.navigate("entrance") }
+                )
+            }
+        }
+}

@@ -61,3 +61,4 @@ wwwroot\images\photos\pexels-thevibrantmachine-3066867.jpg
 wwwroot\images\photos\photo1.jpg
 wwwroot\images\photos\testqr.png
 wwwroot\index.html
+wwwroot\js\spotify-player.js
