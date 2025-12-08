@@ -140,8 +140,6 @@ namespace Server.src.DTOs
         public required int ProviderId { get; set; }
         [Required]
         public required string Name { get; set; }
-        [Required]
-        public required string Password { get; set; }
 
         public User RequestToUserProvider(User user)
         {
@@ -156,8 +154,7 @@ namespace Server.src.DTOs
                 {
                     UserId = user.Id,
                     ProviderId = this.ProviderId,
-                    Name = this.Name,
-                    Password = this.Password
+                    Name = this.Name
                 }
             );
             
@@ -231,8 +228,7 @@ namespace Server.src.DTOs
                 schema.Example = new OpenApiObject
                 {
                     [ToCamelCase(nameof(RegisterUserProviderRequestDto.ProviderId))] = new OpenApiInteger(1),
-                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.Name))] = new OpenApiString("test"),
-                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.Password))] = new OpenApiString("password"),
+                    [ToCamelCase(nameof(RegisterUserProviderRequestDto.Name))] = new OpenApiString("test")
                 };
             }
 
