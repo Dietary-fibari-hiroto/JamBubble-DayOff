@@ -13,6 +13,18 @@ namespace Server.src.DTOs
         public required string Password { get; set; }
     }
 
+    public class SendVerificationEmailRequestDto
+    {
+        [Required]
+        public required string Email { get; set;}
+    }
+
+    public class VerifyEmailRequestDto
+    {
+        [Required]
+        public required string Password { get;set;}
+    }
+
     public class AuthRequestFilter : ISchemaFilter
     {
 
@@ -34,6 +46,22 @@ namespace Server.src.DTOs
                 {
                     [ToCamelCase(nameof(LoginRequestDto.Email))] = new OpenApiString("test@test.com"),
                     [ToCamelCase(nameof(LoginRequestDto.Password))] = new OpenApiString("password")
+                };
+            }
+
+            if (context.Type == typeof(SendVerificationEmailRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(SendVerificationEmailRequestDto.Email))] = new OpenApiString("test@test.com")
+                };
+            }
+
+            if (context.Type == typeof(VerifyEmailRequestDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(VerifyEmailRequestDto.Password))] = new OpenApiString("password")
                 };
             }
         }
