@@ -101,7 +101,7 @@ namespace Server.src.DTOs
 
             if (session.Requests != null)
             {
-                requests = session.Requests.Select(r => new RequestsDto(r)).ToList();
+                requests = session.Requests.OrderBy(r => r.Id).Select(r => new RequestsDto(r)).ToList();
             }
 
         }
@@ -173,6 +173,23 @@ namespace Server.src.DTOs
                     [ToCamelCase(nameof(SessionDetailResponseDto.UserCapacity))] = new OpenApiInteger(10),
                     [ToCamelCase(nameof(SessionDetailResponseDto.CreatedAt))] = new OpenApiString(DateTime.UtcNow.ToString("o")),
                     [ToCamelCase(nameof(SessionDetailResponseDto.FinishedAt))] = new OpenApiNull(),
+                    [ToCamelCase(nameof(SessionDetailResponseDto.SessionTag))] = new OpenApiArray
+                    {
+                        new OpenApiObject
+                        {
+                            [ToCamelCase(nameof(SessionTagDto.Id))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(SessionTagDto.Label))] = new OpenApiString("Sample Tag"),
+                        }
+                    },
+                    [ToCamelCase(nameof(SessionDetailResponseDto.requests))] = new OpenApiArray
+                    {
+                        new OpenApiObject
+                        {
+                            [ToCamelCase(nameof(RequestsDto.Id))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(RequestsDto.GuestId))] = new OpenApiInteger(1),
+                            [ToCamelCase(nameof(RequestsDto.MusicId))] = new OpenApiInteger(1),
+                        }
+                    }
                 };
             }
 
@@ -185,13 +202,15 @@ namespace Server.src.DTOs
                 };
             }
 
-            //if (context.Type == typeof())
-            //{
-            //    schema.Example = new OpenApiObject
-            //    {
-            //        [ToCamelCase(nameof(UserProviderResponseDto.ProviderId))] = new OpenApiInteger(1),
-            //    };
-            //}
+            if (context.Type == typeof(RequestsDto))
+            {
+                schema.Example = new OpenApiObject
+                {
+                    [ToCamelCase(nameof(RequestsDto.Id))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(RequestsDto.GuestId))] = new OpenApiInteger(1),
+                    [ToCamelCase(nameof(RequestsDto.MusicId))] = new OpenApiInteger(1),
+                };
+            }
 
             //if (context.Type == typeof())
             //{
