@@ -72,7 +72,7 @@ fun LoginScreen(navController: NavController) {
             // ---- Buttons ----
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-                Submit(label = "次へ", onClick = { navController.navigate("") })
+                Submit(label = "次へ", onClick = { navController.navigate("app/main") })
 
                 Spacer(Modifier.height(12.dp))
 

@@ -71,7 +71,7 @@ fun RegisterCompleteScreen(
             ) {
                 Submit(
                     label = "はじめる",
-                    onClick = { navController.navigate("") },
+                    onClick = { navController.navigate("app/main") },
                 )
             }
         }

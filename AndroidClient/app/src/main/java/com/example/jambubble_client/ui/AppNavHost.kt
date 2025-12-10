@@ -1,6 +1,8 @@
 package com.example.jambubble_client.ui
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -15,12 +17,22 @@ import com.example.jambubble_client.ui.screens.auths.RegisterConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.RegisterScreen
 import com.example.jambubble_client.ui.screens.entrance.EntranceScreen
 import com.example.jambubble_client.ui.screens.entrance.LoadingScreen
+import com.example.jambubble_client.ui.screens.musics.MusicPanelScreen
+import com.example.jambubble_client.ui.screens.musics.PlaylistDetailScreen
+import com.example.jambubble_client.ui.screens.musics.PlaylistScreen
+import com.example.jambubble_client.ui.screens.musics.SearchScreen
+import com.example.jambubble_client.ui.screens.users.HelpScreen
+import com.example.jambubble_client.ui.screens.users.MainScreen
+import com.example.jambubble_client.ui.screens.users.SettingScreen
+import com.example.jambubble_client.ui.screens.users.UserMenu
+import com.example.jambubble_client.ui.screens.users.UserProfileScreen
 
 @Composable
 fun AppNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
         startDestination = "brandscreen",
+        modifier = Modifier.fillMaxSize()
     ){
         composable("brandscreen"){ BrandScreen(navController)}
         composable("entrance/loading"){ LoadingScreen(navController)}
@@ -44,5 +56,17 @@ fun AppNavHost(navController: NavHostController) {
         composable("auth/register/confirm/email/complete"){ EmailCompleteScreen(navController) }
         composable("auth/register/provider"){ ProviderConfirmScreen(navController) }
         composable("auth/register/complete"){RegisterCompleteScreen(navController)}
+
+
+        composable("app/main"){MainScreen(navController)}
+        composable("app/user/profile"){ UserProfileScreen(navController)}
+        composable("app/user/menu"){ UserMenu(navController) }
+        composable("app/user/setting"){ SettingScreen(navController) }
+        composable("app/user/help"){ HelpScreen(navController) }
+
+        composable("app/search"){ SearchScreen(navController) }
+        composable("app/playlist"){ PlaylistScreen(navController) }
+        composable("app/playlist/detail"){ PlaylistDetailScreen(navController) }
+        composable("app/music/panel"){ MusicPanelScreen(navController)}
     }
 }
