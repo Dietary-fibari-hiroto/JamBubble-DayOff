@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -19,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.jambubble_client.ui.styles.ColorPrimary
 
@@ -45,24 +43,24 @@ fun Submit(
         contentPadding = PaddingValues(0.dp)       // ← 余白を全部ゼロにする
     ) {
         Row(
+            modifier = Modifier.fillMaxWidth(), // ← これが超重要！
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier.wrapContentWidth()
+            horizontalArrangement = Arrangement.SpaceAround
         ) {
             if (iconRes != null) {
                 Image(
                     painter = painterResource(id = iconRes),
                     contentDescription = null,
-                    modifier = Modifier
-                        .size(35.dp)
+                    modifier = Modifier.size(35.dp)
                 )
             }
+
             Text(
                 text = label,
                 style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                color = textColor
             )
         }
+
     }
 }
