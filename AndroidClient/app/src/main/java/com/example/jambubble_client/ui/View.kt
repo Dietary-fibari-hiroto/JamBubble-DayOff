@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.example.jambubble_client.ui.screens.musics.PlaylistDetailScreen
+import com.example.jambubble_client.ui.screens.friends.ProfileScreen
 
 @Preview(
     showBackground = true,
@@ -19,7 +19,7 @@ fun PreviewUserProfile() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-    ) {
-        PlaylistDetailScreen(navController)
+    ){
+        ProfileScreen(navController)
     }
 }

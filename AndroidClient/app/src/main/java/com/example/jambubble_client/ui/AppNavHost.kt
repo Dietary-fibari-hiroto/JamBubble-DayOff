@@ -1,8 +1,6 @@
 package com.example.jambubble_client.ui
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,10 +15,15 @@ import com.example.jambubble_client.ui.screens.auths.RegisterConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.RegisterScreen
 import com.example.jambubble_client.ui.screens.entrance.EntranceScreen
 import com.example.jambubble_client.ui.screens.entrance.LoadingScreen
+import com.example.jambubble_client.ui.screens.friends.FriendAddPage
+import com.example.jambubble_client.ui.screens.friends.FriendScreen
+import com.example.jambubble_client.ui.screens.musics.FornowScreen
 import com.example.jambubble_client.ui.screens.musics.MusicPanelScreen
 import com.example.jambubble_client.ui.screens.musics.PlaylistDetailScreen
 import com.example.jambubble_client.ui.screens.musics.PlaylistScreen
 import com.example.jambubble_client.ui.screens.musics.SearchScreen
+import com.example.jambubble_client.ui.screens.sessions.SessionListScreen
+import com.example.jambubble_client.ui.screens.sessions.SessionSearchScreen
 import com.example.jambubble_client.ui.screens.users.HelpScreen
 import com.example.jambubble_client.ui.screens.users.MainScreen
 import com.example.jambubble_client.ui.screens.users.SettingScreen
@@ -32,7 +35,6 @@ fun AppNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
         startDestination = "brandscreen",
-        modifier = Modifier.fillMaxSize()
     ){
         composable("brandscreen"){ BrandScreen(navController)}
         composable("entrance/loading"){ LoadingScreen(navController)}
@@ -68,5 +70,12 @@ fun AppNavHost(navController: NavHostController) {
         composable("app/playlist"){ PlaylistScreen(navController) }
         composable("app/playlist/detail"){ PlaylistDetailScreen(navController) }
         composable("app/music/panel"){ MusicPanelScreen(navController)}
+        composable("app/session/search"){ SessionSearchScreen(navController)}
+        composable("app/session/List"){ SessionListScreen(navController)}
+        composable("app/friend"){FriendScreen(navController)}
+        composable("app/friend/add"){ FriendAddPage(navController) }
+        composable("app/friend/user"){ UserProfileScreen(navController) }
+        composable("app/friend/fornow"){ FornowScreen(navController) }
+
     }
 }
