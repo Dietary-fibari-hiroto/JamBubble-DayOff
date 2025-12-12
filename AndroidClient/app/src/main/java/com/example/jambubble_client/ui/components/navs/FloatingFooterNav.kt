@@ -90,7 +90,7 @@ fun FloatingFooterNav(
                 FooterItem(
                     icon = R.drawable.shell,
                     label = "セッション",
-                    onClick = { navController.navigate("/app/session") }
+                    onClick = { navController.navigate("app/session") }
                 )
             }
         }
