@@ -20,8 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.jambubble_client.R
-import com.example.jambubble_client.dto.SessionCardDto
-import com.example.jambubble_client.dto.favoriteSongDto
+import com.example.jambubble_client.data.dto.SessionCardDto
+import com.example.jambubble_client.data.dto.favoriteSongDto
 import com.example.jambubble_client.ui.components.buttons.UserIcon
 import com.example.jambubble_client.ui.components.cards.SongCard
 import com.example.jambubble_client.ui.components.pannels.SessionDeck

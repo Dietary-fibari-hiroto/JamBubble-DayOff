@@ -40,11 +40,13 @@ import com.example.jambubble_client.ui.screens.users.MainScreen
 import com.example.jambubble_client.ui.screens.users.SettingScreen
 import com.example.jambubble_client.ui.screens.users.UserMenu
 import com.example.jambubble_client.ui.screens.users.UserProfileScreen
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
 
 @Composable
 fun AppNavHost(navController: NavHostController) {
 
     val sessionVm: SessionCreateViewModel = viewModel()
+    val userVm: RegisterViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -56,18 +58,10 @@ fun AppNavHost(navController: NavHostController) {
 
 
         composable("auth/login") { LoginScreen(navController) }
-        composable("auth/register") { RegisterScreen(navController) }
+        composable("auth/register") { RegisterScreen(navController,userVm) }
         composable("auth/explain") { ExplainScreen(navController) }
         composable("auth/register/confirm") {
-            RegisterConfirmScreen(
-                name = "ゆずき",
-                email = "yuzu@email.com",
-                password = "・・・・",
-                gender = "男性",
-                birthday = "2004/11/11",
-                imageUrl = "https://dawn-waiting.com/static/media/dawn_cat_ani.863d6550f404cf074627.png",
-                navController = navController
-            )
+            RegisterConfirmScreen(navController = navController,viewModel = userVm)
         }
         composable("auth/register/confirm/email") { EmailConfirmScreen(navController) }
         composable("auth/register/confirm/email/complete") { EmailCompleteScreen(navController) }

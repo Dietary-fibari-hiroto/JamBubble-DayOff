@@ -19,7 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.jambubble_client.R
-import com.example.jambubble_client.dto.SessionCardDto
+import com.example.jambubble_client.data.dto.SessionCardDto
 
 @Composable
 fun SessionCard(

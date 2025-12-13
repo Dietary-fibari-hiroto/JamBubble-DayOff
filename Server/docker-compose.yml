@@ -27,6 +27,7 @@ services:
     depends_on:
       - mysql
     environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:9001
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
       - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
       - JWT__KEY=${JWT__KEY}

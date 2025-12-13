@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\infrastructure\\entities\\friends\\friend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\infrastructure\\entities\\friends\\friend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\infrastructure\\entities\\sessions\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\infrastructure\\entities\\sessions\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\infrastructure\\entities\\friends\\friendrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\infrastructure\\entities\\friends\\friendrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,52 +42,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Infrastructure\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Server\\src\\Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwv0AAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T11:57:45.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Guest.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Sessions\\Guest.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Infrastructure\\Entities\\Sessions\\Guest.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Sessions\\Guest.cs",
-              "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Sessions\\Guest.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T08:57:16.953Z"
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-13T10:50:03.966Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FriendRequest.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
-              "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Friends\\FriendRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxgAAAAAAAAAAAAAAA==",
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-12-13T10:50:00.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".dockerignore",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.dockerignore",
+              "RelativeDocumentMoniker": ".dockerignore",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\.dockerignore",
+              "RelativeToolTip": ".dockerignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-13T10:49:58.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Server\\src\\Api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Server\\src\\Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T08:57:12.252Z"
+              "WhenOpened": "2025-12-13T10:13:12.007Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Friend.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Friends\\Friend.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Infrastructure\\Entities\\Friends\\Friend.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Infrastructure\\Entities\\Friends\\Friend.cs",
-              "RelativeToolTip": "Server\\src\\Infrastructure\\Entities\\Friends\\Friend.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwYAAAAXAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Server\\src\\Api\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Server\\src\\Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T08:56:21.186Z"
+              "WhenOpened": "2025-12-13T10:13:09.543Z",
+              "EditorCaption": ""
             }
           ]
         }

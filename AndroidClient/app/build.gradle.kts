@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -12,6 +14,7 @@ android {
 
     buildFeatures{
         compose = true
+        buildConfig = true
     }
 
     defaultConfig {
@@ -22,6 +25,26 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val properties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            properties.load(localPropertiesFile.inputStream())
+        }
+
+
+        val keys = listOf(
+            "INIT_LOGIN_EMAIL_SPATH",
+            "INIT_LOGIN_PASS_SPATH",
+            "BASE_URL",
+            "ACCESS_TOKEN"
+        )
+
+        //noinspection WrongGradleMethod
+        keys.forEach { key ->
+            val value = properties.getProperty(key) ?: ""
+            buildConfigField("String", key, "\"$value\"")
+        }
     }
 
     buildTypes {
@@ -65,4 +88,11 @@ dependencies {
 
     implementation(libs.coil.compose)
 
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.security.crypto)
 }

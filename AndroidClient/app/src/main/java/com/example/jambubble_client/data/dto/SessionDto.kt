@@ -1,4 +1,4 @@
-package com.example.jambubble_client.dto
+package com.example.jambubble_client.data.dto
 
 import androidx.annotation.DrawableRes
 import com.example.jambubble_client.R

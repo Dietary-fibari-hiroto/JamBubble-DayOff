@@ -17,7 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.jambubble_client.dto.favoriteSongDto
+import com.example.jambubble_client.data.dto.favoriteSongDto
 
 @Composable
 fun SongCard(

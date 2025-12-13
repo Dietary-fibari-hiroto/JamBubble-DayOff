@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.unit.dp
 import com.example.jambubble_client.R
-import com.example.jambubble_client.dto.SessionCardDto
+import com.example.jambubble_client.data.dto.SessionCardDto
 import com.example.jambubble_client.ui.components.cards.SessionCard
 
 

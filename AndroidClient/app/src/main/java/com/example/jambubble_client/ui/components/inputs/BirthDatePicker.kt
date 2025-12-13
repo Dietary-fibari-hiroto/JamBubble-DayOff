@@ -2,6 +2,7 @@ package com.example.jambubble_client.ui.components.inputs
 
 import android.app.DatePickerDialog
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,24 +18,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.time.LocalDate
 import java.util.Calendar
-
 @Composable
 fun BirthDatePicker(
     label: String,
     value: LocalDate?,
     onValueChange: (LocalDate) -> Unit
 ) {
-
     val context = LocalContext.current
     val calendar = Calendar.getInstance()
 
     Column(modifier = Modifier.padding(vertical = 8.dp)) {
         Text(text = label, color = Color.White, fontSize = 12.sp)
 
-        OutlinedTextField(
-            value = value?.toString() ?: "",
-            onValueChange = {},
-            readOnly = true,
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp)
@@ -48,14 +44,19 @@ fun BirthDatePicker(
                         calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH)
                     ).show()
-                },
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = Color.White,
-                unfocusedBorderColor = Color.White,
-                focusedTextColor = Color.White,
-                unfocusedTextColor = Color.White,
-                cursorColor = Color.White
+                }
+        ) {
+            OutlinedTextField(
+                value = value?.toString() ?: "",
+                onValueChange = {},
+                readOnly = true,
+                modifier = Modifier.fillMaxWidth(),
+                enabled = false,
+                colors = OutlinedTextFieldDefaults.colors(
+                    disabledBorderColor = Color.White,
+                    disabledTextColor = Color.White
+                )
             )
-        )
+        }
     }
 }

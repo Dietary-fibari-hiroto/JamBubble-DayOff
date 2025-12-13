@@ -13,32 +13,67 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.jambubble_client.ui.components.buttons.RowTextButton
 import com.example.jambubble_client.ui.components.buttons.Submit
 import com.example.jambubble_client.ui.components.pannels.AuthBgPanel
 import com.example.jambubble_client.ui.components.typographies.ConfirmLabel
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterConfirmUiState
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterConfirmViewModelFactory
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterConfirmViewmodel
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun RegisterConfirmScreen(
-    name: String,
-    email: String,
-    password: String,
-    gender: String,
-    birthday: String,
-    imageUrl: String,
-    navController: NavController
+    navController: NavController,
+    viewModel: RegisterViewModel,
+    confirmViewModel: RegisterConfirmViewmodel = viewModel(
+        factory = RegisterConfirmViewModelFactory(
+            LocalContext.current
+        )
+    )
 ) {
+
+    //誕生日を表示用にstringに変換するおん
+    val birthdayText = viewModel.birthday?.format(
+        DateTimeFormatter.ofPattern("yyyy/MM/dd")
+    ) ?: ""
+    val state = confirmViewModel.uiState
+
+    when(state){
+        RegisterConfirmUiState.Success -> {
+            LaunchedEffect(Unit) {
+                navController.navigate("auth/register/confirm/email")
+            }
+        }
+        RegisterConfirmUiState.Loading -> {
+            CircularProgressIndicator()
+        }
+
+        is RegisterConfirmUiState.Error -> {
+            Text(
+                text = state.message,
+                color = Color.Red
+            )
+        }
+        else -> Unit
+    }
+
     AuthBgPanel {
         Column(
             modifier = Modifier
@@ -50,7 +85,7 @@ fun RegisterConfirmScreen(
 
             // ---------- アイコン（143×143） ----------
             Image(
-                painter = rememberAsyncImagePainter(imageUrl),
+                painter = rememberAsyncImagePainter(viewModel.imageUri),
                 contentDescription = null,
                 modifier = Modifier.size(143.dp)
             )
@@ -65,11 +100,11 @@ fun RegisterConfirmScreen(
 
             // ---------- 各項目 ----------
 
-            ConfirmLabel(label = "アカウント名", value = name)
-            ConfirmLabel(label = "メールアドレス", value = email)
-            ConfirmLabel(label = "パスワード", value = password)
-            ConfirmLabel(label = "性別", value = gender)
-            ConfirmLabel(label = "生年月日", value = birthday)
+            ConfirmLabel(label = "アカウント名", value = viewModel.name)
+            ConfirmLabel(label = "メールアドレス", value = viewModel.email)
+            ConfirmLabel(label = "パスワード", value = "・・・・")
+            ConfirmLabel(label = "性別", value = viewModel.gender)
+            ConfirmLabel(label = "生年月日", value = birthdayText)
 
             // ---------- 画像 ----------
             Column(
@@ -92,7 +127,7 @@ fun RegisterConfirmScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Image(
-                        painter = rememberAsyncImagePainter(imageUrl),
+                        painter = rememberAsyncImagePainter(viewModel.imageUri),
                         contentDescription = null,
                         modifier = Modifier
                             .size(140.dp)
@@ -105,7 +140,20 @@ fun RegisterConfirmScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             // ---------- ボタン ----------
-            Submit(label = "確定", onClick = {navController.navigate("auth/register/confirm/email")})
+            Submit(
+                label = "確定",
+                onClick = {
+                    confirmViewModel.register(
+                        name = viewModel.name,
+                        email = viewModel.email,
+                        password = viewModel.password,
+                        gender = viewModel.gender,
+                        birthday = birthdayText,
+                        userImage = viewModel.imageUri
+                    )
+                }
+            )
+
 
             RowTextButton(text = "もどる", onClick = {navController.navigate("")}, underline = true)
         }
