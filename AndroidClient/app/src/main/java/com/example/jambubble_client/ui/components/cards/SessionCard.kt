@@ -18,16 +18,18 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.example.jambubble_client.R
-import com.example.jambubble_client.data.dto.SessionCardDto
+import com.example.jambubble_client.data.api.ApiConfig
+import com.example.jambubble_client.data.dto.SessionListResponseDto
 
 @Composable
 fun SessionCard(
-    session: SessionCardDto = SessionCardDto(
-        id = "1",
+    session: SessionListResponseDto = SessionListResponseDto(
+        id = 1,
         title = "title",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.spotify_icon
+        imgUrl="https://dawn-waiting.com/static/media/IMG_7018.f9a222d51c71b3498418.jpg",
+        userCount = 0
     )
 ) {
     Column(
@@ -43,14 +45,18 @@ fun SessionCard(
                 .clip(RoundedCornerShape(10.dp)),
         ) {
             Image(
-                painter = painterResource(session.thumbnailRes),
+                painter = rememberAsyncImagePainter(
+                    model = ApiConfig.BASE_URL+session.imgUrl,
+                    placeholder =painterResource(R.drawable.dawn_cat),
+                    error = painterResource(R.drawable.dawn_cat)
+                ),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.matchParentSize()
             )
 
             Image(
-                painter = painterResource(session.providerRes),
+                painter = painterResource(R.drawable.dawn_cat),
                 contentDescription = null,
                 modifier = Modifier
                     .size(30.dp)

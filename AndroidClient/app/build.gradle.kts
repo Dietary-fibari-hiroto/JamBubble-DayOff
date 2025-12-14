@@ -4,15 +4,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
 }
 
 android {
     namespace = "com.example.jambubble_client"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36  // この書き方に修正
 
-    buildFeatures{
+    buildFeatures {
         compose = true
         buildConfig = true
     }
@@ -32,7 +31,6 @@ android {
             properties.load(localPropertiesFile.inputStream())
         }
 
-
         val keys = listOf(
             "INIT_LOGIN_EMAIL_SPATH",
             "INIT_LOGIN_PASS_SPATH",
@@ -40,7 +38,6 @@ android {
             "ACCESS_TOKEN"
         )
 
-        //noinspection WrongGradleMethod
         keys.forEach { key ->
             val value = properties.getProperty(key) ?: ""
             buildConfigField("String", key, "\"$value\"")
@@ -56,12 +53,20 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
@@ -88,11 +93,16 @@ dependencies {
 
     implementation(libs.coil.compose)
 
+    // Retrofit & OkHttp (マルチパート対応に必要)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-
-
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.security.crypto)
+
+    // DataStore & Serialization
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.kotlinx.serialization.json)
 }

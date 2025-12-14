@@ -12,7 +12,7 @@ import retrofit2.http.Part
 
 interface UserApiService {
     @Multipart
-    @POST("user")
+    @POST("/api/user")
     suspend fun postUser(
         @Part("Name") name: RequestBody,
         @Part("Email") email: RequestBody,
@@ -22,7 +22,7 @@ interface UserApiService {
         @Part userImage: MultipartBody.Part?  // nullable
     ): Response<Unit>  // または適切なレスポンス型
 
-    @GET("user")
+    @GET("/api/user")
     suspend fun getUser(
         @Header("Authorization") token:String
     ): UserProfileDto

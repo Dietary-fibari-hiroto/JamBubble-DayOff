@@ -17,3 +17,11 @@ data class favoriteSongDto(
     @DrawableRes val thumbnailRes: Int=R.drawable.offn,
     @DrawableRes val providerRes: Int=R.drawable.spotify_icon
 )
+
+//セッション一覧で取得する一件の方
+data class SessionListResponseDto(
+    val id: Int,
+    val title: String = "",
+    val imgUrl: String = "",
+    val userCount: Int
+)

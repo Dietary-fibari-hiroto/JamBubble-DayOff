@@ -1,7 +1,6 @@
 package com.example.jambubble_client.data.repository
 
 import android.content.Context
-import android.util.Log
 import com.example.jambubble_client.Config
 import com.example.jambubble_client.data.api.service.AuthApiService
 import com.example.jambubble_client.data.dto.LoginRequestDto
@@ -22,7 +21,6 @@ class AuthRepository(
             val response = api.login(
                 LoginRequestDto(email,password)
             )
-            Log.d("TAG", "デバッグ用")
             if(response.isSuccessful){
                 val token = response.body()?.token?:return Result.failure(Exception("トークンがないよーて"))
 
@@ -40,6 +38,7 @@ class AuthRepository(
 
 sealed class AuthState {
     object Loading : AuthState()
+    object Success: AuthState()
     object Unauthenticated : AuthState()
     data class Authenticated(val user: UserProfileDto) : AuthState()
 }

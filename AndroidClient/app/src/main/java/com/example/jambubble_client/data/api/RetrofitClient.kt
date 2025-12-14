@@ -1,6 +1,7 @@
 package com.example.jambubble_client.data.api
 
 import com.example.jambubble_client.data.api.service.AuthApiService
+import com.example.jambubble_client.data.api.service.SessionApiService
 import com.example.jambubble_client.data.api.service.UserApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,6 +21,10 @@ object RetrofitClient{
 
     val authApi: AuthApiService by lazy{
         retrofit.create(AuthApiService::class.java)
+    }
+
+    val sessionApi: SessionApiService by lazy {
+        retrofit.create(SessionApiService::class.java)
     }
 
 }

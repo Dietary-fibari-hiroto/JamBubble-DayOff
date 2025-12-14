@@ -5,7 +5,7 @@ import android.net.Uri
 import android.provider.OpenableColumns
 import android.util.Log
 import com.example.jambubble_client.Config
-import com.example.jambubble_client.data.UserLocalDataSource
+import com.example.jambubble_client.data.UserLocalDataStore
 import com.example.jambubble_client.data.api.ApiConfig
 import com.example.jambubble_client.data.api.service.UserApiService
 import com.example.jambubble_client.data.dto.UserProfileDto
@@ -26,12 +26,11 @@ import okhttp3.RequestBody.Companion.toRequestBody
 class UserRepository(
     private val api: UserApiService,
     private val context: Context,  //ContentResolverに必要
-    private val local: UserLocalDataSource
 ) {
     val authState = MutableStateFlow<AuthState>(AuthState.Loading)
 
     val userState: StateFlow<UserProfileDto?> =
-        local.userFlow.stateIn(
+        UserLocalDataStore.userFlow.stateIn(
             scope = CoroutineScope(SupervisorJob() + Dispatchers.IO),
             started = SharingStarted.Eagerly,
             initialValue = null
@@ -45,14 +44,15 @@ class UserRepository(
         }
         val user = api.getUser("Bearer $token")
         Log.d("TAG", "ユーザー情報取得成功 $user")
-        local.save(user)
+        UserLocalDataStore.save(user)
     }
 
     suspend fun logout(){
-        local.clear()
+        UserLocalDataStore.clear()
+        SecureStorage.remove(context,Config.ACCESS_TOKEN)
     }
 
-
+    //アプリ起動時にユーザー情報を取得する
     suspend fun initialize(){
         val token = SecureStorage.load(context,Config.ACCESS_TOKEN)
         if(token == null){
@@ -62,7 +62,10 @@ class UserRepository(
 
         runCatching {
             api.getUser("Bearer $token")
+
         }.onSuccess{
+            Log.d("TAG", "ユーザー情報取得成功 $it")
+            UserLocalDataStore.save(it)
             authState.value = AuthState.Authenticated(it)
         }.onFailure {
             SecureStorage.remove(context,Config.ACCESS_TOKEN)
