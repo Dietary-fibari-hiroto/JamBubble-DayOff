@@ -1,6 +1,5 @@
 package com.example.jambubble_client.ui.components.buttons
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -32,9 +31,6 @@ fun UserIcon(
 ) {
     val user by UserLocalDataStore.userFlow.collectAsState(initial = null)
 
-    if(user != null){
-        Log.d("TAG", "UserIconでユーザー情報取得成功 $user")
-    }
     var isDialogOpen by remember { mutableStateOf(false) }
 
     Box(

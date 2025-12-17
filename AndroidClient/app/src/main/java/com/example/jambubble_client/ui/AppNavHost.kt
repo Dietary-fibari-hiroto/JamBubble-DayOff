@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.jambubble_client.ui.screens.BrandScreen
+
 import com.example.jambubble_client.ui.screens.auths.EmailCompleteScreen
 import com.example.jambubble_client.ui.screens.auths.EmailConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.ExplainScreen
@@ -41,9 +42,10 @@ import com.example.jambubble_client.ui.screens.users.SettingScreen
 import com.example.jambubble_client.ui.screens.users.UserMenu
 import com.example.jambubble_client.ui.screens.users.UserProfileScreen
 import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
+import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
 
 @Composable
-fun AppNavHost(navController: NavHostController) {
+fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPannelViewModel) {
 
     val sessionVm: SessionCreateViewModel = viewModel()
     val userVm: RegisterViewModel = viewModel()
@@ -78,7 +80,7 @@ fun AppNavHost(navController: NavHostController) {
         composable("app/search") { SearchScreen(navController) }
         composable("app/playlist") { PlaylistScreen(navController) }
         composable("app/playlist/detail") { PlaylistDetailScreen(navController) }
-        composable("app/music/panel") { MusicPanelScreen(navController) }
+        composable("app/music/panel") { MusicPanelScreen(navController,musicPannelViewModel) }
         composable("app/session/search") { SessionSearchScreen(navController) }
         composable("app/session/List") { SessionListScreen(navController) }
         composable("app/friend") { FriendScreen(navController) }
@@ -100,5 +102,7 @@ fun AppNavHost(navController: NavHostController) {
         composable("function/session/request/board"){SessionRequestBoardScreen(navController)}
         composable("function/session/playlist"){SessionPlaylistScreen(navController)}
         composable("function/session/member"){SessionMemberScreen(navController)}
+
+
     }
 }

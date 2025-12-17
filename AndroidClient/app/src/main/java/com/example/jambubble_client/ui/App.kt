@@ -8,9 +8,10 @@ import com.example.jambubble_client.ui.components.navs.SessionFooterNav
 import com.example.jambubble_client.ui.layouts.AuthLayout
 import com.example.jambubble_client.ui.layouts.EntranceLayout
 import com.example.jambubble_client.ui.layouts.MainLayout
+import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
 
 @Composable
-fun App() {
+fun App(musicPannelViewModel: MusicPannelViewModel) {
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
@@ -24,22 +25,22 @@ fun App() {
     }
 
     when (layoutType) {
-        LayoutType.Default -> AppNavHost(navController)
+        LayoutType.Default -> AppNavHost(navController,musicPannelViewModel)
 
         LayoutType.Entrance -> EntranceLayout {
-            AppNavHost(navController)
+            AppNavHost(navController,musicPannelViewModel)
         }
 
         LayoutType.Auth -> AuthLayout {
-            AppNavHost(navController)
+            AppNavHost(navController,musicPannelViewModel)
         }
 
         LayoutType.App -> MainLayout(
-            content = { AppNavHost(navController) },
+            content = { AppNavHost(navController,musicPannelViewModel) },
             footer = { FloatingFooterNav(navController) }
         )
         LayoutType.Function -> MainLayout(
-            content={AppNavHost(navController)},
+            content={AppNavHost(navController,musicPannelViewModel)},
             footer = {SessionFooterNav(navController)}
         )
     }

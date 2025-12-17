@@ -57,12 +57,6 @@ fun PlaylistDetailScreen(
             modifier = Modifier
                 .matchParentSize()
                 .alpha(1f)
-        )
-
-        //ぼかし
-        Box(
-            modifier = Modifier
-                .matchParentSize()
                 .blur(15.dp)
         )
 
@@ -85,6 +79,8 @@ fun PlaylistDetailScreen(
                     label = "Back",
                     onClick = { navController.navigate("app/playlist") })
                 Image(
+                    modifier = Modifier
+                        .size(16.dp),
                     painter = painterResource(id = R.drawable.ellipsis),
                     contentDescription = "menu"
                 )

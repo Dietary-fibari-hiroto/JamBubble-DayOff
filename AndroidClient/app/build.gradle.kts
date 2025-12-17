@@ -1,5 +1,7 @@
 import java.util.Properties
 
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -9,7 +11,7 @@ plugins {
 
 android {
     namespace = "com.example.jambubble_client"
-    compileSdk = 36  // この書き方に修正
+    compileSdk = 36
 
     buildFeatures {
         compose = true
@@ -35,13 +37,17 @@ android {
             "INIT_LOGIN_EMAIL_SPATH",
             "INIT_LOGIN_PASS_SPATH",
             "BASE_URL",
-            "ACCESS_TOKEN"
+            "ACCESS_TOKEN",
+            "SPOTIFY_CLIENT_ID"
         )
 
         keys.forEach { key ->
             val value = properties.getProperty(key) ?: ""
             buildConfigField("String", key, "\"$value\"")
         }
+
+        manifestPlaceholders["redirectSchemeName"] = "jambubble"
+        manifestPlaceholders["redirectHostName"] = "callback"
     }
 
     buildTypes {
@@ -51,6 +57,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+
         }
     }
 
@@ -105,4 +113,10 @@ dependencies {
     // DataStore & Serialization
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.kotlinx.serialization.json)
+
+
+    //Spotify
+    implementation(files("libs/spotify-app-remote-release-0.8.0.aar"))
+    implementation(files("libs/spotify-auth-release-2.1.0.aar"))
+    implementation(libs.gson)
 }
