@@ -38,7 +38,9 @@ android {
             "INIT_LOGIN_PASS_SPATH",
             "BASE_URL",
             "ACCESS_TOKEN",
-            "SPOTIFY_CLIENT_ID"
+            "SPOTIFY_CLIENT_ID",
+            "SPOTIFY_ACCESS_TOKEN",
+            "SPOTIFY_REFRESH_TOKEN"
         )
 
         keys.forEach { key ->
@@ -119,4 +121,6 @@ dependencies {
     implementation(files("libs/spotify-app-remote-release-0.8.0.aar"))
     implementation(files("libs/spotify-auth-release-2.1.0.aar"))
     implementation(libs.gson)
+
+    implementation(libs.androidx.browser)
 }

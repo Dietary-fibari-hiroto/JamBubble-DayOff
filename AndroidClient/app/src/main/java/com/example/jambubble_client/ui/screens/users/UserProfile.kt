@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,7 +54,8 @@ fun UserProfileScreen(navController: NavController) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 16.dp),
+                    .padding(horizontal = 16.dp)
+                    .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 ReturnButton(
@@ -155,7 +158,7 @@ fun UserProfileScreen(navController: NavController) {
                     Column (
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ){
-                        Submit(backgroundColor= ColorDeepGray,label = "Premiumプラン", iconRes = R.drawable.spotify_icon, onClick = {})
+                        Submit(backgroundColor= ColorDeepGray,label = "Premiumプラン", iconRes = R.drawable.spotify_icon, onClick = {navController.navigate("auth/spotify/login")})
                         Submit(backgroundColor= ColorDeepGray,label = "Apple Music でログイン", iconRes = R.drawable.applemusic_icon, onClick = {})
                     }
                 }

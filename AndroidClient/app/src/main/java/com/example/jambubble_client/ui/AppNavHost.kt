@@ -5,6 +5,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.jambubble_client.spotifyremote.data.repository.SpotifyAuthRepository
 import com.example.jambubble_client.ui.screens.BrandScreen
 
 import com.example.jambubble_client.ui.screens.auths.EmailCompleteScreen
@@ -15,6 +16,7 @@ import com.example.jambubble_client.ui.screens.auths.ProviderConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.RegisterCompleteScreen
 import com.example.jambubble_client.ui.screens.auths.RegisterConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.RegisterScreen
+import com.example.jambubble_client.ui.screens.auths.SpotifyLoginScreen
 import com.example.jambubble_client.ui.screens.entrance.EntranceScreen
 import com.example.jambubble_client.ui.screens.entrance.LoadingScreen
 import com.example.jambubble_client.ui.screens.features.SessionLinkScreen
@@ -44,11 +46,13 @@ import com.example.jambubble_client.ui.screens.users.UserProfileScreen
 import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
 
+
 @Composable
-fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPannelViewModel) {
+fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPannelViewModel,authManager: SpotifyAuthRepository) {
 
     val sessionVm: SessionCreateViewModel = viewModel()
     val userVm: RegisterViewModel = viewModel()
+
 
     NavHost(
         navController = navController,
@@ -103,6 +107,7 @@ fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPanne
         composable("function/session/playlist"){SessionPlaylistScreen(navController)}
         composable("function/session/member"){SessionMemberScreen(navController)}
 
+        composable("auth/spotify/login"){ SpotifyLoginScreen(authManager,navController) }
 
     }
 }
