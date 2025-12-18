@@ -8,6 +8,7 @@ import com.example.jambubble_client.Config
 import com.example.jambubble_client.data.UserLocalDataStore
 import com.example.jambubble_client.data.api.ApiConfig
 import com.example.jambubble_client.data.api.service.UserApiService
+import com.example.jambubble_client.data.dto.OtherUserProfileDto
 import com.example.jambubble_client.data.dto.UserProfileDto
 import com.example.jambubble_client.data.dto.UserRegisterDto
 import com.example.jambubble_client.util.SecureStorage
@@ -105,6 +106,20 @@ class UserRepository(
                 Result.failure(Exception("登録に失敗しました: ${response.code()}"))
             }
         } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun userById(id:Int):Result<OtherUserProfileDto> {
+        return try{
+            val token = SecureStorage.load(context, Config.ACCESS_TOKEN)
+                ?: throw IllegalStateException("Access token is null")
+
+            val response = api.getUserById(id,"Bearer $token")
+            Log.d("TAG", "getFriendPlaylist: $response")
+            Result.success(response)
+        }catch (e:Exception){
+            Log.d("TAG", "getFriendPlaylist: $e")
             Result.failure(e)
         }
     }

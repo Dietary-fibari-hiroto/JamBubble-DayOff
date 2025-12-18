@@ -29,3 +29,13 @@ data class UserProfileDto(
     val sessionCount:Int,
     val musicId:String?
 )
+
+@Serializable
+data class OtherUserProfileDto(
+    val name: String,
+    val gender: Int,
+    val imgUrl: String?,
+    val message:String?,
+    val sessionCount:Int,
+    val musicId:String?
+)

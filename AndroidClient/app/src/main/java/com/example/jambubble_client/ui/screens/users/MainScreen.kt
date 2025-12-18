@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -26,8 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.jambubble_client.R
-import com.example.jambubble_client.data.dto.SessionCardDto
-import com.example.jambubble_client.data.dto.favoriteSongDto
 import com.example.jambubble_client.ui.components.buttons.UserIcon
 import com.example.jambubble_client.ui.components.cards.SongCard
 import com.example.jambubble_client.ui.components.pannels.SessionDeck
@@ -92,6 +91,21 @@ fun MainScreen(
                     title = "フレンドのセッション",
                     sessions = state.friendSessionList
                 )
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        "Favorite Song",
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.padding(start = 16.dp, bottom = 16.dp)
+                    )
+                    LazyRow(
+                        contentPadding = PaddingValues(horizontal = 16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        items(state.favoriteMusicList) { song ->
+                            SongCard(song)
+                        }
+                    }
+                }
             }
             is MainUiState.Error -> {
                 val message = (uiState as MainUiState.Error).message
@@ -103,54 +117,6 @@ fun MainScreen(
 
 
         // Favorite Song
-        Column(modifier = Modifier.fillMaxWidth()) {
-            Text(
-                "Favorite Song",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(start = 16.dp, bottom = 16.dp)
-            )
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                items(3) {
-                    SongCard(favoriteSongDto = favoriteSongDto(id = it, title = "title"))
-                }
-            }
-        }
+
     }
 }
-
-val sampleSessions = listOf(
-    SessionCardDto(
-        id = "session_001",
-        title = "秋の夜に合いそうな曲集めてます",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.spotify_icon
-    ),
-    SessionCardDto(
-        id = "session_002",
-        title = "まったりチルタイム用プレイリスト",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.spotify_icon
-    ),
-    SessionCardDto(
-        id = "session_003",
-        title = "作業効率爆上がりBGM特集",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.applemusic_icon
-    ),
-    SessionCardDto(
-        id = "session_004",
-        title = "ドライブで聴きたいエモい曲",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.spotify_icon
-    ),
-    SessionCardDto(
-        id = "session_005",
-        title = "雨の日にしっとり聴きたい音楽",
-        thumbnailRes = R.drawable.offn,
-        providerRes = R.drawable.spotify_icon
-    )
-)
-

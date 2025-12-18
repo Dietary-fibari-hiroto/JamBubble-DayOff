@@ -18,10 +18,11 @@ import com.example.jambubble_client.R
 @Composable
 fun ReturnButton(
     label: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(top = 20.dp)
             .clickable { onClick() },

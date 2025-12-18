@@ -12,10 +12,6 @@ class AuthRepository(
     private val context: Context
 ) {
 
-
-
-
-
     suspend fun login(email: String, password: String): Result<Unit> {
         return try{
             val response = api.login(

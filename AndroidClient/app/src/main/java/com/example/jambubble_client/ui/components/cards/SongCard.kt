@@ -17,11 +17,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.jambubble_client.data.dto.favoriteSongDto
+import com.example.jambubble_client.R
+import com.example.jambubble_client.data.dto.FavoriteMusicSummary
 
 @Composable
 fun SongCard(
-    favoriteSongDto: favoriteSongDto,
+    favoriteMusicSummary: FavoriteMusicSummary,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -34,24 +35,31 @@ fun SongCard(
                 .clip(RoundedCornerShape(16.dp))
         ) {
             Image(
-                painter = painterResource(id = favoriteSongDto.thumbnailRes),
+                painter = painterResource(id = R.drawable.movie),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
 
             Image(
-                painter = painterResource(id = favoriteSongDto.providerRes),
+                painter = painterResource(id = R.drawable.spotify_icon),
                 contentDescription = null,
                 modifier = Modifier
                     .size(30.dp)
                     .align(Alignment.BottomEnd)
                     .clip(CircleShape)
             )
+
+            Text(
+                text = favoriteMusicSummary.count.toString(),
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+            )
         }
 
         Text(
-            text = favoriteSongDto.title,
+            text = favoriteMusicSummary.musicId,
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier.padding(top = 6.dp)
         )

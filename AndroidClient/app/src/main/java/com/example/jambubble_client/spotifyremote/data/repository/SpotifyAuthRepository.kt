@@ -31,8 +31,8 @@ class SpotifyAuthRepository(
 
     companion object {
         private const val TAG = "SpotifyAuthRepository"
-        private const val KEY_TOKENS = "spotify_tokens"
-        private const val KEY_CODE_VERIFIER = "code_verifier"
+        private const val KEY_TOKENS = Config.SPOTIFY_ACCESS_TOKEN
+        private const val KEY_CODE_VERIFIER = Config.KEY_CODE_VERIFIER
         private const val KEY_USER = "spotify_user"
         private const val KEY_PROCESSING_CODE = "processing_code"  // 重複処理防止
     }
