@@ -74,6 +74,7 @@ class SpotifyRepository(private val application: Application) {
     }
 
 
+
     //Serviceの状態を監視してRepositoryに反映
     private fun observeServiceStates() {
         service?.let { svc ->

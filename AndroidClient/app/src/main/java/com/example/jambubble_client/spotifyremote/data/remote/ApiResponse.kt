@@ -1,4 +1,4 @@
-package com.example.jambubble_client.spotifyremote.data.remote.response
+package com.example.jambubble_client.spotifyremote.data.remote
 
 import com.google.gson.annotations.SerializedName
 

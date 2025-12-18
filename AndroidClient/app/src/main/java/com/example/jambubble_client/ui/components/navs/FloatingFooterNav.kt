@@ -78,7 +78,7 @@ fun FloatingFooterNav(
                 FooterItem(
                     icon = R.drawable.search,
                     label = "検索",
-                    onClick = { navController.navigate("test") }
+                    onClick = { navController.navigate("app/search") }
                 )
 
                 FooterItem(

@@ -5,9 +5,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.jambubble_client.spotifyremote.data.repository.SpotifyAuthRepository
 import com.example.jambubble_client.ui.screens.BrandScreen
-
 import com.example.jambubble_client.ui.screens.auths.EmailCompleteScreen
 import com.example.jambubble_client.ui.screens.auths.EmailConfirmScreen
 import com.example.jambubble_client.ui.screens.auths.ExplainScreen
@@ -44,11 +42,16 @@ import com.example.jambubble_client.ui.screens.users.SettingScreen
 import com.example.jambubble_client.ui.screens.users.UserMenu
 import com.example.jambubble_client.ui.screens.users.UserProfileScreen
 import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
+import com.example.jambubble_client.ui.viewmodel.auths.SpotifyAuthViewModel
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
+import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 
 
 @Composable
-fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPannelViewModel,authManager: SpotifyAuthRepository) {
+fun AppNavHost(navController: NavHostController,
+               musicPannelViewModel: MusicPannelViewModel,
+               authViewModel: SpotifyAuthViewModel,
+               searchViewModel: SearchViewModel) {
 
     val sessionVm: SessionCreateViewModel = viewModel()
     val userVm: RegisterViewModel = viewModel()
@@ -81,7 +84,7 @@ fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPanne
         composable("app/user/setting") { SettingScreen(navController) }
         composable("app/user/help") { HelpScreen(navController) }
 
-        composable("app/search") { SearchScreen(navController) }
+        composable("app/search") { SearchScreen(searchViewModel,musicPannelViewModel,navController) }
         composable("app/playlist") { PlaylistScreen(navController) }
         composable("app/playlist/detail") { PlaylistDetailScreen(navController) }
         composable("app/music/panel") { MusicPanelScreen(navController,musicPannelViewModel) }
@@ -107,7 +110,8 @@ fun AppNavHost(navController: NavHostController,musicPannelViewModel: MusicPanne
         composable("function/session/playlist"){SessionPlaylistScreen(navController)}
         composable("function/session/member"){SessionMemberScreen(navController)}
 
-        composable("auth/spotify/login"){ SpotifyLoginScreen(authManager,navController) }
+        composable("auth/spotify/login"){ SpotifyLoginScreen(authViewModel,navController) }
+        //composable("test"){ TestScreen(searchViewModel) }
 
     }
 }

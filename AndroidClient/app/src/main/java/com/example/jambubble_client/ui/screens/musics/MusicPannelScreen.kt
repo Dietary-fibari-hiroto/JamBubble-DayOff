@@ -1,5 +1,6 @@
 package com.example.jambubble_client.ui.screens.musics
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
 import com.example.jambubble_client.R
 import com.example.jambubble_client.spotifyremote.data.model.PlayerState
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
@@ -46,9 +48,8 @@ import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
 @Composable
 fun MusicPanelScreen(
     navController: NavController,
-    viewModel: MusicPannelViewModel
-
-) {
+    viewModel: MusicPannelViewModel,
+    ) {
     //UI状態を監視
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
@@ -57,7 +58,10 @@ fun MusicPanelScreen(
             viewModel.connectToSpotify()
         }
     }
+    fun test(){
+        Log.d("tset","imguri:${uiState.playerState.imageUri}")
 
+    }
 
     Box(
         modifier = Modifier
@@ -65,13 +69,14 @@ fun MusicPanelScreen(
     ) {
         if(uiState.isConnected) {
             // 背景画像
-            Image(
-                painter = painterResource(id = R.drawable.offn),
+            AsyncImage(
+                model = uiState.playerState.imageUri,
                 contentDescription = null,
                 modifier = Modifier
                     .matchParentSize()
                     .alpha(0.8f)
-                    .blur(15.dp),
+                    .blur(15.dp)
+                    .clickable{test()},
                 contentScale = ContentScale.Crop
             )
 
