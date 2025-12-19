@@ -8,6 +8,7 @@ namespace Server.src.DTOs
 {
     public class UserAllDataResponseDto
     {
+        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public int Gender { get; set; }
@@ -23,6 +24,7 @@ namespace Server.src.DTOs
         // コンストラクタ
         public UserAllDataResponseDto(User user)
         {
+            this.Id = user.Id;
             this.Name = user.Name;
             this.Email = user.Email;
             this.Gender = user.Gender;

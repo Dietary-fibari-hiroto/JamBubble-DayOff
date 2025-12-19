@@ -3,6 +3,9 @@ using Server.src.Repositories;
 using Server.src.Services;
 namespace Server.Data.Configrations
 {
+    /// <summary>
+    /// DIコンテナに登録するための拡張メソッドをまとめたクラス
+    /// </summary>
     public static class Extensions
     {
         public static void RegisterRepositories(this IServiceCollection services)

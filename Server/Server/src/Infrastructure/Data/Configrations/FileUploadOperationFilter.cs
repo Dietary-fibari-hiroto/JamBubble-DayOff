@@ -5,6 +5,13 @@ namespace Server.src.Configrations
 {
     public class FileUploadOperationFilter : IOperationFilter
     {
+        /// <summary>
+        /// SwaggerでAPIドキュメント生成時のみ処理される
+        /// IFromFileを受け付けるエンドポイントのリクエスト使用を自動でmultipart/form-dataに設定するクラス
+        /// 動作していないかもしれない
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="context"></param>
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             var fileParameters = context.MethodInfo.GetParameters()

@@ -9,38 +9,47 @@ using System;
 
 namespace Server.src.Configrations
 {
+    /// <summary>
+    /// 開発時のダミーデータをDBに挿入するクラス
+    /// ユーザー、セッション、プロバイダ、タグ、セッションソート設定、シーンなどのデータを挿入する
+    /// </summary>
     public class DevelopmentDataSeeder
     {
         public static async Task SeedAsync(IServiceProvider serviceProvider)
         {
-            var tempPas = "password";
-            var tagCount = 3;
+            var tagCount = 3; // タグの生成回数
 
             using var scope = serviceProvider.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             var userService = scope.ServiceProvider.GetRequiredService<IUserService>();
 
             // マスタ作成
-            await AddProviderAsync(dbContext);
-            await AddTagAsync(dbContext, tagCount);
-            await AddSessionSortSettingAsync(dbContext);
-            await AddSceneAsync(dbContext);
+            await AddProviderAsync(dbContext); // プロバイダ
+            await AddTagAsync(dbContext, tagCount); // セッションタグ
+            await AddSessionSortSettingAsync(dbContext); // セッションソート設定
+            await AddSceneAsync(dbContext); // セッションシーン
 
             // ユーザーの作成
             var dummyUsers = GenerateDummyUsers();
             var addedDummyUsers = await AddUsersAsync(userService, dummyUsers);
 
+            // 作成されたユーザーを元に作成・更新
             foreach (var user in addedDummyUsers)
             {
-                await UpdateUsersAsync(userService, addedDummyUsers);
-                await AddFriendsAsync(dbContext, user, addedDummyUsers);
-                await AddMessagesAsync(dbContext, user, 5);
-                await AddUserProviderAsync(userService, user);
-                await AddSessionsAsync(dbContext, user, 2);
-                await AddFornowAsync(dbContext, user);
+                await UpdateUsersAsync(userService, addedDummyUsers); // ユーザー作成時に追記できなかった項目
+                await AddFriendsAsync(dbContext, user, addedDummyUsers); // フレンド
+                await AddMessagesAsync(dbContext, user, 5); // メッセージ
+                await AddUserProviderAsync(userService, user); // ユーザプロバイダ
+                await AddSessionsAsync(dbContext, user, 2); // セッション
+                await AddFornowAsync(dbContext, user); // fornow
             }
         }
 
+        /// <summary>
+        /// プロバイダ作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <returns></returns>
         private static async Task AddProviderAsync(AppDbContext dbContext)
         {
             // プロバイダー挿入
@@ -56,6 +65,12 @@ namespace Server.src.Configrations
             }
         }
 
+        /// <summary>
+        /// タグ作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         private static async Task AddTagAsync(AppDbContext dbContext, int count)
         {
             for (int i = 1; i <= count; i++)
@@ -73,6 +88,11 @@ namespace Server.src.Configrations
             }
         }
 
+        /// <summary>
+        /// セッションソート設定作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <returns></returns>
         private static async Task AddSessionSortSettingAsync(AppDbContext dbContext)
         {
             var setting = await dbContext.SessionSortSettings.FirstOrDefaultAsync(s => s.Id == 1);
@@ -88,6 +108,11 @@ namespace Server.src.Configrations
             }
         }
 
+        /// <summary>
+        /// セッションシーン作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <returns></returns>
         private static async Task AddSceneAsync(AppDbContext dbContext)
         {
             var scene = await dbContext.Scenes.FirstOrDefaultAsync(s => s.Id == 1);
@@ -101,7 +126,10 @@ namespace Server.src.Configrations
             }
         }
 
-
+        /// <summary>
+        /// 作成するユーザー一覧
+        /// </summary>
+        /// <returns></returns>
         private static List<RegisterUserRequestDto> GenerateDummyUsers()
         {
             var pasTemp = "password";
@@ -120,6 +148,12 @@ namespace Server.src.Configrations
             };
         }
 
+        /// <summary>
+        /// ユーザ作成
+        /// </summary>
+        /// <param name="userService"></param>
+        /// <param name="dummyUsers"></param>
+        /// <returns></returns>
         private static async Task<List<User>> AddUsersAsync(IUserService userService, List<RegisterUserRequestDto> dummyUsers)
         {
             var addedUsers = new List<User>();
@@ -140,6 +174,12 @@ namespace Server.src.Configrations
             return addedUsers;
         }
 
+        /// <summary>
+        /// ユーザ情報に追記
+        /// </summary>
+        /// <param name="userService"></param>
+        /// <param name="users"></param>
+        /// <returns></returns>
         private static async Task UpdateUsersAsync(IUserService userService, List<User> users)
         {
             // ランダム生成用のインスタンス
@@ -155,7 +195,14 @@ namespace Server.src.Configrations
                 }, user.Id);
             }
         }
-
+        
+        /// <summary>
+        /// フレンド追加
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="user"></param>
+        /// <param name="allUsers"></param>
+        /// <returns></returns>
         private static async Task AddFriendsAsync(AppDbContext dbContext, User user, List<User> allUsers)
         {
             foreach (var friend in allUsers)
@@ -180,6 +227,13 @@ namespace Server.src.Configrations
             await dbContext.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// メッセージ作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="user"></param>
+        /// <param name="messageCount"></param>
+        /// <returns></returns>
         private static async Task AddMessagesAsync(AppDbContext dbContext, User user, int messageCount)
         {
             for (int i = 0; i < messageCount; i++)
@@ -195,6 +249,12 @@ namespace Server.src.Configrations
             await dbContext.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// ユーザプロバイダ作成
+        /// </summary>
+        /// <param name="userService"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         private static async Task AddUserProviderAsync(IUserService userService, User user)
         {
             await userService.AddUserProviderAsync(new RegisterUserProviderRequestDto
@@ -204,6 +264,13 @@ namespace Server.src.Configrations
             }, user.Id);
         }
 
+        /// <summary>
+        /// セッションタグ作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="user"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         private static async Task AddSessionsAsync(AppDbContext dbContext, User user, int count)
         {
             for(int i = 1; i <= count; i++)
@@ -231,6 +298,12 @@ namespace Server.src.Configrations
             await dbContext.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Fornow作成
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         private static async Task AddFornowAsync(AppDbContext dbContext, User user)
         {
             await dbContext.Fornows.AddAsync(new Fornow
