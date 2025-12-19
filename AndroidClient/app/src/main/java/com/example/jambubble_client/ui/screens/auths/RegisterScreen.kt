@@ -1,6 +1,5 @@
 package com.example.jambubble_client.ui.screens.auths
 
-import android.net.Uri
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -37,33 +36,23 @@ import com.example.jambubble_client.ui.components.inputs.ImagePickerBox
 import com.example.jambubble_client.ui.components.inputs.SelectBox
 import com.example.jambubble_client.ui.components.inputs.TextInput
 import com.example.jambubble_client.ui.components.pannels.AuthBgPanel
-import java.time.LocalDate
+import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
 
 
 @Composable
 fun RegisterScreen(
-    navController: NavController
+    navController: NavController,
+    vm: RegisterViewModel
 ) {
-
-    var accountName by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
     var passwordConfirm by remember { mutableStateOf("") }
-
     val genderOptions = listOf("男性", "女性", "どちらでもない")
-    var selectedGender by remember { mutableStateOf(genderOptions.first()) }
-
-    var birthday by remember { mutableStateOf<LocalDate?>(null) }
-
-    var imageUri by remember { mutableStateOf<Uri?>(null) }
-
     var isChecked by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
     val imagePickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri ->
-        imageUri = uri
+        vm.imageUri = uri
         uri?.let {
             Log.d("Register", "選択画像: $it")
         }
@@ -99,10 +88,10 @@ fun RegisterScreen(
 
             TextInput(
                 label = "アカウント名",
-                value = accountName,
-                onValueChange = { accountName = it })
-            TextInput(label = "メールアドレス", value = email, onValueChange = { email = it })
-            TextInput(label = "パスワード", value = password, onValueChange = { password = it })
+                value = vm.name,
+                onValueChange = { vm.name = it })
+            TextInput(label = "メールアドレス", value = vm.email, onValueChange = { vm.email = it })
+            TextInput(label = "パスワード", value = vm.password, onValueChange = { vm.password = it })
             TextInput(
                 label = "パスワード（確認）",
                 value = passwordConfirm,
@@ -111,20 +100,20 @@ fun RegisterScreen(
             SelectBox(
                 label = "性別",
                 options = genderOptions,
-                value = selectedGender,
-                onValueSelected = { selectedGender = it }
+                value = vm.gender,
+                onValueSelected = { vm.gender = it }
             )
 
             BirthDatePicker(
                 label = "生年月日",
-                value = birthday,
-                onValueChange = { birthday = it }
+                value = vm.birthday,
+                onValueChange = { vm.birthday = it }
             )
 
             ImagePickerBox(
                 label = "プロフィール画像",
                 supplement = "推奨サイズ: 300x300px",
-                imageUri = imageUri,
+                imageUri = vm.imageUri,
                 onPickClick = { imagePickerLauncher.launch("image/*") }
             )
 
