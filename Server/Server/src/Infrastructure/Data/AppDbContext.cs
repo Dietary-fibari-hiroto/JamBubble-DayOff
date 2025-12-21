@@ -71,7 +71,7 @@ namespace Server.Data
             //複合キーの定義
             modelBuilder.Entity<UserProvider>().HasKey(p => new { p.UserId, p.ProviderId });
             modelBuilder.Entity<Friend>().HasKey(p => new { p.User1Id, p.User2Id });
-            modelBuilder.Entity<FriendRequest>().HasKey(p => new { p.SendUserId, p.PassUserId });
+            modelBuilder.Entity<FriendRequest>().HasKey(p => new { p.User1Id, p.User2Id });
             modelBuilder.Entity<UserBlock>().HasKey( p=> new {p.UserId,p.BlockedUserId});
 
             modelBuilder.Entity<SessionTag>().HasKey(p => new { p.SessionId, p.TagId });
@@ -103,6 +103,10 @@ namespace Server.Data
 
             // ユニーク制約の定義
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+
+            // チェック制約の定義
+            // .HasCheckConstraintは非推奨になっており、マイグレーション上で生のSQLで追加する方法が推奨されている
+            //modelBuilder.Entity<FriendRequest>().HasCheckConstraint("CK_FriendRequest_User1Id_User2Id", "User1Id < User2Id");
         }
 
         //INSERTやUPDATEでDBに反映させるタイミングで呼び出される関数

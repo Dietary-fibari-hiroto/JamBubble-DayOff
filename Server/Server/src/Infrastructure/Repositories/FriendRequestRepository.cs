@@ -13,14 +13,14 @@ namespace Server.src.Repositories
             _context = context;
         }
 
-        // 送信者IDと受信者IDでフレンドリクエストを取得
-        public async Task<FriendRequest?> GetFriendRequestByIdsAsync(int sendUerId, int passUserId, bool asTracking = true)
+        // ID1とID2でフレンドリクエストを取得
+        public async Task<FriendRequest?> GetFriendRequestByIdsAsync(int id1, int id2, bool asTracking = true)
         {
             IQueryable<FriendRequest> query = _context.FriendRequests
-                .Where(fr => fr.SendUserId == sendUerId && fr.PassUserId == passUserId);
+                .Where(fr => fr.User1Id == id1 && fr.User2Id == id2);
             if (!asTracking)
             {
-                query = query.AsNoTracking(); // 追跡オフ 
+                query = query.AsNoTracking();
             }
             return await query.FirstOrDefaultAsync();
         }
