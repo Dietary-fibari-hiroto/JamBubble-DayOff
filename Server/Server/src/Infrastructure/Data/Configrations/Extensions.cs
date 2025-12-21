@@ -1,6 +1,8 @@
-﻿using Server.src.Interfaces;
+﻿using Server.src.Application.Services;
+using Server.src.Interfaces;
 using Server.src.Repositories;
 using Server.src.Services;
+using Server.src.Signaling.Hubs;
 namespace Server.Data.Configrations
 {
     /// <summary>
@@ -29,6 +31,11 @@ namespace Server.Data.Configrations
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IFavoriteMusicService, FavoriteMusicService>();
             services.AddScoped<IProviderService, ProviderService>();
+
+            //シグナリングハブのサービス登録
+            services.AddSingleton<SessionManager>();
+            //Spotify検索サービスの登録
+            services.AddSingleton<SpotifySearchService>();
         }
     }
 }

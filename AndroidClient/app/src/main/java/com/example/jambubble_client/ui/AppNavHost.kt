@@ -17,14 +17,13 @@ import com.example.jambubble_client.ui.screens.auths.RegisterScreen
 import com.example.jambubble_client.ui.screens.auths.SpotifyLoginScreen
 import com.example.jambubble_client.ui.screens.entrance.EntranceScreen
 import com.example.jambubble_client.ui.screens.entrance.LoadingScreen
-import com.example.jambubble_client.ui.screens.features.SessionLinkScreen
+import com.example.jambubble_client.ui.screens.features.SessionFunctionScreen
 import com.example.jambubble_client.ui.screens.features.SessionLoadingScreen
-import com.example.jambubble_client.ui.screens.features.SessionMemberScreen
-import com.example.jambubble_client.ui.screens.features.SessionPlaylistScreen
-import com.example.jambubble_client.ui.screens.features.SessionRequestBoardScreen
-import com.example.jambubble_client.ui.screens.features.SessionRequestScreen
+import com.example.jambubble_client.ui.screens.features.SessionTest
 import com.example.jambubble_client.ui.screens.friends.FriendAddPage
+import com.example.jambubble_client.ui.screens.friends.FriendRequestListScreen
 import com.example.jambubble_client.ui.screens.friends.FriendScreen
+import com.example.jambubble_client.ui.screens.friends.MailListScreen
 import com.example.jambubble_client.ui.screens.musics.FornowScreen
 import com.example.jambubble_client.ui.screens.musics.MusicPanelScreen
 import com.example.jambubble_client.ui.screens.musics.PlaylistDetailScreen
@@ -44,6 +43,7 @@ import com.example.jambubble_client.ui.screens.users.UserProfileScreen
 import com.example.jambubble_client.ui.viewmodel.auths.RegisterViewModel
 import com.example.jambubble_client.ui.viewmodel.auths.SpotifyAuthViewModel
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 
 
@@ -51,7 +51,8 @@ import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 fun AppNavHost(navController: NavHostController,
                musicPannelViewModel: MusicPannelViewModel,
                authViewModel: SpotifyAuthViewModel,
-               searchViewModel: SearchViewModel) {
+               searchViewModel: SearchViewModel,
+               sessionViewModel: MusicSessionViewModel) {
 
     val sessionVm: SessionCreateViewModel = viewModel()
     val userVm: RegisterViewModel = viewModel()
@@ -90,10 +91,17 @@ fun AppNavHost(navController: NavHostController,
         composable("app/music/panel") { MusicPanelScreen(navController,musicPannelViewModel) }
         composable("app/session/search") { SessionSearchScreen(navController) }
         composable("app/session/List") { SessionListScreen(navController) }
+
+
+
         composable("app/friend") { FriendScreen(navController) }
         composable("app/friend/add") { FriendAddPage(navController) }
         composable("app/friend/user") { UserProfileScreen(navController) }
         composable("app/friend/fornow") { FornowScreen(navController) }
+        composable("app/friend/requestlist"){FriendRequestListScreen(navController)}
+        composable("app/friend/maillist"){MailListScreen(navController)}
+
+
 
         composable("app/session") { SessionScreen(navController) }
         composable("app/session/create") { SessionCreateScreen(navController, sessionVm) }
@@ -103,15 +111,11 @@ fun AppNavHost(navController: NavHostController,
                 sessionVm
             )
         }
-        composable("session/loading"){SessionLoadingScreen(navController)}
-        composable("function/session/link"){ SessionLinkScreen(navController) }
-        composable("function/session/request"){SessionRequestScreen(navController)}
-        composable("function/session/request/board"){SessionRequestBoardScreen(navController)}
-        composable("function/session/playlist"){SessionPlaylistScreen(navController)}
-        composable("function/session/member"){SessionMemberScreen(navController)}
+        composable("session/loading"){SessionLoadingScreen(navController,sessionViewModel)}
+        composable("function/session"){SessionFunctionScreen(sessionViewModel,navController)}
 
         composable("auth/spotify/login"){ SpotifyLoginScreen(authViewModel,navController) }
         //composable("test"){ TestScreen(searchViewModel) }
-
+        composable("test"){SessionTest(sessionViewModel,searchViewModel)}
     }
 }

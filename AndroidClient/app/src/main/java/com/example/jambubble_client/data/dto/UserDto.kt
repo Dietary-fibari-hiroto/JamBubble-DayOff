@@ -19,6 +19,7 @@ data class UserRegisterDto(
 
 @Serializable
 data class UserProfileDto(
+    val id: Int,
     val name: String,
     val birthday: String,
     val email: String,

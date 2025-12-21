@@ -40,3 +40,8 @@ C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Server.xml
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\SpotifyAPI.Web.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.dll

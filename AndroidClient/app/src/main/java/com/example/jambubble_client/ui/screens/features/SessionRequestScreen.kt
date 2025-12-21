@@ -27,9 +27,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.jambubble_client.ui.components.inputs.SearchBar
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
-fun SessionRequestScreen(navController: NavController) {
+fun SessionRequestScreen(navController: NavController,sessionViewModel: MusicSessionViewModel) {
 
     var isLibrarySelected by remember { mutableStateOf(true) }
 

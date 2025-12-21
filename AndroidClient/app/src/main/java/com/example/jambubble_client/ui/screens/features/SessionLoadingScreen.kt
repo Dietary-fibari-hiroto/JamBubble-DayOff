@@ -19,11 +19,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.jambubble_client.R
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun SessionLoadingScreen(navController: NavController) {
+fun SessionLoadingScreen(navController: NavController,sessionViewModel: MusicSessionViewModel) {
 
     var isCompletedLoading by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -35,7 +36,7 @@ fun SessionLoadingScreen(navController: NavController) {
                 isCompletedLoading = true
                 scope.launch {
                     delay(2000)
-                    navController.navigate("function/session/link")
+                    navController.navigate("function/session")
                 }
             },
         contentAlignment = Alignment.Center

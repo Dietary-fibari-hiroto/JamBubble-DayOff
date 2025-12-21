@@ -66,7 +66,7 @@ fun FloatingFooterNav(
                 FooterItem(
                     icon = R.drawable.house,
                     label = "ホーム",
-                    onClick = { navController.navigate("app/main") }
+                    onClick = { navController.navigate("test") }
                 )
 
                 FooterItem(

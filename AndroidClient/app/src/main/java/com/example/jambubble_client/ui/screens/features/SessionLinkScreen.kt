@@ -33,10 +33,12 @@ import com.example.jambubble_client.R
 import com.example.jambubble_client.ui.components.buttons.Submit
 import com.example.jambubble_client.ui.components.elements.Tag
 import com.example.jambubble_client.ui.styles.ColorAppleMusic
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
 fun SessionLinkScreen(
-    navController: NavController
+    navController: NavController,
+    sessionViewModel: MusicSessionViewModel
 ) {
 
     Box(

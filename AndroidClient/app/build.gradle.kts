@@ -134,4 +134,10 @@ dependencies {
 
     implementation(libs.core)
 
+    implementation(libs.coil.compose.v250)
+    //コルーチン
+    implementation(libs.kotlinx.coroutines.android.v173)
+    //SignalR
+    implementation(libs.signalr)
+
 }

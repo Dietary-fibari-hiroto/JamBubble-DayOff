@@ -1,6 +1,6 @@
 package com.example.jambubble_client.ui.screens.friends
 
-import android.util.Log
+import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,6 +46,7 @@ import com.example.jambubble_client.R
 import com.example.jambubble_client.data.UserLocalDataStore
 import com.example.jambubble_client.data.api.ApiConfig
 import com.example.jambubble_client.data.dto.OtherUserProfileDto
+import com.example.jambubble_client.data.dto.UserProfileDto
 import com.example.jambubble_client.ui.components.buttons.Submit
 import com.example.jambubble_client.ui.components.inputs.SearchBar
 import com.example.jambubble_client.ui.styles.ColorDeepGray
@@ -64,10 +66,20 @@ enum class FriendRequestEnum {
 }
 
 
+enum class RequestResultEnum{
+    Default,
+    Requested,
+    AlreadyFriend,
+    AlreadyRequested,
+    Error
+}
+
+
 @Composable
 fun FriendAddPage(
     navController: NavController
 ) {
+
 
     //ユーザーの情報を読みこむ
     val user by UserLocalDataStore.userFlow.collectAsState(initial = null)
@@ -80,23 +92,30 @@ fun FriendAddPage(
     var scanned by remember { mutableStateOf(false) }
     var state by remember { mutableStateOf(FriendRequestEnum.Default) }
     val result by viewModel.qrResult.collectAsState()
+    var qrBitmap by remember { mutableStateOf<Bitmap?>(null) }
+    //friendRequestのステータス
+    val requestState by viewModel.requestState.collectAsState()
 
     LaunchedEffect(result,state) {
         if (result != null) {
             state = FriendRequestEnum.SearchSuccess
             val friendId = result!!.toInt()
             viewModel.loadUserById(friendId)
-            Log.d("TAG", "フレンド情報: $friendState")
         }
         if (state == FriendRequestEnum.QrScanner) {
             scanned = false
         }
     }
 
-    //自分のIDを用いてQR生成
-    val bitmap = remember{
-        generateQrCode("84")
+
+    LaunchedEffect(user?.id) {
+        val id = user?.id ?: return@LaunchedEffect
+        qrBitmap = generateQrCode(id.toString())
     }
+
+
+
+
 
 
 
@@ -129,10 +148,15 @@ fun FriendAddPage(
 
             
             FriendRequestEnum.Default -> {
-                DefaultContent(
-                    openScanner={state = FriendRequestEnum.QrScanner},
-                    myQrCode = bitmap.asImageBitmap()
-                )
+                if(qrBitmap != null) {
+                    DefaultContent(
+                        user = user,
+                        openScanner={state = FriendRequestEnum.QrScanner},
+                        myQrCode = qrBitmap!!.asImageBitmap()
+                    )
+                }else{
+                    CircularProgressIndicator()
+                }
             }
             FriendRequestEnum.QrScanner -> {
                 CameraPermissionWrapper {
@@ -151,21 +175,32 @@ fun FriendAddPage(
 
             FriendRequestEnum.SearchSuccess -> {
                 SearchSuccessContent(
-                    onRequest = { state = FriendRequestEnum.Requested },
+                    onRequest = {
+                        if(result != null){
+                            val friendId = result!!.toInt()
+                            viewModel.requestFriend(friendId)
+                            viewModel.clearResult()
+                            state = FriendRequestEnum.Requested
+                        }
+
+                        state = FriendRequestEnum.Requested
+                                },
                     id = result,
                     onTurnBack = {
                         scanned = false
                         viewModel.clearResult()
                         state = FriendRequestEnum.Default
                     },
-                    friendState = friendState
+                    friendState = friendState,
                 )
             }
 
             FriendRequestEnum.Requested -> {
                 RequestedContent(
                     onClose = {navController.navigate("app/friend")},
-                    onRequest = { /* no-op */ }
+                    onRequest = { /* no-op */ },
+                    uiState = requestState
+
                 )
             }
         }
@@ -180,6 +215,7 @@ fun FriendAddPage(
 
 @Composable
 fun DefaultContent(
+    user: UserProfileDto?,
     myQrCode: ImageBitmap,
     openScanner: () -> Unit
 ) {
@@ -213,8 +249,8 @@ fun DefaultContent(
 
         Spacer(Modifier.height(30.dp))
 
-        Text("名前:ゆずき", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.Black)
-        Text("ID:132", fontSize = 18.sp, fontWeight = FontWeight.Bold,color = Color.Black)
+        Text("名前:${user?.name}", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+        Text("ID:${user?.id}", fontSize = 18.sp, fontWeight = FontWeight.Bold,color = Color.Black)
 
         Spacer(Modifier.height(30.dp))
 
@@ -230,7 +266,8 @@ fun DefaultContent(
 @Composable
 fun RequestedContent(
     onClose: () -> Unit,
-    onRequest: () -> Unit
+    onRequest: () -> Unit,
+    uiState: RequestResultEnum
 ) {
     Column(
         modifier = Modifier
@@ -242,26 +279,62 @@ fun RequestedContent(
         verticalArrangement = Arrangement.Center
     ) {
 
-        Text("ユーザーが見つかりました！")
+        when(uiState) {
+            RequestResultEnum.Default -> {
+                CircularProgressIndicator()
+            }
+            RequestResultEnum.Requested -> {
 
-        Spacer(Modifier.height(50.dp))
+                Text("フレンド申請を送信しました！" ,color=Color.Black)
 
-        Image(
-            painter = painterResource(id = R.drawable.circle_check_big),
-            contentDescription = null,
-            modifier = Modifier.size(200.dp)
-        )
+                Spacer(Modifier.height(50.dp))
 
-        Spacer(Modifier.height(50.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.circle_check_big),
+                    contentDescription = null,
+                    modifier = Modifier.size(150.dp)
+                )
+            }
 
-        Submit(
-            label = "フレンドリクエスト",
-            onClick = onRequest,
-            backgroundColor= ColorSpotifyPrimary
-        )
+            RequestResultEnum.AlreadyFriend ->{
+                Text("すでにフレンドになっています。" ,color=Color.Black)
+
+                Spacer(Modifier.height(50.dp))
+
+                Image(
+                    painter = painterResource(id = R.drawable.circle_user_round),
+                    contentDescription = null,
+                    modifier = Modifier.size(150.dp)
+                )
+            }
+
+            RequestResultEnum.AlreadyRequested->{
+                Text("フレンド申請が送信済みです。" ,color=Color.Black)
+
+                Spacer(Modifier.height(50.dp))
+
+                Image(
+                    painter = painterResource(id = R.drawable.circle_user_round),
+                    contentDescription = null,
+                    modifier = Modifier.size(150.dp)
+                )
+            }
+
+            else -> {
+                Text("エラーが発生しました。"+"時間をおいてもう一度お試しください。" ,color=Color.Black)
+
+                Spacer(Modifier.height(50.dp))
+
+                Image(
+                    painter = painterResource(id = R.drawable.x),
+                    contentDescription = null,
+                    modifier = Modifier.size(150.dp)
+                )
+            }
+
+        }
 
         Spacer(Modifier.height(30.dp))
-
         Submit(
             label = "閉じる",
             onClick = onClose,

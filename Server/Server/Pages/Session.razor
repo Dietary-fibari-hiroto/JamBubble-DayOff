@@ -1,0 +1,379 @@
+﻿@page "/session/{sessionId}"
+@using Server.src.Signaling.Models
+@using Server.src.Application.Services
+@using Server.src.Signaling.Hubs
+@using Microsoft.AspNetCore.SignalR.Client
+@inject SessionManager SessionManager
+@inject SpotifySearchService SpotifyService
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+<PageTitle>Music Session - @SessionId</PageTitle>
+
+<div class="container">
+    @if (!_isJoined)
+    {
+        <div class="join-container">
+            <h2>セッションに参加</h2>
+            <div class="form-group">
+                <label>名前を入力してください</label>
+                <input type="text" class="form-control" @bind="_guestName" placeholder="Your Name" />
+            </div>
+            <button class="btn btn-primary" @onclick="JoinSession" disabled="@_isConnecting">
+                @if (_isConnecting)
+                {
+                    <span>接続中...</span>
+                }
+                else
+                {
+                    <span>参加</span>
+                }
+            </button>
+            @if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                <div class="alert alert-danger mt-3">@_errorMessage</div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="session-container">
+            <h2>Music Session: @SessionId</h2>
+            <p>ようこそ、@_guestName さん！</p>
+
+            <div class="search-section">
+                <h3>曲を検索</h3>
+                <div class="search-box">
+                    <input type="text" class="form-control" @bind="_searchQuery" @bind:event="oninput" placeholder="曲名、アーティスト名で検索..." />
+                    <button class="btn btn-secondary" @onclick="SearchTracks">検索</button>
+                </div>
+
+                @if (_isSearching)
+                {
+                    <p>検索中...</p>
+                }
+                else if (_searchResults.Any())
+                {
+                    <div class="search-results">
+                        @foreach (var track in _searchResults)
+                        {
+                            <div class="track-item">
+                                @if (!string.IsNullOrEmpty(track.AlbumImageUrl))
+                                {
+                                    <img src="@track.AlbumImageUrl" alt="Album" class="album-image" />
+                                }
+                                <div class="track-info">
+                                    <div class="track-name">@track.Name</div>
+                                    <div class="track-artist">@track.Artist - @track.Album</div>
+                                </div>
+                                <button class="btn btn-sm btn-success" @onclick="() => AddTrack(track)">追加</button>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="playlist-section">
+                <h3>プレイリスト</h3>
+                @if (_playlist.Any())
+                {
+                    <div class="playlist">
+                        @foreach (var item in _playlist.OrderBy(p => p.Order))
+                        {
+                            <div class="playlist-item">
+                                @if (!string.IsNullOrEmpty(item.AlbumImageUrl))
+                                {
+                                    <img src="@item.AlbumImageUrl" alt="Album" class="album-image-small" />
+                                }
+                                <div class="track-info">
+                                    <div class="track-name">@item.TrackName</div>
+                                    <div class="track-artist">@item.ArtistName</div>
+                                    <div class="track-requester">リクエスト: @item.RequestedBy</div>
+                                </div>
+                                @if (item.RequestedByUserId == _userId)
+                                {
+                                    <button class="btn btn-sm btn-danger" @onclick="() => RemoveTrack(item.Id)">削除</button>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p>プレイリストは空です。曲を追加してください！</p>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .join-container {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .form-group {
+        margin: 20px 0;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #1db954;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #666;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .search-section, .playlist-section {
+        margin: 30px 0;
+    }
+
+    .search-box {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .search-results, .playlist {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .track-item, .playlist-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        gap: 15px;
+    }
+
+    .album-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .album-image-small {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .track-info {
+        flex: 1;
+    }
+
+    .track-name {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .track-artist {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .track-requester {
+        color: #999;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .alert {
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string SessionId { get; set; } = string.Empty;
+
+    private HubConnection? _hubConnection;
+    private string _guestName = string.Empty;
+    private string _userId = string.Empty;
+    private bool _isJoined = false;
+    private bool _isConnecting = false;
+    private string _errorMessage = string.Empty;
+
+    private string _searchQuery = string.Empty;
+    private bool _isSearching = false;
+    private List<SpotifyTrackSearchResult> _searchResults = new();
+    private List<PlaylistItem> _playlist = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InitializeSignalR();
+    }
+
+    private async Task InitializeSignalR()
+    {
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/musicsessionhub"))
+            .Build();
+
+        _hubConnection.On<List<PlaylistItem>>("PlaylistUpdated", (playlist) =>
+        {
+            _playlist = playlist;
+            InvokeAsync(StateHasChanged);
+        });
+
+        _hubConnection.On("SessionClosed", () =>
+        {
+            _errorMessage = "セッションが終了しました";
+            _isJoined = false;
+            InvokeAsync(StateHasChanged);
+        });
+
+        await _hubConnection.StartAsync();
+    }
+
+    private async Task JoinSession()
+    {
+        if (string.IsNullOrWhiteSpace(_guestName))
+        {
+            _errorMessage = "名前を入力してください";
+            return;
+        }
+
+        _isConnecting = true;
+        _errorMessage = string.Empty;
+
+        try
+        {
+            var request = new JoinSessionRequest
+            {
+                SessionId = SessionId,
+                GuestName = _guestName
+            };
+
+            var result = await _hubConnection!.InvokeAsync<bool>("JoinSession", request);
+            if (result)
+            {
+                _userId = Guid.NewGuid().ToString(); // 実際はサーバーから取得
+                _isJoined = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"セッションへの参加に失敗しました: {ex.Message}";
+        }
+        finally
+        {
+            _isConnecting = false;
+        }
+    }
+
+    private async Task SearchTracks()
+    {
+        if (string.IsNullOrWhiteSpace(_searchQuery))
+            return;
+
+        _isSearching = true;
+        try
+        {
+            _searchResults = await SpotifyService.SearchTracksAsync(_searchQuery);
+        }
+        finally
+        {
+            _isSearching = false;
+        }
+    }
+
+    private async Task AddTrack(SpotifyTrackSearchResult track)
+    {
+        try
+        {
+            var request = new AddTrackRequest
+            {
+                SessionId = SessionId,
+                SpotifyTrackId = track.Id,
+                TrackName = track.Name,
+                ArtistName = track.Artist,
+                AlbumName = track.Album,
+                AlbumImageUrl = track.AlbumImageUrl,
+                DurationMs = track.DurationMs,
+                RequestedBy = _guestName,
+                RequestedByUserId = _userId
+            };
+
+            await _hubConnection!.InvokeAsync("AddTrack", request);
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"曲の追加に失敗しました: {ex.Message}";
+        }
+    }
+
+    private async Task RemoveTrack(string itemId)
+    {
+        try
+        {
+            var request = new RemoveTrackRequest
+            {
+                SessionId = SessionId,
+                ItemId = itemId,
+                RequestedByUserId = _userId
+            };
+
+            await _hubConnection!.InvokeAsync("RemoveTrack", request);
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"曲の削除に失敗しました: {ex.Message}";
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_hubConnection is not null)
+        {
+            await _hubConnection.DisposeAsync();
+        }
+    }
+}

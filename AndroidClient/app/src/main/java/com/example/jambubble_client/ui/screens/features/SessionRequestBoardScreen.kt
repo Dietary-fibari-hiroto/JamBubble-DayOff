@@ -23,10 +23,12 @@ import com.example.jambubble_client.R
 import com.example.jambubble_client.ui.components.buttons.ReturnButton
 import com.example.jambubble_client.ui.components.buttons.Submit
 import com.example.jambubble_client.ui.styles.ColorSecondaryBg
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
 fun SessionRequestBoardScreen(
     navController: NavController,
+    sessionViewModel: MusicSessionViewModel,
     title: String = "ただ君に晴れ",
     artist: String = "ヨルシカ"
 ) {

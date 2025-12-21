@@ -25,9 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.jambubble_client.R
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
-fun SessionPlaylistScreen(navController: NavController) {
+fun SessionPlaylistScreen(navController: NavController,sessionViewModel: MusicSessionViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
