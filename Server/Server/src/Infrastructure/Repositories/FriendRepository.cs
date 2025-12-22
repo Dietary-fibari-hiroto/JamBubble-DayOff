@@ -36,8 +36,10 @@ namespace Server.src.Repositories
         // ユーザーIDとフレンドIDでフレンドを取得
         public async Task<Friend?> GetFriendByUserIdAsync(int userId, int friendId, bool asTracking = true)
         {
+            var id1 = Math.Min(userId, friendId);
+            var id2 = Math.Max(userId, friendId);
             IQueryable<Friend> query = _context.Friends
-                .Where(f => (f.User1Id == userId && f.User2Id == friendId) || (f.User2Id == userId && f.User1Id == friendId))
+                .Where(f => f.User1Id == id1 && f.User2Id == id2)
                 .Include(f => f.User1)
                 .Include(f => f.User2);
 
@@ -62,6 +64,14 @@ namespace Server.src.Repositories
         {
             _context.Friends.Remove(friend);
             await _context.SaveChangesAsync();
+        }
+
+        // ユーザーIDとフレンドIDでフレンド関係か確認
+        public async Task<bool> IsFriendAsync(int userId, int friendId)
+        {
+            var id1 = Math.Min(userId, friendId);
+            var id2 = Math.Max(userId, friendId);
+            return await _context.Friends.AnyAsync(f => f.User1Id == id1 && f.User2Id == id2);
         }
     }
 }
