@@ -10,5 +10,6 @@ namespace Server.src.Interfaces
         Task<FriendRequest> AddFriendRequestAsync(FriendRequest friendRequest);
         Task UpdateAsync(FriendRequest friendRequest);
         Task DeleteAsync(FriendRequest friendRequest);
+        Task<bool> IsFriendRequestExistAsync(int sendUserId, int targetUserId);
     }
 }

@@ -73,5 +73,12 @@ namespace Server.src.Repositories
             _context.FriendRequests.Remove(friendRequest);
             await _context.SaveChangesAsync();
         }
+
+        // フレンドリクエストの存在確認
+        public async Task<bool> IsFriendRequestExistAsync(int sendUserId, int targetUserId)
+        {
+            return await _context.FriendRequests
+                .AnyAsync(fr => fr.SendUserId == sendUserId && fr.PassUserId == targetUserId);
+        }
     }
 }

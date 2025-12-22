@@ -9,5 +9,6 @@ namespace Server.src.Interfaces
         public Task<Friend?> GetFriendByUserIdAsync(int userId, int friendId, bool asTracking = true);
         public Task<Friend> AddFriendAsync(Friend friend);
         public Task DeleteFriendAsync(Friend friend);
+        public Task<bool> IsFriendAsync(int userId, int friendId);
     }
 }

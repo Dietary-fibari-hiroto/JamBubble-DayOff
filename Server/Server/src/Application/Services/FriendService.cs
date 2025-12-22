@@ -182,7 +182,7 @@ namespace Server.src.Services
             };
             friendRequest.SetIds(); // User1IdとUser2Idを設定
 
-            // すでにリクエストがあるか確認
+            // すでにどちらからのリクエストがあるか確認
             var existingRequest = await _friendRequestRepo.GetFriendRequestByIdsAsync(friendRequest.User1Id, friendRequest.User2Id, false);
             if (existingRequest != null)
             {
@@ -200,7 +200,7 @@ namespace Server.src.Services
         {
             var id1 = userId < requestUserId ? userId : requestUserId;
             var id2 = userId > requestUserId ? userId : requestUserId;
-            // フレンドリクエストが存在するか確認
+            // どちらかからのフレンドリクエストが存在するか確認
             var friendRequest = await _friendRequestRepo.GetFriendRequestByIdsAsync(id1, id2, true);
             if (friendRequest == null)
             {
@@ -239,6 +239,7 @@ namespace Server.src.Services
             {
                 return false;
             }
+
             await _friendRequestRepo.DeleteAsync(friendRequest);
             return true;
         }

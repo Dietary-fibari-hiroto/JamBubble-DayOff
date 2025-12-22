@@ -45,12 +45,19 @@ namespace Server.src.Api.Controllers
         /// <summary>
         /// ユーザーのプロフィール情報を返す
         /// </summary>
-        [AllowAnonymous]
-        [HttpGet("{id}")]
+        [Authorize]
+        [HttpGet("{targetid}")]
         [ProducesResponseType(typeof(UserProfileResponseDto), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetProfile(int id)
+        public async Task<IActionResult> GetProfile(int targetid)
         {
-            var profile = await _userService.GetUserProfileAsync(id);
+            var userId = User.GetUserId(); // JWTからIDを取得
+
+            if (userId == null)
+            {
+                return Unauthorized("Invalid user ID format in token.");
+            }
+
+            var profile = await _userService.GetUserProfileAsync(userId.Value, targetid);
             if (profile == null)
             {
                 return NotFound("User not found.");
