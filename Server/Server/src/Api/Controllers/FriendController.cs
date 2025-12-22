@@ -130,12 +130,12 @@ namespace Server.src.Api.Controllers
         }
 
         /// <summary>
-        /// 送信・受信したフレンドリクエスト一覧を取得
+        /// 受信したフレンドリクエスト一覧を取得
         /// </summary>
         /// <returns></returns>
         [Authorize]
         [HttpGet("requests")]
-        [ProducesResponseType(typeof(FriendRequestSndRcvDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(FriendRequestRcvDto), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetFriendRequests()
         {
             var userId = User.GetUserId(); // JWTからIDを取得
@@ -144,7 +144,7 @@ namespace Server.src.Api.Controllers
                 return Unauthorized("Invalid user ID format in token.");
             }
 
-            var friendRequests = await _friendService.GetfriendRequestSndRcv(userId.Value);
+            var friendRequests = await _friendService.GetFriendRequestsReceivedAsync(userId.Value);
             return Ok(friendRequests);
         }
 

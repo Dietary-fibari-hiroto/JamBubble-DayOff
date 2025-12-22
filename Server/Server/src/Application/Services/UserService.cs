@@ -8,22 +8,28 @@ namespace Server.src.Services
 {
     public class UserService:IUserService
     {
-        private readonly IUserRepository _repo;
+        private readonly IUserRepository _userRepo;
+        private readonly IFriendRepository _friendRepo;
+        private readonly IFriendRequestRepository _friendRequestRepo;
         private readonly IPasswordHasher<User> _passwordHasher;
 
         private readonly ILogger<UserService> _logger;
-        public UserService(IUserRepository repo, IPasswordHasher<User> passwordHasher, ILogger<UserService> logger)
+        public UserService(IUserRepository userRepo, IPasswordHasher<User> passwordHasher, ILogger<UserService> logger, IFriendRepository friendRepo, IFriendRequestRepository friendRequestRepo)
         {
-            _repo = repo;
+            _userRepo = userRepo;
+            _friendRepo = friendRepo;
+            _friendRequestRepo = friendRequestRepo;
             _passwordHasher = passwordHasher;
 
             _logger = logger;
+            
         }
 
+        // ユーザーのすべての情報を取得
         public async Task<UserAllDataResponseDto?> GetUserAllDataAsync(int userId)
         {
             // IDで取得
-            var user = await _repo.GetUserByIdAsync(userId);
+            var user = await _userRepo.GetUserByIdAsync(userId);
             if (user == null)
             {
                 return null;
@@ -31,27 +37,43 @@ namespace Server.src.Services
 
             return new UserAllDataResponseDto(user);
         }
-        public async Task<UserProfileResponseDto?> GetUserProfileAsync(int userId)
+
+        // ユーザープロフィール情報を取得
+        public async Task<UserProfileResponseDto?> GetUserProfileAsync(int userId, int targetId)
         {
             // IDで取得
-            var user = await _repo.GetUserByIdAsync(userId, false);
-            if (user == null)
+            var targetUser = await _userRepo.GetUserByIdAsync(targetId, false);
+            if (targetUser == null)
             {
                 return null;
             }
 
-            return new UserProfileResponseDto(user);
+            // 関係の確認
+            var ship = UserRelationshipStatus.None;
+
+            if (await _friendRepo.IsFriendAsync(userId, targetId))
+            {
+                ship = UserRelationshipStatus.Friend;
+            }
+            else if (await _friendRequestRepo.IsFriendRequestExistAsync(userId, targetId))
+            {
+                ship = UserRelationshipStatus.Pending;
+            }
+
+            return new UserProfileResponseDto(targetUser, ship);
         }
 
+        // Emailでユーザーが存在するか確認
         public Task<User?> UserExistsAsync(string email)
         {
-            return _repo.GetUserByEmailAsync(email);
+            return _userRepo.GetUserByEmailAsync(email);
         }
 
+        // ユーザー登録
         public async Task<UserAllDataResponseDto?> AddUserAsync(RegisterUserRequestDto userDto)
         {
             // すでに同じEmailのユーザーが存在するか確認
-            var existingUser = await _repo.GetUserByEmailAsync(userDto.Email);
+            var existingUser = await _userRepo.GetUserByEmailAsync(userDto.Email);
             if (existingUser != null)
             {
                 throw new InvalidOperationException("EmailConflict");
@@ -74,22 +96,23 @@ namespace Server.src.Services
             // パスワードのハッシュ化
             user.Password = _passwordHasher.HashPassword(user, user.Password);
 
-            var addedUser = await _repo.AddUserAsync(user);
+            var addedUser = await _userRepo.AddUserAsync(user);
 
             return new UserAllDataResponseDto(addedUser);
         }
 
+        // ユーザー情報更新
         public async Task<UserAllDataResponseDto?> UpdateUserAsync(UpdateUserAllDataRequestDto updateDataDto, int userId)
         {
             // IDで取得
-            var updateUser = await _repo.GetUserByIdAsync(userId);
+            var updateUser = await _userRepo.GetUserByIdAsync(userId);
             if (updateUser == null) return null;
 
             // Emailが重複していないかをチェック
             var newEmail = updateDataDto.Email;
             if(newEmail != null && newEmail != updateUser.Email)
             {
-                var existingUser = await _repo.GetUserByEmailAsync(newEmail);
+                var existingUser = await _userRepo.GetUserByEmailAsync(newEmail);
                 if (existingUser != null && existingUser.Id != userId)
                 {
                     throw new InvalidOperationException("EmailConflict");
@@ -103,15 +126,16 @@ namespace Server.src.Services
                 updateUser.Password = _passwordHasher.HashPassword(updateUser, newPassword);
             }
             
-            await _repo.UpdateAsync(updateUser); // 更新処理
+            await _userRepo.UpdateAsync(updateUser); // 更新処理
 
             return new UserAllDataResponseDto(updateUser);
         }
 
+        // ユーザー削除
         public async Task<bool> DeleteUserAsync(int userId)
         {
             // IDで取得
-            var deleteUser = await _repo.GetUserByIdAsync(userId);
+            var deleteUser = await _userRepo.GetUserByIdAsync(userId);
             if (deleteUser == null) return false;
 
             // TODO :画像データの削除処理は必要か？あとここに書くべきか？
@@ -125,14 +149,15 @@ namespace Server.src.Services
                 }
             }
 
-            await _repo.DeleteUserAsync(deleteUser);
+            await _userRepo.DeleteUserAsync(deleteUser);
 
             return true;
         }
 
+        // ユーザープロバイダー情報取得
         public async Task<List<UserProviderResponseDto>?> GetUserProvidersAsync(int userId)
         {
-            var userProviders = await _repo.GetUserProvidersByUserIdAsync(userId);
+            var userProviders = await _userRepo.GetUserProvidersByUserIdAsync(userId);
             if (userProviders == null)
             {
                 return null;
@@ -141,11 +166,12 @@ namespace Server.src.Services
             return userProviders.Select(up => new UserProviderResponseDto(up)).ToList();
         }
 
+        // ユーザープロバイダー情報登録
         public async Task<bool> AddUserProviderAsync(RegisterUserProviderRequestDto userProviderDto, int userId)
         {
             // ユーザー情報を引っ張ってきてその中にくっついているプロバイダー情報を書き換えて保存し登録する
             // ユーザーが存在するか確認
-            var userEntity = await _repo.GetUserByIdAsync(userId);
+            var userEntity = await _userRepo.GetUserByIdAsync(userId);
             if (userEntity == null)
             {
                 return false;
@@ -162,15 +188,16 @@ namespace Server.src.Services
             // TODO:ハッシュ化したパスは複号不可だから保存しても意味ないのでは？
             //userEntity.Password = _passwordHasher.HashPassword(userEntity, userEntity.Password);
 
-            await _repo.UpdateAsync(userEntity);
+            await _userRepo.UpdateAsync(userEntity);
 
             return true;
         }
 
+        // ユーザープロバイダー情報削除
         public async Task<bool> DeleteUserProviderAsync(DeleteUserProviderRequestDto providerDto, int userId)
         {
             // ユーザーとプロバイダーリストが存在するか確認
-            var userEntity = await _repo.GetUserByIdAsync(userId);
+            var userEntity = await _userRepo.GetUserByIdAsync(userId);
             if (userEntity == null || userEntity.UserProviders == null)
             {
                 return false;
@@ -180,7 +207,7 @@ namespace Server.src.Services
             var targetProvider = userEntity.UserProviders.FirstOrDefault(up => up.ProviderId == providerDto.ProviderId);
             if (targetProvider != null)
             {
-                await _repo.DeleteUserProviderAsync(targetProvider);
+                await _userRepo.DeleteUserProviderAsync(targetProvider);
                 return true;
             }
             else

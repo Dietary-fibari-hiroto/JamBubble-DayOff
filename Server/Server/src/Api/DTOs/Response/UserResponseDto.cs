@@ -56,24 +56,36 @@ namespace Server.src.DTOs
         }
     }
 
+    public enum UserRelationshipStatus
+    {
+        None = 0,         // 関係なし
+        Friend = 1,       // フレンド
+        Pending = 2,      // 申請中
+    }
+
 
     public class UserProfileResponseDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Gender { get; set; }
         public string? ImgUrl { get; set; }
         public string? Message { get; set; }
         public int SessionCount { get; set; }
         public string? MusicId { get; set; }
+        public UserRelationshipStatus RelationshipStatus { get; set; }
 
-        public UserProfileResponseDto(User user)
+
+        public UserProfileResponseDto(User user, UserRelationshipStatus status)
         {
+            this.Id = user.Id;
             this.Name = user.Name;
             this.Gender = user.Gender;
             this.ImgUrl = user.ImgUrl;
             this.Message = user.Message;
             this.SessionCount = user.UserHistory!.SessionCount;
             this.MusicId = user.FavoriteMusic!.MusicId;
+            this.RelationshipStatus = status;
         }
     }
 

@@ -11,6 +11,7 @@ namespace Server.src.Interfaces
         public Task<FornowDetailResponseDto?> GetFriendFornowDetailAsync(int userId, int fornowId);
         public Task<bool> SetLikeToFornowAsync(int userId, int friendId);
         public Task<FriendRequestSndRcvDto> GetfriendRequestSndRcv(int userId);
+        public Task<List<FriendRequestRcvDto>> GetFriendRequestsReceivedAsync(int userId);
         public Task<bool> RequestFriendAsync(int userId, int friendId);
         public Task<bool> ProprietyFriendAsync(int userId, int friendId, bool propriety);
         public Task<bool> DeleteFriendRequestAsync(int userId, int friendId);

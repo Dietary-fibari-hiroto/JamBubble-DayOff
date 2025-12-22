@@ -13,14 +13,14 @@ namespace Server.src.Repositories
             _context = context;
         }
 
-        // 送信者IDと受信者IDでフレンドリクエストを取得
-        public async Task<FriendRequest?> GetFriendRequestByIdsAsync(int sendUerId, int passUserId, bool asTracking = true)
+        // ID1とID2でフレンドリクエストを取得
+        public async Task<FriendRequest?> GetFriendRequestByIdsAsync(int id1, int id2, bool asTracking = true)
         {
             IQueryable<FriendRequest> query = _context.FriendRequests
-                .Where(fr => fr.SendUserId == sendUerId && fr.PassUserId == passUserId);
+                .Where(fr => fr.User1Id == id1 && fr.User2Id == id2);
             if (!asTracking)
             {
-                query = query.AsNoTracking(); // 追跡オフ 
+                query = query.AsNoTracking();
             }
             return await query.FirstOrDefaultAsync();
         }
@@ -72,6 +72,13 @@ namespace Server.src.Repositories
         {
             _context.FriendRequests.Remove(friendRequest);
             await _context.SaveChangesAsync();
+        }
+
+        // フレンドリクエストの存在確認
+        public async Task<bool> IsFriendRequestExistAsync(int sendUserId, int targetUserId)
+        {
+            return await _context.FriendRequests
+                .AnyAsync(fr => fr.SendUserId == sendUserId && fr.PassUserId == targetUserId);
         }
     }
 }
