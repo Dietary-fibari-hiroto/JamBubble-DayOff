@@ -1,5 +1,6 @@
 .env
 .env.*
+appsettings.json
 
 ## =========================================
 ## .NET / ASP.NET / MAUI / Blazor 共通設定

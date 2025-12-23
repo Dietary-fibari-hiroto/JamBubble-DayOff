@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\signaling\\hubs\\musicsessionhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\signaling\\hubs\\musicsessionhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\api\\controllers\\favoritesongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\api\\controllers\\favoritesongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\src\\signaling\\hubs\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\src\\signaling\\hubs\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|c:\\users\\2230372\\mydata\\yuzu_product\\jambubble-dayoff\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{33456E55-856B-4F7F-B8DA-2398A56284C1}|Server\\Server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Api\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Server\\src\\Api\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAADwvzUAAAAgAAAAAAAAAA==",
+              "Title": "MusicSessionHub.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
+              "RelativeDocumentMoniker": "Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
+              "RelativeToolTip": "Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T12:50:24.812Z",
+              "WhenOpened": "2025-12-23T10:23:56.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FavoriteSongController.cs",
-              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\FavoriteSongController.cs",
-              "RelativeDocumentMoniker": "Server\\src\\Api\\Controllers\\FavoriteSongController.cs",
-              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Api\\Controllers\\FavoriteSongController.cs",
-              "RelativeToolTip": "Server\\src\\Api\\Controllers\\FavoriteSongController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABOAAAAAAAAAA==",
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\SessionManager.cs",
+              "RelativeDocumentMoniker": "Server\\src\\Signaling\\Hubs\\SessionManager.cs",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\SessionManager.cs",
+              "RelativeToolTip": "Server\\src\\Signaling\\Hubs\\SessionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T08:49:30.347Z",
+              "WhenOpened": "2025-12-23T10:19:30.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\appsettings.json",
+              "RelativeToolTip": "Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-22T01:04:44.69Z",
               "EditorCaption": ""
             }
           ]

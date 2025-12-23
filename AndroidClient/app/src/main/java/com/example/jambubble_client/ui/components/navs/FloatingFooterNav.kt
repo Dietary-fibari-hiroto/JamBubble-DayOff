@@ -36,14 +36,13 @@ fun FloatingFooterNav(
         contentAlignment = Alignment.BottomCenter
     ) {
 
-        // Glass Background
         Box(
             modifier = Modifier
                 .width(360.dp)
                 .height(80.dp)
         ) {
 
-            // ガラス背景（ぼかし）
+            //背景
             Box(
                 modifier = Modifier
                     .matchParentSize()
@@ -53,7 +52,6 @@ fun FloatingFooterNav(
                     .blur(18.dp)
             )
 
-            // アイコン行
             Row(
                 modifier = Modifier
                     .matchParentSize()

@@ -11,6 +11,7 @@ using Server.src.DTOs;
 using Server.src.Entities;
 using Server.src.Middlewares;
 using Server.src.Services;
+using Server.src.Signaling.Hubs;
 using System.Reflection;
 using System.Security.Cryptography.Xml;
 using System.Text.Json;
@@ -24,6 +25,12 @@ builder.Services.AddControllers(); //API�ŃR���g���[���g��
 builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
 
 builder.Services.AddCustomSwagger(); // Swaggerの設定
+
+//Signalingの設定
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+builder.Services.AddSignalR();
+
 
 var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
@@ -71,7 +78,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();//��L�݌v�}����ɍ\�z
 
-app.MapGet("/", () => "Hello World!");
 
 //SwaggerUI�̃G���h�|�C���g��UI�ǂݍ��݁��\�z
 if (app.Environment.IsDevelopment())
@@ -81,13 +87,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     // await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
 }
-
+app.UseRouting();
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
-
 app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理ミドルウェア
 
 app.UseAuthentication(); // 認証ミドルウェア
 app.UseAuthorization(); // 認可ミドルウェア
+
+//Blazerの設定
+app.MapRazorPages();
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+app.MapHub<MusicSessionHub>("/musicsessionhub");
 
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 

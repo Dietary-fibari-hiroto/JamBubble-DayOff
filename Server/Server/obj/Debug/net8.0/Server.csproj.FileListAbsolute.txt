@@ -149,3 +149,13 @@ C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\ne
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\obj\Debug\net8.0\Server.xml
 C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\EmbedIO.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\SpotifyAPI.Web.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\SpotifyAPI.Web.Auth.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\bin\Debug\net8.0\Swan.Lite.dll
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\obj\Debug\net8.0\Server.RazorAssemblyInfo.cache
+C:\Users\2230372\MyData\Yuzu_Product\JamBubble-DayOff\Server\Server\obj\Debug\net8.0\Server.RazorAssemblyInfo.cs

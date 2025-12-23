@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -29,6 +30,7 @@ fun Submit(
     backgroundColor: Color = ColorPrimary,
     textColor: Color = Color.White,
     iconRes: Int? =null,
+    iconSize: Int = 35
 ) {
     Button(
         onClick = onClick,
@@ -37,22 +39,23 @@ fun Submit(
             .height(50.dp),
         shape = RoundedCornerShape(10.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = backgroundColor,     // ← Button 背景をここで設定する
-            contentColor = textColor              // ↑ Text 色もこれ
+            containerColor = backgroundColor,
+            contentColor = textColor
         ),
-        contentPadding = PaddingValues(0.dp)       // ← 余白を全部ゼロにする
+        contentPadding = PaddingValues(0.dp)
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(), // ← これが超重要！
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceAround
+            horizontalArrangement = Arrangement.Center
         ) {
             if (iconRes != null) {
                 Image(
                     painter = painterResource(id = iconRes),
                     contentDescription = null,
-                    modifier = Modifier.size(35.dp)
+                    modifier = Modifier.size(iconSize.dp)
                 )
+                Spacer(Modifier.width(20.dp))
             }
 
             Text(

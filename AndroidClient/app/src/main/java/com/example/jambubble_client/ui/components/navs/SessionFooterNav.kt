@@ -19,11 +19,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.example.jambubble_client.R
+import com.example.jambubble_client.ui.screens.features.ScreenState
 
 @Composable
-fun SessionFooterNav(navController: NavController){
+fun SessionFooterNav(onChangeState:(ScreenState) -> Unit){
     Box(        modifier = Modifier
         .fillMaxSize().padding(bottom = 20.dp),
         contentAlignment = Alignment.BottomCenter
@@ -38,7 +38,7 @@ fun SessionFooterNav(navController: NavController){
         ) {
             Box(
                 modifier = Modifier.size(60.dp)
-                    .clickable{navController.navigate("function/session/link")},
+                    .clickable{onChangeState(ScreenState.LINK)},
                 contentAlignment = Alignment.Center
                 ){
                 Image(
@@ -49,7 +49,7 @@ fun SessionFooterNav(navController: NavController){
             }
             Box(
                 modifier = Modifier.size(60.dp)
-                    .clickable{navController.navigate("function/session/request")},
+                    .clickable{onChangeState(ScreenState.SEARCH)},
                 contentAlignment = Alignment.Center
             ){
                 Image(
@@ -60,7 +60,7 @@ fun SessionFooterNav(navController: NavController){
             }
             Box(
                     modifier = Modifier.size(60.dp)
-                        .clickable{navController.navigate("function/session/playlist")},
+                        .clickable{onChangeState(ScreenState.PLAYLIST)},
                 contentAlignment = Alignment.Center
             ){
             Image(

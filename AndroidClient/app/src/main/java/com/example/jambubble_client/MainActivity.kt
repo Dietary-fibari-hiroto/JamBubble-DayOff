@@ -20,6 +20,7 @@ import com.example.jambubble_client.ui.styles.AppTheme
 import com.example.jambubble_client.ui.viewmodel.auths.SpotifyAuthViewModel
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelModelFactory
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -62,6 +63,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    //セッション時に必要なビューモデルを初期化
+    private val SessionViewModel: MusicSessionViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +79,7 @@ class MainActivity : ComponentActivity() {
 
         setContent{
             AppTheme {
-                App(musicPannelViewModel,authViewModel,searchViewModel)
+                App(musicPannelViewModel,authViewModel,searchViewModel,SessionViewModel)
             }
         }
     }

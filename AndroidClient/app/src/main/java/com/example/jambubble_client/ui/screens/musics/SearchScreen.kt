@@ -237,7 +237,7 @@ fun ProviderSwitch(
 }
 
 @Composable
-private fun SearchBar(
+public fun SearchBar(
     query: String,
     onQueryChange: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -263,7 +263,7 @@ private fun SearchBar(
 }
 
 @Composable
-private fun SearchResults(
+public fun SearchResults(
     tracks: List<Track>,
     musicPannelViewModel: MusicPannelViewModel
 ) {
@@ -282,7 +282,7 @@ private fun SearchResults(
 }
 
 @Composable
-private fun TrackItem(
+public fun TrackItem(
     track: Track,
     onClick: () -> Unit
 ) {
@@ -290,7 +290,11 @@ private fun TrackItem(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp)
-            .clickable(onClick = onClick)
+            .clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Black
+        )
+
     ) {
         Row(
             modifier = Modifier.padding(12.dp),
@@ -301,7 +305,7 @@ private fun TrackItem(
                 model = track.imageUrl,
                 contentDescription = null,
                 modifier = Modifier
-                    .size(60.dp)
+                    .size(50.dp)
                     .clip(RoundedCornerShape(4.dp)),
                 contentScale = ContentScale.Crop
             )
@@ -313,6 +317,7 @@ private fun TrackItem(
                 Text(
                     text = track.name,
                     style = MaterialTheme.typography.titleMedium,
+                    color = Color.White,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -339,7 +344,7 @@ private fun TrackItem(
 }
 
 @Composable
-private fun LoadingContent() {
+public fun LoadingContent() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -349,7 +354,7 @@ private fun LoadingContent() {
 }
 
 @Composable
-private fun ErrorContent(
+public fun ErrorContent(
     message: String,
     onDismiss: () -> Unit
 ) {
@@ -381,7 +386,7 @@ private fun ErrorContent(
 }
 
 @Composable
-private fun EmptyContent() {
+public fun EmptyContent() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -404,7 +409,7 @@ private fun EmptyContent() {
 }
 
 @Composable
-private fun InitialContent() {
+public fun InitialContent() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center

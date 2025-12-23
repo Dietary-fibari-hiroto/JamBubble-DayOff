@@ -13,9 +13,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.jambubble_client.ui.components.buttons.ReturnButton
 import com.example.jambubble_client.ui.components.cards.MemberCard
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
-fun SessionMemberScreen(navController: NavController) {
+fun SessionMemberScreen(navController: NavController,sessionViewModel: MusicSessionViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()

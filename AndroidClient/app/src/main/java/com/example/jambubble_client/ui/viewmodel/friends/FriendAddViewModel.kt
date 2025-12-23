@@ -6,14 +6,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.jambubble_client.data.api.RetrofitClient
 import com.example.jambubble_client.data.dto.OtherUserProfileDto
+import com.example.jambubble_client.data.repository.FriendRepository
+import com.example.jambubble_client.data.repository.FriendRequestResult
 import com.example.jambubble_client.data.repository.UserRepository
+import com.example.jambubble_client.ui.screens.friends.RequestResultEnum
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class FriendAddViewModel(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val friendRepository: FriendRepository
 ): ViewModel() {
+
+    private val _requestState = MutableStateFlow(RequestResultEnum.Default)
+    val requestState: StateFlow<RequestResultEnum> = _requestState
+
 
     private val _friendState =
         MutableStateFlow<Result<OtherUserProfileDto>?>(null)
@@ -36,6 +44,29 @@ class FriendAddViewModel(
     fun clearResult(){
         _qrResult.value = null
     }
+
+
+    //以下フレンド関連
+    fun requestFriend(targetUserId: Int) {
+        viewModelScope.launch {
+            when (friendRepository.postFriendRequest(targetUserId)) {
+                FriendRequestResult.Success -> {
+                    _requestState.value = RequestResultEnum.Requested
+                }
+                FriendRequestResult.AlreadyFriend -> {
+                    _requestState.value = RequestResultEnum.AlreadyFriend
+                }
+                FriendRequestResult.AlreadyRequested -> {
+                    _requestState.value = RequestResultEnum.AlreadyRequested
+                }
+                else -> {
+                    _requestState.value = RequestResultEnum.Error
+                }
+
+            }
+        }
+    }
+
 }
 
 
@@ -45,7 +76,9 @@ class FriendAddViewModelFactory(
 ): ViewModelProvider.Factory{
     override fun <T:ViewModel>create(modelClass:Class<T>):T{
         val api = RetrofitClient.userApi
+        val friendApi = RetrofitClient.friendApi
         val repository = UserRepository(api, context.applicationContext)
-        return FriendAddViewModel(repository) as T
+        val friendRepository = FriendRepository(friendApi,context.applicationContext)
+        return FriendAddViewModel(repository,friendRepository) as T
     }
 }

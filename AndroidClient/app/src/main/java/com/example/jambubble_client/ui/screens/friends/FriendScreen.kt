@@ -67,8 +67,8 @@ fun FriendScreen(
         ) {
             FriendMenuButton(R.drawable.user_round_plus, onClick = {navController.navigate("app/friend/add")})
             FriendMenuButton(R.drawable.map_pinned)
-            FriendMenuButton(R.drawable.mail)
-            FriendMenuButton(R.drawable.message_circle_plus)
+            FriendMenuButton(R.drawable.mail, onClick = {navController.navigate("app/friend/maillist")})
+            FriendMenuButton(R.drawable.message_circle_plus, onClick = {navController.navigate("app/friend/requestlist")})
         }
 
         // --- ForNow ---
