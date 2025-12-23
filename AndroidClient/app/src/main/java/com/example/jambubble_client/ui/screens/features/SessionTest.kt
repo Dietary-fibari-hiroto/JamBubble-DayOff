@@ -97,7 +97,7 @@ fun SessionTest(viewModel: MusicSessionViewModel,searchViewModel: SearchViewMode
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            // エラーメッセージ表示
+            //エラーメッセージ表示
             errorMessage?.let { error ->
                 Card(
                     modifier = Modifier
@@ -130,7 +130,7 @@ fun SessionTest(viewModel: MusicSessionViewModel,searchViewModel: SearchViewMode
             }
 
             if (!isSessionActive) {
-                // セッション未開始状態
+                //セッション未開始状態
                 SessionStartCard(
                     onStartSession = { deviceId ->
                         viewModel.createSession(deviceId)
@@ -138,24 +138,24 @@ fun SessionTest(viewModel: MusicSessionViewModel,searchViewModel: SearchViewMode
                     isLoading = isLoading
                 )
             } else {
-                // セッション情報表示
+                //セッション情報表示
                 SessionInfoCard(
                     sessionId = sessionId ?: "",
                     guestUrl = guestUrl ?: "",
-                    onCloseSession = { viewModel.closeSession() }
+                    onCloseSession = { viewModel.closeSession() }//セッション終了トリガー
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // プレイリスト表示
+                //プレイリスト表示
                 PlaylistSection(
                     playlist = playlist,
                     onRemoveTrack = { itemId -> viewModel.removeTrack(itemId) },
                     onReorderPlaylist = { orderedIds -> viewModel.reorderPlaylist(orderedIds) }
                 )
 
-                // TODO: Spotify Remote SDK統合
-                // SpotifyPlayerSection(playlist)
+                //TODO: Spotify Remote SDK統合
+                //SpotifyPlayerSection(playlist)
             }
         }
 
@@ -303,7 +303,7 @@ fun PlaylistSection(
                     text = "プレイリスト (${playlist.size}曲)",
                     style = MaterialTheme.typography.titleMedium
                 )
-                // TODO: 並び替えボタン実装
+                //TODO: 並び替えボタン実装
             }
 
             Spacer(modifier = Modifier.height(8.dp))

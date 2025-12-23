@@ -1,5 +1,6 @@
 package com.example.jambubble_client.ui.screens.features
 
+import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -15,14 +16,23 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -33,6 +43,7 @@ import com.example.jambubble_client.R
 import com.example.jambubble_client.ui.components.buttons.Submit
 import com.example.jambubble_client.ui.components.elements.Tag
 import com.example.jambubble_client.ui.styles.ColorAppleMusic
+import com.example.jambubble_client.ui.viewmodel.friends.qr.generateQrCode
 import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 
 @Composable
@@ -40,6 +51,14 @@ fun SessionLinkScreen(
     navController: NavController,
     sessionViewModel: MusicSessionViewModel
 ) {
+    var showDialog by remember { mutableStateOf(false) }
+
+    val guestUrl by sessionViewModel.guestUrl.collectAsState()
+    var qrBitmap by remember {mutableStateOf<Bitmap?>(null)}
+    LaunchedEffect(guestUrl) {
+        qrBitmap = generateQrCode(guestUrl!!)
+    }
+
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -95,7 +114,7 @@ fun SessionLinkScreen(
             ) {
 
                 Text(
-                    text = "dawn-waiting.com/jumbubble/session/...",
+                    text = "$guestUrl",
                     color = Color(0xFFAAAAAA),
                     fontSize = 12.sp,
                     modifier = Modifier.padding(start = 12.dp)
@@ -116,7 +135,7 @@ fun SessionLinkScreen(
             // QRコード画像
             // -------------------------------------
             Image(
-                painter = painterResource(id = R.drawable.testqr),
+                bitmap = qrBitmap?.asImageBitmap() ?: Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888).asImageBitmap(),
                 contentDescription = null,
                 modifier = Modifier
                     .size(200.dp)
@@ -154,8 +173,44 @@ fun SessionLinkScreen(
             Submit(
                 backgroundColor = ColorAppleMusic,
                 label = "セッションを終了する",
-                onClick={}
+                onClick={
+                    showDialog = true
+                }
             )
+            if (showDialog) {
+                AlertDialog(
+                    containerColor = Color.Black,
+                    onDismissRequest = {
+                        showDialog = false
+                    },
+                    title = {
+                        Text("セッションを終了しますか？")
+                    },
+                    text = {
+                        Text("この操作は取り消せません。")
+                    },
+                    confirmButton = {
+                        TextButton(
+                            onClick = {
+                                showDialog = false
+                                sessionViewModel.closeSession()
+                                navController.navigate("app/session")
+                            }
+                        ) {
+                            Text("終了する")
+                        }
+                    },
+                    dismissButton = {
+                        TextButton(
+                            onClick = {
+                                showDialog = false
+                            }
+                        ) {
+                            Text("キャンセル")
+                        }
+                    }
+                )
+            }
         }
 
         IconButton(

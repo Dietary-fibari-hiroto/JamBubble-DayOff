@@ -11,9 +11,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.jambubble_client.ui.components.navs.SessionFooterNav
+import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
 import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
+import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 
 //スクリーンの切替ENUM
 enum class ScreenState {
@@ -26,17 +29,24 @@ enum class ScreenState {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SessionFunctionScreen(viewModel: MusicSessionViewModel,navController: NavController){
+fun SessionFunctionScreen(viewModel: MusicSessionViewModel,searchViewModel: SearchViewModel,navController: NavController,musicPannelViewModel: MusicPannelViewModel){
+    //検索につかうステータス
+    val searchQuery by searchViewModel.searchQuery.collectAsStateWithLifecycle()
+    val searchResults by searchViewModel.searchResults.collectAsStateWithLifecycle()
+    val errorMessage by searchViewModel.errorMessage.collectAsStateWithLifecycle()
+
+
+
+    //セッションで使うデータを格納する変数群
     val sessionId by viewModel.sessionId.collectAsState()
     val guestUrl by viewModel.guestUrl.collectAsState()
     val playlist by viewModel.playlist.collectAsState()
-    val searchResults by viewModel.searchResults.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
-    val errorMessage by viewModel.errorMessage.collectAsState()
     val isSessionActive by viewModel.isSessionActive.collectAsState()
 
     var showSearchDialog by remember { mutableStateOf(false) }
-    var searchQuery by remember { mutableStateOf("") }
+
+    //スクリーンのルート管理
     var screenState by remember { mutableStateOf(ScreenState.LINK) }
 
 
@@ -59,7 +69,16 @@ fun SessionFunctionScreen(viewModel: MusicSessionViewModel,navController: NavCon
             }
 
             ScreenState.SEARCH -> {
-                SessionRequestScreen(navController,viewModel)
+                SessionRequestScreen(
+                    navController,
+                    viewModel,
+                    searchViewModel,
+                    musicPannelViewModel,
+                    isLoading,
+                    searchQuery,
+                    searchResults,
+                    errorMessage
+                )
             }
 
             else -> {}

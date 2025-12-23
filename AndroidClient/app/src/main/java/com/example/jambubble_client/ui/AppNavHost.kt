@@ -112,7 +112,7 @@ fun AppNavHost(navController: NavHostController,
             )
         }
         composable("session/loading"){SessionLoadingScreen(navController,sessionViewModel)}
-        composable("function/session"){SessionFunctionScreen(sessionViewModel,navController)}
+        composable("function/session"){SessionFunctionScreen(sessionViewModel,searchViewModel,navController,musicPannelViewModel)}
 
         composable("auth/spotify/login"){ SpotifyLoginScreen(authViewModel,navController) }
         //composable("test"){ TestScreen(searchViewModel) }
