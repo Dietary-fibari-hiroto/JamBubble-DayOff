@@ -1,5 +1,6 @@
 package com.example.jambubble_client.ui.screens.features
 
+import android.R.attr.contentDescription
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +16,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -38,8 +41,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.jambubble_client.R
+import com.example.jambubble_client.data.model.PlaybackStatus
 import com.example.jambubble_client.data.model.PlaylistItem
 import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
+import com.example.jambubble_client.util.Resource
+import com.google.android.gms.maps.model.Circle
 
 @Composable
 fun SessionPlaylistScreen(navController: NavController,sessionViewModel: MusicSessionViewModel) {
@@ -171,6 +177,29 @@ fun PlaylistItem(
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+        }
+        when (item.status ?: PlaybackStatus.PENDING) {  // ← nullの場合はPENDING
+            PlaybackStatus.COMPLETED -> {
+                Icon(
+                    imageVector = Icons.Default.CheckCircle,
+                    contentDescription = "再生済み",
+                    tint = Color(0xFF4CAF50)
+                )
+            }
+            PlaybackStatus.PLAYING -> {
+                Icon(
+                    imageVector = Icons.Default.PlayArrow,
+                    contentDescription = "再生中",
+                    tint = Color(0xFF2196F3)
+                )
+            }
+            PlaybackStatus.PENDING -> {
+                Image(
+                    painter = painterResource(R.drawable.heart),
+                    contentDescription = "未再生",
+                    modifier = Modifier.size(12.dp)
+                )
+            }
         }
         IconButton(onClick = onRemove) {
             Icon(

@@ -22,7 +22,8 @@ import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
 enum class ScreenState {
     LINK,
     SEARCH,
-    PLAYLIST
+    PLAYLIST,
+    MEMBER
 }
 
 
@@ -61,7 +62,11 @@ fun SessionFunctionScreen(viewModel: MusicSessionViewModel,searchViewModel: Sear
 
         when(screenState) {
             ScreenState.LINK -> {
-                SessionLinkScreen(navController,viewModel)
+                SessionLinkScreen(navController,viewModel,
+                    onChangeState = { newState ->
+                        screenState = newState
+                    }
+                )
             }
 
             ScreenState.PLAYLIST -> {
@@ -79,6 +84,12 @@ fun SessionFunctionScreen(viewModel: MusicSessionViewModel,searchViewModel: Sear
                     searchResults,
                     errorMessage
                 )
+            }
+            ScreenState.MEMBER -> {
+                SessionMemberScreen(navController,viewModel,
+                    onChangeState = { newState ->
+                        screenState = newState
+                    })
             }
 
             else -> {}

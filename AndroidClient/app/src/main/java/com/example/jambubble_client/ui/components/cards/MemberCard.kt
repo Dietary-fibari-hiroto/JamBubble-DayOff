@@ -35,11 +35,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jambubble_client.R
+import com.example.jambubble_client.data.model.Guest
 import com.example.jambubble_client.ui.components.buttons.MiniSubmit
 
 
 @Composable
-fun MemberCard() {
+fun MemberCard(guest: Guest) {
 
     var isOpen by remember { mutableStateOf(false) }
 
@@ -83,8 +84,8 @@ fun MemberCard() {
                     Spacer(modifier = Modifier.width(12.dp))
 
                     Column {
-                        Text("ゆづき", fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                        Text("ホスト", fontSize = 12.sp, color = Color.Gray)
+                        Text(guest.name, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                        Text(guest.userId, fontSize = 12.sp, color = Color.Gray)
                     }
                 }
 

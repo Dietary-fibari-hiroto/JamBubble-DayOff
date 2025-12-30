@@ -1,5 +1,7 @@
 package com.example.jambubble_client.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Session(
     val sessionId: String,
     val hostConnectionId: String,
@@ -21,9 +23,17 @@ data class PlaylistItem(
     val requestedBy: String,
     val requestedByUserId: String,
     val requestedAt: String,
-    val order: Int
+    val order: Int,
+
+    @SerializedName("status")
+    val status: PlaybackStatus? = null
 )
 
+enum class PlaybackStatus {
+    PENDING,    // 未再生
+    PLAYING,    // 再生中
+    COMPLETED   // 再生済み
+}
 data class Guest(
     val userId: String,
     val name: String,

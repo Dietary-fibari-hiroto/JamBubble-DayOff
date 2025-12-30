@@ -29,6 +29,7 @@ namespace Server.src.Signaling.Models
         public string RequestedByUserId { get; set; } = string.Empty;
         public DateTime RequestedAt { get; set; }
         public int Order { get; set; }
+        public PlaybackStatus Status { get; set; } = PlaybackStatus.Pending;
     }
 
     //ゲストモデル
@@ -96,6 +97,13 @@ namespace Server.src.Signaling.Models
         public string ItemId { get; set; } = string.Empty;
         public string RequestedByUserId { get; set; } = string.Empty;
     }
+    //トラック更新リクエスト
+    public class UpdateTrackStatusRequest
+    {
+        public string SessionId { get; set; } = string.Empty;
+        public string ItemId { get; set; } = string.Empty;
+        public PlaybackStatus Status { get; set; }
+    }
 
     //Spotifyトラック検索結果モデル
     public class SpotifyTrackSearchResult
@@ -106,6 +114,13 @@ namespace Server.src.Signaling.Models
         public string Album { get; set; } = string.Empty;
         public string AlbumImageUrl { get; set; } = string.Empty;
         public int DurationMs { get; set; }
+    }
+
+    public enum PlaybackStatus
+    {
+        Pending,    // 未再生
+        Playing,    // 再生中
+        Completed   // 再生済み
     }
 
 }

@@ -49,6 +49,7 @@ namespace Server.src.Signaling.Hubs
             }
         }
 
+
         // ゲストがセッションに参加
         public async Task<bool> JoinSession(JoinSessionRequest request)
         {
@@ -94,6 +95,7 @@ namespace Server.src.Signaling.Hubs
                 throw new HubException("セッションへの参加に失敗しました");
             }
         }
+
 
         // トラックをプレイリストに追加
         public async Task<bool> AddTrack(AddTrackRequest request)
@@ -173,6 +175,50 @@ namespace Server.src.Signaling.Hubs
             {
                 _logger.LogError(ex, "プレイリスト並び替え中にエラーが発生しました");
                 throw new HubException("プレイリストの並び替えに失敗しました");
+            }
+        }
+
+        // ホストが曲の再生を開始したとき
+        public async Task<bool> UpdateTrackStatus(UpdateTrackStatusRequest request)
+        {
+            try
+            {
+                var session = _sessionManager.GetSession(request.SessionId);
+                if (session == null)
+                {
+                    throw new HubException("セッションが見つかりません");
+                }
+
+                var item = session.Playlist.FirstOrDefault(i => i.Id == request.ItemId);
+                if (item == null)
+                {
+                    _logger.LogWarning(
+                        "トラックが見つかりません。SessionId: {SessionId}, ItemId: {ItemId}",
+                        request.SessionId,
+                        request.ItemId
+                    );
+                    return false;
+                }
+
+                // 🎯 シンプル！変換不要！
+                item.Status = request.Status;
+
+                // セッション参加者全員にプレイリスト更新を通知
+                await Clients.Group(request.SessionId).SendAsync("PlaylistUpdated", session.Playlist);
+
+                _logger.LogInformation(
+                    "✅ トラック状態が更新されました。SessionId: {SessionId}, ItemId: {ItemId}, Status: {Status}",
+                    request.SessionId,
+                    request.ItemId,
+                    request.Status
+                );
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "トラック状態更新中にエラーが発生しました");
+                throw new HubException("トラック状態の更新に失敗しました");
             }
         }
 

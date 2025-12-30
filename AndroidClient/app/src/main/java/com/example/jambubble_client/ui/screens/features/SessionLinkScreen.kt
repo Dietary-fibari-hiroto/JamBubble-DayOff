@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -49,7 +50,8 @@ import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
 @Composable
 fun SessionLinkScreen(
     navController: NavController,
-    sessionViewModel: MusicSessionViewModel
+    sessionViewModel: MusicSessionViewModel,
+    onChangeState: (ScreenState) -> Unit
 ) {
     var showDialog by remember { mutableStateOf(false) }
 
@@ -69,7 +71,8 @@ fun SessionLinkScreen(
             contentDescription = null,
             modifier = Modifier
                 .fillMaxSize()
-                .alpha(0.8f),
+                .alpha(0.8f)
+                .clickable{onChangeState(ScreenState.MEMBER)},
             contentScale = ContentScale.Crop
         )
 
@@ -214,7 +217,7 @@ fun SessionLinkScreen(
         }
 
         IconButton(
-            onClick = {navController.navigate("function/session/member")},
+            onClick = { onChangeState(ScreenState.MEMBER) },
             modifier = Modifier
                 .size(50.dp)
                 .align(Alignment.TopStart)

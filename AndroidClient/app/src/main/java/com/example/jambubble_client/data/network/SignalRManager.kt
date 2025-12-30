@@ -5,6 +5,7 @@ import com.example.jambubble_client.data.model.AddTrackRequest
 import com.example.jambubble_client.data.model.CreateSessionRequest
 import com.example.jambubble_client.data.model.CreateSessionResponse
 import com.example.jambubble_client.data.model.Guest
+import com.example.jambubble_client.data.model.PlaybackStatus
 import com.example.jambubble_client.data.model.PlaylistItem
 import com.example.jambubble_client.data.model.RemoveTrackRequest
 import com.example.jambubble_client.data.model.ReorderPlaylistRequest
@@ -15,7 +16,6 @@ import com.microsoft.signalr.HubConnectionBuilder
 import com.microsoft.signalr.HubConnectionState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-
 class SignalRManager(private val serverUrl: String) {
     private var hubConnection: HubConnection? = null
     private val gson = Gson()
@@ -219,6 +219,52 @@ class SignalRManager(private val serverUrl: String) {
             success
         } catch (e: Exception) {
             Log.e("SignalR", "曲削除中にエラーが発生しました", e)
+            e.printStackTrace()
+            false
+        }
+    }
+
+    // 🆕 追加: トラックの再生状態を更新
+    suspend fun updateTrackStatus(
+        sessionId: String,
+        itemId: String,
+        status: PlaybackStatus
+    ): Boolean {
+        return try {
+            // PlaybackStatus enumを文字列に変換
+            val statusString = when (status) {
+                PlaybackStatus.PENDING -> "Pending"
+                PlaybackStatus.PLAYING -> "Playing"
+                PlaybackStatus.COMPLETED -> "Completed"
+            }
+
+            Log.d(
+                "SignalR",
+                "トラック状態を更新します: itemId=$itemId, status=$statusString, sessionId=$sessionId"
+            )
+
+            // 🔧 修正: オブジェクトとして送信
+            val request = mapOf(
+                "sessionId" to sessionId,
+                "itemId" to itemId,
+                "status" to statusString
+            )
+
+            val success = hubConnection?.invoke(
+                Boolean::class.java,
+                "UpdateTrackStatus",
+                request  // ← オブジェクトとして送信
+            )?.blockingGet() ?: false
+
+            if (success) {
+                Log.d("SignalR", "✅ トラック状態更新成功: $itemId -> $statusString")
+            } else {
+                Log.w("SignalR", "⚠️ トラック状態更新失敗: $itemId -> $statusString")
+            }
+
+            success
+        } catch (e: Exception) {
+            Log.e("SignalR", "❌ トラック状態更新中にエラーが発生しました", e)
             e.printStackTrace()
             false
         }

@@ -10,6 +10,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.example.jambubble_client.data.network.SignalRManager
 import com.example.jambubble_client.spotifyremote.data.remote.AuthInterceptor
 import com.example.jambubble_client.spotifyremote.data.repository.SpotifyAuthRepository
 import com.example.jambubble_client.spotifyremote.data.repository.SpotifyRepository
@@ -18,10 +20,12 @@ import com.example.jambubble_client.spotifyremote.service.SpotifyApiService
 import com.example.jambubble_client.ui.App
 import com.example.jambubble_client.ui.styles.AppTheme
 import com.example.jambubble_client.ui.viewmodel.auths.SpotifyAuthViewModel
-import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelModelFactory
 import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModel
+import com.example.jambubble_client.ui.viewmodel.musics.MusicPannelViewModelFactory
 import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModel
+import com.example.jambubble_client.ui.viewmodel.musics.MusicSessionViewModelFactory
 import com.example.jambubble_client.ui.viewmodel.searchs.SearchViewModel
+import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -36,13 +40,35 @@ class MainActivity : ComponentActivity() {
 
     //画面遷移しても音楽の再生状態が失われないようにSpotifyのサービスをここで定義
     private val musicPannelViewModel: MusicPannelViewModel by viewModels{
-        MusicPannelModelFactory(SpotifyRepository(application))
+        MusicPannelViewModelFactory(SpotifyRepository(application))
+    }
+    //セッション時に必要なビューモデルを初期化
+    private val SessionViewModel: MusicSessionViewModel by viewModels {
+        MusicSessionViewModelFactory(signalRManager, spotifyRepository)
     }
     // Repositories
     private lateinit var authRepository: SpotifyAuthRepository
     private lateinit var searchRepository: SpotifySearchRepository
 
     private var hasHandledIntent = false
+
+    private val spotifyRepository by lazy {
+        SpotifyRepository(
+            application = application,
+            onTrackStatusChanged = { trackId, status ->
+                lifecycleScope.launch {
+                    val sessionId = SessionViewModel.sessionId.value
+                    if (sessionId != null) {
+                        signalRManager.updateTrackStatus(sessionId, trackId, status)
+                    }
+                }
+            }
+        )
+    }
+
+    private val signalRManager by lazy {
+        SignalRManager("http://192.168.10.10:9001") // TODO: 実際のURLに変更
+    }
 
     // ViewModels
     private val authViewModel: SpotifyAuthViewModel by viewModels {
@@ -63,8 +89,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //セッション時に必要なビューモデルを初期化
-    private val SessionViewModel: MusicSessionViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

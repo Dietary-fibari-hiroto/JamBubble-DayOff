@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
               "RelativeToolTip": "Server\\src\\Signaling\\Hubs\\MusicSessionHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAANIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T10:23:56.033Z",
               "EditorCaption": ""
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Server\\src\\Signaling\\Hubs\\SessionManager.cs",
               "ToolTip": "C:\\Users\\2230372\\MyData\\Yuzu_Product\\JamBubble-DayOff\\Server\\Server\\src\\Signaling\\Hubs\\SessionManager.cs",
               "RelativeToolTip": "Server\\src\\Signaling\\Hubs\\SessionManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAQwKoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T10:19:30.718Z",
               "EditorCaption": ""
@@ -68,8 +68,7 @@
               "RelativeToolTip": "Server\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-22T01:04:44.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-22T01:04:44.69Z"
             }
           ]
         }
