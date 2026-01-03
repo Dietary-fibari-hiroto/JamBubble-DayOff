@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.example.jambubble_client.data.api.ApiConfig
 import com.example.jambubble_client.data.network.SignalRManager
 import com.example.jambubble_client.spotifyremote.data.remote.AuthInterceptor
 import com.example.jambubble_client.spotifyremote.data.repository.SpotifyAuthRepository
@@ -67,7 +68,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private val signalRManager by lazy {
-        SignalRManager("http://192.168.10.10:9001") // TODO: 実際のURLに変更
+        SignalRManager(ApiConfig.BASE_URL)
     }
 
     // ViewModels

@@ -1,0 +1,52 @@
+﻿<section class="screen-frame enter-name">
+    <p>ニックネームを入力してください！</p>
+    <div class="enter-name__container">
+        <label>ニックネーム</label>
+        <input class="enter-name__container-input"
+               type="text"
+               value="@GuestName"
+               @oninput="OnInputChanged"
+               placeholder="例: ゆづき" />
+    </div>
+
+
+    @if (IsConnecting)
+    {
+        <p>接続中...</p>
+    }
+    else
+    {
+        <button class="submit_button primary"
+                @onclick="OnJoinClicked">
+            確定
+        </button>
+    }
+
+    @if (!string.IsNullOrWhiteSpace(ErrorMessage))
+    {
+        <div class="alert alert-danger mt-3">@ErrorMessage</div>
+    }
+</section>
+
+@code {
+    [Parameter] public string GuestName { get; set; } = "";
+    [Parameter] public EventCallback<string> GuestNameChanged { get; set; }
+    [Parameter] public bool IsConnecting { get; set; } = false;
+    [Parameter] public string? ErrorMessage { get; set; }
+    [Parameter] public EventCallback OnJoin { get; set; }
+
+    private async Task OnInputChanged(ChangeEventArgs e)
+    {
+        var newValue = e.Value?.ToString() ?? "";
+        Console.WriteLine($"OnInputChanged: '{newValue}'");
+        await GuestNameChanged.InvokeAsync(newValue);
+    }
+
+    private async Task OnJoinClicked()
+    {
+        Console.WriteLine($"=== OnJoinClicked START ===");
+        Console.WriteLine($"GuestName: '{GuestName}'");
+        await OnJoin.InvokeAsync();
+        Console.WriteLine($"=== OnJoinClicked END ===");
+    }
+}

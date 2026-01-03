@@ -1,0 +1,74 @@
+.track-search {
+  box-sizing: border-box;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.track-search > * + * {
+  margin-top: 1rem;
+}
+.track-search__title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.track-search__input {
+  width: 300px;
+  height: 50px;
+  color: white;
+  background: black;
+  border-radius: 10px;
+  border: solid 1px white;
+}
+.track-search__result {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  height: 100%;
+  overflow-y: scroll;
+}
+.track-search__result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid white 1px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.track-search__result-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+.track-search__result-space {
+  margin: 3rem 0;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+}
+.track-inner {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.track-inner > * + * {
+  margin-left: 1rem;
+}
+
+.add-button {
+  min-width: 30px;
+  min-height: 30px;
+  border: 5px;
+  background: #5A189A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=TrackSearch.razor.css.map */

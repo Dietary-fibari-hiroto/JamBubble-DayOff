@@ -1,0 +1,153 @@
+﻿@page "/session/{sessionId}"
+@using Server.src.Signaling.Models
+@using Server.src.Application.Services
+@using Server.src.Signaling.Hubs
+@using Microsoft.AspNetCore.SignalR.Client
+@inject SessionManager SessionManager
+@inject SpotifySearchService SpotifyService
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+<PageTitle>Music Session - @SessionId</PageTitle>
+
+<div class="container">
+    <div class="user-info">
+        <h2>Music Session: @SessionId</h2>
+        <p>ようこそ、@_guestName さん！</p>
+    </div>
+    
+    @if (!_isJoined)
+    {
+        <EnterName GuestName="@_guestName"
+                   GuestNameChanged="OnGuestNameChanged"
+                   IsConnecting="@_isConnecting"
+                   ErrorMessage="@_errorMessage"
+                   OnJoin="JoinSession" />
+    }
+    else
+    {
+        <div class="content-wrapper">
+            @switch (_currentViewMode)
+            {
+                case ViewMode.Search:
+                    <TrackSearch SearchQuery="@_searchQuery"
+                                 SearchQueryChanged="(value) => _searchQuery = value"
+                                 IsSearching="@_isSearching"
+                                 SearchResults="@_searchResults"
+                                 OnSearchInput="HandleSearchQueryChanged"
+                                 OnTrackAdd="AddTrack" />
+                    break;
+                    
+                case ViewMode.Playlist:
+                    <Playlist Items="@_playlist"
+                              CurrentUserId="@_userId"
+                              OnTrackRemove="RemoveTrack" />
+                    break;
+            }
+        </div>
+
+        <div class="view-switcher">
+            <button class="view-switcher__button @(IsActiveView(ViewMode.Search))"
+                    @onclick="() => SwitchView(ViewMode.Search)">
+                🔍 検索
+            </button>
+            <button class="view-switcher__button @(IsActiveView(ViewMode.Playlist))"
+                    @onclick="() => SwitchView(ViewMode.Playlist)">
+                🎵 プレイリスト
+            </button>
+        </div>
+    }
+</div>
+
+<style>
+    .content-wrapper {
+        padding-bottom: 80px; /* fixed ボタンの高さ分の余白 */
+    }
+
+    .view-switcher {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        background: white;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .view-switcher__button {
+        flex: 1;
+        padding: 16px;
+        border: none;
+        background: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .view-switcher__button:hover {
+        background-color: #f5f5f5;
+    }
+
+    .view-switcher__button.active {
+        background-color: #1db954;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+@code {
+    public enum ViewMode
+    {
+        Search,
+        Playlist
+    }
+
+    [Parameter]
+    public string SessionId { get; set; } = string.Empty;
+    
+    private ViewMode _currentViewMode = ViewMode.Search;
+    private System.Threading.Timer? _searchDebounceTimer;
+
+    private HubConnection? _hubConnection;
+    private string _guestName = string.Empty;
+    private string _userId = string.Empty;
+    private bool _isJoined = false;
+    private bool _isConnecting = false;
+    private string _errorMessage = string.Empty;
+
+    private string _searchQuery = string.Empty;
+    private bool _isSearching = false;
+    private List<SpotifyTrackSearchResult> _searchResults = new();
+    private List<PlaylistItem> _playlist = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await InitializeSignalR();
+            StateHasChanged();
+        }
+    }
+
+    private void SwitchView(ViewMode viewMode)
+    {
+        _currentViewMode = viewMode;
+    }
+
+    private string IsActiveView(ViewMode viewMode)
+    {
+        return _currentViewMode == viewMode ? "active" : "";
+    }
+
+    // 以下、既存のメソッドはそのまま
+    private async Task InitializeSignalR() { /* 既存のコード */ }
+    private async Task JoinSession() { /* 既存のコード */ }
+    private async Task SearchTracks(string query) { /* 既存のコード */ }
+    private async Task AddTrack(SpotifyTrackSearchResult track) { /* 既存のコード */ }
+    private async Task RemoveTrack(string itemId) { /* 既存のコード */ }
+    private async Task HandleSearchQueryChanged(string query) { /* 既存のコード */ }
+    private void OnGuestNameChanged(string value) { /* 既存のコード */ }
+    public async ValueTask DisposeAsync() { /* 既存のコード */ }
+}

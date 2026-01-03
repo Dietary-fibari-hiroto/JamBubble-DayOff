@@ -1,0 +1,46 @@
+﻿@using Server.src.Signaling.Models
+
+<div class="screen-frame">
+    <h3>プレイリスト</h3>
+    @if (Items.Any())
+    {
+        <div class="playlist">
+            @foreach (var item in Items.OrderBy(p => p.Order))
+            {
+                <div class="playlist-item">
+                    @if (!string.IsNullOrEmpty(item.AlbumImageUrl))
+                    {
+                        <img src="@item.AlbumImageUrl" alt="Album" class="album-image-small" />
+                    }
+                    <div class="track-info">
+                        <div class="track-name">@item.TrackName</div>
+                        <div class="track-artist">@item.ArtistName</div>
+                        <div class="track-requester">リクエスト: @item.RequestedBy</div>
+                    </div>
+                    @if (item.RequestedByUserId == CurrentUserId)
+                    {
+                        <button class="btn btn-sm btn-danger"
+                                @onclick="() => OnTrackRemove.InvokeAsync(item.Id)">
+                            削除
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>プレイリストは空です。曲を追加してください！</p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<PlaylistItem> Items { get; set; } = new();
+
+    [Parameter]
+    public string CurrentUserId { get; set; } = string.Empty;
+
+    [Parameter]
+    public EventCallback<string> OnTrackRemove { get; set; }
+}

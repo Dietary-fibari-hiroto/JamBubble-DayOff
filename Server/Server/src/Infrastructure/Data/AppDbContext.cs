@@ -79,6 +79,55 @@ namespace Server.Data
 
             modelBuilder.Entity<FornowLike>().HasKey(p => new { p.FornowId, p.UserId });
 
+            // FriendRequest の外部キー設定（SQL Server用にNoActionに変更）
+            modelBuilder.Entity<FriendRequest>()
+                .HasOne(f => f.User1)
+                .WithMany()
+                .HasForeignKey(f => f.User1Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<FriendRequest>()
+                .HasOne(f => f.User2)
+                .WithMany()
+                .HasForeignKey(f => f.User2Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<FriendRequest>()
+                .HasOne(f => f.SendUser)
+                .WithMany()
+                .HasForeignKey(f => f.SendUserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<FriendRequest>()
+                .HasOne(f => f.PassUser)
+                .WithMany()
+                .HasForeignKey(f => f.PassUserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Friend の外部キー設定（SQL Server用にNoActionに変更）
+            modelBuilder.Entity<Friend>()
+                .HasOne(f => f.User1)
+                .WithMany()
+                .HasForeignKey(f => f.User1Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Friend>()
+                .HasOne(f => f.User2)
+                .WithMany()
+                .HasForeignKey(f => f.User2Id)
+                .OnDelete(DeleteBehavior.NoAction);
+            // StreetPassHistory の外部キー設定
+            modelBuilder.Entity<StreetPassHistory>()
+                .HasOne(s => s.PassedUser1)
+                .WithMany()
+                .HasForeignKey(s => s.PassedUser1Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<StreetPassHistory>()
+                .HasOne(s => s.PassedUser2)
+                .WithMany()
+                .HasForeignKey(s => s.PassedUser2Id)
+                .OnDelete(DeleteBehavior.NoAction);
             // カスケード削除の設定
             modelBuilder.Entity<User>()
                 .HasOne(u => u.UserHistory)
@@ -100,7 +149,68 @@ namespace Server.Data
                 .WithOne(m => m.User)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+            // UserBlock の外部キー設定
+            modelBuilder.Entity<UserBlock>()
+                .HasOne(u => u.User)
+                .WithMany()
+                .HasForeignKey(u => u.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
 
+            modelBuilder.Entity<UserBlock>()
+                .HasOne(u => u.BlockedUser)
+                .WithMany()
+                .HasForeignKey(u => u.BlockedUserId)
+                .OnDelete(DeleteBehavior.NoAction);
+            // FornowLike の外部キー設定
+            modelBuilder.Entity<FornowLike>()
+                .HasOne(f => f.Fornow)
+                .WithMany()
+                .HasForeignKey(f => f.FornowId)
+                .OnDelete(DeleteBehavior.Cascade);  // これはCascadeでOK
+
+            modelBuilder.Entity<FornowLike>()
+                .HasOne(f => f.User)
+                .WithMany()
+                .HasForeignKey(f => f.UserId)
+                .OnDelete(DeleteBehavior.NoAction);  // こっちをNoActionに
+
+            // SessionInvitation の外部キー設定
+            modelBuilder.Entity<SessionInvitation>()
+                .HasOne(s => s.Session)
+                .WithMany()
+                .HasForeignKey(s => s.SessionId)
+                .OnDelete(DeleteBehavior.Cascade);  // SessionはCascadeでOK
+
+            modelBuilder.Entity<SessionInvitation>()
+                .HasOne(s => s.User)
+                .WithMany()
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.NoAction);  // UserはNoAction
+                                                     // RequestCache の外部キー設定
+            modelBuilder.Entity<RequestCache>()
+                .HasOne(r => r.Guest)
+                .WithMany()
+                .HasForeignKey(r => r.GuestId)
+                .OnDelete(DeleteBehavior.Cascade);  // GuestはCascadeでOK
+
+            modelBuilder.Entity<RequestCache>()
+                .HasOne(r => r.Session)
+                .WithMany()
+                .HasForeignKey(r => r.SessionId)
+                .OnDelete(DeleteBehavior.NoAction);  // SessionはNoAction
+
+            // Request の外部キー設定
+            modelBuilder.Entity<Request>()
+                .HasOne(r => r.Guest)
+                .WithMany()
+                .HasForeignKey(r => r.GuestId)
+                .OnDelete(DeleteBehavior.Cascade);  // GuestはCascadeでOK
+
+            modelBuilder.Entity<Request>()
+                .HasOne(r => r.Session)
+                .WithMany()
+                .HasForeignKey(r => r.SessionId)
+                .OnDelete(DeleteBehavior.NoAction);  // SessionはNoAction
             // ユニーク制約の定義
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
 

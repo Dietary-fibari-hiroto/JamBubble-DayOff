@@ -18,9 +18,9 @@ namespace Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.10")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Server.src.Entities.FavoriteMusic", b =>
                 {
@@ -30,7 +30,7 @@ namespace Server.Migrations
 
                     b.Property<string>("MusicId")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("music_id");
 
                     b.HasKey("UserId");
@@ -45,7 +45,7 @@ namespace Server.Migrations
                 {
                     b.Property<string>("MusicId")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("music_id");
 
                     b.Property<int>("Count")
@@ -64,24 +64,24 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.Property<bool>("Finished")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("finished");
 
                     b.Property<string>("Message")
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("message");
 
                     b.Property<string>("MusicId")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("music_id");
 
                     b.Property<int>("UserId")
@@ -105,7 +105,12 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
+                    b.Property<int?>("FornowId1")
+                        .HasColumnType("int");
+
                     b.HasKey("FornowId", "UserId");
+
+                    b.HasIndex("FornowId1");
 
                     b.HasIndex("UserId");
 
@@ -126,7 +131,7 @@ namespace Server.Migrations
                         .HasColumnName("user2_id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.HasKey("User1Id", "User2Id");
@@ -151,10 +156,8 @@ namespace Server.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<DateTime>("CreatedAt"));
 
                     b.Property<int>("PassUserId")
                         .HasColumnType("int")
@@ -170,10 +173,8 @@ namespace Server.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("updated_at");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlComputedColumn(b.Property<DateTime>("UpdatedAt"));
 
                     b.HasKey("User1Id", "User2Id");
 
@@ -193,7 +194,7 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Authority")
                         .HasColumnType("int")
@@ -201,7 +202,7 @@ namespace Server.Migrations
 
                     b.Property<string>("Name")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("name");
 
                     b.Property<int>("SessionId")
@@ -228,25 +229,25 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("content");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.Property<bool>("IsRead")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("is_read");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("title");
 
                     b.Property<int>("UserId")
@@ -267,12 +268,12 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("name");
 
                     b.HasKey("Id");
@@ -287,7 +288,7 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GuestId")
                         .HasColumnType("int")
@@ -296,18 +297,23 @@ namespace Server.Migrations
                     b.Property<string>("MusicId")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("music_id");
 
                     b.Property<int>("SessionId")
                         .HasColumnType("int")
                         .HasColumnName("session_id");
 
+                    b.Property<int?>("SessionId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GuestId");
 
                     b.HasIndex("SessionId");
+
+                    b.HasIndex("SessionId1");
 
                     b.ToTable("requests");
                 });
@@ -319,7 +325,7 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GuestId")
                         .HasColumnType("int")
@@ -328,7 +334,7 @@ namespace Server.Migrations
                     b.Property<string>("MusicId")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("music_id");
 
                     b.Property<int>("OrderIndex")
@@ -339,11 +345,16 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("session_id");
 
+                    b.Property<int?>("SessionId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GuestId");
 
                     b.HasIndex("SessionId");
+
+                    b.HasIndex("SessionId1");
 
                     b.ToTable("request_caches");
                 });
@@ -355,12 +366,12 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("name");
 
                     b.HasKey("Id");
@@ -375,10 +386,10 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.Property<int>("DefaultSortId")
@@ -386,31 +397,31 @@ namespace Server.Migrations
                         .HasColumnName("default_sort_id");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("description");
 
                     b.Property<bool>("Finished")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("finished");
 
                     b.Property<DateTime?>("FinishedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("finished_at");
 
                     b.Property<string>("ImgUrl")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("img_url");
 
                     b.Property<bool>("IsPublic")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("is_public");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("password");
 
                     b.Property<int>("ProviderId")
@@ -424,7 +435,7 @@ namespace Server.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("title");
 
                     b.Property<int>("UserCapacity")
@@ -459,7 +470,7 @@ namespace Server.Migrations
                         .HasColumnName("user_id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.HasKey("SessionId", "UserId");
@@ -479,17 +490,17 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("description");
 
                     b.Property<string>("Label")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("label");
 
                     b.HasKey("Id");
@@ -524,18 +535,18 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.Property<double>("Latitude")
-                        .HasColumnType("double")
+                        .HasColumnType("float")
                         .HasColumnName("latitude");
 
                     b.Property<double>("Longitude")
-                        .HasColumnType("double")
+                        .HasColumnType("float")
                         .HasColumnName("longitude");
 
                     b.Property<int>("PassedUser1Id")
@@ -563,16 +574,16 @@ namespace Server.Migrations
                         .HasColumnName("user_id");
 
                     b.Property<string>("Message")
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("message");
 
                     b.Property<string>("PlaylistEndpoint")
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("playlist_endpoint");
 
                     b.Property<bool>("SecretMode")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("secret_mode");
 
                     b.HasKey("UserId");
@@ -587,12 +598,12 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Label")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("label");
 
                     b.HasKey("Id");
@@ -607,7 +618,7 @@ namespace Server.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateOnly>("Birthday")
                         .HasColumnType("date")
@@ -615,15 +626,13 @@ namespace Server.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<DateTime>("CreatedAt"));
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("email");
 
                     b.Property<int>("Gender")
@@ -632,35 +641,33 @@ namespace Server.Migrations
 
                     b.Property<string>("ImgUrl")
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("img_url");
 
                     b.Property<bool>("IsStreetPass")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("bit")
                         .HasColumnName("is_street_pass");
 
                     b.Property<string>("Message")
-                        .HasColumnType("longtext")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("message");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("name");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("password");
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("updated_at");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlComputedColumn(b.Property<DateTime>("UpdatedAt"));
 
                     b.HasKey("Id");
 
@@ -681,7 +688,7 @@ namespace Server.Migrations
                         .HasColumnName("blocked_user_id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("datetime2")
                         .HasColumnName("created_at");
 
                     b.HasKey("UserId", "BlockedUserId");
@@ -725,7 +732,7 @@ namespace Server.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("name");
 
                     b.HasKey("UserId", "ProviderId");
@@ -761,15 +768,19 @@ namespace Server.Migrations
             modelBuilder.Entity("Server.src.Entities.FornowLike", b =>
                 {
                     b.HasOne("Server.src.Entities.Fornow", "Fornow")
-                        .WithMany("FornowLikes")
+                        .WithMany()
                         .HasForeignKey("FornowId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Server.src.Entities.Fornow", null)
+                        .WithMany("FornowLikes")
+                        .HasForeignKey("FornowId1");
+
                     b.HasOne("Server.src.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Fornow");
@@ -782,13 +793,13 @@ namespace Server.Migrations
                     b.HasOne("Server.src.Entities.User", "User1")
                         .WithMany()
                         .HasForeignKey("User1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "User2")
                         .WithMany()
                         .HasForeignKey("User2Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("User1");
@@ -801,25 +812,25 @@ namespace Server.Migrations
                     b.HasOne("Server.src.Entities.User", "PassUser")
                         .WithMany()
                         .HasForeignKey("PassUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "SendUser")
                         .WithMany()
                         .HasForeignKey("SendUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "User1")
                         .WithMany()
                         .HasForeignKey("User1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "User2")
                         .WithMany()
                         .HasForeignKey("User2Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("PassUser");
@@ -868,10 +879,14 @@ namespace Server.Migrations
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.Session", "Session")
-                        .WithMany("Requests")
+                        .WithMany()
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
+
+                    b.HasOne("Server.src.Entities.Session", null)
+                        .WithMany("Requests")
+                        .HasForeignKey("SessionId1");
 
                     b.Navigation("Guest");
 
@@ -887,10 +902,14 @@ namespace Server.Migrations
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.Session", "Session")
-                        .WithMany("RequestCaches")
+                        .WithMany()
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
+
+                    b.HasOne("Server.src.Entities.Session", null)
+                        .WithMany("RequestCaches")
+                        .HasForeignKey("SessionId1");
 
                     b.Navigation("Guest");
 
@@ -943,7 +962,7 @@ namespace Server.Migrations
                     b.HasOne("Server.src.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Session");
@@ -975,13 +994,13 @@ namespace Server.Migrations
                     b.HasOne("Server.src.Entities.User", "PassedUser1")
                         .WithMany()
                         .HasForeignKey("PassedUser1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "PassedUser2")
                         .WithMany()
                         .HasForeignKey("PassedUser2Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("PassedUser1");
@@ -1005,13 +1024,13 @@ namespace Server.Migrations
                     b.HasOne("Server.src.Entities.User", "BlockedUser")
                         .WithMany()
                         .HasForeignKey("BlockedUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Server.src.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("BlockedUser");

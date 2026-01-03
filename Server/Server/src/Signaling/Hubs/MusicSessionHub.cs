@@ -24,7 +24,7 @@ namespace Server.src.Signaling.Hubs
                 var session = _sessionManager.CreateSession(Context.ConnectionId);
 
                 // TODO: 設定ファイル（appsettings.json 等）から取得する
-                var baseUrl = "http://192.168.10.10:9001";
+                var baseUrl = Environment.GetEnvironmentVariable("BASE_URL");
                 var guestUrl = $"{baseUrl}/session/{session.SessionId}";
 
                 // ホストをセッショングループに追加

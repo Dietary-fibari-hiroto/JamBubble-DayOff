@@ -1,0 +1,62 @@
+﻿@using Server.src.Signaling.Models
+<secction class="screen-frame track-search">
+    <p class="track-search__title">曲を検索</p>
+    <input type="text" class="track-search__input"
+           value="@SearchQuery"
+           @oninput="OnInputChanged"
+           placeholder="曲名、アーティスト名で検索..." />
+    @if (IsSearching)
+    {
+        <p>検索中...</p>
+    }
+    else if (SearchResults.Any())
+    {
+        <div class="track-search__result">
+            @foreach (var track in SearchResults)
+            {
+                <div class="track-search__result-item">
+                    <div class="track-inner">
+                        @if (!string.IsNullOrEmpty(track.AlbumImageUrl))
+                        {
+                            <img src="@track.AlbumImageUrl" alt="Album" class="track-search__result-img" />
+                        }
+                        <div class="track-info">
+                            <div class="track-name text-lg">@track.Name</div>
+                            <div class="track-artist text-base">@track.Artist - @track.Album</div>
+                        </div>
+                    </div>
+                    <button class="add-button text-base" @onclick="() => OnTrackAdd.InvokeAsync(track)">
+                        ＋
+                    </button>
+                </div>
+            }
+            <div class="track-search__result-space" />
+        </div>
+    }
+</secction>
+
+@code {
+    [Parameter] public string SearchQuery { get; set; } = string.Empty;
+
+    [Parameter]
+    public EventCallback<string> SearchQueryChanged { get; set; }
+
+    [Parameter]
+    public bool IsSearching { get; set; }
+
+    [Parameter]
+    public List<SpotifyTrackSearchResult> SearchResults { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<string> OnSearchInput { get; set; }
+    [Parameter]
+    public EventCallback<SpotifyTrackSearchResult> OnTrackAdd { get; set; }
+
+    private async Task OnInputChanged(ChangeEventArgs e)
+    {
+        var newValue = e.Value?.ToString() ?? "";
+        await SearchQueryChanged.InvokeAsync(newValue);
+        await OnSearchInput.InvokeAsync(newValue);
+    }
+
+}
