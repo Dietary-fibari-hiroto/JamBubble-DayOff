@@ -9,3 +9,20 @@ body, p,h1 {
     color: White;
 
 }
+html,body {
+    font-size: clamp(10px, 1vw, 16px);
+}
+
+input {
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}

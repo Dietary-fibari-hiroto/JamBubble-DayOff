@@ -36,13 +36,25 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NyZWVuc1xTZXNzaW9uTm90Rm91bmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/Session.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/Screens/EnterName.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NyZWVuc1xFbnRlck5hbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-npyv3nff4v
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/Screens/Playlist.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NyZWVuc1xQbGF5bGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-rvzz18yqeu
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/Screens/TrackSearch.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NyZWVuc1xUcmFja1NlYXJjaC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-rodcipz503
+
+[C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/Session.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-gae0vm2aip
 
 [C:/Users/2230372/MyData/Yuzu_Product/JamBubble-DayOff/Server/Server/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s

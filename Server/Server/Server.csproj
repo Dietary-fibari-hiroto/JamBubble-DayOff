@@ -20,6 +20,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
     <PackageReference Include="SpotifyAPI.Web" Version="7.1.1" />
@@ -29,10 +30,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Components\" />
     <Folder Include="src\Api\Extensions\" />
     <Folder Include="src\Core\Exceptions\" />
     <Folder Include="src\Infrastructure\Migrations\" />
     <Folder Include="src\Signaling\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\users\.gitkeep" />
+    <None Include="wwwroot\images\users\43a52eca-6bdf-4734-bfaf-c0a2995b132e_.jpg" />
+    <None Include="wwwroot\images\users\551da5db-8d7d-4bd4-9564-92769ef4b2be_.png" />
   </ItemGroup>
 
 </Project>

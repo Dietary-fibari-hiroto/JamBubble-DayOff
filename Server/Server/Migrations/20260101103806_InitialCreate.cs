@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -7,75 +6,127 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Server.Migrations
 {
     /// <inheritdoc />
-    public partial class JumBubble : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "age",
-                table: "users");
-
-            migrationBuilder.DropColumn(
-                name: "favorite_music",
-                table: "users");
-
-            migrationBuilder.AddColumn<DateTime>(
-                name: "birthday",
-                table: "users",
-                type: "datetime(6)",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
-
             migrationBuilder.CreateTable(
                 name: "favorite_music_summaries",
                 columns: table => new
                 {
-                    music_id = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    music_id = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     count = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_favorite_music_summaries", x => x.music_id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "providers",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_providers", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "scenes",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_scenes", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "session_sort_settings",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    label = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_session_sort_settings", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tags",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    label = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tags", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "users",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    birthday = table.Column<DateOnly>(type: "date", nullable: false),
+                    email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    gender = table.Column<int>(type: "int", nullable: false),
+                    is_street_pass = table.Column<bool>(type: "bit", nullable: false),
+                    img_url = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_users", x => x.id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "favorite_musics",
                 columns: table => new
                 {
-                    user_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    user_id1 = table.Column<int>(type: "int", nullable: false),
-                    music_id = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    music_id = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_favorite_musics", x => x.user_id);
                     table.ForeignKey(
-                        name: "FK_favorite_musics_users_user_id1",
-                        column: x => x.user_id1,
+                        name: "FK_favorite_musics_users_user_id",
+                        column: x => x.user_id,
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "fornows",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<int>(type: "int", nullable: false),
-                    music_id = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    message = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    finished = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    music_id = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    finished = table.Column<bool>(type: "bit", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -86,38 +137,44 @@ namespace Server.Migrations
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "friend_requests",
                 columns: table => new
                 {
+                    user1_id = table.Column<int>(type: "int", nullable: false),
+                    user2_id = table.Column<int>(type: "int", nullable: false),
                     send_user_id = table.Column<int>(type: "int", nullable: false),
                     pass_user_id = table.Column<int>(type: "int", nullable: false),
                     state = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    updated_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_friend_requests", x => new { x.send_user_id, x.pass_user_id });
+                    table.PrimaryKey("PK_friend_requests", x => new { x.user1_id, x.user2_id });
                     table.ForeignKey(
                         name: "FK_friend_requests_users_pass_user_id",
                         column: x => x.pass_user_id,
                         principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK_friend_requests_users_send_user_id",
                         column: x => x.send_user_id,
                         principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_friend_requests_users_user1_id",
+                        column: x => x.user1_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_friend_requests_users_user2_id",
+                        column: x => x.user2_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateTable(
                 name: "friends",
@@ -125,7 +182,7 @@ namespace Server.Migrations
                 {
                     user1_id = table.Column<int>(type: "int", nullable: false),
                     user2_id = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -134,30 +191,25 @@ namespace Server.Migrations
                         name: "FK_friends_users_user1_id",
                         column: x => x.user1_id,
                         principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK_friends_users_user2_id",
                         column: x => x.user2_id,
                         principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateTable(
                 name: "messages",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<int>(type: "int", nullable: false),
-                    title = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    content = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    is_reqd = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    is_read = table.Column<bool>(type: "bit", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -168,193 +220,26 @@ namespace Server.Migrations
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "providers",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_providers", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "scenes",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<int>(type: "int", maxLength: 255, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_scenes", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "session_sort_settings",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    label = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_session_sort_settings", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "tags",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    label = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tags", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "user_blocks",
-                columns: table => new
-                {
-                    user_id = table.Column<int>(type: "int", nullable: false),
-                    blocked_user_id = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_user_blocks", x => new { x.user_id, x.blocked_user_id });
-                    table.ForeignKey(
-                        name: "FK_user_blocks_users_blocked_user_id",
-                        column: x => x.blocked_user_id,
-                        principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_blocks_users_user_id",
-                        column: x => x.user_id,
-                        principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "user_histories",
-                columns: table => new
-                {
-                    user_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    user_id1 = table.Column<int>(type: "int", nullable: false),
-                    session_count = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_user_histories", x => x.user_id);
-                    table.ForeignKey(
-                        name: "FK_user_histories_users_user_id1",
-                        column: x => x.user_id1,
-                        principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "fornow_likes",
-                columns: table => new
-                {
-                    fornow_id = table.Column<int>(type: "int", nullable: false),
-                    user_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_fornow_likes", x => new { x.fornow_id, x.user_id });
-                    table.ForeignKey(
-                        name: "FK_fornow_likes_fornows_fornow_id",
-                        column: x => x.fornow_id,
-                        principalTable: "fornows",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_fornow_likes_users_user_id",
-                        column: x => x.user_id,
-                        principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "user_providers",
-                columns: table => new
-                {
-                    user_id = table.Column<int>(type: "int", nullable: false),
-                    provider_id = table.Column<int>(type: "int", nullable: false),
-                    name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    password = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_user_providers", x => new { x.user_id, x.provider_id });
-                    table.ForeignKey(
-                        name: "FK_user_providers_providers_provider_id",
-                        column: x => x.provider_id,
-                        principalTable: "providers",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_providers_users_user_id",
-                        column: x => x.user_id,
-                        principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "sessions",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<int>(type: "int", nullable: false),
-                    title = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    finished = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    finished_at = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    finished = table.Column<bool>(type: "bit", nullable: false),
+                    finished_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     provider_id = table.Column<int>(type: "int", nullable: false),
-                    password = table.Column<string>(type: "varchar(16)", maxLength: 16, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     scene_id = table.Column<int>(type: "int", nullable: false),
                     default_sort_id = table.Column<int>(type: "int", nullable: false),
-                    img_url = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    is_public = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    img_url = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    is_public = table.Column<bool>(type: "bit", nullable: false),
                     user_capacity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -384,17 +269,151 @@ namespace Server.Migrations
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "street_pass_histories",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    passed_user1_id = table.Column<int>(type: "int", nullable: false),
+                    passed_user2_id = table.Column<int>(type: "int", nullable: false),
+                    latitude = table.Column<double>(type: "float", nullable: false),
+                    longitude = table.Column<double>(type: "float", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_street_pass_histories", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_street_pass_histories_users_passed_user1_id",
+                        column: x => x.passed_user1_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_street_pass_histories_users_passed_user2_id",
+                        column: x => x.passed_user2_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "street_pass_options",
+                columns: table => new
+                {
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    playlist_endpoint = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    secret_mode = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_street_pass_options", x => x.user_id);
+                    table.ForeignKey(
+                        name: "FK_street_pass_options_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_blocks",
+                columns: table => new
+                {
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    blocked_user_id = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_blocks", x => new { x.user_id, x.blocked_user_id });
+                    table.ForeignKey(
+                        name: "FK_user_blocks_users_blocked_user_id",
+                        column: x => x.blocked_user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_user_blocks_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_histories",
+                columns: table => new
+                {
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    session_count = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_histories", x => x.user_id);
+                    table.ForeignKey(
+                        name: "FK_user_histories_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_providers",
+                columns: table => new
+                {
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    provider_id = table.Column<int>(type: "int", nullable: false),
+                    name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_providers", x => new { x.user_id, x.provider_id });
+                    table.ForeignKey(
+                        name: "FK_user_providers_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "fornow_likes",
+                columns: table => new
+                {
+                    fornow_id = table.Column<int>(type: "int", nullable: false),
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    FornowId1 = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_fornow_likes", x => new { x.fornow_id, x.user_id });
+                    table.ForeignKey(
+                        name: "FK_fornow_likes_fornows_FornowId1",
+                        column: x => x.FornowId1,
+                        principalTable: "fornows",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_fornow_likes_fornows_fornow_id",
+                        column: x => x.fornow_id,
+                        principalTable: "fornows",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_fornow_likes_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateTable(
                 name: "guests",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     user_id = table.Column<int>(type: "int", nullable: true),
                     session_id = table.Column<int>(type: "int", nullable: false),
                     authority = table.Column<int>(type: "int", nullable: false)
@@ -413,8 +432,31 @@ namespace Server.Migrations
                         column: x => x.user_id,
                         principalTable: "users",
                         principalColumn: "id");
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "session_invitations",
+                columns: table => new
+                {
+                    session_id = table.Column<int>(type: "int", nullable: false),
+                    user_id = table.Column<int>(type: "int", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_session_invitations", x => new { x.session_id, x.user_id });
+                    table.ForeignKey(
+                        name: "FK_session_invitations_sessions_session_id",
+                        column: x => x.session_id,
+                        principalTable: "sessions",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_session_invitations_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateTable(
                 name: "session_tags",
@@ -438,20 +480,19 @@ namespace Server.Migrations
                         principalTable: "tags",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "request_caches",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     session_id = table.Column<int>(type: "int", nullable: false),
                     guest_id = table.Column<int>(type: "int", nullable: false),
-                    music_id = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    order_index = table.Column<int>(type: "int", nullable: false)
+                    music_id = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    order_index = table.Column<int>(type: "int", nullable: false),
+                    SessionId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -463,24 +504,27 @@ namespace Server.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_request_caches_sessions_SessionId1",
+                        column: x => x.SessionId1,
+                        principalTable: "sessions",
+                        principalColumn: "id");
+                    table.ForeignKey(
                         name: "FK_request_caches_sessions_session_id",
                         column: x => x.session_id,
                         principalTable: "sessions",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateTable(
                 name: "requests",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     session_id = table.Column<int>(type: "int", nullable: false),
                     guest_id = table.Column<int>(type: "int", nullable: false),
-                    music_id = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    music_id = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    SessionId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -492,13 +536,16 @@ namespace Server.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_requests_sessions_SessionId1",
+                        column: x => x.SessionId1,
+                        principalTable: "sessions",
+                        principalColumn: "id");
+                    table.ForeignKey(
                         name: "FK_requests_sessions_session_id",
                         column: x => x.session_id,
                         principalTable: "sessions",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                        principalColumn: "id");
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_favorite_musics_user_id",
@@ -507,15 +554,15 @@ namespace Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_favorite_musics_user_id1",
-                table: "favorite_musics",
-                column: "user_id1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_fornow_likes_fornow_id_user_id",
                 table: "fornow_likes",
                 columns: new[] { "fornow_id", "user_id" },
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_fornow_likes_FornowId1",
+                table: "fornow_likes",
+                column: "FornowId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_fornow_likes_user_id",
@@ -531,6 +578,16 @@ namespace Server.Migrations
                 name: "IX_friend_requests_pass_user_id",
                 table: "friend_requests",
                 column: "pass_user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_friend_requests_send_user_id",
+                table: "friend_requests",
+                column: "send_user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_friend_requests_user2_id",
+                table: "friend_requests",
+                column: "user2_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_friends_user1_id_user2_id",
@@ -569,6 +626,11 @@ namespace Server.Migrations
                 column: "session_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_request_caches_SessionId1",
+                table: "request_caches",
+                column: "SessionId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_requests_guest_id",
                 table: "requests",
                 column: "guest_id");
@@ -577,6 +639,22 @@ namespace Server.Migrations
                 name: "IX_requests_session_id",
                 table: "requests",
                 column: "session_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_requests_SessionId1",
+                table: "requests",
+                column: "SessionId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_session_invitations_session_id_user_id",
+                table: "session_invitations",
+                columns: new[] { "session_id", "user_id" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_session_invitations_user_id",
+                table: "session_invitations",
+                column: "user_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_session_tags_session_id_tag_id",
@@ -610,6 +688,16 @@ namespace Server.Migrations
                 column: "user_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_street_pass_histories_passed_user1_id",
+                table: "street_pass_histories",
+                column: "passed_user1_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_street_pass_histories_passed_user2_id",
+                table: "street_pass_histories",
+                column: "passed_user2_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_user_blocks_blocked_user_id",
                 table: "user_blocks",
                 column: "blocked_user_id");
@@ -627,19 +715,15 @@ namespace Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_histories_user_id1",
-                table: "user_histories",
-                column: "user_id1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_user_providers_provider_id",
-                table: "user_providers",
-                column: "provider_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_user_providers_user_id_provider_id",
                 table: "user_providers",
                 columns: new[] { "user_id", "provider_id" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_users_email",
+                table: "users",
+                column: "email",
                 unique: true);
         }
 
@@ -671,7 +755,16 @@ namespace Server.Migrations
                 name: "requests");
 
             migrationBuilder.DropTable(
+                name: "session_invitations");
+
+            migrationBuilder.DropTable(
                 name: "session_tags");
+
+            migrationBuilder.DropTable(
+                name: "street_pass_histories");
+
+            migrationBuilder.DropTable(
+                name: "street_pass_options");
 
             migrationBuilder.DropTable(
                 name: "user_blocks");
@@ -703,24 +796,8 @@ namespace Server.Migrations
             migrationBuilder.DropTable(
                 name: "session_sort_settings");
 
-            migrationBuilder.DropColumn(
-                name: "birthday",
-                table: "users");
-
-            migrationBuilder.AddColumn<int>(
-                name: "age",
-                table: "users",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
-
-            migrationBuilder.AddColumn<string>(
-                name: "favorite_music",
-                table: "users",
-                type: "varchar(50)",
-                maxLength: 50,
-                nullable: true)
-                .Annotation("MySql:CharSet", "utf8mb4");
+            migrationBuilder.DropTable(
+                name: "users");
         }
     }
 }

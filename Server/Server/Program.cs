@@ -19,7 +19,15 @@ using System.Text.Json;
 //�A�v���̐ݒ��DI�������邽�߂̏���
 var builder = WebApplication.CreateBuilder(args);
 
-Env.Load();
+// 変更後
+try
+{
+    Env.Load();
+}
+catch
+{
+    // Docker環境では.envファイルがないので無視
+}
 
 builder.Services.AddControllers(); //API�ŃR���g���[���g���܂����܂��Ȃ�
 builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
@@ -33,20 +41,19 @@ builder.Services.AddSignalR();
 
 
 var connectionString =
-    Environment.GetEnvironmentVariable("MYSQL_CONNECTION")
+    Environment.GetEnvironmentVariable("SQLSERVER_CONNECTION")
     ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
     ?? Environment.GetEnvironmentVariable("CONNECTION_STRING")
     ?? throw new InvalidOperationException("Connection string not found.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(
+    options.UseSqlServer(
         connectionString,
-        new MySqlServerVersion(new Version(8, 0, 38)),
-        mySqlOptions => mySqlOptions.EnableRetryOnFailure(
-    maxRetryCount: 5,               // �ő僊�g���C��
-    maxRetryDelay: TimeSpan.FromSeconds(10), // ���g���C�Ԋu�̍ő厞��
-    errorNumbersToAdd: null          // �ǉ��Ń��g���C�Ώۂɂ���G���[�ԍ� (null�ł�OK)
-)
+        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorNumbersToAdd: null
+        )
     ));
 builder.Services.RegisterServices();
 builder.Services.RegisterRepositories();
@@ -68,10 +75,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT__KEY")!)
             ),
-            ValidateIssuer = true, // 発行者の検証
-            ValidateAudience = true, // 対象者の検証
-            ValidateLifetime = false, // 有効期限の検証
-            ValidateIssuerSigningKey = true, // 署名キーの検証
+            ValidateIssuer = true, //発行者の検証
+            ValidateAudience = true, //対象者の検証
+            ValidateLifetime = false, //有効期限の検証
+            ValidateIssuerSigningKey = true, //署名キーの検証
         };
     }
     );
