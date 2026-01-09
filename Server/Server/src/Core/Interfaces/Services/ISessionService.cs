@@ -11,5 +11,6 @@ namespace Server.src.Interfaces
         Task<List<SessionResponseDto>> GetSessionActPubFrinedAsync(int userId, int n, int skip);
         Task<List<SessionResponseDto>> GetSavePossibleSessionsAsync(int userId);
         Task<SessionDetailResponseDto?> AddSessionAsync(SessionRequestDto sessionReqDto, int userId);
+        Task<bool> SetSessionEndedAsync(int sessionId);
     }
 }

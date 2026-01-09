@@ -21,6 +21,8 @@ namespace Server.Data.Configrations
             services.AddScoped<IFornowLikeRepository, FornowLikeRepository>();
             services.AddScoped<IFavoriteMusicSummaryRepository, FavoriteMusicSummaryRepository>();
             services.AddScoped<IProviderRepository, ProviderRepository>();
+            services.AddScoped<IGuestRepository, GuestRepository>();
+            services.AddScoped<IRequestCacheRepository, RequestCacheRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services) { 
@@ -31,6 +33,8 @@ namespace Server.Data.Configrations
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IFavoriteMusicService, FavoriteMusicService>();
             services.AddScoped<IProviderService, ProviderService>();
+            services.AddScoped<IGuestService, GuestService>();
+            services.AddScoped<IRequestCacheService, RequestCacheService>();
 
             //シグナリングハブのサービス登録
             services.AddSingleton<SessionManager>();

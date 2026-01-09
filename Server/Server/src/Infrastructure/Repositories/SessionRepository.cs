@@ -97,6 +97,19 @@ namespace Server.src.Repositories
             return await query.ToListAsync();
         }
 
+        // セッションIdで検索
+        public async Task<Session?> GetSessionByIdAsync(int sessionId, bool asTracking = true)
+        {
+            IQueryable<Session> query = _context.Sessions
+                .Where(s => s.Id == sessionId);
+
+            if (!asTracking)
+            {
+                query = query.AsNoTracking(); // 追跡なし
+            }
+                return await query.FirstOrDefaultAsync();
+        }
+
         // セッション作成
         public async Task<Session> AddSessionAsync(Session session)
         {

@@ -12,13 +12,13 @@ namespace Server.src.Entities
         [Required]
         public int SessionId { get; set; }
         [ForeignKey(nameof(SessionId))]
-        public required Session Session { get; set; }
+        public Session? Session { get; set; }
 
 
         [Required]
         public int GuestId { get; set; }
         [ForeignKey(nameof(GuestId))]
-        public required Guest Guest { get; set; }
+        public Guest? Guest { get; set; }
 
         [Required]
         [StringLength(50)]
