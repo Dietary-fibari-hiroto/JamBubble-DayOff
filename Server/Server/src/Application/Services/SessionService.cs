@@ -5,6 +5,7 @@ using Server.src.Entities;
 using Server.src.Interfaces;
 using Server.src.Repositories;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Server.src.Services
 {
@@ -106,6 +107,20 @@ namespace Server.src.Services
             await _sessionRepo.UpdateSessionAsync(addedSession);
 
             return new SessionDetailResponseDto(addedSession);
+        }
+
+        // セッションの終了判定を更新
+        public async Task<bool> SetSessionEndedAsync(int sessionId)
+        {
+            var session = await _sessionRepo.GetSessionByIdAsync(sessionId);
+            if(session == null)
+            {
+                return false;
+            }
+            session.Finished = true;
+            session.FinishedAt = DateTime.UtcNow;
+            await _sessionRepo.UpdateSessionAsync(session);
+            return true;
         }
     }
 }
