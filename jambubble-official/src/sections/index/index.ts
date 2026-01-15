@@ -5,3 +5,5 @@ export { default as Approach } from "./Approach.astro";
 export { default as Function } from "./Function.astro";
 export { default as Usecase } from "./Usecase.astro";
 export { default as OneThing } from "./OneThing.astro";
+export { default as Structure } from "./Structure.astro";
+export { default as Release } from "./Release.astro";

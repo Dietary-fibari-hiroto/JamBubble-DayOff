@@ -1,7 +1,7 @@
 ---
 import "../sections/index"
 import BaseLayout from "../layouts/BaseLayout.astro"
-import { Hero,Concept,Description,Approach,Function,Usecase,OneThing } from "../sections/index"
+import { Hero,Concept,Description,Approach,Function,Usecase,OneThing,Structure,Release } from "../sections/index"
 import { ImagesIndex } from "../assets/images/ImagesIndex";
 const bg = `url(${ImagesIndex.hero})`      // url()を付ける
 const bgSp = `url(${ImagesIndex.verticalHero})` // url()を付ける
@@ -16,7 +16,10 @@ const bgSp = `url(${ImagesIndex.verticalHero})` // url()を付ける
     <Approach/>
     <Function/>
     <Usecase/>
+    <Structure/>
+    <Release/>
     <OneThing/>
+    
 </BaseLayout>
 <script>
     import { setUpFadeInWindowOnScroll } from "../hooks/fadeOnScroll";

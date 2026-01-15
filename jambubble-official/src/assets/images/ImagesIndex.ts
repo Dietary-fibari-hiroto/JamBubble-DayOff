@@ -19,11 +19,13 @@ import pexels_thevibrantmachine_3066867 from "./photos/pexels-thevibrantmachine-
 
 import arrow from "./elements/arrow.png";
 import jam_logo from "./icons/jamlogo.png";
+import cloud_png from "./icons/070cloudnetwork_101558.png";
 import verticalHero from "./photos/verticalHero.png";
 
 export const ImagesIndex = {
   arrow: arrow.src,
   jam_logo: jam_logo.src,
+  cloud_png: cloud_png.src,
 
   verticalHero: verticalHero.src,
 

@@ -1,0 +1,85 @@
+---
+import Bubble from "../components/elements/Bubble.astro"
+---
+
+
+
+<div id="loading-screen" class="loading-screen flex-all-center fill-bg__theme">
+  <div class="loader">
+    <div class="absolute-center">
+      <Bubble/>
+    </div>
+    <p>Loading...</p>
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p id="progress-text">0%</p>
+  </div>
+  <figure class="second-proccess">
+    <div class="second-proccess__concept">
+        <p class="concept-text"> 
+          私たちで作る、<br/>
+            私たちの音楽体験。</p>
+    </div>
+  </figure>
+</div>
+
+
+
+<style lang="scss">
+
+  .loading-screen {
+    position: fixed;
+    z-index: 99;
+    width: 100vw;
+    height: 100dvh;
+    text-align: center;
+  
+  }
+
+  .loader {
+    /* 最初は表示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .second-proccess {
+    /* 最初は非表示（JSで制御） */
+    width:100%;
+    height: 100%;
+    position:relative;
+    &__concept{
+        position: absolute;
+        width:100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color:black;
+        letter-spacing: 0.5rem;
+    }
+
+  }
+
+  .progress-container {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 1rem auto;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: width 0.3s ease;
+    width: 0%;
+  }
+
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>

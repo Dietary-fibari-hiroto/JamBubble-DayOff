@@ -1,6 +1,7 @@
 ---
 import "../assets/styles/index.scss";
 const {title = "dawn"} = Astro.props;
+import LoadingScreen from "./LoadingScreen.astro";
 ---
 
 
@@ -13,9 +14,24 @@ const {title = "dawn"} = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg">
-        <main>
+        <LoadingScreen/>
+        <main class="main-content">
             <slot/>
         </main>
         
+        <script>
+            import {initLoadingScreenWithStages} from "../hooks/loadingScreen"
+              initLoadingScreenWithStages({
+    trackImages: true,
+    minDisplayTime: 2000,// プログレスバー最低表示時間
+    loaderFadeDuration: 500,//ローダーフェードアウト時間
+    secondProcessFadeDuration: 800,//2段階目フェードイン/アウト時間
+    secondProcessDisplayTime: 2000,//2段階目の表示時間
+    finalFadeDuration: 1000,//全体のフェードアウト時間(これさわってりゃなんとかなる)
+    onComplete: () => {
+      console.log('ローディング終わり！');
+    }
+  });
+        </script>
     </body>
 </html>
