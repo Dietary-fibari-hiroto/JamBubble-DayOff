@@ -1,0 +1,34 @@
+---
+import { SectionTitle } from "../../components";
+import { ImagesIndex } from "../../assets/images/ImagesIndex";
+---
+<section class="structure fill-bg__theme">
+    <SectionTitle title="JamBubbleの仕組み" subTitle="structure" />
+    <img class="img--sm-box" src={ImagesIndex.cloud_png}/>
+    <p class="structure-text concept-text">
+        クラウド上でプレイリストを管理することで、複数人での音楽体験を実現しています。
+セッションを作成すると、クラウド上に専用のプレイリストが生成されます。参加者がWebやアプリから曲をリクエストすると、その情報がリアルタイムですべての端末に反映され、再生端末で順番に再生されていきます。
+アプリのインストールは不要。Webブラウザがあれば、誰でもすぐに参加できます。技術的な知識も、特別な準備も必要ありません。ただリンクを開くだけで、音楽体験に加わることができます。
+    </p>
+</section>
+
+<style lang="scss">
+    .structure{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:3rem;
+        &-img{
+            max-width:100%;
+        }
+        &-text{
+            
+            width: 62.5rem;
+            max-width:100%;
+            box-sizing: border-box;
+            padding:0 1rem;
+        }
+        
+    }
+</style>
