@@ -10,12 +10,11 @@
 .container {
     position: relative;
     width: 100vw;
-    height: 100lvh;
     background: linear-gradient(to bottom,#000000,#555555);
 }
 
 .session-nav {
-    position: absolute;
+    position: fixed;
     bottom: 3%;
     left: 50%;
     transform: translateX(-50%);

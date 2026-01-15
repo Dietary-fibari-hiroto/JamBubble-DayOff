@@ -1,4 +1,11 @@
 services:
+  sqlserver:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong!Password123
+    ports:
+      - "1433:1433"
+  
   server:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

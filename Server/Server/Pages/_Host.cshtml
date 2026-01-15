@@ -9,8 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JamBubble</title>
     <base href="~/" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link href="Server.styles.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    @using System.Reflection
+    <link href="@(Assembly.GetExecutingAssembly().GetName().Name).styles.css" rel="stylesheet" />
+
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />

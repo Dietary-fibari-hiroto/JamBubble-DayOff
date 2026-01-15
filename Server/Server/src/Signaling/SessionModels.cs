@@ -68,6 +68,12 @@ namespace Server.src.Signaling.Models
         public string SessionId { get; set; } = string.Empty;
         public string GuestName { get; set; } = string.Empty;
     }
+    //セッション退出リクエスト(ゲスト)
+    public class LeaveSessionRequest
+    {
+        public string SessionId { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
+    }
 
     //トラック追加リクエスト
     public class AddTrackRequest
@@ -115,6 +121,7 @@ namespace Server.src.Signaling.Models
         public string AlbumImageUrl { get; set; } = string.Empty;
         public int DurationMs { get; set; }
     }
+
 
     public enum PlaybackStatus
     {

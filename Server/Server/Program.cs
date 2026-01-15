@@ -89,11 +89,11 @@ var app = builder.Build();//��L�݌v�}����ɍ\�z
 //SwaggerUI�̃G���h�|�C���g��UI�ǂݍ��݁��\�z
 if (app.Environment.IsDevelopment())
 {
-    app.UseStaticFiles();
     app.UseSwagger();
     app.UseSwaggerUI();
     // await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
 }
+app.UseStaticFiles();
 app.UseRouting();
 app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
 app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理ミドルウェア
@@ -109,5 +109,79 @@ app.MapHub<MusicSessionHub>("/musicsessionhub");
 
 app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
 
+
 app.Run();//���s�I�I�I
 
+
+
+
+
+/*
+ * 
+ * # ビルドステージ
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# csprojファイルをコピーして依存関係を復元
+COPY ["Server.csproj", "./"]
+RUN dotnet restore "Server.csproj"
+
+# 残りのソースコードをコピーしてビルド
+COPY . .
+RUN dotnet build "Server.csproj" -c Release -o /app/build
+
+# 公開ステージ
+FROM build AS publish
+RUN dotnet publish "Server.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+# ランタイムステージ
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+
+# 非rootユーザーで実行（重要！）
+USER app
+
+# ポート設定
+EXPOSE 8080
+EXPOSE 8081
+
+# ASP.NET Coreのポート設定を明示
+ENV ASPNETCORE_URLS=http://+:8080
+
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Server.dll"]
+ */
+
+/**
+ * 
+ * # デバッグ コンテナーをカスタマイズする方法と、Visual Studio がこの Dockerfile を使用してより高速なデバッグのためにイメージをビルドする方法については、https://aka.ms/customizecontainer をご覧ください。
+
+# このステージは、VS から高速モードで実行するときに使用されます (デバッグ構成の既定値)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER $APP_UID
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+
+# このステージは、サービス プロジェクトのビルドに使用されます
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Server/Server.csproj", "Server/"]
+RUN dotnet restore "./Server/Server.csproj"
+COPY . .
+WORKDIR "/src/Server"
+RUN dotnet build "./Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# このステージは、最終ステージにコピーするサービス プロジェクトを公開するために使用されます
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Server.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# このステージは、運用環境または VS から通常モードで実行している場合に使用されます (デバッグ構成を使用しない場合の既定)
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Server.dll"]
+ */

@@ -1,0 +1,98 @@
+﻿@using Server.src.Signaling.Models
+
+
+
+<div class="member-list screen-frame">
+    <button class="return-button " @onclick="OnReturn" type="button">
+    <img src="images/elements/x.png" alt="戻る" />
+</button>
+    <h3>参加メンバー (@Members.Count)</h3>
+    <ul class="member-list__items">
+        @foreach (var member in Members)
+        {
+            <li class="member-list__item">
+                <span class="member-list__name">@member.Name</span>
+                <span class="member-list__joined">
+                    @member.JoinedAt.ToLocalTime().ToString("HH:mm")
+                </span>
+            </li>
+        }
+    </ul>
+</div>
+
+<style>
+    .member-list {
+        background: #0c1020;
+        color: #e8ecff;
+        padding: 1rem 1.2rem;
+        box-sizing:border-box;
+        border-radius: 18px;
+    }
+
+        .member-list h3 {
+            margin: 10rem 0 0.8rem;
+            font-size: 2rem;
+            color: #cfd6ff;
+            letter-spacing: 0.02em;
+        }
+
+    .member-list__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+    }
+
+    .member-list__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 10px 12px;
+        transition: background 0.2s, transform 0.15s;
+    }
+
+        .member-list__item:active {
+            transform: scale(0.98);
+        }
+
+        .member-list__item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+    .member-list__name {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #f4f6ff;
+    }
+
+    .member-list__joined {
+        font-size: 1rem;
+        color: #a7b0ff;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .return-button {
+        position: fixed;
+        z-index: 10;
+        top: 3%;
+        left: 3%;
+    }
+
+</style>
+
+@code {
+    [Parameter]
+    public List<Guest> Members { get; set; } = new();
+
+    [Parameter]
+    public EventCallback Return { get; set; }
+
+    private async Task OnReturn()
+    {
+        await Return.InvokeAsync();
+    }
+}

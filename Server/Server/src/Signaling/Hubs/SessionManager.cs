@@ -83,16 +83,17 @@ namespace Server.src.Signaling.Hubs
             }
         }
 
-
-        public void RemoveGuest(string sessionId ,string userId)
+        //ゲストの退出処理
+        public bool RemoveGuest(LeaveSessionRequest request)
         {
-            if(_sessions.TryGetValue(sessionId,out var session))
+            if(_sessions.TryGetValue(request.SessionId,out var session))
             {
-                session.Guests.RemoveAll(g => g.UserId == userId);
+                session.Guests.RemoveAll(g => g.UserId == request.UserId);
                 session.LastActivity = DateTime.UtcNow;
-
+                return true;
                 /*Service処理*/
             }
+            return false;
         }
 
 

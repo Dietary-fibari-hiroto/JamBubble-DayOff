@@ -1,0 +1,60 @@
+---
+import "../sections/index"
+import BaseLayout from "../layouts/BaseLayout.astro"
+import { Hero,Concept,Description,Approach,Function,Usecase,OneThing } from "../sections/index"
+import { ImagesIndex } from "../assets/images/ImagesIndex";
+const bg = `url(${ImagesIndex.hero})`      // url()を付ける
+const bgSp = `url(${ImagesIndex.verticalHero})` // url()を付ける
+---
+<BaseLayout>
+    <figure class="fixed-bg section-frame">
+        <div window-scroll-fade class="fixed-bg__panel section-frame"/>
+    </figure>
+    <Hero/>
+    <Concept/>
+    <Description/>
+    <Approach/>
+    <Function/>
+    <Usecase/>
+    <OneThing/>
+</BaseLayout>
+<script>
+    import { setUpFadeInWindowOnScroll } from "../hooks/fadeOnScroll";
+    setUpFadeInWindowOnScroll({
+        scrollThreshold:100,
+        attribute:"[window-scroll-fade]",
+    })
+</script>
+<style define:vars={{bg,bgSp}} lang="scss" >
+    
+    .fixed-bg{
+        background-image: var(--bg);
+        position:fixed; 
+        top: 0;
+        left: 0;
+        background-position: center;
+        background-size: cover;
+        &__panel{
+            background-color: #00000088;
+            backdrop-filter: blur(0.5rem);
+        }
+    }
+    [window-scroll-fade] {
+        opacity: 0;
+        transition: opacity 0.7s ease-out;
+    }
+    [window-scroll-fade].is-visible {
+        opacity: 1;
+    }
+    [hero-fadeout]{
+        transition: opacity 0.7s ease-out;
+        &.is-invisible{
+            opacity: 0;
+        }
+    }
+    @media (max-width: 767px) {
+        .fixed-bg{
+            background-image: var(--bgSp);
+        }
+    }
+</style>

@@ -1,0 +1,47 @@
+---
+import { ImagesIndex } from "../../assets/images/ImagesIndex"
+const bg = ImagesIndex.hero
+
+---
+
+<section class="section-frame hero">
+    <div class="hero-title">
+        <img class="img--sm-box" src={ImagesIndex.jam_logo}/>
+        <p class="text-7xl-bold">JamBubble</p>
+        <p class="text-xl">by team DAYOFF.</p>
+    </div>
+    <p class="hero-catch concept-text">
+        そばにいても、<br/>
+離れていても、<br/>
+私たちで作る、<br/>
+私たちだけのプレイリスト<br/>
+    </p>
+</section>
+
+<style lang="scss">
+    .hero{
+        position: relative;
+        color: white;
+        &-title{
+            position: absolute;
+            bottom:0;
+            left:0;
+            padding:3rem;
+        }
+        &-catch{
+            position: absolute;
+            top: 10%;
+            right: 30%;
+        }
+    }
+
+    @media(max-width:767px){
+        .hero{
+            &-catch{
+                position: absolute;
+                top: 10%;
+                right: 20%;
+            }
+        }
+    }
+</style>

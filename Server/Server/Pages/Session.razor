@@ -24,12 +24,17 @@
     {
         <!--
         <div class="user-info">
-            <h2>Music Session: @SessionId</h2>
-            <p>ようこそ、@_guestName さん！</p>
+        <h2>Music Session: @SessionId</h2>
+        <p>ようこそ、@_guestName さん！</p>
         </div>
         -->
         switch (_currentViewMode)
         {
+            case ViewMode.Home:
+                <MemberList 
+                    Members="@_members"
+                            Return="@(() => SwitchToView(ViewMode.Search))" />
+                break;
             case ViewMode.Search:
 
             <TrackSearch SearchQuery="@_searchQuery"
@@ -48,13 +53,15 @@
         }
 
         <nav class="session-nav">
-                <button class="session-nav__button" @onclick="()=>SwitchView(ViewMode.Search)">
-                <img src="images/elements/list-minus.png" alt="qr_icon"/>
-
-                </button>
-                <button class="session-nav__button" @onclick="()=>SwitchView(ViewMode.Playlist)">
+            <button class="session-nav__button" @onclick="@(async () => await SwitchToView(ViewMode.Home))">
+                <img src="images/elements/house.png" alt="house_icon" />
+            </button>
+            <button class="session-nav__button" @onclick="@(async () => await SwitchToView(ViewMode.Search))">
+                <img src="images/elements/list-minus.png" alt="qr_icon" />
+            </button>
+            <button class="session-nav__button" @onclick="@(async () => await SwitchToView(ViewMode.Playlist))">
                 <img src="images/elements/git-pull-request-arrow.png" alt="qr_icon" />
-                </button>
+            </button>
             </nav>
     }
 
@@ -65,10 +72,12 @@
 @code {
     public enum ViewMode
     {
+        Home,
         Search,
         Playlist
     }
     private ViewMode _currentViewMode = ViewMode.Search;
+    private List<Guest> _members = new();
     [Parameter]
     public string SessionId { get; set; } = string.Empty;
     private System.Threading.Timer? _searchDebounceTimer;
@@ -106,6 +115,32 @@
             InvokeAsync(StateHasChanged);
         });
 
+        //ゲストの参加を受信
+        _hubConnection.On<Guest>("GuestJoined", (guest) =>
+        {
+            _members.Add(guest);
+            InvokeAsync(StateHasChanged);
+        });
+
+
+        //ゲストの退出を通知
+        _hubConnection.On<string>("GuestLeft", (connectionId) =>
+        {
+            var member = _members.FirstOrDefault(m => m.ConnectionId == connectionId);
+            if(member != null)
+            {
+                _members.Remove(member);
+            }
+            InvokeAsync(StateHasChanged);
+        });
+
+        //メンバリストの初期化を受信
+        _hubConnection.On<List<Guest>>("MemberListUpdated", (members) =>
+        {
+            _members = members;
+            InvokeAsync(StateHasChanged);
+        });
+
         _hubConnection.On("SessionClosed", () =>
         {
             _errorMessage = "セッションが終了しました";
@@ -113,25 +148,28 @@
             InvokeAsync(StateHasChanged);
         });
 
+
+
         await _hubConnection.StartAsync();
     }
 
-
-    private void SwitchView(ViewMode viewMode)
+    //ビューを切り替える関数
+    private async Task SwitchToView(ViewMode viewMode)
     {
+        Console.WriteLine($"Switching from {_currentViewMode} to {viewMode}");
         _currentViewMode = viewMode;
+        await InvokeAsync(StateHasChanged);
     }
-
+    //ビューによってclassを切り替える
     private string IsActiveView(ViewMode viewMode)
     {
         return _currentViewMode == viewMode ? "active" : "";
     }
 
+    //セッションに参加する関数
     private async Task JoinSession()
     {
-        Console.WriteLine("=== JoinSession START ===");
-        Console.WriteLine($"_guestName: '{_guestName}'");
-        Console.WriteLine($"_hubConnection is null: {_hubConnection is null}");
+
 
         if (string.IsNullOrWhiteSpace(_guestName))
         {
@@ -163,6 +201,7 @@
             {
                 _userId = Guid.NewGuid().ToString();
                 _isJoined = true;
+                _members = await _hubConnection!.InvokeAsync<List<Guest>>("GetMembers", SessionId);
                 Console.WriteLine("Join successful!");
             }
             else
@@ -183,6 +222,7 @@
         }
     }
 
+    //検索関数
     private async Task SearchTracks(string query)
     {
         _isSearching = true;
@@ -199,6 +239,7 @@
         }
     }
 
+    //トラックを追加する関数
     private async Task AddTrack(SpotifyTrackSearchResult track)
     {
         try
@@ -224,6 +265,7 @@
         }
     }
 
+    //トラックを削除する関数
     private async Task RemoveTrack(string itemId)
     {
         try
@@ -242,6 +284,7 @@
             _errorMessage = $"曲の削除に失敗しました: {ex.Message}";
         }
     }
+
 
     public async ValueTask DisposeAsync()
     {
@@ -272,6 +315,31 @@
                 await SearchTracks(query);
             });
         }, null, 500, Timeout.Infinite); // 500ms待ってから検索
+    }
+
+    //セッションを退出する関数
+    private async Task LeaveSession()
+    {
+        try
+        {
+            var request = new LeaveSessionRequest
+                {
+                    SessionId = SessionId,
+                    UserId = _userId
+                };
+            await _hubConnection!.InvokeAsync("LeaveSession", request);
+
+            _isJoined = false;
+            _guestName = string.Empty;
+            _playlist.Clear();
+            _searchResults.Clear();
+
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            _errorMessage = $"セッションからの退出に失敗しました: {ex.Message}";
+        }
     }
 
     private void OnGuestNameChanged(string value)

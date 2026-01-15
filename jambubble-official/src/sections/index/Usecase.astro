@@ -1,0 +1,93 @@
+---
+import { ImagesIndex } from "../../assets/images/ImagesIndex";
+import { SectionTitle } from "../../components";
+const usecaseList = [
+    {
+        img:ImagesIndex.pexels_thevibrantmachine_3066867,
+        title:"ドライブや移動中に",
+        text:"運転手だけが音楽を選ぶのではなく、同乗者全員が次に流れる曲をリクエストできる。車内の空気に、自然な一体感が生まれます。"
+    },
+    {
+        img:ImagesIndex.IMG_6963,
+        title:"旅行やイベントのBGMとして",
+        text:"宿泊先やイベント会場でセッションを立ち上げ、参加者それぞれの“今聴きたい曲”を集めたプレイリストに。その時間ならではの音楽が残ります。"
+    },
+    {
+        img:ImagesIndex.IMG_1,
+        title:"離れた場所にいる友人と",
+        text:"同じセッションに参加して、選曲を通じて気分や空気感を共有する。言葉がなくても、音楽でつながることができます"
+    }
+]
+---
+
+<section class="fill-bg__theme usecase padding-section">
+    <SectionTitle title="利用シーン" subTitle="Usecase" />
+    <div class="usecase-inner">
+        <img class="img--lg-vertical"  src={ImagesIndex.IMG_7646}/>
+        <div>
+            <p class="concept-text">音楽は、ひとりで楽しむものでもあるけれど、<br/>
+ 誰かと一緒にいる時間を、そっとつないでくれるものでもあります。<br/>
+JamBubble は、<br/>
+ 「同じ空間」でも、「少し離れた場所」でも、<br/>
+ その場にいる全員が音楽に参加できる体験をつくります。</p>
+ <p class="text-5xl">
+    たとえば<br/>
+こんなシーンで。
+ </p>
+        </div>
+    </div>
+    <div class="usecase-example">
+        {
+            usecaseList.map((list)=>(
+                <div class="usecase-example__container">
+                    <img class="usecase-example__container-img" src={list.img}/>
+                    <div>
+                        <p class="text-3xl">{list.title}</p>
+                        <p class="text-md">運転手だけが音楽を選ぶのではなく、同乗者全員が次に流れる曲をリクエストできる。車内の空気に、自然な一体感が生まれます。</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+
+<style lang="scss">
+    .usecase{
+        > * + *{
+            margin-top:10rem;
+        }
+        &-inner{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        &-example{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap:5rem;
+            flex-wrap: wrap;
+
+            &__container{
+                width:37.5rem;
+                &-img{
+                    width: 100%;
+                    height:28rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        .usecase{
+            &-inner{
+                flex-direction: column;
+                gap: 3rem;
+            }
+        }
+    }
+
+</style>

@@ -1,22 +1,95 @@
 ﻿<div class="not-page">
-    <img class="not-page__logo" src="https://dawn-waiting.com/static/media/jumbubblelogo.a74d046d2b3aefb1b4fc.png" />
-    <p class="text-base">Powered By Jambubble</p>
-    <p class="text-4xl font-bold">このURLは無効です。</p>
-    <p class="text-base">有効なセッションにご参加ください。</p>
+  <div class="not-page__card">
+    <img
+      class="not-page__logo"
+      src="https://dawn-waiting.com/static/media/jumbubblelogo.a74d046d2b3aefb1b4fc.png"
+      alt="Jambubble Logo"
+    />
+
+    <p class="powered">Powered By Jambubble</p>
+
+    <h1 class="title">このURLは無効です。</h1>
+
+    <p class="message">有効なセッションにご参加ください!</p>
+  </div>
 </div>
 
 <style>
-    .not-page{
-        width:100vw;
-        height:100lvh;
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        flex-direction: column;
-    }
+  :root {
+    --accent: #ff8500;
+    --secondary: #240046;
+    --bg: #000000;
+    --text: #e9e9e9;
+  }
 
-    .not-page__logo{
-        width:120px;
-        height120px;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    color: var(--text);
+  }
+
+  .not-page {
+    width: 100vw;
+    height: 100lvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing:border-box;
+    padding: 1.5rem;
+  }
+
+  .not-page__card {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    
+    background: linear-gradient(145deg, #0a0a0a, #0f0f0f);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  }
+
+  .not-page__logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.2rem;
+
+    filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(2819%)
+      hue-rotate(1deg) brightness(102%) contrast(104%);
+  }
+
+  .powered {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .message {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .not-page__card::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 2px;
+    margin: 1.6rem auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    opacity: 0.8;
+  }
+
+
 </style>

@@ -200,10 +200,10 @@ namespace Server.src.Signaling.Hubs
                     return false;
                 }
 
-                // 🎯 シンプル！変換不要！
+
                 item.Status = request.Status;
 
-                // セッション参加者全員にプレイリスト更新を通知
+                //セッション参加者全員にプレイリスト更新を通知
                 await Clients.Group(request.SessionId).SendAsync("PlaylistUpdated", session.Playlist);
 
                 _logger.LogInformation(
@@ -302,6 +302,46 @@ namespace Server.src.Signaling.Hubs
             }
         }
 
+        //ゲストのセッション退出関数
+        public async Task<bool> RemoveGuest(LeaveSessionRequest request)
+        {
+            try
+            {
+                var session = _sessionManager.GetSession(request.SessionId);
+                if(session  == null)
+                {
+                    throw new HubException("セッションが見つかりません。");
+                }
+
+                var removed = _sessionManager.RemoveGuest(request);
+
+                if (!removed)
+                {
+                    _logger.LogWarning("ゲストが見つかりませんでした。");
+                    return false;
+                }
+
+                await Groups.RemoveFromGroupAsync(Context.ConnectionId, request.SessionId);
+                await Clients.Group(request.SessionId).SendAsync("GuestLeft", Context.ConnectionId);
+                return true;
+
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, "セッションの退出中にエラーが発生しました。");
+                throw new HubException("セッションからの退出に失敗しました。");
+            }
+        }
+
+        public Task<List<Guest>> GetMembers(string sessionId)
+        {
+            var session = _sessionManager.GetSession(sessionId);
+            if(session == null)
+            {
+                return Task.FromResult(new List<Guest>());
+            }
+            return Task.FromResult(session.Guests.ToList());
+        }
+
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
             // 接続切断時の処理（ホスト切断時などを想定）
@@ -315,6 +355,7 @@ namespace Server.src.Signaling.Hubs
 
             await base.OnDisconnectedAsync(exception);
         }
+
     }
 
 }

@@ -1,5 +1,7 @@
 ﻿.screen-frame {
+    position:relative;
     width: 100vw;
-    height: 100lvh;
+    height: 100dvh;
+    overflow-y:scroll;
 }
 

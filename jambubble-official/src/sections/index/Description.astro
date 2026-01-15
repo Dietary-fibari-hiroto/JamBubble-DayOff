@@ -1,0 +1,61 @@
+---
+import { SectionTitle } from "../../components"
+import { ImagesIndex } from "../../assets/images/ImagesIndex"
+---
+
+<section class="padding-section description fill-bg__theme">
+    <SectionTitle title="JamBubbleについて" subTitle="Description"  />
+
+    <div class="description-inner">
+        <p class="description-inner__concept text-5xl">
+            私たちで作る、<br/>
+            私たちの音楽体験。
+        </p>
+        <p class="concept-text">
+            JamBubbleは、<br/>
+ 複数人が同じプレイリストに参加し、<br/>
+ 音楽をリクエストしながら共有できる音楽体験アプリです。<br/>
+セッションごとにプレイリストを作成し、<br/>
+ アプリやWebから参加することで、<br/>
+ 誰でも選曲に加わることができます。<br/>
+再生する端末が一つでも、<br/>
+ それぞれのスマートフォンから音楽を選び、<br/>
+ 一つの体験として共有できます。<br/>
+        </p>
+        <img class="img--lg-vertical" src={ImagesIndex.IMG_7758}/>
+    </div>
+    <img class="img--sm-horizontal" src={ImagesIndex.IMG_7621}/>
+</section>
+
+<style lang="scss">
+    .description{
+
+        &-inner{
+            width: 100%;
+            margin:5rem 0;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            > * + *{
+                margin-left:5rem;
+            }
+
+            &__concept{
+                writing-mode: vertical-rl;
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        .description{
+            &-inner{
+                flex-direction: column;
+                align-items: center;
+                > * + *{
+                    margin-top:5rem;
+                }
+            }
+            
+        }
+    }
+</style>

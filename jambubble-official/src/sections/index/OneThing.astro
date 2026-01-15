@@ -1,0 +1,159 @@
+---
+import { ImagesIndex } from "../../assets/images/ImagesIndex";
+const images = [
+  { src: ImagesIndex.hero, alt: "" },
+  { src: ImagesIndex.IMG_1, alt: "" },
+  { src: ImagesIndex.IMG_7450, alt: "" },
+  { src: ImagesIndex.IMG_7621, alt: "" },
+  { src: ImagesIndex.IMG_7758, alt: "" },
+    { src: ImagesIndex.IMG_7784, alt: "" },
+      { src: ImagesIndex.IMG_7987, alt: "" },
+        { src: ImagesIndex.IMG_7992, alt: "" },
+          { src: ImagesIndex.IMG_7731, alt: "" },
+            { src: ImagesIndex.IMG_8026, alt: "" },
+              { src: ImagesIndex.IMG_8000, alt: "" },
+];
+---
+
+
+<section class="section-frame fill-bg__theme onething padding-section">
+<div>
+        <p>
+        音楽を、ひとりで聴く時間もいい。<br/>
+ でも、ときどきは、<br/>
+ 誰かと同じ曲を待つ時間も、悪くない。<br/>
+    </p>
+    <p class="text-7xl-bold">
+        DayOff
+    </p>
+</div>
+<div>
+        <div class="scroll-container">
+  <div class="scroll-content">
+    {images.map((image) => (
+      <div class="image-wrapper">
+        <img src={image.src} alt={image.alt} />
+      </div>
+    ))}
+    {images.map((image) => (
+      <div class="image-wrapper">
+        <img src={image.src} alt={image.alt} />
+      </div>
+    ))}
+    {images.map((image) => (
+      <div class="image-wrapper">
+        <img src={image.src} alt={image.alt} />
+      </div>
+    ))}
+    
+  </div>
+</div>
+<p class="copyright">Copyright 2026/01/10 - Dawn. All Rights Reserved.</p>
+</section>
+
+<style lang="scss">
+    .onething{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        text-align: center;
+        width: 100%;
+
+    overflow-x: hidden;
+    }
+    .copyright{
+        position:absolute;
+        width:100%;
+        box-sizing: border-box;
+        padding:1rem;
+        text-align: center;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:0;
+    }
+
+
+    .scroll-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0;
+    position: relative;
+  }
+
+  .scroll-container::before,
+  .scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .scroll-container::before {
+    left: 0;
+    background: linear-gradient(to right, #1a1a2e, transparent);
+  }
+
+  .scroll-container::after {
+    right: 0;
+    background: linear-gradient(to left, #1a1a2e, transparent);
+  }
+
+  .scroll-content {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+
+  .image-wrapper {
+    flex-shrink: 0;
+    width: 400px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .image-wrapper:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-400px * 5 - 2rem * 5));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .image-wrapper {
+      width: 280px;
+      height: 210px;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-280px * 5 - 2rem * 5));
+      }
+    }
+  }
+</style>

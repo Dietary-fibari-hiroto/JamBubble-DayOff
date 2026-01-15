@@ -1,0 +1,31 @@
+---
+const {title,subTitle,isWhite} = Astro.props;
+---
+
+
+<div class={`section-title ${isWhite&&"white"}`}>
+    <p class="section-title__sub text-base">{subTitle}</p>
+    <p class="text-xl">-</p>
+    <p class="text-xl">{title}</p>
+</div>
+
+<style lang="scss">
+    .section-title{
+        &.white{
+            color: white;
+        }
+        padding:3rem;
+        width:100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        > * + * {
+            padding-left:1rem;
+        }
+
+        &__sub{
+            color:#FF8500;
+        }
+    }
+</style>
