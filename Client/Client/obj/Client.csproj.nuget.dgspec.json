@@ -315,25 +315,7 @@
         "maccatalyst-x64": {
           "#import": []
         },
-        "win10-arm": {
-          "#import": []
-        },
-        "win10-arm-aot": {
-          "#import": []
-        },
-        "win10-arm64-aot": {
-          "#import": []
-        },
         "win10-x64": {
-          "#import": []
-        },
-        "win10-x64-aot": {
-          "#import": []
-        },
-        "win10-x86": {
-          "#import": []
-        },
-        "win10-x86-aot": {
           "#import": []
         }
       }

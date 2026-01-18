@@ -17,7 +17,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>880</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Client.styles.css'))">
@@ -37,7 +37,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>48924</FileLength>
-      <LastWriteTime>Fri, 05 Dec 2025 01:52:35 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Client.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\fonts.css'))">
@@ -57,7 +57,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1195</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\fonts.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\index.css'))">
@@ -77,7 +77,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>85</FileLength>
-      <LastWriteTime>Thu, 30 Oct 2025 14:47:11 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\index.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\utils.css'))">
@@ -97,7 +97,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1532</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\utils.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Variable.css'))">
@@ -117,7 +117,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>360</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Variable.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf'))">
@@ -137,7 +137,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5440956</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Black.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Bold.ttf'))">
@@ -157,7 +157,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5445700</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Bold.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-ExtraBold.ttf'))">
@@ -177,7 +177,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5443180</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-ExtraBold.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-ExtraLight.ttf'))">
@@ -197,7 +197,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5454392</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-ExtraLight.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Light.ttf'))">
@@ -217,7 +217,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5453956</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Light.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Medium.ttf'))">
@@ -237,7 +237,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5446916</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Medium.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Regular.ttf'))">
@@ -257,7 +257,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5450308</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:06 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Regular.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-SemiBold.ttf'))">
@@ -277,7 +277,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5444352</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-SemiBold.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Thin.ttf'))">
@@ -297,15 +297,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>5453084</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\Noto_Sans_JP\NotoSansJP-Thin.ttf'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\arrow-up-from-line.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\arrow-up-from-line.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/arrow-up-from-line.svg</RelativePath>
+      <RelativePath>images/elementIcons/arrow-up-from-line.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -317,15 +317,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>319</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\arrow-up-from-line.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\arrow-up-from-line.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\check.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\check.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/check.svg</RelativePath>
+      <RelativePath>images/elementIcons/check.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -337,15 +337,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>255</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\check.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\check.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\chevron-down.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\chevron-down.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/chevron-down.svg</RelativePath>
+      <RelativePath>images/elementIcons/chevron-down.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -357,15 +357,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>266</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\chevron-down.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\chevron-down.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\circle-check-big.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\circle-check-big.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/circle-check-big.svg</RelativePath>
+      <RelativePath>images/elementIcons/circle-check-big.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -377,15 +377,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>321</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\circle-check-big.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\circle-check-big.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\circle-user-round.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\circle-user-round.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/circle-user-round.svg</RelativePath>
+      <RelativePath>images/elementIcons/circle-user-round.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -397,15 +397,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>350</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\circle-user-round.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\circle-user-round.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\contact.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\contact.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/contact.svg</RelativePath>
+      <RelativePath>images/elementIcons/contact.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -417,15 +417,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>401</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\contact.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\contact.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\ellipsis.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\ellipsis.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/ellipsis.svg</RelativePath>
+      <RelativePath>images/elementIcons/ellipsis.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -437,15 +437,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>326</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\ellipsis.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\ellipsis.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\eye.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\eye.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/eye.svg</RelativePath>
+      <RelativePath>images/elementIcons/eye.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -457,15 +457,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>368</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\eye.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\eye.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\fast-forward.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\fast-forward.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/fast-forward.svg</RelativePath>
+      <RelativePath>images/elementIcons/fast-forward.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -477,15 +477,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>406</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\fast-forward.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\fast-forward.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\focus.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\focus.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/focus.svg</RelativePath>
+      <RelativePath>images/elementIcons/focus.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -497,15 +497,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>401</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\focus.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\focus.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\focus-black.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\focus-black.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/focus-black.svg</RelativePath>
+      <RelativePath>images/elementIcons/focus-black.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -517,15 +517,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>406</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\focus-black.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\focus-black.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\git-pull-request-create-arrow.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\git-pull-request-create-arrow.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/git-pull-request-create-arrow.svg</RelativePath>
+      <RelativePath>images/elementIcons/git-pull-request-create-arrow.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -537,15 +537,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>425</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\git-pull-request-create-arrow.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\git-pull-request-create-arrow.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\heart.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\heart.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/heart.svg</RelativePath>
+      <RelativePath>images/elementIcons/heart.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -557,15 +557,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>389</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\heart.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\heart.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\house.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\house.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/house.svg</RelativePath>
+      <RelativePath>images/elementIcons/house.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -577,15 +577,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>395</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\house.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\house.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\list-minus.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\list-minus.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/list-minus.svg</RelativePath>
+      <RelativePath>images/elementIcons/list-minus.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -597,15 +597,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>318</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\list-minus.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\list-minus.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\list-music.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\list-music.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/list-music.svg</RelativePath>
+      <RelativePath>images/elementIcons/list-music.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -617,15 +617,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>348</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\list-music.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\list-music.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\mail.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\mail.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/mail.svg</RelativePath>
+      <RelativePath>images/elementIcons/mail.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -637,15 +637,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>326</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\mail.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\mail.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\map-pinned.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\map-pinned.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/map-pinned.svg</RelativePath>
+      <RelativePath>images/elementIcons/map-pinned.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -657,15 +657,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>501</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\map-pinned.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\map-pinned.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\menu.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\menu.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/menu.svg</RelativePath>
+      <RelativePath>images/elementIcons/menu.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -677,15 +677,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>285</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\menu.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\menu.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\message-circle-plus.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\message-circle-plus.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/message-circle-plus.svg</RelativePath>
+      <RelativePath>images/elementIcons/message-circle-plus.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -697,15 +697,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>429</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\message-circle-plus.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\message-circle-plus.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\play.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\play.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/play.svg</RelativePath>
+      <RelativePath>images/elementIcons/play.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -717,15 +717,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>320</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\play.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\play.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\qr-code.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\qr-code.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/qr-code.svg</RelativePath>
+      <RelativePath>images/elementIcons/qr-code.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -737,15 +737,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>596</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\qr-code.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\qr-code.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\radio.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\radio.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/radio.svg</RelativePath>
+      <RelativePath>images/elementIcons/radio.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -757,15 +757,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>437</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\radio.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\radio.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\repeat.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\repeat.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/repeat.svg</RelativePath>
+      <RelativePath>images/elementIcons/repeat.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -777,15 +777,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>353</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\repeat.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\repeat.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\repeat-1.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\repeat-1.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/repeat-1.svg</RelativePath>
+      <RelativePath>images/elementIcons/repeat-1.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -797,15 +797,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>378</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\repeat-1.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\repeat-1.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\return.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\return.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/return.svg</RelativePath>
+      <RelativePath>images/elementIcons/return.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -817,15 +817,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>252</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\return.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\return.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\search.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\search.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/search.svg</RelativePath>
+      <RelativePath>images/elementIcons/search.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -837,15 +837,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>289</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\search.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\search.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\share.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\share.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/share.svg</RelativePath>
+      <RelativePath>images/elementIcons/share.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -857,15 +857,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>326</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\share.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\share.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shell.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shell.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/shell.png</RelativePath>
+      <RelativePath>images/elementIcons/shell.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -877,15 +877,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>13246</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shell.png'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shell.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shell.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shell.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/shell.svg</RelativePath>
+      <RelativePath>images/elementIcons/shell.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -897,15 +897,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>369</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shell.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shell.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shield-ban.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shield-ban.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/shield-ban.svg</RelativePath>
+      <RelativePath>images/elementIcons/shield-ban.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -917,15 +917,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>448</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shield-ban.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shield-ban.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shuffle.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shuffle.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/shuffle.svg</RelativePath>
+      <RelativePath>images/elementIcons/shuffle.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -937,15 +937,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>448</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\shuffle.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\shuffle.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\square-pen.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\square-pen.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/square-pen.svg</RelativePath>
+      <RelativePath>images/elementIcons/square-pen.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -957,15 +957,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>439</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\square-pen.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\square-pen.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\undo-2.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\undo-2.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/undo-2.svg</RelativePath>
+      <RelativePath>images/elementIcons/undo-2.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -977,15 +977,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>322</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\undo-2.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\undo-2.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\user-round-plus.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\user-round-plus.png'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/user-round-plus.png</RelativePath>
+      <RelativePath>images/elementIcons/user-round-plus.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -997,15 +997,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>532</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\user-round-plus.png'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\user-round-plus.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\user-round-plus.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\user-round-plus.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/user-round-plus.svg</RelativePath>
+      <RelativePath>images/elementIcons/user-round-plus.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1017,15 +1017,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>355</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\user-round-plus.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\user-round-plus.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\users.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\users.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/users.svg</RelativePath>
+      <RelativePath>images/elementIcons/users.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1037,15 +1037,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>387</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\users.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\users.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\x.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\x.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/x.svg</RelativePath>
+      <RelativePath>images/elementIcons/x.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1057,15 +1057,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>264</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\x.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\x.svg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\x-black.svg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\x-black.svg'))">
       <SourceType>Package</SourceType>
       <SourceId>Client</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>/</BasePath>
-      <RelativePath>images/elementicons/x-black.svg</RelativePath>
+      <RelativePath>images/elementIcons/x-black.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1077,8 +1077,8 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>269</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementicons\x-black.svg'))</OriginalItemSpec>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\elementIcons\x-black.svg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\applemusic_icon.png'))">
       <SourceType>Package</SourceType>
@@ -1097,7 +1097,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>34295</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\applemusic_icon.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\DayoffWhiteLogo.png'))">
@@ -1117,7 +1117,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>12909</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\DayoffWhiteLogo.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\jumbubblelogo.png'))">
@@ -1137,7 +1137,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>63629</FileLength>
-      <LastWriteTime>Thu, 30 Oct 2025 14:47:11 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\jumbubblelogo.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\spotify_icon.png'))">
@@ -1157,7 +1157,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>18769</FileLength>
-      <LastWriteTime>Wed, 29 Oct 2025 06:58:07 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\icons\spotify_icon.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\movie.jpg'))">
@@ -1177,7 +1177,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>194757</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\movie.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\offn.jpg'))">
@@ -1197,7 +1197,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>656968</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\offn.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\pexels-thevibrantmachine-3066867.jpg'))">
@@ -1217,7 +1217,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1649863</FileLength>
-      <LastWriteTime>Thu, 30 Oct 2025 14:47:11 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\pexels-thevibrantmachine-3066867.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\photo1.jpg'))">
@@ -1237,7 +1237,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>133753</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\photo1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\testqr.png'))">
@@ -1257,7 +1257,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>360</FileLength>
-      <LastWriteTime>Fri, 07 Nov 2025 06:49:44 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photos\testqr.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))">
@@ -1277,7 +1277,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>669</FileLength>
-      <LastWriteTime>Thu, 04 Dec 2025 11:54:56 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\spotify-player.js'))">
@@ -1297,7 +1297,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>7188</FileLength>
-      <LastWriteTime>Fri, 05 Dec 2025 06:40:59 GMT</LastWriteTime>
+      <LastWriteTime>Thu, 15 Jan 2026 12:20:19 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\spotify-player.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

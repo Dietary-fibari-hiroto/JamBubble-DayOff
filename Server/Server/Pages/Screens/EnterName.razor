@@ -1,31 +1,64 @@
 ﻿<section class="screen-frame enter-name">
-    <p>ニックネームを入力してください！</p>
-    <div class="enter-name__container">
-        <label>ニックネーム</label>
-        <input class="enter-name__container-input"
-               type="text"
-               value="@GuestName"
-               @oninput="OnInputChanged"
-               placeholder="例: ゆづき" />
+    <div class="enter-name__welcome">
+        <div class="enter-name__logo">
+            <span class="logo-icon">🎵</span>
+        </div>
+        <h1 class="enter-name__title">JamBubble</h1>
+        <p class="enter-name__subtitle">音楽セッションに参加しよう</p>
     </div>
 
-
-    @if (IsConnecting)
+    @if (!string.IsNullOrWhiteSpace(HostName))
     {
-        <p>接続中...</p>
-    }
-    else
-    {
-        <button class="submit_button primary"
-                @onclick="OnJoinClicked">
-            確定
-        </button>
+        <div class="enter-name__host-info">
+            <p class="host-label">ホスト</p>
+            <p class="host-name">@HostName</p>
+        </div>
     }
 
-    @if (!string.IsNullOrWhiteSpace(ErrorMessage))
-    {
-        <div class="alert alert-danger mt-3">@ErrorMessage</div>
-    }
+    <div class="enter-name__form">
+        <div class="enter-name__input-group">
+            <label class="input-label">ニックネーム</label>
+            <div class="input-wrapper">
+                <input class="enter-name__input"
+                       type="text"
+                       value="@GuestName"
+                       @oninput="OnInputChanged"
+                       placeholder="例: ゆづき"
+                       maxlength="20" />
+                <div class="input-underline"></div>
+            </div>
+            <p class="input-hint">セッション内で表示される名前です</p>
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(ErrorMessage))
+        {
+            <div class="error-message">
+                <span class="error-icon">⚠️</span>
+                <span>@ErrorMessage</span>
+            </div>
+        }
+
+        @if (IsConnecting)
+        {
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>接続中...</p>
+            </div>
+        }
+        else
+        {
+            <button class="submit-button"
+                    @onclick="OnJoinClicked"
+                    disabled="@string.IsNullOrWhiteSpace(GuestName)">
+                <span class="button-text">参加する</span>
+                <span class="button-icon">→</span>
+            </button>
+        }
+    </div>
+
+    <div class="enter-name__footer">
+        <p class="footer-text">リアルタイムで音楽を共有・リクエストできます</p>
+    </div>
 </section>
 
 @code {
@@ -33,6 +66,7 @@
     [Parameter] public EventCallback<string> GuestNameChanged { get; set; }
     [Parameter] public bool IsConnecting { get; set; } = false;
     [Parameter] public string? ErrorMessage { get; set; }
+    [Parameter] public string? HostName { get; set; }
     [Parameter] public EventCallback OnJoin { get; set; }
 
     private async Task OnInputChanged(ChangeEventArgs e)

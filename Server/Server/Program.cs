@@ -100,6 +100,8 @@ app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理
 
 app.UseAuthentication(); // 認証ミドルウェア
 app.UseAuthorization(); // 認可ミドルウェア
+app.UseAntiforgery();
+
 
 //Blazerの設定
 app.MapRazorPages();
