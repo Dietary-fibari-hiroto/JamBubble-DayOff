@@ -1,4 +1,4 @@
-﻿using DotNetEnv; // �� �������ɒǉ�
+﻿using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Server.Data;
 using Server.Data.Configrations;
+using Server.Pages;
 using Server.src.Configrations;
 using Server.src.DTOs;
 using Server.src.Entities;
@@ -16,10 +17,10 @@ using System.Reflection;
 using System.Security.Cryptography.Xml;
 using System.Text.Json;
 
-//�A�v���̐ݒ��DI�������邽�߂̏���
+//アプリの設定・DIを準備するための準備
 var builder = WebApplication.CreateBuilder(args);
 
-// 変更後
+// .envファイル読み込み
 try
 {
     Env.Load();
@@ -29,14 +30,17 @@ catch
     // Docker環境では.envファイルがないので無視
 }
 
-builder.Services.AddControllers(); //API�ŃR���g���[���g���܂����܂��Ȃ�
-builder.Services.AddEndpointsApiExplorer(); //SwaggerUI�p��API�h�L�������g�\�z
+builder.Services.AddControllers(); //APIでコントローラーを使うなら
+builder.Services.AddEndpointsApiExplorer(); //SwaggerUI用のAPIドキュメントを構築
 
 builder.Services.AddCustomSwagger(); // Swaggerの設定
 
-//Signalingの設定
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+// ===== 新形式Blazor設定 =====
+// Razor Componentsを追加（新方式）
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents(); // SignalR経由のインタラクティブモード
+
+// SignalRは引き続き使える
 builder.Services.AddSignalR();
 
 
@@ -64,7 +68,6 @@ builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 // 定期実行サービスの登録
 builder.Services.AddHostedService<TimedHostedService>();
 
-// JWT認証の設定
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -83,36 +86,41 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     }
     );
 
-var app = builder.Build();//��L�݌v�}����ɍ\�z
+var app = builder.Build(); // 上記設計図から実際に構築
 
 
-//SwaggerUI�̃G���h�|�C���g��UI�ǂݍ��݁��\�z
+//SwaggerUIのエンドポイントやUI読み込み・構築
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
     // await DevelopmentDataSeeder.SeedAsync(app.Services); // 開発用データ
 }
+
+// 静的ファイル（CSS/JS）はルーティングより先に！
 app.UseStaticFiles();
+
 app.UseRouting();
-app.UseHttpsRedirection(); //Http�Ń��N�G�X�g���ꂽ�Ƃ���Https�փ��_�C���N�g
-app.UseMiddleware<ExceptionHandlingMiddleware>(); // // カスタム例外処理ミドルウェア
+app.UseHttpsRedirection(); // HttpでリクエストされたときHttpsへリダイレクト
+app.UseMiddleware<ExceptionHandlingMiddleware>(); // カスタム例外処理ミドルウェア
 
 app.UseAuthentication(); // 認証ミドルウェア
 app.UseAuthorization(); // 認可ミドルウェア
+
+// アンチフォージェリー（CSRF対策）はAuthentication/Authorizationの後！
 app.UseAntiforgery();
 
+// ===== 新形式Blazor設定 =====
+// Razor Componentsのマッピング（App.razorがエントリーポイント）
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode(); // SignalR経由のインタラクティブモード
 
-//Blazerの設定
-app.MapRazorPages();
-app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+// SignalR Hubは引き続き使える
 app.MapHub<MusicSessionHub>("/musicsessionhub");
 
-app.MapControllers(); //controller�Œ�`���ꂽ���[�g��L���ɂ���(�R���g���[���[��L���ɂ���)
+app.MapControllers(); // controllerで定義されたルートを有効にする
 
-
-app.Run();//���s�I�I�I
+app.Run(); // 実行！！！
 
 
 

@@ -1,42 +1,455 @@
 ﻿@using Server.src.Signaling.Models
-<secction class="screen-frame track-search">
-    <p class="track-search__title">曲を検索</p>
-    <input type="text" class="track-search__input"
-           value="@SearchQuery"
-           @oninput="OnInputChanged"
-           placeholder="曲名、アーティスト名で検索..." />
+
+<section class="screen-frame track-search">
+    <div class="search-header">
+        <h2 class="search-title">🔍 曲を検索</h2>
+        <div class="search-input-wrapper">
+            <span class="search-icon">🎵</span>
+            <input type="text"
+                   class="search-input"
+                   value="@SearchQuery"
+                   @oninput="OnInputChanged"
+                   placeholder="曲名、アーティスト名で検索..." />
+        </div>
+    </div>
+
     @if (IsSearching)
     {
-        <p>検索中...</p>
+        <div class="loading-state">
+            <div class="spinner"></div>
+            <p class="loading-text">検索中...</p>
+        </div>
     }
     else if (SearchResults.Any())
     {
-        <div class="track-search__result">
+        <div class="search-results">
             @foreach (var track in SearchResults)
             {
-                <div class="track-search__result-item">
-                    <div class="track-inner">
+                <div class="result-item">
+                    <div class="track-content" @onclick="() => OnTrackClick.InvokeAsync(track)">
                         @if (!string.IsNullOrEmpty(track.AlbumImageUrl))
                         {
-                            <img src="@track.AlbumImageUrl" alt="Album" class="track-search__result-img" />
+                            <div class="album-image-wrapper">
+                                <img src="@track.AlbumImageUrl" alt="Album" class="album-image" />
+                            </div>
                         }
                         <div class="track-info">
-                            <div class="track-name text-lg">@track.Name</div>
-                            <div class="track-artist text-base">@track.Artist - @track.Album</div>
+                            <div class="track-name">@track.Name</div>
+                            <div class="track-artist">@track.Artist</div>
+                            <div class="track-album">@track.Album</div>
                         </div>
                     </div>
-                    <button class="add-button text-base" @onclick="() => OnTrackAdd.InvokeAsync(track)">
-                        ＋
+                    <button class="add-button" @onclick="() => OnTrackAdd.InvokeAsync(track)" @onclick:stopPropagation="true">
+                        <span class="add-icon">＋</span>
                     </button>
                 </div>
             }
-            <div class="track-search__result-space" />
+            <div class="results-spacer"></div>
         </div>
     }
-</secction>
+    else if (!string.IsNullOrWhiteSpace(SearchQuery))
+    {
+        <div class="empty-state">
+            <div class="empty-icon">🎼</div>
+            <p class="empty-text">曲が見つかりませんでした</p>
+            <p class="empty-hint">別のキーワードで検索してみてください</p>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <div class="empty-icon">🎸</div>
+            <p class="empty-text">曲を検索しよう</p>
+            <p class="empty-hint">好きな曲をプレイリストに追加できます</p>
+        </div>
+    }
+</section>
+<style>
+    .track-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100dvh;
+        color: white;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .search-header {
+        padding: 1.5rem 1.5rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+    }
+
+    .search-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin: 0 0 1rem 0;
+        background: linear-gradient(135deg, #FF8500 0%, #FFB347 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .search-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1rem;
+        font-size: 1.2rem;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 56px;
+        padding: 0 1rem 0 3rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .search-input:focus {
+            border-color: #FF8500;
+            background: rgba(255, 133, 0, 0.08);
+            box-shadow: 0 0 0 4px rgba(255, 133, 0, 0.15);
+        }
+
+        .search-input:hover:not(:focus) {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+    .loading-state {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-top-color: #FF8500;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    .loading-text {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+    }
+
+    .search-results {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+        .search-results::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .search-results::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .search-results::-webkit-scrollbar-thumb {
+            background: rgba(255, 133, 0, 0.3);
+            border-radius: 4px;
+        }
+
+            .search-results::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 133, 0, 0.5);
+            }
+
+    .result-item {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        transition: all 0.3s ease;
+        animation: slideIn 0.3s ease-out;
+    }
+
+        .result-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 133, 0, 0.3);
+            transform: translateX(4px);
+        }
+
+    .track-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+        min-width: 0;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+    }
+
+        .track-content:hover {
+            opacity: 0.8;
+        }
+
+    .album-image-wrapper {
+        flex-shrink: 0;
+        position: relative;
+    }
+
+        .album-image-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(255, 133, 0, 0.2);
+            pointer-events: none;
+        }
+
+    .album-image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
+
+    .track-info {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .track-name {
+        font-weight: 700;
+        font-size: 1rem;
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .track-artist {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .track-album {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .add-button {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #FF8500 0%, #FF6B00 100%);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(255, 133, 0, 0.3);
+    }
+
+        .add-button:hover {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF5500 100%);
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 4px 12px rgba(255, 133, 0, 0.5);
+        }
+
+        .add-button:active {
+            transform: scale(0.95) rotate(90deg);
+        }
+
+    .add-icon {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1;
+    }
+
+    .results-spacer {
+        height: 100px;
+    }
+
+    .empty-state {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 2rem;
+        text-align: center;
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .empty-icon {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.3;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .empty-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 0 0.5rem 0;
+    }
+
+    .empty-hint {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+    }
+
+    @@keyframes spin {
+        to
+
+    {
+        transform: rotate(360deg);
+    }
+
+    }
+
+    @@keyframes slideIn {
+        from
+
+    {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    }
+
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    }
+
+    @@keyframes float {
+        0%, 100%
+
+    {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    }
+
+    @@media (max-width: 480px) {
+        .search-header
+
+    {
+        padding: 1rem;
+    }
+
+    .search-title {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        height: 52px;
+        font-size: 0.95rem;
+    }
+
+    .search-results {
+        padding: 0.75rem;
+    }
+
+    .result-item {
+        padding: 0.75rem;
+    }
+
+    .album-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .track-name {
+        font-size: 0.9rem;
+    }
+
+    .track-artist {
+        font-size: 0.85rem;
+    }
+
+    .track-album {
+        font-size: 0.75rem;
+    }
+
+    .add-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .add-icon {
+        font-size: 1.3rem;
+    }
+
+    }
+</style>
 
 @code {
-    [Parameter] public string SearchQuery { get; set; } = string.Empty;
+    [Parameter]
+    public string SearchQuery { get; set; } = string.Empty;
 
     [Parameter]
     public EventCallback<string> SearchQueryChanged { get; set; }
@@ -49,8 +462,12 @@
 
     [Parameter]
     public EventCallback<string> OnSearchInput { get; set; }
+
     [Parameter]
     public EventCallback<SpotifyTrackSearchResult> OnTrackAdd { get; set; }
+
+    [Parameter]
+    public EventCallback<SpotifyTrackSearchResult> OnTrackClick { get; set; }
 
     private async Task OnInputChanged(ChangeEventArgs e)
     {
@@ -58,5 +475,4 @@
         await SearchQueryChanged.InvokeAsync(newValue);
         await OnSearchInput.InvokeAsync(newValue);
     }
-
 }

@@ -1,4 +1,5 @@
 ﻿@page "/session/{sessionId}"
+@rendermode InteractiveServer
 @using Server.src.Signaling.Models
 @using Server.src.Application.Services
 @using Server.src.Signaling.Hubs
@@ -7,7 +8,6 @@
 @inject SpotifySearchService SpotifyService
 @inject NavigationManager NavigationManager
 @implements IAsyncDisposable
-
 <PageTitle>Music Session - @SessionId</PageTitle>
 
 <div class="container">
@@ -18,7 +18,7 @@
                    GuestNameChanged="OnGuestNameChanged"
                    IsConnecting="@_isConnecting"
                    ErrorMessage="@_errorMessage"
-        OnJoin="JoinSession" />
+                   OnJoin="@JoinSession" />
     }
     else
     {
@@ -31,24 +31,41 @@
         switch (_currentViewMode)
         {
             case ViewMode.Home:
-                <MemberList 
-                    Members="@_members"
-                            Return="@(() => SwitchToView(ViewMode.Search))" />
+                <Home Return="@(() => SwitchToView(ViewMode.Member))"
+                      OnLeave="@LeaveSession"
+                      SessionName="@SessionId"
+                      HostName="ホスト名"
+                      SceneName="カフェでまったり"
+                      Tags="@(new List<string> { "ジャズ", "リラックス", "作業用" })" />
                 break;
+
             case ViewMode.Search:
 
-            <TrackSearch SearchQuery="@_searchQuery"
-                         SearchQueryChanged="(value) => _searchQuery = value"
-                         IsSearching="@_isSearching"
-                         SearchResults="@_searchResults"
-                OnSearchInput="HandleSearchQueryChanged"
-                OnTrackAdd="AddTrack"
-                />
+                <TrackSearch SearchQuery="@_searchQuery"
+                             SearchQueryChanged="(value) => _searchQuery = value"
+                             IsSearching="@_isSearching"
+                             SearchResults="@_searchResults"
+                             OnSearchInput="HandleSearchQueryChanged"
+                             OnTrackAdd="AddTrack"
+                             OnTrackClick="ShowTrackDetail" />
                 break;
+
             case ViewMode.Playlist:
                 <Playlist Items="@_playlist"
-                      CurrentUserId="@_userId"
-                      OnTrackRemove="RemoveTrack" />
+                          CurrentUserId="@_userId"
+                          OnTrackRemove="RemoveTrack" />
+                break;
+
+            case ViewMode.Member:
+                <MemberList Members="@_members"
+                            Return="@(() => SwitchToView(ViewMode.Home))" />
+                break;
+
+            case ViewMode.MusicDetail:
+                <MusicDetail Track="@_selectedTrack"
+                             Return="@(() => SwitchToView(ViewMode.Search))"
+                             OnTrackAdd="AddTrackFromDetail"
+                             IsAlreadyInPlaylist="@IsLastAddedTrack(_selectedTrack.Id)" />
                 break;
         }
 
@@ -62,7 +79,7 @@
             <button class="session-nav__button" @onclick="@(async () => await SwitchToView(ViewMode.Playlist))">
                 <img src="images/elements/git-pull-request-arrow.png" alt="qr_icon" />
             </button>
-            </nav>
+        </nav>
     }
 
 
@@ -74,7 +91,9 @@
     {
         Home,
         Search,
-        Playlist
+        Playlist,
+        Member,
+        MusicDetail
     }
     private ViewMode _currentViewMode = ViewMode.Search;
     private List<Guest> _members = new();
@@ -93,6 +112,7 @@
     private bool _isSearching = false;
     private List<SpotifyTrackSearchResult> _searchResults = new();
     private List<PlaylistItem> _playlist = new();
+    private SpotifyTrackSearchResult _selectedTrack = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -127,7 +147,7 @@
         _hubConnection.On<string>("GuestLeft", (connectionId) =>
         {
             var member = _members.FirstOrDefault(m => m.ConnectionId == connectionId);
-            if(member != null)
+            if (member != null)
             {
                 _members.Remove(member);
             }
@@ -242,6 +262,14 @@
     //トラックを追加する関数
     private async Task AddTrack(SpotifyTrackSearchResult track)
     {
+        // 直前に追加された曲と同じかチェック
+        if (_playlist.Any() && _playlist.Last().SpotifyTrackId == track.Id)
+        {
+            _errorMessage = "この曲は直前に追加されました";
+            StateHasChanged();
+            return;
+        }
+
         try
         {
             var request = new AddTrackRequest
@@ -285,6 +313,31 @@
         }
     }
 
+    //トラック詳細を表示する関数
+    private async Task ShowTrackDetail(SpotifyTrackSearchResult track)
+    {
+        _selectedTrack = track;
+        await SwitchToView(ViewMode.MusicDetail);
+    }
+
+    //MusicDetailから曲を追加する関数
+    private async Task AddTrackFromDetail(SpotifyTrackSearchResult track)
+    {
+        await AddTrack(track);
+        // 追加成功したら検索画面に戻る
+        if (string.IsNullOrEmpty(_errorMessage))
+        {
+            await SwitchToView(ViewMode.Search);
+        }
+    }
+
+    //トラックが直前に追加された曲かチェック
+    private bool IsLastAddedTrack(string spotifyTrackId)
+    {
+        if (!_playlist.Any()) return false;
+        return _playlist.Last().SpotifyTrackId == spotifyTrackId;
+    }
+
 
     public async ValueTask DisposeAsync()
     {
@@ -323,10 +376,10 @@
         try
         {
             var request = new LeaveSessionRequest
-                {
-                    SessionId = SessionId,
-                    UserId = _userId
-                };
+            {
+                SessionId = SessionId,
+                UserId = _userId
+            };
             await _hubConnection!.InvokeAsync("LeaveSession", request);
 
             _isJoined = false;
@@ -336,7 +389,7 @@
 
             StateHasChanged();
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             _errorMessage = $"セッションからの退出に失敗しました: {ex.Message}";
         }

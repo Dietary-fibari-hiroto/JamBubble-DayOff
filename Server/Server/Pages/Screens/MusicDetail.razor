@@ -1,0 +1,378 @@
+﻿@using Server.src.Signaling.Models
+
+<section class="screen-frame music-detail">
+    <button class="close-button" @onclick="OnReturn" type="button">
+        <span class="close-icon">✕</span>
+    </button>
+
+    <div class="detail-content">
+        @if (!string.IsNullOrEmpty(Track.AlbumImageUrl))
+        {
+            <div class="album-art-wrapper">
+                <img src="@Track.AlbumImageUrl" alt="Album Art" class="album-art" />
+            </div>
+        }
+
+        <div class="track-details">
+            <h2 class="track-title">@Track.Name</h2>
+            <p class="track-artist">@Track.Artist</p>
+            <p class="track-album">@Track.Album</p>
+
+            @if (Track.DurationMs > 0)
+            {
+                <p class="track-duration">
+                    <span class="duration-icon">⏱️</span>
+                    @FormatDuration(Track.DurationMs)
+                </p>
+            }
+        </div>
+
+        @if (IsAlreadyInPlaylist)
+        {
+            <div class="already-added-message">
+                <span class="check-icon">✓</span>
+                <span>この曲は直前に追加されました</span>
+            </div>
+        }
+        else
+        {
+            <button class="add-to-playlist-button" @onclick="OnAddTrack">
+                <span class="button-icon">＋</span>
+                <span class="button-text">プレイリストに追加</span>
+            </button>
+        }
+    </div>
+</section>
+
+
+
+<style>
+    .music-detail {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100dvh;
+        color: white;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .close-button {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 100;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+        .close-button:hover {
+            background: rgba(255, 133, 0, 0.2);
+            border-color: rgba(255, 133, 0, 0.4);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .close-button:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+    .close-icon {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1;
+    }
+
+    .detail-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        gap: 2rem;
+        overflow-y: auto;
+        animation: fadeIn 0.4s ease-out;
+    }
+
+        .detail-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .detail-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .detail-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 133, 0, 0.3);
+            border-radius: 4px;
+        }
+
+            .detail-content::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 133, 0, 0.5);
+            }
+
+    .album-art-wrapper {
+        position: relative;
+        animation: scaleIn 0.5s ease-out;
+    }
+
+        .album-art-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(255, 133, 0, 0.3);
+            pointer-events: none;
+        }
+
+    .album-art {
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+    }
+
+    .track-details {
+        text-align: center;
+        max-width: 500px;
+        animation: slideUp 0.5s ease-out 0.1s backwards;
+    }
+
+    .track-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 0 0.75rem 0;
+        background: linear-gradient(135deg, #FF8500 0%, #FFB347 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.3;
+    }
+
+    .track-artist {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 0 0.5rem 0;
+    }
+
+    .track-album {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0 0 1rem 0;
+    }
+
+    .track-duration {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        margin: 0;
+    }
+
+    .duration-icon {
+        font-size: 1rem;
+    }
+
+    .add-to-playlist-button {
+        width: 100%;
+        max-width: 400px;
+        height: 56px;
+        border-radius: 12px;
+        border: none;
+        background: linear-gradient(135deg, #FF8500 0%, #FF6B00 100%);
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(255, 133, 0, 0.3);
+        animation: slideUp 0.5s ease-out 0.2s backwards;
+    }
+
+        .add-to-playlist-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 133, 0, 0.4);
+            background: linear-gradient(135deg, #FF6B00 0%, #FF5500 100%);
+        }
+
+        .add-to-playlist-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(255, 133, 0, 0.3);
+        }
+
+    .button-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .button-text {
+        letter-spacing: 0.05em;
+    }
+
+    .already-added-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 400px;
+        padding: 1rem 1.5rem;
+        background: rgba(40, 167, 69, 0.15);
+        border: 2px solid rgba(40, 167, 69, 0.4);
+        border-radius: 12px;
+        color: #6fdc8c;
+        font-size: 1rem;
+        font-weight: 600;
+        animation: slideUp 0.5s ease-out 0.2s backwards;
+    }
+
+    .check-icon {
+        font-size: 1.5rem;
+        color: #6fdc8c;
+    }
+
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    }
+
+    @@keyframes scaleIn {
+        from
+
+    {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    }
+
+    @@keyframes slideUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    @@media (max-width: 480px) {
+        .close-button
+
+    {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .detail-content {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .album-art {
+        width: 240px;
+        height: 240px;
+    }
+
+    .track-title {
+        font-size: 1.6rem;
+    }
+
+    .track-artist {
+        font-size: 1.1rem;
+    }
+
+    .track-album {
+        font-size: 0.9rem;
+    }
+
+    .add-to-playlist-button {
+        font-size: 1rem;
+        height: 52px;
+    }
+
+    .already-added-message {
+        font-size: 0.9rem;
+        padding: 0.85rem 1.25rem;
+    }
+
+    }
+</style>
+
+@code {
+    [Parameter]
+    public SpotifyTrackSearchResult Track { get; set; } = new();
+
+    [Parameter]
+    public EventCallback Return { get; set; }
+
+    [Parameter]
+    public EventCallback<SpotifyTrackSearchResult> OnTrackAdd { get; set; }
+
+    [Parameter]
+    public bool IsAlreadyInPlaylist { get; set; }
+
+    private async Task OnReturn()
+    {
+        await Return.InvokeAsync();
+    }
+
+    private async Task OnAddTrack()
+    {
+        if (!IsAlreadyInPlaylist)
+        {
+            await OnTrackAdd.InvokeAsync(Track);
+        }
+    }
+
+    private string FormatDuration(int durationMs)
+    {
+        var duration = TimeSpan.FromMilliseconds(durationMs);
+        return $"{(int)duration.TotalMinutes}:{duration.Seconds:D2}";
+    }
+}

@@ -48,8 +48,7 @@
         else
         {
             <button class="submit-button"
-                    @onclick="OnJoinClicked"
-                    disabled="@string.IsNullOrWhiteSpace(GuestName)">
+                    @onclick="OnJoinClicked">
                 <span class="button-text">参加する</span>
                 <span class="button-icon">→</span>
             </button>
@@ -60,6 +59,363 @@
         <p class="footer-text">リアルタイムで音楽を共有・リクエストできます</p>
     </div>
 </section>
+
+
+<style>
+    .enter-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: white;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        min-height: 100dvh;
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .enter-name__welcome {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: slideDown 0.8s ease-out;
+    }
+
+    .enter-name__logo {
+        margin-bottom: 1.5rem;
+    }
+
+        .enter-name__logo .logo-icon {
+            font-size: 4rem;
+            display: inline-block;
+            animation: bounce 1s ease-in-out infinite;
+            filter: drop-shadow(0 4px 12px rgba(255, 133, 0, 0.4));
+        }
+
+    .enter-name__title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0;
+        background: linear-gradient(135deg, #FF8500 0%, #FFB347 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+    }
+
+    .enter-name__subtitle {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .enter-name__host-info {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 1rem 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        animation: slideUp 0.8s ease-out;
+    }
+
+        .enter-name__host-info .host-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 0 0.25rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .enter-name__host-info .host-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            color: #FFB347;
+        }
+
+    .enter-name__form {
+        width: 100%;
+        max-width: 400px;
+        animation: slideUp 0.8s ease-out 0.2s backwards;
+    }
+
+    .enter-name__input-group {
+        margin-bottom: 2rem;
+    }
+
+        .enter-name__input-group .input-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.05em;
+        }
+
+        .enter-name__input-group .input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .enter-name__input-group .input-hint {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0.5rem 0 0 0;
+            font-style: italic;
+        }
+
+    .enter-name__input {
+        background: rgba(255, 255, 255, 0.05);
+        width: 100%;
+        height: 56px;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        font-size: 1.1rem;
+        padding: 0 1.25rem;
+        transition: all 0.3s ease;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+        .enter-name__input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .enter-name__input:focus {
+            border-color: #FF8500;
+            background: rgba(255, 133, 0, 0.08);
+            box-shadow: 0 0 0 4px rgba(255, 133, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .enter-name__input:hover:not(:focus) {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+    .enter-name .input-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #FF8500, #FFB347);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .enter-name__input:focus + .input-underline {
+        transform: scaleX(1);
+    }
+
+    .enter-name .error-message {
+        background: rgba(220, 53, 69, 0.15);
+        border: 1px solid rgba(220, 53, 69, 0.4);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #ff6b6b;
+        animation: shake 0.5s ease;
+    }
+
+        .enter-name .error-message .error-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+    .enter-name .loading-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+
+        .enter-name .loading-state .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #FF8500;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .enter-name .loading-state p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+    .enter-name__footer {
+        margin-top: 3rem;
+        text-align: center;
+        animation: fadeIn 1s ease-out 0.6s backwards;
+    }
+
+        .enter-name__footer .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+        }
+
+    .submit-button {
+        width: 100%;
+        height: 56px;
+        border-radius: 12px;
+        border: none;
+        background: linear-gradient(135deg, #FF8500 0%, #FF6B00 100%);
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(255, 133, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+        .submit-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 133, 0, 0.4);
+        }
+
+            .submit-button:hover:not(:disabled)::before {
+                left: 100%;
+            }
+
+            .submit-button:hover:not(:disabled) .button-icon {
+                transform: translateX(4px);
+            }
+
+        .submit-button:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(255, 133, 0, 0.3);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .submit-button .button-text {
+            letter-spacing: 0.05em;
+        }
+
+        .submit-button .button-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @@keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @@keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-8px);
+        }
+
+        75% {
+            transform: translateX(8px);
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .enter-name {
+            padding: 1rem;
+        }
+
+        .enter-name__title {
+            font-size: 2.5rem;
+        }
+
+        .enter-name__logo .logo-icon {
+            font-size: 3rem;
+        }
+
+        .enter-name__form {
+            max-width: 100%;
+        }
+    }
+
+</style>
 
 @code {
     [Parameter] public string GuestName { get; set; } = "";
@@ -80,6 +436,19 @@
     {
         Console.WriteLine($"=== OnJoinClicked START ===");
         Console.WriteLine($"GuestName: '{GuestName}'");
+
+        // 名前が入力されているかチェック
+        if (string.IsNullOrWhiteSpace(GuestName))
+        {
+            Console.WriteLine("GuestName is empty, ignoring click");
+            ErrorMessage = "ニックネームを入力してください";
+            StateHasChanged();
+            return;
+        }
+
+        // エラーメッセージをクリア
+        ErrorMessage = null;
+
         await OnJoin.InvokeAsync();
         Console.WriteLine($"=== OnJoinClicked END ===");
     }

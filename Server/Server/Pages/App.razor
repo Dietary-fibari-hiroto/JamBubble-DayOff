@@ -1,11 +1,28 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <SessionNotFound/>
-    </NotFound>
-</Router>
+﻿<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <title>JamBubble</title>
 
+    <!-- 通常のCSS -->
+    <link href="css/index.css" rel="stylesheet" />
+    
+    <!-- Blazor CSS分離ファイル -->
+    <link href="Server.styles.css" rel="stylesheet" />
+    
+    <!-- 動的headコンテンツ用 -->
+    <HeadOutlet />
+</head>
+
+<body>
+    <!-- ルーティング -->
+    <Routes />
+    
+    <!-- Blazor WebAssembly/Server用スクリプト -->
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
