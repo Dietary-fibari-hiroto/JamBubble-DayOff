@@ -1,0 +1,71 @@
+﻿
+.wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; /* 画面の幅を広げる*/
+    height: 100vh; /* 画面全体に広げる*/
+    display: flex;
+    justify-content: center; /* 左右中央 */
+    align-items: center; /* 上下中央 */
+}
+
+.end-container {
+    display: flex;
+    flex-direction: column; /*改行します。*/
+    justify-content: center; /* 上下中央 */
+    align-items: center; /* 左右中央 */
+}
+
+#message{
+    margin-bottom: 70px;
+    text-align:center; /*テキスト中央*/
+}
+
+.icon-container {
+    width:100px;
+    height: 100px;
+    margin-bottom: 9px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /*グラデーションのこと色は二つ上からの下まで*/
+    background: linear-gradient(180deg, #555 0%, #000 100%);
+    border-radius: 10px;
+    
+}
+.icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#title{
+    margin: 0 0 42px 0;
+}
+.appstore{
+    width:300px;
+    height:50px;
+    margin: 0 0 6px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #ffffff;
+    background: #18609A;
+    border:none;
+    border-radius:10px;
+    
+}
+.googleplay {
+    width: 300px;
+    height: 50px;
+    margin: 0 0 6px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: var(--color-spotify-secondary);
+    border: none;
+    border-radius: 10px;
+}
