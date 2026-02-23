@@ -1,6 +1,48 @@
 ﻿@page "/sessionplaylist"
+@using Web.Components.UI.elements
+<div class="wrapper">
+    <div class="list-container">
+        <div class="track isplayed">
+            <img class="album" src="/images/photos/659edf6203a148d523903f01beb20d21-300x300.png" />
+            <div class="track-row">
+                <p class="string-s" id="track-title">僕が死のうと思ってのは</p>
+                <p class="string-ss" id="track-artist">amazarashi</p>
+            </div>
+        </div>
 
-<h3>SessionPlaylist</h3>
+        <div class="track isplayed">
+            <img class="album" src="/images/elementIcons/circle-user-round.svg" />
+            <div class="track-row">
+                <p class="string-s" id="track-title">僕が死のうと思ってのは</p>
+                <p class="string-ss" id="track-artist">amazarashi</p>
+            </div>
+        </div>
+        <div class="track iscurrent">
+            <img class="album" src="/images/photos/659edf6203a148d523903f01beb20d21-300x300.png" />
+            <div class="track-row">
+                <p class="string-md-bold" id="track-title">僕が死のうと思ってのは</p>
+                <p class="string-s" id="track-artist">amazarashi</p>
+            </div>
+        </div>
+        <div class="track">
+            <img class="album" src="/images/photos/659edf6203a148d523903f01beb20d21-300x300.png" />
+            <div class="track-row">
+                <p class="string-s" id="track-title">僕が死のうと思ってのは</p>
+                <p class="string-ss" id="track-artist">amazarashi</p>
+            </div>
+        </div>
+        <div class="track">
+            <img class="album" src="/images/photos/659edf6203a148d523903f01beb20d21-300x300.png" />
+            <div class="track-row">
+                <p class="string-s" id="track-title">僕が死のうと思ってのは</p>
+                <p class="string-ss" id="track-artist">amazarashi</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-container">
+    <MenuBar/>
+</div>
 
 @code {
 

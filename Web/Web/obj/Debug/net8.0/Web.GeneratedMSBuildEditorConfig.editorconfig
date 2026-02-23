@@ -40,22 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uRW5kLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionMenber.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTWVuYmVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionPlaylist.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUGxheWxpc3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionRequest.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUmVxdWVzdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionRequestBoard.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUmVxdWVzdEJvYXJkLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/Splash.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGxhc2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -84,6 +68,38 @@ build_metadata.AdditionalFiles.CssScope = b-l0gfn74exd
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTGluay5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-nrkreluhnm
 
-[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/MenuBar.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxNZW51QmFyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-rswppccu2v
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionMember.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uTWVtYmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-p9y8dl09qn
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionPlaylist.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUGxheWxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-pnoxgtz2z2
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionRequest.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUmVxdWVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-tklsusd25y
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/Pages/SessionRequestBoard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXNzaW9uUmVxdWVzdEJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-airo7hijbe
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/cards/ArtistLabel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxjYXJkc1xBcnRpc3RMYWJlbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-b5derkp35q
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/elements/MenuBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xNZW51QmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-gz835h6ids
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/elements/Request.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxlbGVtZW50c1xSZXF1ZXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-pf9efy7k4h
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/icons/ArrowRightIcon.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxpY29uc1xBcnJvd1JpZ2h0SWNvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-zughe1vubi
+
+[C:/Users/2230233/source/repos/JamBubble-DayOff/Web/Web/Components/UI/icons/ArrowUpIcon.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxpY29uc1xBcnJvd1VwSWNvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-v5hj9jgl5z

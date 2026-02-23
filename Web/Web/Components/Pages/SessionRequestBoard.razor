@@ -1,6 +1,31 @@
 ﻿@page "/sessionrequestboard"
+@using Web.Components.UI.elements
 
-<h3>SessionRequestBoard</h3>
+<div id="wrapper">
+    <div class="icon-container">
+        <img class="arrow-left-icon" src="/images/elementIcons/chevron-down.svg"/>
+    </div>
+    <div class="img-container">
+        <img class="music-pic" src="/images/photos/659edf6203a148d523903f01beb20d21-300x300.png" />
+    </div>
+    <div class="music-info-container">
+        <h1 id="song-title">
+            ただ君晴れ
+        </h1>
+        <p id="artist">
+            ヨルシカ
+        </p>
+    </div>
+    <div id="button-container">
+        <button id="button-style">
+            <img class="request-icon" src="/images/elementIcons/arrow-up-from-line.svg"/>
+            <p class="string-reg-bold" id="request-text">リクエスト</p>
+        </button>
+    </div>
+</div>
+<div id="menu-container">
+    <MenuBar />
+</div>
 
 @code {
 

@@ -1,0 +1,13 @@
+﻿.icon-container {
+    background-color: #5A189A;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.arrow-up-icon {
+    margin: 7px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
