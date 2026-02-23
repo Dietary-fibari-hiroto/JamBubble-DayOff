@@ -65,4 +65,11 @@ C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\Web.pdb
 C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\ref\Web.dll
 C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\Pages\SessionLink.razor.rz.scp.css
-C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\MenuBar.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\Pages\SessionRequest.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\elements\MenuBar.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\elements\Request.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\icons\ArrowRightIcon.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\cards\ArtistLabel.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\Pages\SessionRequestBoard.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\UI\icons\ArrowUpIcon.razor.rz.scp.css
+C:\Users\2230233\source\repos\JamBubble-DayOff\Web\Web\obj\Debug\net8.0\scopedcss\Components\Pages\SessionPlaylist.razor.rz.scp.css
