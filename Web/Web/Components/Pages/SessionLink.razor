@@ -1,6 +1,6 @@
 ﻿@page "/sessionlink"
 @rendermode InteractiveServer
-@using Components.UI
+@using Web.Components.UI.elements
 <div id="wrapper" >
     <img  id="background" src="/images/elementIcons/shell.svg"/>
     <div id="contact-container">
@@ -25,7 +25,7 @@
             <p @onclick="OpenDialog" class="string-reg-bold" id="open-text">セッションを退出する</p>
         </div>
     </div>
-    <Web.Components.UI.MenuBar />
+    <MenuBar />
 </div>
 
 
